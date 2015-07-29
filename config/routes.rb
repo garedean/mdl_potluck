@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/' => 'home#index'
-  get '/home/store' => 'home#store'
+  get '/home/admin' => 'home#admin'
   
   resources :ingredients
   resources :categories 

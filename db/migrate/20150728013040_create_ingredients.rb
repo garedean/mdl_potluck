@@ -17,6 +17,6 @@ class CreateIngredients < ActiveRecord::Migration
     	t.string   "name"
     	t.datetime "created_at"
     	t.datetime "updated_at"
-    end	
+    end
   end
 end

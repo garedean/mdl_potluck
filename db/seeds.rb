@@ -1,9 +1,49 @@
-category1 = Category.create(name: 'Raw Protein');
-category2 = Category.create(name: 'Vegetables');
+category1 = Category.create(name: 'Raw Protein',
+                            has_children: true);
+category2 = Category.create(name: 'Vegetables',
+                            has_children: true);
 
-Category.create(name: 'Beef', parent_id: category1.id);
-Category.create(name: 'Chicken', parent_id: category1.id);
-Category.create(name: 'Pork', parent_id: category1.id);
+category3 = Category.create(name: 'Meats',
+                            parent_id: category1.id,
+                            has_children: true);
+category4 = Category.create(name: 'Seafood',
+                            parent_id: category1.id,
+                            has_children: true);
+
+category5 = Category.create(name: 'Chicken',
+                            parent_id: category3.id,
+                            has_children: true);
+Category.create(name: 'Beef',
+                parent_id: category3.id,
+                has_children: true);
+Category.create(name: 'Turkey',
+                parent_id: category3.id,
+                has_children: true);
+Category.create(name: 'Pork',
+                parent_id: category3.id,
+                has_children: true);
+Category.create(name: 'Buffalo',
+                parent_id: category3.id,
+                has_children: true);
+Category.create(name: 'Lamb',
+                parent_id: category3.id,
+                has_children: true);
+
+Category.create(name: 'Whole Chicken',
+                parent_id: category5.id,
+                has_children: false);
+Category.create(name: 'Chicken Breast',
+                parent_id: category5.id,
+                has_children: false);
+Category.create(name: 'Chicken Legs',
+                parent_id: category5.id,
+                has_children: false);
+Category.create(name: 'Chicken Drumsticks',
+                parent_id: category5.id,
+                has_children: false);
+Category.create(name: 'Ground Chicken',
+                parent_id: category5.id,
+                has_children: false);
 
 
 # Category.create(name: 'Raw Protein', children:[

@@ -1,30 +1,10 @@
 class CategoriesController < ApplicationController
-
   def index
-  	@categories = Category.all
-  end
-
-  def new
-  	@category = Category.new()
-  end
-
-  def create
-	@category = Category.new(category_params)
-  	if @category.save
-  		flash[:notice] = "You have added a category"
-  		redirect_to categories_path
-  	else
-  		render 'new'
-  	end
+  	@categories = Category.where(parent_id: nil)
   end
 
   def show
-    @category = Category.find(params[:category_id])
-  end
-
-  private
-
-   def category_params
-  	params.require(:category).permit(:name)
+    @category = Category.find(params[:id])
+    @items = Category.where(parent_id: @category.id)
   end
 end

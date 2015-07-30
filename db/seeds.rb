@@ -1,7 +1,9 @@
-Category.create(name: 'Raw Protein');
-Category.create(name: 'Vegetables');
-Category.create(name: 'Fruits');
-Category.create(name: 'Grains');
+category1 = Category.create(name: 'Raw Protein');
+category2 = Category.create(name: 'Vegetables');
+
+Category.create(name: 'Beef', parent_id: category1.id);
+Category.create(name: 'Chicken', parent_id: category1.id);
+Category.create(name: 'Pork', parent_id: category1.id);
 
 
 # Category.create(name: 'Raw Protein', children:[

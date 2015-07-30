@@ -21,13 +21,14 @@ group :development do
   gem 'letter_opener'
 end
 
-group :test, :development do
+group :development, :test do
   gem 'rspec-rails'
-  gem 'launchy'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'launchy'
   gem 'factory_girl_rails'
+  gem 'simplecov', require: false
 end

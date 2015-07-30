@@ -17,12 +17,9 @@
 <ul class="theList">
   <% @items.each do |item| %>
     <li>
-      <% if item.has_children %>
-        <%= link_to category_path(item) do %>
-			<span class="btn listButtons">
-  			 <span><%= item.name %></span>
-  			</span><br>
-        <% end %>
+
+      <% if item.children.any? %>
+        <%= link_to item.name, category_path(item) %>
       <% else %>
         <span class="btn listButtons">
           <%= link_to item.name, new_category_ingredient_path(item, Ingredient.new) %>

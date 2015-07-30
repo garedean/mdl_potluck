@@ -1,1 +1,30 @@
-New ingredient page
+<ul class="breadcrumbs">
+<br>
+<br>
+      <% if @category.parent_id != nil %>
+      <% if @category.parent_id != nil %>
+  		<% @rootCat = @categories[@category.parent_id - 1].parent_id %>
+  		<% @baseCat = @categories[@rootCat - 1].parent_id%>
+  		<li class="crumbles"><%= @categories[@baseCat - 1].name %></li><br><br>
+  	  <% if @rootCat != nil %>
+  		<li class="crumbles"><%= @categories[@rootCat - 1].name %></li><br><br>
+  	  <% end %>
+      <% end %>
+        <li class="crumbles"><%= @categories[@category.parent_id - 1].name %><a href="#"></a></li><br><br>
+      <% end %>
+      	<li class="crumbles"><%= @category.name %><a href="#"></a></li><br><br>
+</ul>
+
+
+
+<%= link_to categories_path do %>
+  <button class="fatButtonSpecific btn">
+    <span>ARRANGE</span>
+  </button>
+<% end %>
+
+<%= link_to '/' do %>
+  <button class="fatButtonSpecific btn">
+    <i class="fi-plus size-48"></i>
+  </button>
+<% end %>

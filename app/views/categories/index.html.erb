@@ -1,13 +1,28 @@
-<% @categories.each do |category| %>
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-  <%= link_to category.name, category_path(category) %>
-  </button>
-  <br>
-<% end %>
-
+<ul class="breadcrumbs">
 <br>
-<%= link_to  new_category_path do %>
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-  <i class="material-icons">add</i>
-  </button>
-<% end %>
+
+  <br>
+  <% if @category != nil %>
+	  <li class="crumbles"><%= @categories[@category.parent_id - 1].name %><a href="#"></a></li><br><br>
+	  <li class="crumbles"><%= @category.name %><a href="#"></a></li><br><br>
+	  <li class="crumbles"><a href="#"></a></li><br><br>
+  <% else %>
+  
+  
+  <% end %>
+</ul>
+
+<div class="listContainer">
+	<ul class="theList">
+		<% @categories.each do |category| %>
+		<li>	
+			<%= link_to category_path(category) do %>
+		  		<span class="btn listButtons">
+		  		 <%= category.name %>
+		  		</span><br>
+		  	<% end %>
+		  </li>
+		  <br>
+		<% end %>
+	</ul>
+</div>

@@ -5,22 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.indigo-pink.min.css">
-  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="Documents/git repos/potlock/potluck/app/assets/stylesheets/foundation-icons/foundation-icons.css" />
 </head>
 <body>
 
-<div class="container">
-	
   <div class="mobileBlock">
-    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-	  <input type="checkbox" id="switch-1" class="mdl-switch__input" checked />
-	  <span class="mdl-switch__label"></span>
-	</label>
-	<%= yield %>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">STORE</a>
+      </div>
+    </nav>  
+    <%= yield %>
   </div>
-</div>
 
 </body>
 </html>

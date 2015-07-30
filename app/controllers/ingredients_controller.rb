@@ -6,6 +6,8 @@ class IngredientsController < ApplicationController
 
   def new
     @ingredient = Ingredient.new
+    @categories = Category.all
+    @category = Category.find(params[:category_id])
   end
 
   def create

@@ -11,6 +11,7 @@ gem 'pry'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'sqlite3'
+gem 'foundation-rails'
 
 group :development do
   gem 'byebug'

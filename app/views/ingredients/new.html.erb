@@ -3,20 +3,20 @@
 <br>
 <br>
     <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.parent.name %><a href="#"></a></li><br><br>
+	<li class="crumbles"><%= @category.parent.parent.parent.name %></li><br><br>
 	<% end %>
 	<% if @category.parent != nil && @category.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.name %><a href="#"></a></li><br><br>
+	<li class="crumbles"><%= @category.parent.parent.name %></li><br><br>
 	<% end %>
 	<% if @category.parent != nil %>
-	<li class="crumbles"><%= @category.parent.name %><a href="#"></a></li><br><br>
+	<li class="crumbles"><%= @category.parent.name %></li><br><br>
 	<% end %>
-    <li class="crumbles"><%= @category.name %><a href="#"></a></li><br><br>
+    <li class="crumbles"><%= @category.name %></li><br><br>
 </ul>
 
 <div class="arrangeButton">
-	<%= link_to categories_path do %>
-	  <button class="fatButtonSpecific btn">
+	<%= link_to ingredients_path do %>
+	  <button class="fatButtonSpecific btn yellowPlusButton">
 	    <span>ARRANGE</span>
 	  </button>
 	<% end %>
@@ -28,7 +28,7 @@
 	  <%= f.hidden_field :name, :value => @category.name %>
 	  <br>
 	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
-	  <i class="fi-plus size-48"></i>
+	  <i class="fi-plus size-48 yellowPlusButton"></i>
 	  <% end %>
 	<% end %>
 </div>

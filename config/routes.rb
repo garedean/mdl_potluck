@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  get '/home/admin' => 'home#admin'
+  get '/home/prepare' => 'home#prepare'
 
   resources :ingredients
 

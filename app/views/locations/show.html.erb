@@ -3,12 +3,15 @@
 <ul>
   <% @sublocations.each do |location| %>
     <li>
-      <% if location.children.any? %>
-        <%= link_to location.name, location_path(location) %>
-      <% else %>
-        <%= link_to location.name, location_path(location) %>
-        <%#= link_to location.name, new_location_ingredient_path(location, Ingredient.new) %>
-      <% end %>
+      <%= link_to location.name, location_path(location) %>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @location.ingredients.each do |ingredient| %>
+    <li>
+      <%= link_to ingredient.name, location_ingredient_path(@location, ingredient) %>
     </li>
   <% end %>
 </ul>

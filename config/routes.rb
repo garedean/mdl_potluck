@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     resources :ingredients
   end
 
-  resources :locations
+  resources :locations do
+    resources :ingredients
+  end
 end

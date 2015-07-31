@@ -16,6 +16,10 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
+a {
+	color: white;
+}
+
 .mobileBlock {
    background-color: #E0E0E0;
    width: 375px;
@@ -23,15 +27,28 @@
  }
 
 .navbar {
-	background-color: #9E9E9E;
+	background-color: #263238;
+}
+
+
+.addButton {
+	position: absolute;
+	top: 235px;
+	left: 180px;
+}
+
+.arrangeButton {
+	position: absolute;
+	top: 255px;
+	
 }
 
 .fatButton {
     position: relative;
     margin: 10px;
     top: 390px;
-    left: 100px;
-	background-color: #008CBA;
+    left: 15px;
+	background-color: #263238;
 	width: 150px;
 	height: 150px;
 	color: white;
@@ -42,7 +59,7 @@
     margin: 10px;
     top: 220px;
     left: 15px;
-	background-color: #008CBA;
+	background-color: #263238;
 	width: 150px;
 	height: 150px;
 	color: white;
@@ -64,8 +81,31 @@
 }
 
 .listButtons {
-	background-color: white;
+	background-color: #263238;
+	width: 300px;
+	height: 80px;
+	line-height: 70px;
+	font-size: 180%;
 }
+
+a:hover{
+	color: #FFC107;
+}
+
+.ingredientTable {
+	margin-left: 10px;
+	width: 355px;
+	height: 580px;
+	overflow-y: scroll;
+}
+
+.alertCenter {
+	margin-top: 15px;
+	margin-left: 150px;
+	color: #FFC107;
+	display: none;
+}
+
 
 /* FOUNDATION ICON SIZES */
 .size-12 { font-size: 12px; }

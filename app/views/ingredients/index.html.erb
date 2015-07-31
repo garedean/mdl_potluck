@@ -1,27 +1,26 @@
-<h3>Unassigned Ingredients</h3>
-
-
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-  <thead>
-    <tr>
-      <th class="mdl-data-table__cell--non-numeric">Ingredient</th>
-      <th>Location</th>
-      <th>Created</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @ingredients.each do |ingredient| %>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric"><%= ingredient.name %></td>
-      <td>25</td>
-      <td><%= ingredient.formatted_time %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to  new_ingredient_path do %>
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-  <i class="material-icons">add</i>
-  </button>
-<% end %>
+<div class="ingredientTable">
+  <table>
+    <thead>
+      <tr>
+        <th width="160">NAME</th>
+        <th>LOCATION</th>
+        <th>QUANTITY</th>
+        <th>LIFESPAN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ingredients.each do |ingredient| %>
+      <tr>
+        <%= link_to ingredient_path(ingredient) do %>
+        <td> <%= ingredient.name %></td>
+        <% end %>
+        <td> <%= ingredient.id %></td>
+        <td> <%= ingredient.id %></td>
+        <td> 
+        <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

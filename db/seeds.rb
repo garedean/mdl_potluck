@@ -140,3 +140,144 @@ Category.create(name: 'Dairy/Eggs', children:[
   Category.create(name: 'Butter'),
   Category.create(name: 'Cream')
 ])
+
+Location.create(name: 'Kitchen', children:[
+  Location.create(name: 'Under Counter'),
+  Location.create(name: 'Spice Area', children:[
+    Location.create(name: 'Spice Top Shelves'),
+    Location.create(name: 'Spice Middle Shelves'),
+    Location.create(name: 'Spice Bottom Shelves')
+  ])
+])
+
+Location.create(name: 'Dishwasher Room', children:[
+  Location.create(name: 'Deli Fridge #2', children:[
+    Location.create(name: 'Deli Left Door', children:[
+      Location.create(name: 'Left Door Top'),
+      Location.create(name: 'Left Door Middle'),
+      Location.create(name: 'Left Door Bottom')
+    ]),
+    Location.create(name: 'Deli Middle Door', children:[
+      Location.create(name: 'Middle Door Top'),
+      Location.create(name: 'Middle Door Middle'),
+      Location.create(name: 'Middle Door Bottom')
+    ]),
+    Location.create(name: 'Deli Right Door', children:[
+      Location.create(name: 'Right Door Top'),
+      Location.create(name: 'Right Door Middle'),
+      Location.create(name: 'Right Door Bottom')
+    ])
+  ]),
+  Location.create(name: 'Fridge #1', children:[
+    Location.create(name: 'Freezer (Left)', children:[
+      Location.create(name: 'Door'),
+      Location.create(name: 'Top Shelves'),
+      Location.create(name: 'Middle Shelves'),
+      Location.create(name: 'Bottom Shelves')
+    ]),
+    Location.create(name: 'Fridge (Right)', children:[
+      Location.create(name: 'Door'),
+      Location.create(name: 'Top Shelves'),
+      Location.create(name: 'Middle Shelves'),
+      Location.create(name: 'Bottom Shelves')
+    ])
+  ])
+])
+
+Location.create(name: 'Loading Dock', children:[
+  Location.create(name: 'Floor'),
+  Location.create(name: 'Shelves')
+])
+
+Location.create(name: 'Back Hall', children:[
+  Location.create(name: 'Shelves'),
+  Location.create(name: 'Floor'),
+  Location.create(name: 'Fridge #8', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ]),
+  Location.create(name: 'Freezer #7', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ])
+])
+
+Location.create(name: 'Back Room', children:[
+  Location.create(name: 'Freezer #3', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ]),
+  Location.create(name: 'Freezer #4', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ]),
+  Location.create(name: 'Freezer #5', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ]),
+  Location.create(name: 'Freezer #6', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ]),
+  Location.create(name: 'Shelves', children:[
+    Location.create(name: 'Cove/Closet'),
+    Location.create(name: 'Metal Racks')
+  ]),
+  Location.create(name: 'Table', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Lower Shelf')
+  ]),
+  Location.create(name: 'Floor')
+])
+
+Location.create(name: 'Walk-In Fridge', children:[
+  Location.create(name: 'Front', children:[
+    Location.create(name: 'Left', children: [
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+    ]),
+    Location.create(name: 'Right', children:[
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+    ])
+  ]),
+  Location.create(name: 'Back', children:[
+    Location.create(name: 'Left', children: [
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+    ]),
+    Location.create(name: 'Right', children:[
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+    ])
+  ])
+])
+
+Location.create(name: 'Alleyway', children:[
+  Location.create(name: 'Building Side', children: [
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ]),
+  Location.create(name: 'Opposite Side', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+  ])
+])
+
+Location.create(name: 'Basement', children:[
+  Location.create(name: 'Shelves'),
+  Location.create(name: 'Table'),
+  Location.create(name: 'Floor')
+])

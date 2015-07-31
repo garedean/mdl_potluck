@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :categories do
     resources :ingredients
   end
+
+  resources :locations
 end

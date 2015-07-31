@@ -1,0 +1,14 @@
+<%= @location.name %>
+
+<ul>
+  <% @sublocations.each do |location| %>
+    <li>
+      <% if location.children.any? %>
+        <%= link_to location.name, location_path(location) %>
+      <% else %>
+        <%= link_to location.name, location_path(location) %>
+        <%#= link_to location.name, new_location_ingredient_path(location, Ingredient.new) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

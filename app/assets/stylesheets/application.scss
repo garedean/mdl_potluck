@@ -37,6 +37,12 @@ a {
 	left: 180px;
 }
 
+.arrangeButton {
+	position: absolute;
+	top: 255px;
+	
+}
+
 .fatButton {
     position: relative;
     margin: 10px;
@@ -76,10 +82,14 @@ a {
 
 .listButtons {
 	background-color: #263238;
-	width: 200px;
+	width: 300px;
 	height: 80px;
 	line-height: 70px;
 	font-size: 180%;
+}
+
+a:hover{
+	color: #FFC107;
 }
 
 .ingredientTable {

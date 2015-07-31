@@ -2,30 +2,25 @@
 <ul class="breadcrumbs">
 <br>
 <br>
-      <% if @category.parent_id != nil %>
-      <% if @category.parent_id != nil %>
-  		<% @rootCat = @categories[@category.parent_id - 1].parent_id %>
-  	  <% if @rootCat != nil %>
-  		<% @baseCat = @categories[@rootCat - 1].parent_id%>
-  		<% end %>
-  	  <% if @baseCate != nil %>
-  	  <% end %>
-  		<li class="crumbles"><%= @categories[@baseCat - 1].name %></li><br><br>
-  		
-  	  <% if @rootCat != nil %>
-  		<li class="crumbles"><%= @categories[@rootCat - 1].name %></li><br><br>
-  	    <% end %>
-        <% end %>
-        <li class="crumbles"><%= @categories[@category.parent_id - 1].name %><a href="#"></a></li><br><br>
-      <% end %>
-      	<li class="crumbles"><%= @category.name %><a href="#"></a></li><br><br>
+    <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
+	<li class="crumbles"><%= @category.parent.parent.parent.name %><a href="#"></a></li><br><br>
+	<% end %>
+	<% if @category.parent != nil && @category.parent.parent != nil%>
+	<li class="crumbles"><%= @category.parent.parent.name %><a href="#"></a></li><br><br>
+	<% end %>
+	<% if @category.parent != nil %>
+	<li class="crumbles"><%= @category.parent.name %><a href="#"></a></li><br><br>
+	<% end %>
+    <li class="crumbles"><%= @category.name %><a href="#"></a></li><br><br>
 </ul>
 
-<%= link_to categories_path do %>
-  <button class="fatButtonSpecific btn">
-    <span>ARRANGE</span>
-  </button>
-<% end %>
+<div class="arrangeButton">
+	<%= link_to categories_path do %>
+	  <button class="fatButtonSpecific btn">
+	    <span>ARRANGE</span>
+	  </button>
+	<% end %>
+</div>
 
 <div class="addButton">
 	<%= form_for [@category, @ingredient] do |f| %>

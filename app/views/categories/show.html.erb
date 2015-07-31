@@ -1,5 +1,3 @@
-
-
 <ul class="breadcrumbs">
 <br>
 <br>
@@ -22,13 +20,13 @@
       	<%= link_to category_path(item) do%>
 	        <span class="btn listButtons">
 	          <%= item.name %>
-	        </span><br>
+	        </span><br><br>
         <% end %>
       <% else %>
         <%= link_to new_category_ingredient_path(item, Ingredient.new) do%>
 	        <span class="btn listButtons">
 	           <%= item.name %>
-	        </span><br>
+	        </span><br><br>
         <% end %>
       <% end %>
     </li>

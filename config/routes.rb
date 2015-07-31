@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   get '/home/prepare' => 'home#prepare'
 
   resources :ingredients
+  resources :locations
 
   resources :categories do
     resources :ingredients
   end
-
-  resources :locations
+  
+  resources :ingredients do
+    resources :locations 
+  end
+  
 end

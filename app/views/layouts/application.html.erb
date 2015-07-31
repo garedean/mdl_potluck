@@ -14,11 +14,12 @@
       <div class="navbar-header">
         <a href="/" class="navbar-brand">STORE</a>
       </div>
+      <div class = "alertCenter" id="flash">
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
     </nav>  
-     <div class = "alertCenter" id="flash">
-      <%= flash[:notice] %>
-      <%= flash[:alert] %>
-     </div>
+     
     <%= yield %>
   </div>
 

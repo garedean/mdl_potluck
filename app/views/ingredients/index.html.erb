@@ -1,6 +1,26 @@
-
-<ul>
-<% @ingredients.each do |ingredient| %>
-  <li> <%= ingredient.name %></li>
-<% end %>
-</ul>
+<div class="ingredientTable">
+  <table>
+    <thead>
+      <tr>
+        <th width="160">NAME</th>
+        <th>LOCATION</th>
+        <th>QUANTITY</th>
+        <th>LIFESPAN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ingredients.each do |ingredient| %>
+      <tr>
+        <%= link_to ingredient_path(ingredient) do %>
+        <td> <%= ingredient.name %></td>
+        <% end %>
+        <td> <%= ingredient.id %></td>
+        <td> <%= ingredient.id %></td>
+        <td> 
+        <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

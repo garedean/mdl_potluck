@@ -13,7 +13,7 @@ class IngredientsController < ApplicationController
   def create
 	  @ingredient = Ingredient.new(ingredient_params)
   	if @ingredient.save
-  		flash[:notice] = "You have added an ingredient"
+  		flash[:notice] = "NEW ITEM ADDED"
   		redirect_to root_path
   	else
   		render 'new'

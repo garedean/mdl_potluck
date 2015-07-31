@@ -1,3 +1,6 @@
+# category seeds
+# ------------------------------------------------
+
 Category.create(name: 'Raw Protein', children:[
   Category.create(name: 'Meats', children:[
     Category.create(name: 'Chicken', children:[
@@ -141,6 +144,9 @@ Category.create(name: 'Dairy/Eggs', children:[
   Category.create(name: 'Cream')
 ])
 
+# location seeds
+# ------------------------------------------------
+
 Location.create(name: 'Kitchen', children:[
   Location.create(name: 'Under Counter'),
   Location.create(name: 'Spice Area', children:[
@@ -281,3 +287,26 @@ Location.create(name: 'Basement', children:[
   Location.create(name: 'Table'),
   Location.create(name: 'Floor')
 ])
+
+# ingredient seeds
+# ------------------------------------------------
+
+r = Random.new
+locations = Location.where({name: ["Bottom",
+                                   "Middle",
+                                   "Top",
+                                   "Floor",
+                                   "Door",
+                                   "Right",
+                                   "Left",
+                                   "Under Counter",
+                                   "Spice Top Shelves",
+                                   "Spice Middle Shelves",
+                                   "Spice Bottom Shelves",
+                                   "Shelves"]} )
+
+max_category_id = Category.maximum(:id)
+
+5000.times do
+  Ingredient.create(category_id: r.rand(max_category_id), location_id: locations.sample.id)
+end

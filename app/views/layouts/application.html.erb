@@ -15,6 +15,10 @@
         <a href="/" class="navbar-brand">STORE</a>
       </div>
     </nav>  
+     <div class = "alertCenter" id="flash">
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+     </div>
     <%= yield %>
   </div>
 

@@ -5,12 +5,17 @@
       <% if @category.parent_id != nil %>
       <% if @category.parent_id != nil %>
   		<% @rootCat = @categories[@category.parent_id - 1].parent_id %>
+  	  <% if @rootCat != nil %>
   		<% @baseCat = @categories[@rootCat - 1].parent_id%>
+  		<% end %>
+  	  <% if @baseCate != nil %>
+  	  <% end %>
   		<li class="crumbles"><%= @categories[@baseCat - 1].name %></li><br><br>
+  		
   	  <% if @rootCat != nil %>
   		<li class="crumbles"><%= @categories[@rootCat - 1].name %></li><br><br>
-  	  <% end %>
-      <% end %>
+  	    <% end %>
+        <% end %>
         <li class="crumbles"><%= @categories[@category.parent_id - 1].name %><a href="#"></a></li><br><br>
       <% end %>
       	<li class="crumbles"><%= @category.name %><a href="#"></a></li><br><br>
@@ -22,10 +27,14 @@
   </button>
 <% end %>
 
-<%= link_to '/' do %>
-  <button class="fatButtonSpecific btn">
-    <i class="fi-plus size-48"></i>
-  </button>
-<% end %>
-
+<div class="addButton">
+	<%= form_for [@category, @ingredient] do |f| %>
+	  <%= f.hidden_field :category_id, :value => @category.id %>
+	  <%= f.hidden_field :name, :value => @category.name %>
+	  <br>
+	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
+	  <i class="fi-plus size-48"></i>
+	  <% end %>
+	<% end %>
+</div>
 

@@ -24,6 +24,10 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
   end
 
+  def expiring_soon
+    @ingredients = Ingredient.order(expiring_at: :asc).limit(50)
+  end
+
   private
 
   def ingredient_params

@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   resources :ingredients do
     resources :locations 
   end
-  
-
+end

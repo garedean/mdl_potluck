@@ -2,15 +2,15 @@
 <br>
 <br>
     <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.parent.name %><a href="#"></a></li><br><br>
+	<li class="crumbles"><%= @category.parent.parent.parent.name %></li><br><br>
 	<% end %>
 	<% if @category.parent != nil && @category.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.name %><a href="#"></a></li><br><br>
+	<li class="crumbles"><%= @category.parent.parent.name %></li><br><br>
 	<% end %>
 	<% if @category.parent != nil %>
-	<li class="crumbles"><%= @category.parent.name %><a href="#"></a></li><br><br>
+	<li class="crumbles"><%= @category.parent.name %></li><br><br>
 	<% end %>
-    <li class="crumbles"><%= @category.name %><a href="#"></a></li><br><br>
+    <li class="crumbles"><%= @category.name %></li><br><br>
 </ul>
 
 <ul class="theList">
@@ -20,13 +20,12 @@
       	<%= link_to category_path(item) do%>
 	        <span class="btn listButtons">
 	          <%= item.name %>
-	        </span><br>
+	        </span><br><br>
         <% end %>
       <% else %>
         <%= link_to new_category_ingredient_path(item, Ingredient.new) do%>
 	        <span class="btn listButtons">
 	           <%= item.name %>
-	        </span><br>
         <% end %>
       <% end %>
     </li>

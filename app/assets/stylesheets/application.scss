@@ -65,6 +65,17 @@ a {
 	color: white;
 }
 
+.fatButtonPrepare {
+    position: relative;
+    margin: 10px;
+    top: 240px;
+    left: 15px;
+	background-color: #263238;
+	width: 150px;
+	height: 150px;
+	color: white;
+}
+
 .crumbles {
 	font-size: large;
 }
@@ -104,6 +115,10 @@ a:hover{
 	margin-left: 150px;
 	color: #FFC107;
 	display: none;
+}
+
+.yellowPlusButton {
+	color: #FFC107;
 }
 
 

@@ -14,7 +14,7 @@ class IngredientsController < ApplicationController
 	  @ingredient = Ingredient.new(ingredient_params)
   	if @ingredient.save
   		flash[:notice] = "+ NEW ITEM ADDED"
-  		redirect_to root_path
+  		redirect_to ingredient_locations_path(@ingredient)
   	else
   		render 'new'
   	end
@@ -31,7 +31,7 @@ class IngredientsController < ApplicationController
   private
 
   def ingredient_params
-  	params.require(:ingredient).permit(:name)
+  	params.require(:ingredient).permit()
   end
 
 end

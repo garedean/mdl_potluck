@@ -1,17 +1,35 @@
-<%= @location.name %>
-
-<ul>
-  <% @sublocations.each do |location| %>
-    <li>
-      <%= link_to location.name, location_path(location) %>
-    </li>
+<ul class="breadcrumbs">
+<br>
+<br>
+  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.parent.name %></li><br><br>
   <% end %>
+  <% if @location.parent != nil && @location.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.name %></li><br><br>
+  <% end %>
+  <% if @location.parent != nil %>
+  <li class="crumbles"><%= @location.parent.name %></li><br><br>
+  <% end %>
+    <li class="crumbles"><%= @location.name %></li><br><br>
 </ul>
 
-<ul>
-  <% @location.ingredients.each do |ingredient| %>
+<ul class="theList">
+  <% @sublocations.each do |location| %>
     <li>
-      <%= link_to ingredient.name, location_ingredient_path(@location, ingredient) %>
+      <% if location.children.any? %>
+        <%= link_to ingredient_location_path(@ingredient, location) do%>
+          <span class="btn listButtons">
+            <%= location.name %>
+          </span><br><br>
+        <% end %>
+      <% else %>
+        <%= link_to edit_ingredient_location_path(@ingredient, location) do%>
+          <span class="btn listButtons">
+             <%= location.name %>
+          </span><br><br>
+        <% end %>
+      <% end %>
+      <%= link_to location.name, location_path(location) %>
     </li>
   <% end %>
 </ul>

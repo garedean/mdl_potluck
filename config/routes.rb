@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/home/prepare' => 'home#prepare'
 
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
-
+  get '/home/cart', to: 'home#cart'
   get '/ingredients/unarranged', to: 'ingredients#unarranged'
 
   resources :ingredients
@@ -17,3 +17,4 @@ Rails.application.routes.draw do
     resources :ingredients 
   end
 
+end

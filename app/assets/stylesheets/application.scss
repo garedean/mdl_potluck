@@ -46,22 +46,22 @@ a {
 .fatButton {
     position: relative;
     margin: 10px;
-    top: 390px;
-    left: 15px;
+    top: 440px;
+    left: 75px;
 	background-color: #263238;
-	width: 150px;
-	height: 150px;
+	width: 120px;
+	height: 120px;
 	color: white;
 }
 
 .fatButtonSpecific {
     position: relative;
     margin: 10px;
-    top: 220px;
-    left: 15px;
+    top: 260px;
+    left: 45px;
 	background-color: #263238;
-	width: 150px;
-	height: 150px;
+	width: 120px;
+	height: 120px;
 	color: white;
 }
 
@@ -71,8 +71,8 @@ a {
     top: 240px;
     left: 15px;
 	background-color: #263238;
-	width: 150px;
-	height: 150px;
+	width: 120px;
+	height: 120px;
 	color: white;
 }
 
@@ -84,7 +84,7 @@ a {
 	display: inline;
 	float: right;
 	list-style-type: none;
-	height:400px; 
+	height:388px; 
 	width: 90%;
 	overflow: hidden;
 	overflow-y: scroll;
@@ -93,10 +93,15 @@ a {
 
 .listButtons {
 	background-color: #263238;
-	width: 300px;
-	height: 80px;
-	line-height: 70px;
-	font-size: 180%;
+	width: 420px;
+	height: 70px;
+	line-height: 45px;
+	font-size: 270%;
+	text-align: left;
+}
+
+.listButtons:hover {
+	color: #FFC107;
 }
 
 a:hover{
@@ -112,7 +117,7 @@ a:hover{
 
 .alertCenter {
 	margin-top: 15px;
-	margin-left: 150px;
+	margin-left: 200px;
 	color: #FFC107;
 	display: none;
 }

@@ -2,6 +2,7 @@ class IngredientsController < ApplicationController
 
   def index
   	@ingredients = Ingredient.all()
+    @locations = Location.all()
   end
 
   def new
@@ -13,8 +14,8 @@ class IngredientsController < ApplicationController
   def create
 	  @ingredient = Ingredient.new(ingredient_params)
   	if @ingredient.save
-  		flash[:notice] = "+ NEW ITEM ADDED"
-  		  redirect_to ingredient_path(@ingredient)
+  		flash[:notice] = "+ ITEM ADDED"
+  		  redirect_to root_path
   	else
   		render 'new'
   	end
@@ -35,7 +36,7 @@ class IngredientsController < ApplicationController
   def update
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.update(ingredient_params)
-      flash[:notice] = "Location Updated"
+      flash[:notice] = "LOCATION UPDATED"
       redirect_to root_path
     else
       render :edit

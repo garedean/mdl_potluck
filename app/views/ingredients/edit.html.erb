@@ -1,15 +1,32 @@
+<ul class="breadcrumbs">
+<br>
+  <li class="crumbles"><%= @ingredient.name %></li><br><br>
+<br>
+    <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.parent.name %></li><br><br>
+  <% end %>
+  <% if @location.parent != nil && @location.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.name %></li><br><br>
+  <% end %>
+  <% if @location.parent != nil %>
+  <li class="crumbles"><%= @location.parent.name %></li><br><br>
+  <% end %>
+    <li class="crumbles"><%= @location.name %></li><br><br>
+
+</ul>
+
 <ul class="theList">
   <% @sublocations.each do |location| %>
     <li>
       <% if location.children.any? %>
         <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
-          <span class="btn listButtons">
+          <span class="button listButtons">
             <%= location.name %>
           </span><br><br>
         <% end %>
       <% else %>
         <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
-          <span class="btn listButtons">
+          <span class="button listButtons">
              <%= location.name %>
           </span><br><br>
         <% end %>
@@ -23,7 +40,7 @@
 	  <%= f.hidden_field :location_id, :value => @location.id %>
 	  <br>
 	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
-	  <i class="fi-lock size-48 yellowPlusButton"></i>
+	  <i class="fi-map size-48 yellowPlusButton"></i>
 	  <% end %>
 	<% end %>
 </div>

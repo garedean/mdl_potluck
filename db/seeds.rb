@@ -290,6 +290,15 @@ Location.create(name: 'Basement', children:[
   Location.create(name: 'Floor')
 ])
 
+# states seeds
+# ------------------------------------------------
+
+State.create(name: 'Prepare')
+
+State.create(name: 'Admin')
+
+State.create(name: 'Store')
+
 # ingredient seeds
 # ------------------------------------------------
 

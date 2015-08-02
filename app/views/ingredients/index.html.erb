@@ -2,17 +2,18 @@
   <table>
     <thead>
       <tr>
-        <th width="160">NAME</th>
+        <th width="100">NAME</th>
         <th>LOCATION</th>
-        <th>MOVED ON</th>
+        <th width="60">MOVED ON</th>
         <th>LIFESPAN</th>
       </tr>
     </thead>
     <tbody>
-      <% @ingredients.each do |ingredient| %>
+      <% @ingredients.where(:location_id => !nil).each do |ingredient| %>
       <tr>
         <td> <%= ingredient.name %></td>
-        <td> <%= ingredient.location_id %></td>
+        <td> <%= ingredient.location.id %><br><br>
+        </td>
         <td> <%= ingredient.formatted_time_update %></td>
         <td> 
         <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>

@@ -14,14 +14,6 @@
     <li class="crumbles"><%= @category.name %></li><br><br>
 </ul>
 
-<div class="arrangeButton">
-	<%= link_to ingredients_path do %>
-	  <button class="fatButtonSpecific btn yellowPlusButton">
-	    <span>ARRANGE</span>
-	  </button>
-	<% end %>
-</div>
-
 <div class="addButton">
 	<%= form_for [@category, @ingredient] do |f| %>
 	  <%= f.hidden_field :category_id, :value => @category.id %>

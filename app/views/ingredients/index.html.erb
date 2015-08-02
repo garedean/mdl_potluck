@@ -1,0 +1,24 @@
+<div class="ingredientTable">
+  <table>
+    <thead>
+      <tr>
+        <th width="160">NAME</th>
+        <th>LOCATION</th>
+        <th>QUANTITY</th>
+        <th>LIFESPAN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td> <%= ingredient.category_id %></td>
+        <td> <%= ingredient.location_id %></td>
+        <td> <%= ingredient.id %></td>
+        <td> 
+        <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

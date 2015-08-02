@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Potluck</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="Documents/git repos/potlock/potluck/app/assets/stylesheets/foundation-icons/foundation-icons.css" />
+</head>
+<body>
+
+  <div class="mobileBlock">
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">STORE</a>
+        <a href="/home/prepare" class="navbar-brand">PREPARE</a>
+      </div>
+      <div class = "alertCenter" id="flash">
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+    </nav>  
+     
+    <%= yield %>
+  </div>
+
+</body>
+</html>

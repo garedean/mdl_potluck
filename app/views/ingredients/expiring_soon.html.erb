@@ -1,0 +1,12 @@
+Expiring soon:
+
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li>
+      <%= link_to ingredient_path(ingredient) do %>
+        <%= ingredient.name %>
+        <%= ingredient.expiring_at %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

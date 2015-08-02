@@ -1,0 +1,29 @@
+<ul class="theList">
+  <% @sublocations.each do |location| %>
+    <li>
+      <% if location.children.any? %>
+        <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
+          <span class="btn listButtons">
+            <%= location.name %>
+          </span><br><br>
+        <% end %>
+      <% else %>
+        <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
+          <span class="btn listButtons">
+             <%= location.name %>
+          </span><br><br>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="addButton">
+	<%= form_for [@location, @ingredient] do |f| %>
+	  <%= f.hidden_field :location_id, :value => @location.id %>
+	  <br>
+	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
+	  <i class="fi-plus size-48 yellowPlusButton"></i>
+	  <% end %>
+	<% end %>
+</div>

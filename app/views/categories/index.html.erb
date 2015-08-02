@@ -1,0 +1,19 @@
+<ul class="breadcrumbs">
+<br>
+<br>
+</ul>
+
+<div class="listContainer">
+	<ul class="theList">
+		<% @categories.each do |category| %>
+		  <li>	
+			<%= link_to category_path(category) do %>
+		  		<span class="btn listButtons">
+		  		 <%= category.name %>
+		  		</span><br>
+		  	<% end %>
+		  </li>
+		  <br>
+		<% end %>
+	</ul>
+</div>

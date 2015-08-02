@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+
+a {
+	color: white;
+}
+
+.mobileBlock {
+   background-color: #E0E0E0;
+   width: 375px;
+   height: 667px;
+ }
+
+.navbar {
+	background-color: #263238;
+}
+
+
+.addButton {
+	position: absolute;
+	top: 235px;
+	left: 180px;
+}
+
+.arrangeButton {
+	position: absolute;
+	top: 255px;
+	
+}
+
+.fatButton {
+    position: relative;
+    margin: 10px;
+    top: 390px;
+    left: 15px;
+	background-color: #263238;
+	width: 150px;
+	height: 150px;
+	color: white;
+}
+
+.fatButtonSpecific {
+    position: relative;
+    margin: 10px;
+    top: 220px;
+    left: 15px;
+	background-color: #263238;
+	width: 150px;
+	height: 150px;
+	color: white;
+}
+
+.fatButtonPrepare {
+    position: relative;
+    margin: 10px;
+    top: 240px;
+    left: 15px;
+	background-color: #263238;
+	width: 150px;
+	height: 150px;
+	color: white;
+}
+
+.crumbles {
+	font-size: large;
+}
+
+.theList {
+	display: inline;
+	float: right;
+	list-style-type: none;
+	height:400px; 
+	width: 90%;
+	overflow: hidden;
+	overflow-y: scroll;
+	text-align: right;
+}
+
+.listButtons {
+	background-color: #263238;
+	width: 300px;
+	height: 80px;
+	line-height: 70px;
+	font-size: 180%;
+}
+
+a:hover{
+	color: #FFC107;
+}
+
+.ingredientTable {
+	margin-left: 10px;
+	width: 355px;
+	height: 580px;
+	overflow-y: scroll;
+}
+
+.alertCenter {
+	margin-top: 15px;
+	margin-left: 150px;
+	color: #FFC107;
+	display: none;
+}
+
+.yellowPlusButton {
+	color: #FFC107;
+}
+
+
+/* FOUNDATION ICON SIZES */
+.size-12 { font-size: 12px; }
+.size-14 { font-size: 14px; }
+.size-16 { font-size: 16px; }
+.size-18 { font-size: 18px; }
+.size-21 { font-size: 21px; }
+.size-24 { font-size: 24px; }
+.size-36 { font-size: 36px; }
+.size-48 { font-size: 48px; }
+.size-60 { font-size: 60px; }
+.size-72 { font-size: 72px; }

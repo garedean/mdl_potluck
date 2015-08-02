@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: potluck_development
+
+test:
+  <<: *default
+  database: potluck_test
+
+production:
+  <<: *default
+  database: potluck_production
+  username: potluck
+  password: <%= ENV['POTLUCK_DATABASE_PASSWORD'] %>

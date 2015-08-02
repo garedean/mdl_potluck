@@ -1,0 +1,26 @@
+<h1><%= @ingredient.name %></h1>
+
+<ul class="breadcrumbs">
+<br>
+<br>
+  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.parent.name %></li><br><br>
+  <% end %>
+  <% if @location.parent != nil && @location.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.name %></li><br><br>
+  <% end %>
+  <% if @location.parent != nil %>
+  <li class="crumbles"><%= @location.parent.name %></li><br><br>
+  <% end %>
+    <li class="crumbles"><%= @location.name %></li><br><br>
+</ul>
+
+<div class="addButton">
+	<%= form_for [@ingredient, @location] do |f| %>
+	  <%= f.hidden_field :location_id, :value => @location.id %>
+	  <br>
+	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
+	  <i class="fi-plus size-48 yellowPlusButton"></i>
+	  <% end %>
+	<% end %>
+</div>

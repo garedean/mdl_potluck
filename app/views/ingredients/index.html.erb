@@ -9,10 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      <% @ingredients.where(:location_id => !nil).each do |ingredient| %>
+      <% @ingredients.each do |ingredient| %>
       <tr>
         <td> <%= ingredient.name %></td>
-        <td> <%= ingredient.location.id %><br><br>
+        <td> <%= ingredient.location_id %><br><br>
         </td>
         <td> <%= ingredient.formatted_time_update %></td>
         <td> 

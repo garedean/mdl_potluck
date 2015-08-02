@@ -2,7 +2,7 @@
 <ul class="breadcrumbs">
 <br>
 <br>
-  <li class="crumbles"><%= @ingredient.name %></li><br><br>
+  <li class="crumbles"><strong>MOVING:<%= @ingredient.name %></strong></li><br><br>
 </ul>
 
 <ul class="theList">
@@ -17,7 +17,7 @@
       <% else %>
         <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
           <span class="button listButtons">
-             <%= location.name %>
+             <strong><%= location.name %></strong>
           </span><br><br>
         <% end %>
       <% end %>
@@ -25,6 +25,7 @@
   <% end %>
 </ul>
 
+<a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>
 
 <% if @location = nil %>
 	<%= link_to edit_ingredient_path(@ingredient) do %>

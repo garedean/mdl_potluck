@@ -20,3 +20,12 @@ $(function() {
       $(this).delay(5000).fadeOut();
    });
 });
+
+$(document).ready(function() {
+    var page = $('#smoothScroll');  // set to the main content of the page   
+    $(window).mousewheel(function(event, delta, deltaX, deltaY){
+        if (delta < 0) page.scrollTop(page.scrollTop() + 65);
+        else if (delta > 0) page.scrollTop(page.scrollTop() - 65);
+        return false;
+    })
+});

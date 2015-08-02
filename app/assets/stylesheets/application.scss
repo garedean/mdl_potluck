@@ -76,8 +76,37 @@ a {
 	color: white;
 }
 
+.fatButtonBack {
+    position: fixed;
+    margin: 10px;
+    top: 549px;
+    left: 255px;
+	background-color: #263238;
+	width: 80px;
+	height: 80px;
+	color: white;
+}
+.fatButtonBack:hover {
+	color: #FFC107;
+}
+
+.fatButtonBackCommit {
+    position: fixed;
+    margin: 10px;
+    top: 554px;
+    left: 125px;
+	background-color: #263238;
+	width: 80px;
+	height: 80px;
+	color: white;
+}
+
+.fatButtonBackCommit:hover {
+	color: #FFC107;
+}
+
 .crumbles {
-	font-size: large;
+	font-size: medium;
 }
 
 .theList {

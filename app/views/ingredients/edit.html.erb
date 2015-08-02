@@ -1,4 +1,4 @@
-<ul class="breadcrumbs">
+<ul class="breadcrumbs" id="">
 <br>
   <li class="crumbles"><strong>MOVING: <%= @ingredient.name %></strong></li><br><br>
 <br>
@@ -11,8 +11,7 @@
   <% if @location.parent != nil %>
   <li class="crumbles"><%= @location.parent.name %></li><br><br>
   <% end %>
-    <li class="crumbles"><strong><%= @location.name %></strong></li><br><br>
-
+    <li class="crumbles"><strong>TO: <%= @location.name %></strong></li><br>
 </ul>
 
 <ul class="theList">

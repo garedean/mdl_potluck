@@ -1,8 +1,7 @@
 
 <ul class="breadcrumbs">
 <br>
-<br>
-  <li class="crumbles"><strong>MOVING:<%= @ingredient.name %></strong></li><br><br>
+  <li class="crumbles"><strong>MOVING:<%= @ingredient.name %></strong></li><br>
 </ul>
 
 <ul class="theList">
@@ -12,13 +11,13 @@
         <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
           <span class="button listButtons">
             <%= location.name %>
-          </span><br><br>
+          </span><br>
         <% end %>
       <% else %>
         <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
           <span class="button listButtons">
              <strong><%= location.name %></strong>
-          </span><br><br>
+          </span>
         <% end %>
       <% end %>
     </li>

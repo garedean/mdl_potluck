@@ -19,13 +19,13 @@
       	<%= link_to category_path(item) do%>
 	        <span class="button listButtons">
 	          <%= item.name %>
-	        </span><br><br>
+	        </span><br>
         <% end %>
       <% else %>
         <%= link_to new_category_ingredient_path(item, Ingredient.new) do%>
 	        <span class="button listButtons">
 	           <%= item.name %>
-	        </span><br><br>
+	        </span><br>
         <% end %>
       <% end %>
     </li>

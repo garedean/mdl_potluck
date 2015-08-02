@@ -1,0 +1,82 @@
+[33mcommit a91908ad241c0fee9956d3491487ca020fa7f7b8[m
+Author: myanchar <michael.yanchar@gmail.com>
+Date:   Sun Aug 2 11:05:38 2015 -0700
+
+    Fixed page redirects and added a back button to location and category navigation.
+
+[33mcommit a34f22a3370daf2bff2be64ca2ed426f83df70e0[m
+Author: myanchar <michael.yanchar@gmail.com>
+Date:   Sun Aug 2 03:16:52 2015 -0700
+
+    Various styling for navigation menus.
+
+[33mcommit e821205c48ba6a7a1640eb09fbf3b400dac07369[m
+Merge: f22862c 840da67
+Author: myanchar <michael.yanchar@gmail.com>
+Date:   Sun Aug 2 01:14:23 2015 -0700
+
+    Post-merge commit
+
+[33mcommit f22862c9eb6ce48f5fe5e6577eaa374d8bb2961e[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Sun Aug 2 01:06:13 2015 -0700
+
+    Bug fix where locations redirected to edit page after being updated
+
+[33mcommit eb87f44cb5d07f05b2d662e92850cf81e4a2cd2b[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Sun Aug 2 00:50:26 2015 -0700
+
+    Added set location set functionality and backend.
+
+[33mcommit 840da67ea628616a98c19a446eca9a11c5179fe6[m
+Merge: 9b56c3b 5f7ae77
+Author: garedean <garrettdolson@gmail.com>
+Date:   Fri Jul 31 18:39:56 2015 -0700
+
+    Merge from remote
+
+[33mcommit 9b56c3b242f2a98202199530f37ea4c33ea35a5b[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Fri Jul 31 18:31:51 2015 -0700
+
+    Add scaffold for food expiring soon
+
+[33mcommit 5f7ae77950631572a72a60bf6f4170d3ff27fe0c[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 17:16:45 2015 -0700
+
+    Post-merge commit
+
+[33mcommit 425b6cce2b9f35d8089af90043ffc8ec51fbccfb[m
+Merge: 8056365 9f21e1f
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 17:01:17 2015 -0700
+
+    Post-merge commit
+
+[33mcommit 805636507518f30ef3c5323c59c9a7c8e7158f31[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 16:55:50 2015 -0700
+
+    Created new location assignment menu. Nested locations within ingredients. New location assignment does not change database.
+
+[33mcommit 9f21e1f85688d2e0ac9b79e898524747dc26d507[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Fri Jul 31 15:34:53 2015 -0700
+
+    Fix issues with location hierarchy
+
+[33mcommit 4e81a3f444c6bafadbf405785d099bda0ffbf205[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Fri Jul 31 15:34:38 2015 -0700
+
+    Add seed data for ingredients
+
+[33mcommit e584765df03d12afaf02ba430c8282d2e0418641[m
+Merge: b3952d2 b9cb0c3
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 14:37:18 2015 -0700
+
+    Merging active branch
+    Merge branch 'master' of https://github.com/myanchar/potluck_proto

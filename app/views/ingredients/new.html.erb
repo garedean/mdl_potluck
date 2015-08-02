@@ -1,7 +1,6 @@
 
 <ul class="breadcrumbs">
 <br>
-<br>
     <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
 	<li class="crumbles"><%= @category.parent.parent.parent.name %></li><br><br>
 	<% end %>
@@ -11,7 +10,7 @@
 	<% if @category.parent != nil %>
 	<li class="crumbles"><%= @category.parent.name %></li><br><br>
 	<% end %>
-    <li class="crumbles"><%= @category.name %></li><br><br>
+    <li class="crumbles"><%= @category.name %></li><br>
 </ul>
 
 <a href="javascript:history.back()" class="btn fatButtonBackCommit"><i class="fi-arrow-left size-48"></i></a>

@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
   def index
     @locations = Location.where(parent_id: nil)
-    #@ingredient = Ingredient.find(params[:ingredient_id])
+    @ingredient = Ingredient.find(params[:ingredient_id])
   end
 
   def show

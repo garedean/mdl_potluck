@@ -2,8 +2,8 @@
   <table>
     <thead>
       <tr>
-        <th width="100">NAME</th>
-        <th>LOCATION</th>
+        <th width="100">ITEM</th>
+        <th>ITEM ID</th>
         <th width="60">MOVED ON</th>
         <th>LIFESPAN</th>
       </tr>
@@ -14,7 +14,7 @@
         
         <td class="button"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
    
-        <td> <%= ingredient.location.name %><br><br>
+        <td> <%= ingredient.id %><br><br>
         </td>
         <td> <%= ingredient.formatted_time_update %></td>
         <td> 

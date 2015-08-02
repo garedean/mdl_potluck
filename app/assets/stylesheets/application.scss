@@ -31,6 +31,47 @@ a {
 	background-color: #263238;
 }
 
+.itemLifeSpanQuantity {
+	position: fixed;
+	top: 540px;
+	left: 15px;
+}
+
+.quantityField {
+	position: fixed;
+	left: 86px;
+	top: 370px;
+}
+
+.lifespanField {
+	position: fixed;
+	top: 270px;
+	left: 86px;
+}
+
+input.quantityField {
+	width: 200px;
+	height: 60px;
+	font-size: 200%;
+}
+
+input.lifespanField {
+	width: 200px;
+	height: 60px;
+	font-size: 200%;
+}
+
+.quantityLabel {
+	position: fixed;
+	left: 200px;
+	top: 430px;
+}
+
+.lifespanLabel {
+	position: fixed;
+	top: 330px;
+	left: 200px;
+}
 
 .addButton {
 	position: absolute;
@@ -146,8 +187,9 @@ a:hover{
 }
 
 .alertCenter {
-	margin-top: 15px;
-	margin-left: 200px;
+	position: fixed;
+	top: 15px;
+	left: 250px;
 	color: #FFC107;
 	display: none;
 }

@@ -11,9 +11,9 @@ class Ingredient < ActiveRecord::Base
     return self.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d at %I:%M %p")
   end
 
-	def name
-		if category
-			category.name
-		end
+  def name
+	if category
+		category.name
 	end
+  end
 end

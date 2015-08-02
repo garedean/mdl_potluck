@@ -290,15 +290,6 @@ Location.create(name: 'Basement', children:[
   Location.create(name: 'Floor')
 ])
 
-# states seeds
-# ------------------------------------------------
-
-State.create(name: 'Prepare')
-
-State.create(name: 'Admin')
-
-State.create(name: 'Store')
-
 # ingredient seeds
 # ------------------------------------------------
 
@@ -318,7 +309,7 @@ locations = Location.where({name: ["Bottom",
 
 max_category_id = Category.maximum(:id)
 
-2000.times do
+200.times do
   Ingredient.create(category_id: r.rand(max_category_id),
                     location_id: locations.sample.id,
                     expiring_at: Date.today + r.rand(-5..90))

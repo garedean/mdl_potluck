@@ -11,8 +11,10 @@
     <tbody>
       <% @ingredients.each do |ingredient| %>
       <tr>
-        <td> <%= ingredient.name %></td>
-        <td> <%= ingredient.location_id %><br><br>
+        
+        <td class="button"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+   
+        <td> <%= ingredient.location.name %><br><br>
         </td>
         <td> <%= ingredient.formatted_time_update %></td>
         <td> 

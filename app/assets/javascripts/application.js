@@ -21,6 +21,3 @@ $(function() {
    });
 });
 
-$(document).on('pagebeforeshow', '#page-id', function(){  
-    $('div.grid_inner').corner("round 8px").parent().css('padding', '4px').corner("round 14px");
-});

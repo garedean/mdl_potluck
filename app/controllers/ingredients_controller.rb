@@ -25,10 +25,6 @@ class IngredientsController < ApplicationController
     @locations = Location.all
   end
 
-  def expiring_soon
-    @ingredients = Ingredient.order(expiring_at: :asc).limit(50)
-  end
-
   def edit
     @ingredient = Ingredient.find(params[:id])
     @locations = Location.all
@@ -44,6 +40,14 @@ class IngredientsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def expiring_soon
+    @ingredients = Ingredient.order(expiring_at: :asc).limit(50)
+  end
+
+  def unarranged
+    @ingredients = Ingredient.all
   end
 
   private

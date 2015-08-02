@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/home/prepare' => 'home#prepare'
 
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
+  get '/ingredients/unarranged', to: 'ingredients#unarranged'
 
   resources :ingredients
   resources :locations
@@ -14,5 +15,5 @@ Rails.application.routes.draw do
   resources :locations do
     resources :ingredients 
   end
-  
+
 end

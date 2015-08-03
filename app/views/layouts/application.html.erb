@@ -6,16 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="Documents/git repos/potlock/potluck/app/assets/stylesheets/foundation-icons/foundation-icons.css" />
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 
   <div class="mobileBlock">
     <nav class="navbar">
       <div class="navbar-header">
-        <a href="/" class="navbar-brand">STORE</i></a>
-        <a href="/home/prepare" class="navbar-brand">PREP</i></a>
-        <a href="/home/admin" class="navbar-brand">A</i></a>
+        <a href="/" class="navbar-brand"><i class="fa fa-cube"></i> STORE</i></a>
+        <a href="/home/prepare" class="navbar-brand"><i class="fa fa-spoon"></i> PREPARE</i></a>
       </div>
       <div class = "alertCenter" id="flash">
         <%= flash[:notice] %>

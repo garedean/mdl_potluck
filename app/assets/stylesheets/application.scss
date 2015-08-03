@@ -63,7 +63,7 @@ a:hover{
 	background-color: $main-color;
 }
 
-.shoppingCart {
+.makeBlack {
 	color: black;
 }
 
@@ -76,6 +76,30 @@ a:hover{
 	width: 120px;
 	height: 120px;
 	color: white;
+}
+
+.useAll {
+    position: fixed;
+	margin: 10px;
+	top: 509px;
+	left: 215px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+	font-size: 24px;
+}
+
+.emptyAll {
+    position: fixed;
+	margin: 10px;
+	top: 509px;
+	left: 75px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+	font-size: 24px;
 }
 
 .addButton {
@@ -179,6 +203,13 @@ a:hover{
 	margin-left: 10px;
 	width: 355px;
 	height: 580px;
+	overflow-y: scroll;
+}
+
+.cartTable {
+	margin-left: 10px;
+	width: 355px;
+	height: 430px;
 	overflow-y: scroll;
 }
 

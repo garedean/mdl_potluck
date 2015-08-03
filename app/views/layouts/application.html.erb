@@ -23,8 +23,10 @@
         <% end %>
 
         <%= link_to cart_path, class: "navbar-brand" do %>
-          <i class="fa fa-shopping-cart"></i>
+          <i class="fa fa-shopping-cart size-18"></i>
         <% end %>
+
+        <%= current_user.cart.ingredients.count %>
 
         <% if current_user %>
           <%= link_to destroy_user_session_path, method: :delete do %>

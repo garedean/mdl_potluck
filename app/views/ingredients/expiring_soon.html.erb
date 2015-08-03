@@ -22,9 +22,11 @@
             <%= ingredient.expiring_at %>
           </td>
           <td> 
-            <div class="btn">
-            <i class="fi-shopping-cart size-24"></i>
-            </div >
+            <%= link_to add_to_cart_path(ingredient), method: :post do %>
+              <div class="btn ">
+                <i class="fi-shopping-cart size-24 shoppingCart"></i>
+              </div >
+            <% end %>
           </td>
         </tr>
       <% end %>

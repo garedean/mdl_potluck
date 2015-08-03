@@ -16,24 +16,159 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
+/* COLOR VARIABLES */
+
+$main-color: #1B5E20;
+$highlight-color: #FFC107;
+
+/* TOP LEVEL ELEMENTS */
 
 a {
 	color: white;
 }
 
+a:hover{
+	color: $highlight-color;
+}
+
+.mobileBlock {
+	background-color: #E0E0E0;
+	width: 375px;
+	height: 667px;
+}
+
+/* NAVBAR */
+
+.navbar {
+	background-color: $main-color;
+}
+
+.alertCenter {
+	position: fixed;
+	top: 15px;
+	left: 250px;
+	color: $highlight-color;
+	display: none;
+}
+
+/* BUTTONS */
+
+.addButton {
+	position: absolute;
+	top: 235px;
+	left: 180px;
+}
+
+.fatButton {
+	position: relative;
+	margin: 10px;
+	top: 440px;
+	left: 75px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+}
+
+.fatButtonSpecific {
+	position: relative;
+	margin: 10px;
+	top: 260px;
+	left: 45px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+}
+
+.fatButtonPrepare {
+	position: relative;
+	margin: 10px;
+	top: 300px;
+	left: 45px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+}
+
+.fatButtonBack {
+	position: fixed;
+	margin: 10px;
+	top: 549px;
+	left: 255px;
+	background-color: $main-color;
+	width: 80px;
+	height: 80px;
+	color: white;
+}
+
+.fatButtonBack:hover {
+	color: $highlight-color;
+}
+
+.fatButtonBackCommit {
+	position: fixed;
+	margin: 10px;
+	top: 554px;
+	left: 125px;
+	background-color: $main-color;
+	width: 80px;
+	height: 80px;
+	color: white;
+}
+
+.fatButtonBackCommit:hover {
+	color: $highlight-color;
+}
+
+.arrangeButton {
+	position: absolute;
+	top: 255px;
+}
+
+.listButtons {
+	background-color: $main-color;
+	width: 420px;
+	height: 70px;
+	line-height: 45px;
+	font-size: 270%;
+	text-align: left;
+}
+
+.listButtons:hover {
+	color: $highlight-color;
+}
+
+.yellowPlusButton {
+	color: $highlight-color;
+}
+
+/* TABLES */
+
 .tableCell {
 	font-size: 75%;
 }
 
-.mobileBlock {
-   background-color: #E0E0E0;
-   width: 375px;
-   height: 667px;
- }
-
-.navbar {
-	background-color: #1B5E20;
+.ingredientTable {
+	margin-left: 10px;
+	width: 355px;
+	height: 580px;
+	overflow-y: scroll;
 }
+
+.theList {
+	display: inline;
+	float: right;
+	list-style-type: none;
+	height:354px; 
+	width: 90%;
+	overflow: hidden;
+	overflow-y: scroll;
+	text-align: right;
+}
+
+/* INPUT FIELDS */
 
 .itemLifeSpanQuantity {
 	position: fixed;
@@ -59,134 +194,15 @@ input.quantityField {
 	top: 430px;
 }
 
-.addButton {
-	position: absolute;
-	top: 235px;
-	left: 180px;
-}
-
-.arrangeButton {
-	position: absolute;
-	top: 255px;
-	
-}
-
-.fatButton {
-    position: relative;
-    margin: 10px;
-    top: 440px;
-    left: 75px;
-	background-color: #1B5E20;
-	width: 120px;
-	height: 120px;
-	color: white;
-}
-
-.fatButtonSpecific {
-    position: relative;
-    margin: 10px;
-    top: 260px;
-    left: 45px;
-	background-color: #1B5E20;
-	width: 120px;
-	height: 120px;
-	color: white;
-}
-
-.fatButtonPrepare {
-    position: relative;
-    margin: 10px;
-    top: 300px;
-    left: 45px;
-	background-color: #1B5E20;
-	width: 120px;
-	height: 120px;
-	color: white;
-}
-
-.fatButtonBack {
-    position: fixed;
-    margin: 10px;
-    top: 549px;
-    left: 255px;
-	background-color: #1B5E20;
-	width: 80px;
-	height: 80px;
-	color: white;
-}
-.fatButtonBack:hover {
-	color: #FFC107;
-}
-
-.fatButtonBackCommit {
-    position: fixed;
-    margin: 10px;
-    top: 554px;
-    left: 125px;
-	background-color: #1B5E20;
-	width: 80px;
-	height: 80px;
-	color: white;
-}
-
-.fatButtonBackCommit:hover {
-	color: #FFC107;
-}
+/* Breadcrumbs */
 
 .crumbles {
 	font-size: medium;
 	color: black;
 }
 
-.theList {
-	display: inline;
-	float: right;
-	list-style-type: none;
-	height:354px; 
-	width: 90%;
-	overflow: hidden;
-	overflow-y: scroll;
-	text-align: right;
-}
-
-.listButtons {
-	background-color: #1B5E20;
-	width: 420px;
-	height: 70px;
-	line-height: 45px;
-	font-size: 270%;
-	text-align: left;
-}
-
-.listButtons:hover {
-	color: #FFC107;
-}
-
-a:hover{
-	color: #FFC107;
-}
-
-.ingredientTable {
-	margin-left: 10px;
-	width: 355px;
-	height: 580px;
-	overflow-y: scroll;
-}
-
-.alertCenter {
-	position: fixed;
-	top: 15px;
-	left: 250px;
-	color: #FFC107;
-	display: none;
-}
-
-.yellowPlusButton {
-	color: #FFC107;
-}
-
-
 /* FOUNDATION ICON SIZES */
+
 .size-12 { font-size: 12px; }
 .size-14 { font-size: 14px; }
 .size-16 { font-size: 16px; }

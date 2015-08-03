@@ -26,9 +26,10 @@
           <i class="fa fa-shopping-cart size-18"></i>
         <% end %>
 
-        <%= current_user.cart.ingredients.count %>
-
         <% if current_user %>
+
+          <%= current_user.cart.ingredients.count %>
+
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-user-times navbar-brand userLogin"></i>
           <% end %>

@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
   def show
-    @cart_items = Cart.first.ingredients
+    # if user doesn't have cart, create and assign one to them
+    current_user.cart = Cart.create unless current_user.cart
+    @cart_items = current_user.cart.ingredients
   end
 end

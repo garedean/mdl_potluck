@@ -52,9 +52,20 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.all
   end
 
+  def add_to_cart
+    # if user cart doesn't exist, create it
+    current_user.cart = Cart.create unless current_user.cart
+    item_to_add = Ingredient.find(params[:id])
+
+    current_user.cart.add_item(item_to_add)
+    redirect_to :back
+  end
+
   def remove_from_cart
-    binding.pry
-    Ingredient.find(params[:id]).cart_id = nil
+    item_to_remove = Ingredient.find(params[:id])
+
+    current_user.cart.remove_item(item_to_remove)
+    redirect_to :back
   end
 
   private

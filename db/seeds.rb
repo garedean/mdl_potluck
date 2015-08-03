@@ -315,8 +315,8 @@ end
 # cart seeds
 # ------------------------------------------------
 
-cart = Cart.create
-
-40.times do
-  cart.ingredients << Ingredient.find(r.rand(1..10))
-end
+# cart = Cart.create
+#
+# 40.times do
+#   cart.ingredients << Ingredient.find(r.rand(1..10))
+# end

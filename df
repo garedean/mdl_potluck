@@ -80,3 +80,137 @@ Date:   Fri Jul 31 14:37:18 2015 -0700
 
     Merging active branch
     Merge branch 'master' of https://github.com/myanchar/potluck_proto
+
+[33mcommit b3952d26526b4c3f5ea96ac8ad99f97d54586350[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 14:36:49 2015 -0700
+
+    Added prepare page/menu. Prepare navbar link.
+
+[33mcommit 73e5dbb3ec524d4c671f246bbb830e436366ed36[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 14:34:33 2015 -0700
+
+    Added prepare page/menu. Prepare navbar link.
+
+[33mcommit b9cb0c366530bf8fb9bdc9297ec22db1ba45691a[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Fri Jul 31 14:28:40 2015 -0700
+
+    For locations index, only show top level locations
+
+[33mcommit a3e10ac30477e34f442ade2f201e37adbea53cb9[m
+Merge: 89f23c6 9b6d19a
+Author: garedean <garrettdolson@gmail.com>
+Date:   Fri Jul 31 14:27:15 2015 -0700
+
+    Fix merge conflicts
+
+[33mcommit 89f23c65c96525706f7958dfe505b47abc1e0323[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Fri Jul 31 14:23:13 2015 -0700
+
+    Add location hierarchy
+
+[33mcommit 9b6d19a6a76805490de6556302298d7d59699e7d[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 13:29:37 2015 -0700
+
+    Refactored breadcrumb parent-category traverse.
+
+[33mcommit ec765ea15f7e92a85737737806b108d2fc5f5c98[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 11:47:09 2015 -0700
+
+    Created ingredient/item index page with table of created ingredients. Styling update to sync navbar, ingredients#index, categories views.
+
+[33mcommit a1cbd2adab116861e9d94d98aaeecb16a0a05675[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Fri Jul 31 10:49:12 2015 -0700
+
+    Added add button to new ingredient summary page. Adds new ingredient object without an assigned location_id.
+
+[33mcommit 1e54ec362ce7d24f56172073f2d76cb2f5a310bc[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Thu Jul 30 17:10:04 2015 -0700
+
+    Removed unused views. Styling on new item summary page.
+
+[33mcommit 10f21318ecb2349741640c21837cf9755b5a0a9b[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Thu Jul 30 16:25:24 2015 -0700
+
+    Post-merge bug fix. Misdisplaying category button.
+
+[33mcommit bf37b921e94895a4b028f94434b6bdc06446c0b3[m
+Merge: 2569536 3c0646d
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Thu Jul 30 16:20:00 2015 -0700
+
+    Post-merge commit.
+
+[33mcommit 25695368a1e6674dc29ea4a5eabcbf8097f2e035[m
+Author: Michael Yanchar <michael.yanchar@gmail.com>
+Date:   Thu Jul 30 16:13:26 2015 -0700
+
+    Styling for homepage, item categorization page, new item page, and navbar.
+
+[33mcommit 3c0646ddc7e69635990a243aeefb70482ff155db[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 16:00:47 2015 -0700
+
+    Refactor data seeds, remove unnecessary 'has_children?' column on categories table
+
+[33mcommit 52134f49fa53253dff557f1f949d85be18856110[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 14:47:17 2015 -0700
+
+    Add integration test for navigating though food categories to 'add item' page
+
+[33mcommit 073b9a18a53b101bfe776a0b6eb099b342f08607[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 13:09:51 2015 -0700
+
+    Add category hierarchies for adding a new item
+
+[33mcommit 5067412cdf4e045bb3fcdb90f1a845d3b8b1fac1[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 11:42:43 2015 -0700
+
+    Remove lifespan from categories until a later sprint
+
+[33mcommit c3a53ea534155ff5f17e479ee78db88db493ba72[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 11:14:08 2015 -0700
+
+    Create initial seed file for seeding test categories
+
+[33mcommit 7cbcb0c068b8272f1d7b8313af69dcab98f9542e[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 10:42:44 2015 -0700
+
+    Update schema to not include location
+
+[33mcommit f9ba5fb171e05d45db7d8177c227f40245941d11[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 10:41:48 2015 -0700
+
+    Remove locations scaffolding while we focus on 'add item' functionality
+
+[33mcommit a5a91e82d6739e0790e8a98e4816c9696c07dac5[m
+Author: garedean <garrettdolson@gmail.com>
+Date:   Thu Jul 30 10:20:29 2015 -0700
+
+    Configure for postgres
+
+[33mcommit 09a69ec40ea5a5e38bb522e779445d24446eaf72[m
+Author: myanchar <michael.yanchar@gmail.com>
+Date:   Tue Jul 28 17:23:11 2015 -0700
+
+    Creates routes and establish views for ingredients, categories, and locations.
+
+[33mcommit 0c3f0cb057a3f2cec83b95a6e5e5533fb3ab7076[m
+Author: myanchar <michael.yanchar@gmail.com>
+Date:   Tue Jul 28 11:47:18 2015 -0700
+
+    Initial commit of project files. Creates ingredients, categories, and locations objects.

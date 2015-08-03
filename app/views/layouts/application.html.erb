@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Potluck</title>
+  <title>Potluck in the Park</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="Documents/git repos/potlock/potluck/app/assets/stylesheets/foundation-icons/foundation-icons.css" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
 
@@ -14,6 +15,7 @@
       <div class="navbar-header">
         <a href="/" class="navbar-brand">STORE</i></a>
         <a href="/home/prepare" class="navbar-brand">PREP</i></a>
+        <a href="/home/admin" class="navbar-brand">A</i></a>
       </div>
       <div class = "alertCenter" id="flash">
         <%= flash[:notice] %>

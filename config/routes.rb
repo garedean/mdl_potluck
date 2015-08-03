@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root to: 'home#index'
+  get '/home/cart', to: 'home#cart'
   get '/home/prepare' => 'home#prepare'
+  get '/home/admin' => 'home#admin'
 
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
-  get '/home/cart', to: 'home#cart'
   get '/ingredients/unarranged', to: 'ingredients#unarranged'
 
   resources :ingredients

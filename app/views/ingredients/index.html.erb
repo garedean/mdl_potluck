@@ -1,24 +1,24 @@
 <div class="ingredientTable">
-  <table>
+  <table >
     <thead>
       <tr>
         <th width="100">ITEM</th>
         <th>ITEM ID</th>
         <th width="60">MOVED ON</th>
-        <th>LIFESPAN</th>
+        <th>QUANTITY</th>
       </tr>
     </thead>
     <tbody>
       <% @ingredients.each do |ingredient| %>
         <tr>
-          <td class="button"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
-          <td> <%= ingredient.id %><br><br></td>
-          <td> <%= ingredient.formatted_time_update %></td>
-          <td> 
-            <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
-          </td>
+          <td class="button warning tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+          <td > <%= ingredient.id %><br><br></td>
+          <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
+          <td class="tableCell"> <%= ingredient.quantity %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+quantity

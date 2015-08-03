@@ -21,6 +21,10 @@ a {
 	color: white;
 }
 
+.tableCell {
+	font-size: 75%;
+}
+
 .mobileBlock {
    background-color: #E0E0E0;
    width: 375px;
@@ -28,7 +32,7 @@ a {
  }
 
 .navbar {
-	background-color: #263238;
+	background-color: #1B5E20;
 }
 
 .itemLifeSpanQuantity {
@@ -43,19 +47,7 @@ a {
 	top: 370px;
 }
 
-.lifespanField {
-	position: fixed;
-	top: 270px;
-	left: 86px;
-}
-
 input.quantityField {
-	width: 200px;
-	height: 60px;
-	font-size: 200%;
-}
-
-input.lifespanField {
 	width: 200px;
 	height: 60px;
 	font-size: 200%;
@@ -65,12 +57,6 @@ input.lifespanField {
 	position: fixed;
 	left: 200px;
 	top: 430px;
-}
-
-.lifespanLabel {
-	position: fixed;
-	top: 330px;
-	left: 200px;
 }
 
 .addButton {
@@ -90,7 +76,7 @@ input.lifespanField {
     margin: 10px;
     top: 440px;
     left: 75px;
-	background-color: #263238;
+	background-color: #1B5E20;
 	width: 120px;
 	height: 120px;
 	color: white;
@@ -101,7 +87,7 @@ input.lifespanField {
     margin: 10px;
     top: 260px;
     left: 45px;
-	background-color: #263238;
+	background-color: #1B5E20;
 	width: 120px;
 	height: 120px;
 	color: white;
@@ -112,7 +98,7 @@ input.lifespanField {
     margin: 10px;
     top: 240px;
     left: 15px;
-	background-color: #263238;
+	background-color: #1B5E20;
 	width: 120px;
 	height: 120px;
 	color: white;
@@ -123,7 +109,7 @@ input.lifespanField {
     margin: 10px;
     top: 549px;
     left: 255px;
-	background-color: #263238;
+	background-color: #1B5E20;
 	width: 80px;
 	height: 80px;
 	color: white;
@@ -137,7 +123,7 @@ input.lifespanField {
     margin: 10px;
     top: 554px;
     left: 125px;
-	background-color: #263238;
+	background-color: #1B5E20;
 	width: 80px;
 	height: 80px;
 	color: white;
@@ -149,6 +135,7 @@ input.lifespanField {
 
 .crumbles {
 	font-size: medium;
+	color: black;
 }
 
 .theList {
@@ -163,7 +150,7 @@ input.lifespanField {
 }
 
 .listButtons {
-	background-color: #263238;
+	background-color: #1B5E20;
 	width: 420px;
 	height: 70px;
 	line-height: 45px;
@@ -177,10 +164,6 @@ input.lifespanField {
 
 a:hover{
 	color: #FFC107;
-}
-
-.tableFontSize {
-	font-size: 200%;	
 }
 
 .ingredientTable {

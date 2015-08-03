@@ -8,7 +8,7 @@ class Ingredient < ActiveRecord::Base
 
 
   def formatted_time_update
-    return self.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d at %I:%M %p")
+    return self.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d %I:%M %p")
   end
 
   def name

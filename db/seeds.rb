@@ -58,7 +58,7 @@ Category.create(name: 'Raw Protein', children:[
   ])
 ])
 
-Category.create(name: 'Raw Fruits/Veggies', children:[
+Category.create(name: 'Raw Fruits+Veggies', children:[
   Category.create(name: 'Potatoes', children:[
     Category.create(name: 'Russet'),
     Category.create(name: 'Red'),
@@ -88,7 +88,7 @@ Category.create(name: 'Raw Fruits/Veggies', children:[
     Category.create(name: 'Butternut Sq.'),
     Category.create(name: 'Spaghetti Sq.')
   ]),
-  Category.create(name: 'Onions/Garlic', children:[
+  Category.create(name: 'Onions+Garlic', children:[
     Category.create(name: 'Yellow On.'),
     Category.create(name: 'White On.'),
     Category.create(name: 'Garlic'),
@@ -98,13 +98,13 @@ Category.create(name: 'Raw Fruits/Veggies', children:[
   ])
 ])
 
-Category.create(name: 'Grains/Beans', children:[
+Category.create(name: 'Grains+Beans', children:[
   Category.create(name: 'Flour'),
   Category.create(name: 'Whole Grains'),
   Category.create(name: 'Beans')
 ])
 
-Category.create(name: 'Baked Goods/Sweets', children:[
+Category.create(name: 'Baked Goods+Sweets', children:[
   Category.create(name: 'Bread'),
   Category.create(name: 'Cake'),
   Category.create(name: 'Candy'),
@@ -127,7 +127,7 @@ Category.create(name: 'Seasonings', children:[
   Category.create(name: 'Salt')
 ])
 
-Category.create(name: 'Bottles/Cans/Jars/Bags', children:[
+Category.create(name: 'Bottles+Cans+Jars+Bags', children:[
   Category.create(name: 'Bottles', children:[
     Category.create(name: 'Vinegar'),
     Category.create(name: 'Oil'),
@@ -139,7 +139,7 @@ Category.create(name: 'Bottles/Cans/Jars/Bags', children:[
   Category.create(name: 'Bags')
 ])
 
-Category.create(name: 'Dairy/Eggs', children:[
+Category.create(name: 'Dairy+Eggs', children:[
   Category.create(name: 'Milk'),
   Category.create(name: 'Eggs'),
   Category.create(name: 'Butter'),

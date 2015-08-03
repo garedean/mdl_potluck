@@ -1,14 +1,13 @@
 class LocationsController < ApplicationController
   def index
     @locations = Location.where(parent_id: nil)
-    #@ingredient = Ingredient.find(params[:ingredient_id])
   end
 
   def show
     @locations = Location.all
     @location = Location.find(params[:id])
     @sublocations = Location.where(parent_id: @location.id)
-    #@ingredient = Ingredient.find(params[:ingredient_id])
+    @ingredient = Ingredient.find(params[:id])
   end
 
   def edit
@@ -19,8 +18,8 @@ class LocationsController < ApplicationController
   def update
   	@location = Location.find(params[:id])
     if @location.update(location_params)
-      flash[:notice] = "location Updated"
-      redirect_to post_path(@location.post_id)
+      flash[:notice] = "Location Updated"
+      redirect_to root_path
     else
       render :edit
     end
@@ -28,7 +27,7 @@ class LocationsController < ApplicationController
 
 private
   def location_params
-    params.require(:ingredient).permit(:location_id)
+    params.require(:location).permit(:name)
   end
 
 

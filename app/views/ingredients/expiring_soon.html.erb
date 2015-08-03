@@ -1,12 +1,31 @@
-Expiring soon:
-
-<ul>
-  <% @ingredients.each do |ingredient| %>
-    <li>
-      <%= link_to ingredient_path(ingredient) do %>
-        <%= ingredient.name %>
-        <%= ingredient.expiring_at %>
+<div class="ingredientTable">
+  <table >
+    <thead>
+      <tr>
+        <th width="100">ITEM</th>
+        <th>ITEM ID</th>
+        <th width="120">EXPIRING ON</th>
+        <th>CART</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ingredients.each do |ingredient| %>
+        <tr>
+          <td class="button warning tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+          <td > <%= ingredient.id %></td>
+          <td> 
+            <% if ingredient.expiring_at.future? %>
+              <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
+            <% else %>
+              <div class="progress radius success"><span class="meter success" style="width: 1%">&nbsp;&nbsp;&nbsp;EXPIRED</span></div>
+            <% end %>
+            <%= ingredient.expiring_at %>
+          </td>
+          <td> 
+            <i class="fi-shopping-cart size-24"></i>
+          </td>
+        </tr>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    </tbody>
+  </table>
+</div>

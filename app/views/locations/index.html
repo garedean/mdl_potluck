@@ -1,11 +1,11 @@
 
 
 <div class="listContainer">
-  <ul class="theList">
+  <ul class="theList" id="smoothScroll">
     <% @locations.each do |location| %>
     <li>
       <%= link_to location_path(location) do %>
-		    <span class="btn listButtons">
+		    <span class="button listButtons">
     	  <%= location.name %>
     	</span><br><br>
       <% end %>

@@ -1,30 +1,26 @@
 
 <ul class="breadcrumbs">
 <br>
-<br>
     <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.parent.name %></li><br><br>
+		<li class="crumbles"><%= @category.parent.parent.parent.name %></li><br><br>
 	<% end %>
 	<% if @category.parent != nil && @category.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.name %></li><br><br>
+		<li class="crumbles"><%= @category.parent.parent.name %></li><br><br>
 	<% end %>
 	<% if @category.parent != nil %>
-	<li class="crumbles"><%= @category.parent.name %></li><br><br>
+		<li class="crumbles"><%= @category.parent.name %></li><br><br>
 	<% end %>
-    <li class="crumbles"><%= @category.name %></li><br><br>
+    	<li class="crumbles"><%= @category.name %></li><br>
 </ul>
 
-<div class="arrangeButton">
-	<%= link_to ingredients_path do %>
-	  <button class="fatButtonSpecific btn yellowPlusButton">
-	    <span>ARRANGE</span>
-	  </button>
-	<% end %>
-</div>
+<a href="javascript:history.back()" class="btn fatButtonBackCommit"><i class="fi-arrow-left size-48"></i></a>
 
 <div class="addButton">
-	<%= form_for [@category, @ingredient] do |f| %>
+	<%= form_for [@category, @ingredient], :html => {:class => "form"} do |f| %>
+	  <span class="quantityLabel">QUANTITY</span>
+	  <%= f.number_field :quantity, :class => 'quantityField', cols: "30" %>
 	  <%= f.hidden_field :category_id, :value => @category.id %>
+	  <%= f.hidden_field :location_id, :value => nil %>
 	  <%= f.hidden_field :name, :value => @category.name %>
 	  <br>
 	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>

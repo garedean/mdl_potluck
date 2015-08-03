@@ -6,11 +6,16 @@ class Ingredient < ActiveRecord::Base
     return self.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d at %I:%M %p")
   end
 
-	def name
+
+  def formatted_time_update
+    return self.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d %I:%M %p")
+  end
+
+  def name
 		if category
 			category.name
 		end
-	end
+  end
 
 	def self.expiring_soon
 		order(expiring_at: :asc).limit(50)

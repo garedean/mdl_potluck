@@ -1,25 +1,25 @@
 <div class="ingredientTable">
-  <table>
+  <table >
     <thead>
       <tr>
-        <th width="160">NAME</th>
-        <th>LOCATION</th>
+        <th width="90">ITEM</th>
+        <th width="30">ITEM ID</th>
+        <th width="60">MOVED ON</th>
         <th>QUANTITY</th>
-        <th>LIFESPAN</th>
+        <th width="40">CART</th>
       </tr>
     </thead>
     <tbody>
       <% @ingredients.each do |ingredient| %>
-      <tr>
-        <%= link_to ingredient_path(ingredient) do %>
-        <td> <%= ingredient.name %></td>
-        <% end %>
-        <td> <%= ingredient.id %></td>
-        <td> <%= ingredient.id %></td>
-        <td> 
-        <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
-        </td>
-      </tr>
+        <tr>
+          <td class="button warning tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+          <td > <%= ingredient.id %><br><br></td>
+          <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
+          <td class="tableCell"> <%= ingredient.quantity %></td>
+          <td> 
+            <i class="fi-shopping-cart size-24"></i>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>

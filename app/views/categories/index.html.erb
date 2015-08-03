@@ -4,16 +4,17 @@
 </ul>
 
 <div class="listContainer">
-	<ul class="theList">
+	<ul class="theList" id="smoothScroll">
 		<% @categories.each do |category| %>
 		  <li>	
 			<%= link_to category_path(category) do %>
-		  		<span class="btn listButtons">
+		  		<span class="button listButtons">
 		  		 <%= category.name %>
 		  		</span><br>
 		  	<% end %>
 		  </li>
-		  <br>
 		<% end %>
 	</ul>
 </div>
+
+<a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>

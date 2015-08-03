@@ -1,1 +1,44 @@
-<%= @ingredient.name %> show page
+<% if @ingredient.location_id == nil %>
+  <ul class="theList">
+    <% @locations.where(:parent_id => nil).each do |location| %>
+      <li>
+        <% if location.children.any? %>
+          <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
+            <span class="button listButtons">
+              <%= location.name %>
+            </span><br>
+          <% end %>
+        <% else %>
+          <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
+            <span class="button listButtons">
+               <strong><%= location.name %></strong>
+            </span>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <% else %>
+ <ul class="breadcrumbs" id="">
+    <br>
+    <li class="crumbles"><strong><%= @ingredient.name %></strong></li><br>
+    <br><br>
+    <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
+      <li class="crumbles"><%= @ingredient.location.parent.parent.parent.name %></li><br><br>
+    <% end %>
+    <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
+      <li class="crumbles"><%= @ingredient.location.parent.parent.name %></li><br><br>
+    <% end %>
+    <% if @ingredient.location.parent != nil %>
+      <li class="crumbles"><%= @ingredient.location.parent.name %></li><br><br>
+    <% end %>
+      <li class="crumbles"><strong><%= @ingredient.location.name %></strong></li><br>
+  </ul>
+<% end %>
+
+<div class="itemLifeSpanQuantity">
+  <span>EXPIRING:<br><%= @ingredient.expiring_at %></span><br><br>
+  <span>QUANTITY:<br><%= @ingredient.quantity %></span>
+</div>
+
+<a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>

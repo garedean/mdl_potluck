@@ -1,28 +1,18 @@
-<%= link_to ingredients_path do %>
+<%= link_to ingredients_expiring_path do %>
   <button class="fatButtonPrepare btn">
-    <i class="fi-x size-48"></i>
-    <br>EXPIRING
+    <i class="fi-x size-48"></i><br>EXPIRING
   </button>
 <% end %>
 
 <%= link_to ingredients_path do %>
   <button class="fatButtonPrepare btn">
-    <i class="fi-magnifying-glass size-48"></i>
-    <br>ITEM
+    <i class="fi-magnifying-glass size-48"></i><br>INVENTORY
   </button>
 <% end %>
 
-<%= link_to ingredients_path do %>
+<%= link_to home_cart_path do %>
   <button class="fatButtonPrepare btn">
-    <i class="fi-magnifying-glass size-48"></i>
-    <br>LOCATION
-  </button>
-<% end %>
-
-<%= link_to categories_path do %>
-  <button class="fatButtonPrepare btn">
-    <i class="fi-magnifying-glass size-48"></i>
-    <br>CATAGORY
+    <i class="fi-shopping-cart size-48"></i><br>CART
   </button>
 <% end %>
 

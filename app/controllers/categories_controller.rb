@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   def show
   	@categories = Category.all
     @category = Category.find(params[:id])
+    @ingredients = Ingredient.all
     @items = Category.where(parent_id: @category.id)
   end
 end

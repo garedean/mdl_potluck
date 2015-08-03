@@ -16,8 +16,13 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
+
 a {
 	color: white;
+}
+
+.tableCell {
+	font-size: 75%;
 }
 
 .mobileBlock {
@@ -27,9 +32,32 @@ a {
  }
 
 .navbar {
-	background-color: #263238;
+	background-color: #1B5E20;
 }
 
+.itemLifeSpanQuantity {
+	position: fixed;
+	top: 540px;
+	left: 15px;
+}
+
+.quantityField {
+	position: fixed;
+	left: 86px;
+	top: 370px;
+}
+
+input.quantityField {
+	width: 200px;
+	height: 60px;
+	font-size: 200%;
+}
+
+.quantityLabel {
+	position: fixed;
+	left: 200px;
+	top: 430px;
+}
 
 .addButton {
 	position: absolute;
@@ -46,45 +74,75 @@ a {
 .fatButton {
     position: relative;
     margin: 10px;
-    top: 390px;
-    left: 15px;
-	background-color: #263238;
-	width: 150px;
-	height: 150px;
+    top: 440px;
+    left: 75px;
+	background-color: #1B5E20;
+	width: 120px;
+	height: 120px;
 	color: white;
 }
 
 .fatButtonSpecific {
     position: relative;
     margin: 10px;
-    top: 220px;
-    left: 15px;
-	background-color: #263238;
-	width: 150px;
-	height: 150px;
+    top: 260px;
+    left: 45px;
+	background-color: #1B5E20;
+	width: 120px;
+	height: 120px;
 	color: white;
 }
 
 .fatButtonPrepare {
     position: relative;
     margin: 10px;
-    top: 240px;
-    left: 15px;
-	background-color: #263238;
-	width: 150px;
-	height: 150px;
+    top: 300px;
+    left: 45px;
+	background-color: #1B5E20;
+	width: 120px;
+	height: 120px;
 	color: white;
 }
 
+.fatButtonBack {
+    position: fixed;
+    margin: 10px;
+    top: 549px;
+    left: 255px;
+	background-color: #1B5E20;
+	width: 80px;
+	height: 80px;
+	color: white;
+}
+.fatButtonBack:hover {
+	color: #FFC107;
+}
+
+.fatButtonBackCommit {
+    position: fixed;
+    margin: 10px;
+    top: 554px;
+    left: 125px;
+	background-color: #1B5E20;
+	width: 80px;
+	height: 80px;
+	color: white;
+}
+
+.fatButtonBackCommit:hover {
+	color: #FFC107;
+}
+
 .crumbles {
-	font-size: large;
+	font-size: medium;
+	color: black;
 }
 
 .theList {
 	display: inline;
 	float: right;
 	list-style-type: none;
-	height:400px; 
+	height:354px; 
 	width: 90%;
 	overflow: hidden;
 	overflow-y: scroll;
@@ -92,11 +150,16 @@ a {
 }
 
 .listButtons {
-	background-color: #263238;
-	width: 300px;
-	height: 80px;
-	line-height: 70px;
-	font-size: 180%;
+	background-color: #1B5E20;
+	width: 420px;
+	height: 70px;
+	line-height: 45px;
+	font-size: 270%;
+	text-align: left;
+}
+
+.listButtons:hover {
+	color: #FFC107;
 }
 
 a:hover{
@@ -111,8 +174,9 @@ a:hover{
 }
 
 .alertCenter {
-	margin-top: 15px;
-	margin-left: 150px;
+	position: fixed;
+	top: 15px;
+	left: 250px;
 	color: #FFC107;
 	display: none;
 }

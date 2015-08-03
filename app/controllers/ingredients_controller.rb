@@ -53,8 +53,6 @@ class IngredientsController < ApplicationController
   end
 
   def add_to_cart
-    # if user cart doesn't exist, create it
-    current_user.cart = Cart.create unless current_user.cart
     item_to_add = Ingredient.find(params[:id])
 
     current_user.cart.add_item(item_to_add)

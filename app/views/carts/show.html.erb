@@ -26,12 +26,15 @@
   </table>
 </div>
 
-<%= link_to root_path do %>
-  <button class="btn useNow">
+<%= link_to use_all_items_path, method: :post do %>
+  <button class="btn useAll">
     <i class="fa fa-spoon"></i><br>USE</i>
   </button>
 <% end %>
 
-<%= link_to "Empty cart", empty_cart_path, method: :post %><br>
-<%= link_to "Use all items", use_all_items_path, method: :post %>
+<%= link_to empty_cart_path, method: :post do %>
+  <button class="btn emptyAll">
+    <i class="fa fa-cart-arrow-down"></i><br>EMPTY</i>
+  </button>
+<% end %>
 

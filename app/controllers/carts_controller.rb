@@ -7,7 +7,7 @@ class CartsController < ApplicationController
 
   def empty_cart
     remove_cart_items
-    redirect_to :back, notice: "Cart emptied"
+    redirect_to :back, notice: "Cart Emptied"
   end
 
   def use_all_items
@@ -16,7 +16,7 @@ class CartsController < ApplicationController
     end
 
     remove_cart_items
-    redirect_to :back
+    redirect_to :back , notice: "Items Claimed"
   end
 
   private

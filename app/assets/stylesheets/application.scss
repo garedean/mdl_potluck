@@ -78,11 +78,23 @@ a:hover{
 	color: white;
 }
 
-.useNow {
+.useAll {
     position: fixed;
 	margin: 10px;
 	top: 509px;
 	left: 215px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+	font-size: 24px;
+}
+
+.emptyAll {
+    position: fixed;
+	margin: 10px;
+	top: 509px;
+	left: 75px;
 	background-color: $main-color;
 	width: 120px;
 	height: 120px;

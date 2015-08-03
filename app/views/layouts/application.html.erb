@@ -17,7 +17,8 @@
         <a href="/home/prepare" class="navbar-brand"><i class="fa fa-spoon"></i> PREPARE</i></a>
 
         <% if current_user %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %> | 
+          <%= link_to "Cart (#{current_user.cart.ingredients.size})", cart_path %>
         <% else %>
           <%= link_to "Login", new_user_session_path %>
         <% end %>

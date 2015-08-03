@@ -16,8 +16,10 @@
           <td > <%= ingredient.id %><br><br></td>
           <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
           <td class="tableCell"> <%= ingredient.quantity %></td>
-          <td> 
-            <i class="fi-shopping-cart size-24"></i>
+          <td>
+            <%= link_to add_to_cart_path(ingredient), method: :post do %>
+              <i class="fi-shopping-cart size-24"></i>
+            <% end %>
           </td>
         </tr>
       <% end %>

@@ -11,10 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803015621) do
+ActiveRecord::Schema.define(version: 20150803185455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -31,11 +34,15 @@ ActiveRecord::Schema.define(version: 20150803015621) do
     t.integer  "location_id"
     t.date     "expiring_at"
     t.integer  "quantity"
+    t.integer  "cart_id"
   end
+
+  add_index "ingredients", ["cart_id"], name: "index_ingredients_on_cart_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string  "name"
     t.integer "parent_id"
   end
 
+  add_foreign_key "ingredients", "carts"
 end

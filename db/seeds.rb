@@ -1,5 +1,7 @@
 require 'date'
 
+r = Random.new
+
 # category seeds
 # ------------------------------------------------
 
@@ -289,7 +291,6 @@ Location.create(name: 'Basement', children:[
 # ingredient seeds
 # ------------------------------------------------
 
-r = Random.new
 locations = Location.where({name: ["Bottom",
                                    "Middle",
                                    "Top",
@@ -309,4 +310,13 @@ max_category_id = Category.maximum(:id)
   Ingredient.create(category_id: r.rand(max_category_id),
                     location_id: locations.sample.id,
                     expiring_at: Date.today + r.rand(-5..90))
+end
+
+# cart seeds
+# ------------------------------------------------
+
+cart = Cart.create
+
+40.times do
+  cart.ingredients << Ingredient.find(r.rand(1..10))
 end

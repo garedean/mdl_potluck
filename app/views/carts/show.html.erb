@@ -1,3 +1,4 @@
+
 <div class="cartTable">
   <table >
     <thead>
@@ -30,3 +31,7 @@
     <i class="fa fa-spoon"></i><br>USE</i>
   </button>
 <% end %>
+
+<%= link_to "Empty cart", empty_cart_path, method: :post %><br>
+<%= link_to "Use all items", use_all_items_path, method: :post %>
+

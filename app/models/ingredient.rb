@@ -11,4 +11,8 @@ class Ingredient < ActiveRecord::Base
 			category.name
 		end
 	end
+
+	def self.expiring_soon
+		order(expiring_at: :asc).limit(50)
+	end
 end

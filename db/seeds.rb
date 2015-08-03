@@ -306,7 +306,7 @@ locations = Location.where({name: ["Bottom",
 
 max_category_id = Category.maximum(:id)
 
-200.times do
+1000.times do
   Ingredient.create(category_id: r.rand(max_category_id),
                     location_id: locations.sample.id,
                     expiring_at: Date.today + r.rand(-5..90))

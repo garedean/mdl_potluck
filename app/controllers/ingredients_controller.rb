@@ -1,8 +1,8 @@
 class IngredientsController < ApplicationController
 
   def index
-  	@ingredients = Ingredient.all()
-    @locations = Location.all()
+    location = Location.find(params[:location_id])
+  	@ingredients = location.ingredients
   end
 
   def new

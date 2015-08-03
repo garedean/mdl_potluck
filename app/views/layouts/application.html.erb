@@ -13,13 +13,21 @@
   <div class="mobileBlock">
     <nav class="navbar">
       <div class="navbar-header">
-        <a href="/" class="navbar-brand"><i class="fa fa-cube"></i></i></a>
-        <a href="/home/prepare" class="navbar-brand"><i class="fa fa-spoon"></i></a>
-        <% if current_user.cart.ingredients.count > 0 %>
-        <a href="/cart" class="navbar-brand">  <i class="fi-shopping-cart size-18"> <%= current_user.cart.ingredients.count %></i></a> 
-        <% else %>
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <i class="fa fa-cube"></i>
+        <% end %>
+
+        <%= link_to prepare_path, class: "navbar-brand" do %>
+          <i class="fa fa-spoon"></i>
+        <% end %>
+
+        <%= link_to cart_path, class: "navbar-brand" do %>
+          <i class="fa fa-shopping-cart size-18"></i><%= current_user.cart.ingredients.count %>
         <% end %>
         <% if current_user %>
+
+          <%= current_user.cart.ingredients.count %>
+
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-user-times navbar-brand userLogin"></i>
           <% end %>
@@ -28,6 +36,7 @@
             <i class="fa fa-user navbar-brand userLogin"></i>
           <% end %>
         <% end %>
+
       </div>
       <div class = "alertCenter" id="flash">
         <%= flash[:notice] %>

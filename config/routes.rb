@@ -9,13 +9,13 @@ Rails.application.routes.draw do
 
   resources :ingredients
   resources :locations
+  resource :cart
 
   resources :categories do
     resources :ingredients
   end
 
   resources :locations do
-    resources :ingredients 
+    resources :ingredients
   end
-
 end

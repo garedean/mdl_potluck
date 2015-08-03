@@ -1,64 +1,62 @@
 require 'date'
 
+r = Random.new
+
 # category seeds
 # ------------------------------------------------
 
-Category.create(name: 'Raw Protein', children:[
-  Category.create(name: 'Meats', children:[
-    Category.create(name: 'Chicken', children:[
-      Category.create(name: 'Whole Chicken'),
-      Category.create(name: 'Chicken Breast'),
-      Category.create(name: 'Chicken Legs'),
-      Category.create(name: 'Chicken Drumstick'),
-      Category.create(name: 'Ground Chicken')
+Category.create(name: 'Meats', children:[
+  Category.create(name: 'Chicken', children:[
+    Category.create(name: 'Whole Chicken'),
+    Category.create(name: 'Chicken Breast'),
+    Category.create(name: 'Chicken Legs'),
+    Category.create(name: 'Chicken Drumstick'),
+    Category.create(name: 'Ground Chicken')
+  ]),
+  Category.create(name: 'Beef', children:[
+    Category.create(name: 'Beef Steak'),
+    Category.create(name: 'Beef Roast'),
+    Category.create(name: 'Ground Beef')
+  ]),
+  Category.create(name: 'Turkey', children:[
+    Category.create(name: 'Whole Turkey'),
+    Category.create(name: 'Turkey Breast'),
+    Category.create(name: 'Ground Turkey')
+  ]),
+  Category.create(name: 'Pork', children:[
+    Category.create(name: 'Pork Chops'),
+    Category.create(name: 'Pork Roast'),
+    Category.create(name: 'Ground Pork')
+  ]),
+  Category.create(name: 'Buffalo', children:[
+    Category.create(name: 'Buffalo Steak'),
+    Category.create(name: 'Buffalo Roast'),
+    Category.create(name: 'Ground Buffalo')
+  ]),
+  Category.create(name: 'Lamb', children:[
+    Category.create(name: 'Lamb Steak'),
+    Category.create(name: 'Lamb Roast'),
+    Category.create(name: 'Ground Lamb')
+  ]),
+  Category.create(name: 'Fish', children:[
+    Category.create(name: 'Salmon', children:[
+      Category.create(name: 'Whole Salmon'),
+      Category.create(name: 'Salmon Fillet'),
+      Category.create(name: 'Salmon Steaks')
     ]),
-    Category.create(name: 'Beef', children:[
-      Category.create(name: 'Beef Steak'),
-      Category.create(name: 'Beef Roast'),
-      Category.create(name: 'Ground Beef')
-    ]),
-    Category.create(name: 'Turkey', children:[
-      Category.create(name: 'Whole Turkey'),
-      Category.create(name: 'Turkey Breast'),
-      Category.create(name: 'Ground Turkey')
-    ]),
-    Category.create(name: 'Pork', children:[
-      Category.create(name: 'Pork Chops'),
-      Category.create(name: 'Pork Roast'),
-      Category.create(name: 'Ground Pork')
-    ]),
-    Category.create(name: 'Buffalo', children:[
-      Category.create(name: 'Buffalo Steak'),
-      Category.create(name: 'Buffalo Roast'),
-      Category.create(name: 'Ground Buffalo')
-    ]),
-    Category.create(name: 'Lamb', children:[
-      Category.create(name: 'Lamb Steak'),
-      Category.create(name: 'Lamb Roast'),
-      Category.create(name: 'Ground Lamb')
+    Category.create(name: 'White fish', children:[
+      Category.create(name: 'Whole Whitefish'),
+      Category.create(name: 'Whitefish Fillet')
     ])
   ]),
-  Category.create(name: 'Seafood', children:[
-    Category.create(name: 'Fish', children:[
-      Category.create(name: 'Salmon', children:[
-        Category.create(name: 'Whole Salmon'),
-        Category.create(name: 'Salmon Fillet'),
-        Category.create(name: 'Salmon Steaks')
-      ]),
-      Category.create(name: 'White fish', children:[
-        Category.create(name: 'Whole Whitefish'),
-        Category.create(name: 'Whitefish Fillet')
-      ])
-    ]),
-    Category.create(name: 'Shellfish', children:[
-      Category.create(name: 'Shrimp'),
-      Category.create(name: 'Clams'),
-      Category.create(name: 'Mussels')
-    ])
+  Category.create(name: 'Shellfish', children:[
+    Category.create(name: 'Shrimp'),
+    Category.create(name: 'Clams'),
+    Category.create(name: 'Mussels')
   ])
 ])
 
-Category.create(name: 'Raw Fruits+Veggies', children:[
+Category.create(name: 'Raw Fruits & Veggies', children:[
   Category.create(name: 'Potatoes', children:[
     Category.create(name: 'Russet'),
     Category.create(name: 'Red'),
@@ -293,7 +291,6 @@ Location.create(name: 'Basement', children:[
 # ingredient seeds
 # ------------------------------------------------
 
-r = Random.new
 locations = Location.where({name: ["Bottom",
                                    "Middle",
                                    "Top",
@@ -313,4 +310,13 @@ max_category_id = Category.maximum(:id)
   Ingredient.create(category_id: r.rand(max_category_id),
                     location_id: locations.sample.id,
                     expiring_at: Date.today + r.rand(-5..90))
+end
+
+# cart seeds
+# ------------------------------------------------
+
+cart = Cart.create
+
+40.times do
+  cart.ingredients << Ingredient.find(r.rand(1..10))
 end

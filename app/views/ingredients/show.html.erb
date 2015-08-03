@@ -41,4 +41,8 @@
   <span>QUANTITY:<br><%= @ingredient.quantity %></span>
 </div>
 
-<a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>
+<%= link_to root_path do %>
+  <button class="btn moveLater">
+    <i class="fi-clock size-48"></i><br>MOVE LATER</i>
+  </button>
+<% end %>

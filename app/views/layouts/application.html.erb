@@ -13,13 +13,17 @@
   <div class="mobileBlock">
     <nav class="navbar">
       <div class="navbar-header">
-        <a href="/" class="navbar-brand"><i class="fa fa-cube"></i> STORE</i></a>
-        <a href="/home/prepare" class="navbar-brand"><i class="fa fa-spoon"></i> PREPARE</i></a>
-        <a href="/cart" class="navbar-brand shoppingCart"><i class="fa fa-shopping-cart"></i></i></a>
+        <a href="/" class="navbar-brand"><i class="fa fa-cube"></i></i></a>
+        <a href="/home/prepare" class="navbar-brand"><i class="fa fa-spoon"></i></a>
+        <a href="/cart" class="navbar-brand"><i class="fa fa-shopping-cart"></i></a>
         <% if current_user %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-user-times navbar-brand userLogin"></i>
+          <% end %>
         <% else %>
-          <%= link_to "Login", new_user_session_path %>
+          <%= link_to new_user_session_path do %>
+            <i class="fa fa-user navbar-brand userLogin"></i>
+          <% end %>
         <% end %>
       </div>
       <div class = "alertCenter" id="flash">

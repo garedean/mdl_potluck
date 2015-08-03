@@ -43,21 +43,25 @@ a:hover{
 	background-color: $main-color;
 }
 
-.shoppingCart {
+.userLogin {
 	position: absolute;
-	top: 1px;
-	left:310px;
+	top: 3px;
+	left:320px;
 }
 
 .alertCenter {
 	position: fixed;
-	top: 15px;
-	left: 250px;
+	top: 16px;
+	left: 180px;
 	color: $highlight-color;
 	display: none;
 }
 
 /* BUTTONS */
+
+.buttonPrimary {
+	background-color: $main-color;
+}
 
 .addButton {
 	position: absolute;
@@ -91,7 +95,7 @@ a:hover{
 	position: relative;
 	margin: 10px;
 	top: 300px;
-	left: 45px;
+	left: 75px;
 	background-color: $main-color;
 	width: 120px;
 	height: 120px;
@@ -219,3 +223,16 @@ input.quantityField {
 .size-48 { font-size: 48px; }
 .size-60 { font-size: 60px; }
 .size-72 { font-size: 72px; }
+
+
+/* DEVISE USER LOGIN/LOGOUT */
+
+.loginContainer {
+	margin-left: 35px;
+	width: 300px;
+	text-align: center;
+}
+
+.deviseColor a {
+	color: black;
+}

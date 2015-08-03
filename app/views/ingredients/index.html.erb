@@ -6,7 +6,7 @@
         <th width="30">ITEM ID</th>
         <th width="60">MOVED ON</th>
         <th>QUANTITY</th>
-        <th width="40">CART</th>
+        <th width="30">CART</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +17,9 @@
           <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
           <td class="tableCell"> <%= ingredient.quantity %></td>
           <td> 
-            <i class="fi-shopping-cart size-24"></i>
+            <div class="btn">
+              <i class="fi-shopping-cart size-24"></i>
+            </div >
           </td>
         </tr>
       <% end %>

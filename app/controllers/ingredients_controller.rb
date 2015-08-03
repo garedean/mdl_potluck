@@ -45,12 +45,16 @@ class IngredientsController < ApplicationController
   end
 
   def expiring_soon
-    # @ingredients = Ingredient.order(expiring_at: :asc).limit(50)
     @ingredients = Ingredient.expiring_soon
   end
 
   def unarranged
     @ingredients = Ingredient.all
+  end
+
+  def remove_from_cart
+    binding.pry
+    Ingredient.find(params[:id]).cart_id = nil
   end
 
   private

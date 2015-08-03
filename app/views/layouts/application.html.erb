@@ -16,6 +16,11 @@
         <a href="/" class="navbar-brand"><i class="fa fa-cube"></i> STORE</i></a>
         <a href="/home/prepare" class="navbar-brand"><i class="fa fa-spoon"></i> PREPARE</i></a>
         <a href="/cart" class="navbar-brand shoppingCart"><i class="fa fa-shopping-cart"></i></i></a>
+        <% if current_user %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
       </div>
       <div class = "alertCenter" id="flash">
         <%= flash[:notice] %>

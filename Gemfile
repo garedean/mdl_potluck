@@ -12,8 +12,8 @@ gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'sqlite3'
 gem 'foundation-rails'
-gem "breadcrumbs_on_rails"
-gem 'sass-rails'
+gem 'breadcrumbs_on_rails'
+gem 'devise'
 
 group :development do
   gem 'byebug'

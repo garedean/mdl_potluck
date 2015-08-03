@@ -10,17 +10,14 @@
     </thead>
     <tbody>
       <% @ingredients.each do |ingredient| %>
-      <tr>
-        
-        <td class="button"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
-   
-        <td> <%= ingredient.id %><br><br>
-        </td>
-        <td> <%= ingredient.formatted_time_update %></td>
-        <td> 
-        <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
-        </td>
-      </tr>
+        <tr>
+          <td class="button"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+          <td> <%= ingredient.id %><br><br></td>
+          <td> <%= ingredient.formatted_time_update %></td>
+          <td> 
+            <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>

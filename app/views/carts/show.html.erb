@@ -1,9 +1,32 @@
-<ul>
-  <% @cart_items.each do |cart_item| %>
-    <li>
-      <%= cart_item.name %>
-      <%= link_to "X", remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart %>
+<div class="cartTable">
+  <table >
+    <thead>
+      <tr>
+        <th width="130">ITEM</th>
+        <th width="60">ITEM ID</th>
+        <th width="110">EXPIRING ON</th>
+        <th width="40">CART</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart_items.each do |cart_item| %>
+        <tr>
+          <td><%= cart_item.name %></td>
+          <td><%= cart_item.id %></td>
+          <td><%= cart_item.expiring_at %></td>
+          <td> 
+             <%= link_to remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart do %>
+             	<i class="fi-x-circle size-24 makeBlack"></i>
+             <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-    </li>
-  <% end %>
-</ul>
+<%= link_to root_path do %>
+  <button class="btn useNow">
+    <i class="fa fa-spoon"></i><br>USE</i>
+  </button>
+<% end %>

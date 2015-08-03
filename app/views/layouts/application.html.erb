@@ -15,13 +15,11 @@
       <div class="navbar-header">
         <a href="/" class="navbar-brand"><i class="fa fa-cube"></i></i></a>
         <a href="/home/prepare" class="navbar-brand"><i class="fa fa-spoon"></i></a>
-        <a href="/cart" class="navbar-brand"><i class="fa fa-shopping-cart"></i></a>
+        <a href="/cart" class="navbar-brand">  <i class="fi-shopping-cart size-18"> <%= current_user.cart.ingredients.count %></i></a> 
         <% if current_user %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-user-times navbar-brand userLogin"></i>
           <% end %>
-
-          
         <% else %>
           <%= link_to new_user_session_path do %>
             <i class="fa fa-user navbar-brand userLogin"></i>

@@ -2,10 +2,11 @@
   <table >
     <thead>
       <tr>
-        <th width="100">ITEM</th>
-        <th>ITEM ID</th>
+        <th width="90">ITEM</th>
+        <th width="30">ITEM ID</th>
         <th width="60">MOVED ON</th>
         <th>QUANTITY</th>
+        <th width="40">CART</th>
       </tr>
     </thead>
     <tbody>
@@ -15,10 +16,11 @@
           <td > <%= ingredient.id %><br><br></td>
           <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
           <td class="tableCell"> <%= ingredient.quantity %></td>
+          <td> 
+            <i class="fi-shopping-cart size-24"></i>
+          </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
-quantity

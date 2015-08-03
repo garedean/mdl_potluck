@@ -21,8 +21,7 @@
             <i class="fa fa-user-times navbar-brand userLogin"></i>
           <% end %>
 
-          <%= link_to "Cart (#{current_user.cart.ingredients.size})", cart_path %>      
-
+          
         <% else %>
           <%= link_to new_user_session_path do %>
             <i class="fa fa-user navbar-brand userLogin"></i>

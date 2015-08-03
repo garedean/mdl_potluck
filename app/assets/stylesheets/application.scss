@@ -63,6 +63,21 @@ a:hover{
 	background-color: $main-color;
 }
 
+.shoppingCart {
+	color: black;
+}
+
+.moveLater {
+    position: fixed;
+	margin: 10px;
+	top: 509px;
+	left: 215px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+}
+
 .addButton {
 	position: absolute;
 	top: 235px;

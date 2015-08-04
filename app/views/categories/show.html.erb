@@ -24,11 +24,20 @@
       <% else %>
       	<!-- if in prepare mode redirect to category_ingredients_path -->
       	<!-- if in store mode redirect to new_category_ingredient_path -->
-        <%= link_to category_ingredients_path(@category) do%>
-	        <span class="button listButtons">
-	          <%= item.name %>
-	        </span><br>
-        <% end %>
+      	<% if current_user.state == "prepare" %>
+	        <%= link_to category_ingredients_path(@category) do%>
+		      <span class="button listButtons">
+		        <%= item.name %>
+		      </span><br>
+	        <% end %>
+	    <% else %>
+	    	<%= link_to new_category_ingredient_path(@category) do%>
+		      <span class="button listButtons">
+		        <%= item.name %>
+		      </span><br>
+	        <% end %>
+	    <% end %>
+
       <% end %>
     </li>
   <% end %>

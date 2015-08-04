@@ -11,9 +11,7 @@ class IngredientsController < ApplicationController
     cart_items = current_user.cart.ingredients
   	@ingredients = @searchQuery.ingredients - cart_items
   end
-
- 
-
+  
   def new
     @ingredient = Ingredient.new
     @categories = Category.all

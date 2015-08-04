@@ -16,6 +16,7 @@
       <!-- CLICK STORE/PREPARE change state in user model -->
         <%= link_to root_path, class: "navbar-brand" do %>
           <i class="fa fa-cubes"></i>
+          <% current_user.update_attribute(:state, "store") %>
         <% end %>
         <% if current_user == nil %>
           <%= link_to new_user_session_path, class: "navbar-brand" do %>
@@ -24,9 +25,9 @@
         <% else%>
           <%= link_to prepare_path, class: "navbar-brand" do %>
             <i class="fa fa-spoon"></i>
+            <% current_user.update_attribute(:state, "prepare") %>
           <% end %>
         <% end %>
-
         <% if current_user != nil %>
           <% if current_user.cart.ingredients.count > 0 %>
             <%= link_to cart_path, class: "navbar-brand" do %>

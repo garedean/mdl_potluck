@@ -22,7 +22,8 @@
 	        </span><br>
         <% end %>
       <% else %>
-        <%= link_to category_path(item) do%>
+      	<!-- if in prepare mode redirect to category_ingredients_path -->
+        <%= link_to new_category_ingredient_path(@category) do%>
 	        <span class="button listButtons">
 	          <%= item.name %>
 	        </span><br>
@@ -33,11 +34,3 @@
 </ul>
 
 <a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>
-
-<% if current_user.state == "store" %>
-<%= link_to new_category_ingredient_path(@category) do%>
-	<span class="button useAll">
-		+
-	</span><br>
-<% end %>
-<% end %>

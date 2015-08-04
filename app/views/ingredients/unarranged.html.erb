@@ -1,23 +1,33 @@
-<div class="ingredientTable">
-  <table class="tableFontSize">
-    <thead>
-      <tr>
-        <th width="130">NAME</th>
-        <th>LOCATION</th>
-        <th>LIFESPAN</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @ingredients.where(:location_id => nil).each do |ingredient| %>
-      <tr>
-        <td class="tableCell"> <%= ingredient.name %></td>
-        <td class="tableCell"> N/A </td>
-        <td> 
-        <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
-        </td>
-        <td class="button warning"> <%= link_to "Set Location", ingredient_path(ingredient) %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<% if @ingredients.where(:location_id => nil).any? %>
+  <div class="ingredientTable">
+    <table class="tableFontSize">
+      <thead>
+        <tr>
+          <th width="130">NAME</th>
+          <th>LOCATION</th>
+          <th>LIFESPAN</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @ingredients.where(:location_id => nil).each do |ingredient| %>
+        <tr>
+          <td class="tableCell"> <%= ingredient.name %></td>
+          <td class="tableCell"> N/A </td>
+          <td> 
+          <div class="progress radius success"><span class="meter success" style="width: 67%"></span></div>
+          </td>
+          <td class="button mainColor"> <%= link_to "Set Location", ingredient_path(ingredient) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <%= link_to root_path do%>
+    <button class="mainColor arrangeReturn highlightColor">
+      <h3>ALL ITEMS PLACED</h3><br>
+      <h5><strong>RETURN</strong></h5>
+    </button>
+  <% end %>
+<% end %>

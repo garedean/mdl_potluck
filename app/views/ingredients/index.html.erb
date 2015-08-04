@@ -12,7 +12,7 @@
     <tbody>
       <% @ingredients.each do |ingredient| %>
         <tr>
-          <td class="button warning tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+          <td class="button tableCell mainColor"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
           <td > <%= ingredient.id %><br><br></td>
           <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
           <td class="tableCell"> <%= ingredient.quantity %></td>

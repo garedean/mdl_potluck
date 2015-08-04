@@ -11,8 +11,8 @@ test:
   <<: *default
   database: potluck_test
 
-production:
-  <<: *default
-  database: potluck_production
-  username: potluck
-  password: <%= ENV['POTLUCK_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: potluck_production
+#   username: potluck
+#   password: <%= ENV['POTLUCK_DATABASE_PASSWORD'] %>

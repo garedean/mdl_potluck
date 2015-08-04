@@ -14,12 +14,18 @@
     <nav class="navbar">
       <div class="navbar-header">
         <%= link_to root_path, class: "navbar-brand" do %>
-          <i class="fa fa-cube"></i>
+          <i class="fa fa-cubes"></i>
         <% end %>
-
-        <%= link_to prepare_path, class: "navbar-brand" do %>
-          <i class="fa fa-spoon"></i>
+        <% if current_user == nil %>
+          <%= link_to new_user_session_path, class: "navbar-brand" do %>
+            <i class="fa fa-spoon"></i>
+          <% end %>
+        <% else%>
+          <%= link_to prepare_path, class: "navbar-brand" do %>
+            <i class="fa fa-spoon"></i>
+          <% end %>
         <% end %>
+        
         <% if current_user != nil %>
           <% if current_user.cart.ingredients.count > 0 %>
             <%= link_to cart_path, class: "navbar-brand" do %>

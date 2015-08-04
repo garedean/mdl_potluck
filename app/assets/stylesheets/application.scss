@@ -37,6 +37,12 @@ a:hover{
 	height: 667px;
 }
 
+/* ANIMATED */
+
+#mustSignin {
+	display: none;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -51,10 +57,11 @@ a:hover{
 
 .alertCenter {
 	position: fixed;
-	top: 16px;
-	left: 180px;
+	top: 20px;
+	left: 140px;
 	color: $highlight-color;
 	display: none;
+	font-size: 80%;
 }
 
 /* BUTTONS */

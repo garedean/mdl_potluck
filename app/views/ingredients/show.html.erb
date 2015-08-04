@@ -1,4 +1,8 @@
 <% if @ingredient.location_id == nil %>
+  <ul class="breadcrumbs" id="">
+      <br>
+    <li class="crumbles"><strong><%= @ingredient.name %></strong></li><br>
+  </ul>
   <ul class="theList">
     <% @locations.where(:parent_id => nil).each do |location| %>
       <li>
@@ -41,8 +45,10 @@
   <span>QUANTITY:<br><%= @ingredient.quantity %></span>
 </div>
 
-<%= link_to root_path do %>
-  <button class="btn moveLater">
-    <i class="fi-clock size-48"></i><br>MOVE LATER</i>
-  </button>
+<% if @ingredient.location_id == nil %>
+  <%= link_to root_path do %>
+    <button class="btn moveLater">
+      <i class="fi-clock size-48"></i><br>MOVE LATER</i>
+    </button>
+  <% end %>
 <% end %>

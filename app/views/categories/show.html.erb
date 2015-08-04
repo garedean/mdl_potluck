@@ -15,21 +15,7 @@
 <ul class="theList">
   <% @items.each do |item| %>
     <li>
-      <% if item.children.any? %>
-      	<%= link_to category_path(item) do%>
-	        <span class="button listButtons">
-	          <%= item.name %>
-	        </span><br>
-        <% end %>
-      <% else %>
-      	<!-- if in prepare mode redirect to category_ingredients_path -->
-      	<!-- if in store mode redirect to new_category_ingredient_path -->
-        <%= link_to category_ingredients_path(@category) do%>
-	        <span class="button listButtons">
-	          <%= item.name %>
-	        </span><br>
-        <% end %>
-      <% end %>
+      <%= item.hierarchy_link(@category, item, "button listButtons") %>
     </li>
   <% end %>
 </ul>

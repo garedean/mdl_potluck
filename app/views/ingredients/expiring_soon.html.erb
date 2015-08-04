@@ -11,7 +11,7 @@
     <tbody>
       <% @ingredients.each do |ingredient| %>
         <tr>
-          <td class="button warning tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+          <td class="button mainColor tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
           <td > <%= ingredient.id %></td>
           <td> 
             <% if ingredient.expiring_at.future? %>

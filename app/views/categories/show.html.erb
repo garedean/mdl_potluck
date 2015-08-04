@@ -22,9 +22,10 @@
 	        </span><br>
         <% end %>
       <% else %>
-        <%= link_to new_category_ingredient_path(item, Ingredient.new) do%>
+      	<!-- if in prepare mode redirect to category_ingredients_path -->
+        <%= link_to new_category_ingredient_path(@category) do%>
 	        <span class="button listButtons">
-	           <%= item.name %>
+	          <%= item.name %>
 	        </span><br>
         <% end %>
       <% end %>

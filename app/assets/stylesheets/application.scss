@@ -19,7 +19,7 @@
 /* COLOR VARIABLES */
 
 $main-color: #1B5E20;
-$highlight-color: #FFC107;
+$highlight-color: #FFAB40;
 
 /* TOP LEVEL ELEMENTS */
 
@@ -37,6 +37,14 @@ a:hover{
 	height: 667px;
 }
 
+.mainColor {
+	background-color: $main-color;
+}
+
+.highlightColor {
+	background-color: $highlight-color;
+}
+
 /* NAVBAR */
 
 .navbar {
@@ -51,16 +59,18 @@ a:hover{
 
 .alertCenter {
 	position: fixed;
-	top: 16px;
-	left: 180px;
+	top: 20px;
+	left: 190px;
 	color: $highlight-color;
 	display: none;
+	font-size: 80%;
 }
 
 /* BUTTONS */
 
-.buttonPrimary {
-	background-color: $main-color;
+.arrangeReturn {
+	margin-left: 55px;
+	margin-top: 40px;
 }
 
 .makeBlack {

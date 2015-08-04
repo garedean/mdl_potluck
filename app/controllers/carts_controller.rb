@@ -16,7 +16,7 @@ class CartsController < ApplicationController
     remove_cart_items
     redirect_to :back , notice: "Items Claimed"
   end
-
+  
   private
 
   def remove_cart_items

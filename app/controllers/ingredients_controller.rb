@@ -1,9 +1,18 @@
 class IngredientsController < ApplicationController
   def index
-    location = Location.find(params[:location_id])
+    @location = Location.find_by_id(params[:location_id])
+    @category = Category.find_by_id(params[:category_id])
+    if @category == nil
+      @searchQuery = @location
+    end
+    if @location == nil
+      @searchQuery = @category
+    end
     cart_items = current_user.cart.ingredients
-  	@ingredients = location.ingredients - cart_items
+  	@ingredients = @searchQuery.ingredients - cart_items
   end
+
+ 
 
   def new
     @ingredient = Ingredient.new

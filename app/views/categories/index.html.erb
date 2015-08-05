@@ -4,8 +4,8 @@
 
 <div class="listContainer">
 	<ul class="theList" id="smoothScroll">
-		<% @categories.each do |category| %>
-		  <li>	
+		<% @food_categories.each do |category| %>
+		  <li>
 			<%= link_to category_path(category) do %>
 		  		<span class="button listButtons">
 		  		 <%= category.name %>

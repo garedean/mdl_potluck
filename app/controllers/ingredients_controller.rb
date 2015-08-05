@@ -19,14 +19,13 @@ class IngredientsController < ApplicationController
   end
 
   def create
-	  @ingredient = Ingredient.new(ingredient_params)
-  	@ingredient.save
+    @ingredient = Ingredient.new(category_id: params[:category_id])
+
     if @ingredient.save
-  		flash[:notice] = "+ ITEM ADDED"
-  		  redirect_to ingredient_path(@ingredient)
-  	else
-  		render 'new'
-  	end
+      redirect_to :back, notice: "Item added!"
+    else
+      render 'new'
+    end
   end
 
   def show

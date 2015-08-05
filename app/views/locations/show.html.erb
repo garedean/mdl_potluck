@@ -16,19 +16,7 @@
 <ul class="theList">
   <% @sublocations.each do |location| %>
     <li>
-      <% if location.children.any? %>
-        <%= link_to location_path(location) do %>
-          <span class="btn listButtons">
-            <%= location.name %>
-          </span><br><br>
-        <% end %>
-      <% else %>
-        <%= link_to location_ingredients_path(location) do%>
-          <span class="btn listButtons">
-             <%= location.name %>
-          </span><br><br>
-        <% end %>
-      <% end %>
+      <%= hierarchy_link(location, :location, @location, "button listButtons") %>
     </li>
   <% end %>
 </ul>

@@ -1,0 +1,20 @@
+<ul class="breadcrumbs">
+<br>
+<br>
+</ul>
+
+<div class="listContainer">
+	<ul class="theList" id="smoothScroll">
+		<% @categories.each do |category| %>
+		  <li>
+			<%= link_to store_category_path(category) do %>
+		  		<span class="button listButtons">
+		  		 <%= category.name %>
+		  		</span><br>
+		  	<% end %>
+		  </li>
+		<% end %>
+	</ul>
+</div>
+
+<a href="javascript:history.back()" class="btn fatButtonBackCommit"><i class="fi-arrow-left size-48"></i></a>

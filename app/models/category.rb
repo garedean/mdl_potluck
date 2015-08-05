@@ -7,11 +7,19 @@ class Category < ActiveRecord::Base
 
 	has_many :ingredients
 
-	def hierarchy_link(category, item, classes)
-		if children.any?
-			helpers.link_to name, category_path(item), class: classes
+	def hierarchy_link(link_type = nil, category, item, classes)
+		if link_type == :store
+			if children.any?
+				helpers.link_to name, store_category_path(item), class: classes
+			else
+				helpers.link_to name, new_store_category_ingredient_path(category), class: classes
+			end
 		else
-			helpers.link_to name, new_category_ingredient_path(category, item), class: classes
+			if children.any?
+				helpers.link_to name, category_path(item), class: classes
+			else
+				helpers.link_to name, category_ingredients_path(category), class: classes
+			end
 		end
 	end
 

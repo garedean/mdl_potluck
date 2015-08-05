@@ -14,7 +14,7 @@
     <nav class="navbar">
       <div class="navbar-header">
       <!-- CLICK STORE/PREPARE change state in user model -->
-        <%= link_to root_path, class: "navbar-brand" do %>
+        <%= link_to store_path, class: "navbar-brand" do %>
           <i class="fa fa-cubes"></i>
         <% end %>
         <% if current_user == nil %>
@@ -27,14 +27,12 @@
           <% end %>
         <% end %>
 
-        <% if current_user != nil %>
-          <% if current_user.cart.ingredients.count > 0 %>
-            <%= link_to cart_path, class: "navbar-brand" do %>
-              <i class="fa fa-shopping-cart size-18"></i> <%= current_user.cart.ingredients.count %>
-            <% end %>
+        <% if current_user && current_user.cart.ingredients.count > 0 %>
+          <%= link_to cart_path, class: "navbar-brand" do %>
+            <i class="fa fa-shopping-cart size-18"></i> <%= current_user.cart.ingredients.count %>
           <% end %>
         <% end %>
-
+    
         <% if current_user %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-user-times navbar-brand userLogin"></i>

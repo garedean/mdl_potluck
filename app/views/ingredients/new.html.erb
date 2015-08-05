@@ -1,4 +1,3 @@
-
 <ul class="breadcrumbs">
 <br>
     <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
@@ -24,8 +23,7 @@
 	  <%= f.hidden_field :name, :value => @category.name %>
 	  <br>
 	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
-	  <i class="fi-plus size-48 yellowPlusButton"></i><br>COMMIT
+	  <i class="fi-plus size-48 yellowPlusButton"></i>
 	  <% end %>
 	<% end %>
 </div>
-

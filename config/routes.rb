@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}
 
-  root to: 'static_pages#home'
+  root to: 'store/categories#index'
 
   get '/prepare' => 'static_pages#prepare'
   get '/admin' => 'static_pages#admin'
@@ -9,10 +9,17 @@ Rails.application.routes.draw do
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
   get '/ingredients/unarranged', to: 'ingredients#unarranged'
 
-
   resources :ingredients
   resources :locations
   resource :cart
+  resources :categories
+  resource :store, only: [:show]
+
+  namespace :store do
+    resources :categories do
+      resources :ingredients
+    end
+  end
 
   resources :categories do
     resources :ingredients

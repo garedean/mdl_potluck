@@ -18,6 +18,11 @@ Rails.application.routes.draw do
   namespace :store do
     resources :categories do
       resources :ingredients
+
+      member do
+        post 'add_with_location'
+       get 'review'
+      end
     end
 
     resources :ingredients do

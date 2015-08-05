@@ -10,7 +10,7 @@ class Store::IngredientsController < ApplicationController
 	  @ingredient = Ingredient.new(category_id: params[:category_id])
 
     if @ingredient.save
-  		redirect_to store_ingredient_locations_path(@ingredient), notice: "+ ITEM ADDED"
+      redirect_to store_ingredient_path(@ingredient), notice: "Item added!"
   	else
   		render 'new'
   	end

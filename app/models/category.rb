@@ -18,7 +18,7 @@ class Category < ActiveRecord::Base
 			if children.any?
 				helpers.link_to name, category_path(item), class: classes
 			else
-				helpers.link_to name, category_ingredients_path(category), class: classes
+				helpers.link_to name, category_ingredients_path(item), class: classes
 			end
 		end
 	end

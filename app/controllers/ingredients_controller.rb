@@ -1,32 +1,33 @@
 class IngredientsController < ApplicationController
+  # this action serves three resources: ingredients, location/:id/ingredients, category/:id/ingredients
   def index
-    @location = Location.find_by_id(params[:location_id])
-    @category = Category.find_by_id(params[:category_id])
-    if @category == nil
-      @searchQuery = @location
-    end
-    if @location == nil
-      @searchQuery = @category
-    end
+    location = Location.find_by_id(params[:location_id])
+    category = Category.find_by_id(params[:category_id])
     cart_items = current_user.cart.ingredients
-  	@ingredients = @searchQuery.ingredients - cart_items
+
+    resource_ingredients =
+      if method = (location || category)
+        method.ingredients
+      else
+        Ingredient.all
+      end
+
+  	@ingredients = resource_ingredients - cart_items
   end
 
   def new
     @ingredient = Ingredient.new
-    @categories = Category.all
     @category = Category.find(params[:category_id])
   end
 
   def create
-	  @ingredient = Ingredient.new(ingredient_params)
-  	@ingredient.save
+    @ingredient = Ingredient.new(category_id: params[:category_id])
+
     if @ingredient.save
-  		flash[:notice] = "+ ITEM ADDED"
-  		  redirect_to ingredient_path(@ingredient)
-  	else
-  		render 'new'
-  	end
+      redirect_to :back, notice: "Item added!"
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -37,8 +38,8 @@ class IngredientsController < ApplicationController
   def edit
     @ingredient = Ingredient.find(params[:id])
     @locations = Location.all
-    @location = Location.find(params[:location_id])
-    @sublocations = Location.where(parent_id: @location.id)
+    #@location = Location.find(params[:location_id])
+    #@sublocations = Location.where(parent_id: @location.id)
   end
 
   def update

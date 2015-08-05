@@ -1,3 +1,4 @@
+
 class Store::IngredientsController < ApplicationController
   def new
     @ingredient = Ingredient.new

@@ -1,12 +1,7 @@
 <div class="addButton">
 	<%= form_for [:store, @category, @ingredient], :html => {:class => "form"} do |f| %>
-	  <!--<span class="quantityLabel">QUANTITY</span>-->
-	  <%#= f.number_field :quantity, :class => 'quantityField', cols: "30" %>
-	  <%#= f.hidden_field :category_id, :value => @category.id %>
-	  <%#= f.hidden_field :location_id, :value => nil %>
-	  <%#= f.hidden_field :name, :value => @category.name %>
 	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
-    (Add w/out <br> location)<br>
+    (Add w/out <br> Location)<br>
       <i class="fi-plus size-48 yellowPlusButton"></i>
 	  <% end %>
 	<% end %>

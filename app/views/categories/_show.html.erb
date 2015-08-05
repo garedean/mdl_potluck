@@ -16,8 +16,7 @@
 <ul class="theList">
   <% @food_category_children.each do |item| %>
     <li>
-      <!-- if link_type is :store, the link leads to a page where a new ingredient can be added -->
-      <%= item.hierarchy_link(link_type, @food_category, item, "button listButtons") %>
+      <%= hierarchy_link(item, link_type, @food_category, "button listButtons") %>
     </li>
   <% end %>
 </ul>

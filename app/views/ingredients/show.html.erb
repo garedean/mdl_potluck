@@ -44,9 +44,9 @@
 </div>
 
 <% if @ingredient.location_id == nil %>
-  <%= link_to root_path do %>
-    <button class="btn moveLater">
-      <i class="fi-clock size-48"></i><br>MOVE LATER</i>
+  <%= link_to store_path do %>
+    <button class="button bigBottomButtonRight">
+      <i class="fi-clock size-48"></i><br>MOVE LATER
     </button>
   <% end %>
 <% end %>
@@ -56,16 +56,15 @@
     <%= form_for [@ingredient], :html => {:class => "form"} do |f| %>
       <%= f.hidden_field :location_id, :value => nil %>
       <br>
-      <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
-      <i class="fi-map size-48 yellowPlusButton"></i>
-      <br>RELOCATE
+      <%= f.button :submit, :class => "buttons bigBottomButtonLeft" do %>
+      <i class="fi-map size-48"></i>RELOCATE
       <% end %>
     <% end %>
   </div>
   <!-- user state will shift between root path and prepare path -->
-  <%= link_to root_path do %>
-    <button class="btn moveLaterRelocate">
-      <i class="fi-check size-48"></i><br>DONE</i>
+  <%= link_to store_path do %>
+    <button class="button bigBottomButtonRight">
+      <i class="fi-check size-48 yellowPlusButton"></i><br>DONE
     </button>
   <% end %>
 <% else %>

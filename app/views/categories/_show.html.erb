@@ -2,15 +2,14 @@
 <% link_type ||= nil %>
 
 <ul class="breadcrumbs">
-<br>
     <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.parent.name %></li><br><br>
+	<li class="crumbles"><%= @category.parent.parent.parent.name %></li>
 	<% end %>
 	<% if @category.parent != nil && @category.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.name %></li><br><br>
+	<li class="crumbles"><%= @category.parent.parent.name %></li>
 	<% end %>
 	<% if @category.parent != nil %>
-	<li class="crumbles"><%= @category.parent.name %></li><br><br>
+	<li class="crumbles"><%= @category.parent.name %></li>
 	<% end %>
     <li class="crumbles"><%= @category.name %></li><br>
 </ul>
@@ -25,4 +24,4 @@
 </ul>
 
 
-<a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>
+<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

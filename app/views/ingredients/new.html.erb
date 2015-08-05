@@ -11,7 +11,7 @@
     	<li class="crumbles"><strong><%= @category.name %></strong></li><br>
 </ul>
 
-<a href="javascript:history.back()" class="btn fatButtonBackCommit"><i class="fi-arrow-left size-48"></i></a>
+<a href="javascript:history.back()" class="button fatButtonBackCommit"><br><i class="fi-arrow-left size-48"></i></a>
 
 <div class="addButton">
 	<%= form_for [@category, @ingredient], :html => {:class => "form"} do |f| %>
@@ -21,7 +21,7 @@
 	  <%= f.hidden_field :location_id, :value => nil %>
 	  <%= f.hidden_field :name, :value => @category.name %>
 	  <br>
-	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
+	  <%= f.button :submit, :class => "button fatButtonSpecific" do %>
 	  <i class="fi-plus size-48 yellowPlusButton"></i>
 	  <% end %>
 	<% end %>

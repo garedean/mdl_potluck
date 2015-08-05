@@ -9,7 +9,7 @@ class Store::IngredientsController < ApplicationController
 	  @ingredient = Ingredient.new(category_id: params[:category_id])
 
     if @ingredient.save
-  		redirect_to :back, notice: "Item added!"
+  		redirect_to ingredient_path(@ingredient), notice: "+ ITEM ADDED"
   	else
   		render 'new'
   	end

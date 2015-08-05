@@ -19,7 +19,7 @@
 	<%= form_for [@ingredient, @location] do |f| %>
 	  <%= f.hidden_field :location_id, :value => @location.id %>
 	  <br>
-	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
+	  <%= f.button :submit, :class => "button fatButtonSpecific" do %>
 	  <i class="fi-plus size-48 yellowPlusButton"></i>
 	  <% end %>
 	<% end %>

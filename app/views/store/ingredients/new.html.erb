@@ -1,8 +1,27 @@
+<ul class="breadcrumbs">
+    <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
+		<li class="crumbles"><%= @category.parent.parent.parent.name %></li>
+	<% end %>
+	<% if @category.parent != nil && @category.parent.parent != nil%>
+		<li class="crumbles"><%= @category.parent.parent.name %></li>
+	<% end %>
+	<% if @category.parent != nil %>
+		<li class="crumbles"><%= @category.parent.name %></li>
+	<% end %>
+    	<li class="crumbles"><strong><%= @category.name %></strong></li><br>
+</ul>
+
+<a href="javascript:history.back()" class="button bigBottomButtonLeft"><br><br><i class="fi-arrow-left size-48"></i></a>
+
 <div class="addButton">
 	<%= form_for [:store, @category, @ingredient], :html => {:class => "form"} do |f| %>
-	  <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
-    (Add w/out <br> Location)<br>
-      <i class="fi-plus size-48 yellowPlusButton"></i>
+	  <!--<span class="quantityLabel">QUANTITY</span>-->
+	  <%#= f.number_field :quantity, :class => 'quantityField', cols: "30" %>
+	  <%#= f.hidden_field :category_id, :value => @category.id %>
+	  <%#= f.hidden_field :location_id, :value => nil %>
+	  <%#= f.hidden_field :name, :value => @category.name %>
+	  <%= f.button :submit, :class => "button bigBottomButtonRight" do %>
+      <i class="fi-plus size-48 yellowPlusButton"></i><br>COMMIT
 	  <% end %>
 	<% end %>
 </div>

@@ -1,16 +1,14 @@
 <ul class="breadcrumbs">
-<br>
-<br>
   <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
-  <li class="crumbles"><%= @location.parent.parent.parent.name %></li><br><br>
+  <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
   <% end %>
   <% if @location.parent != nil && @location.parent.parent != nil%>
-  <li class="crumbles"><%= @location.parent.parent.name %></li><br><br>
+  <li class="crumbles"><%= @location.parent.parent.name %></li>
   <% end %>
   <% if @location.parent != nil %>
-  <li class="crumbles"><%= @location.parent.name %></li><br><br>
+  <li class="crumbles"><%= @location.parent.name %></li>
   <% end %>
-    <li class="crumbles"><%= @location.name %></li><br><br>
+    <li class="crumbles"><%= @location.name %></li>
 </ul>
 
 <ul class="theList">
@@ -21,4 +19,4 @@
   <% end %>
 </ul>
 
-<a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>
+<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><i class="fi-arrow-left size-48"></i></a>

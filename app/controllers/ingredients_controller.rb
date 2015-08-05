@@ -46,7 +46,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.update(ingredient_params)
       flash[:notice] = "LOCATION SET"
-      redirect_to ingredient_path(@ingredient)
+      redirect_to store_path
     else
       render :edit
     end
@@ -64,6 +64,7 @@ class IngredientsController < ApplicationController
     item_to_add = Ingredient.find(params[:id])
 
     current_user.cart.add_item(item_to_add)
+    flash[:notice] = "ADDED TO CART"
     redirect_to :back
   end
 

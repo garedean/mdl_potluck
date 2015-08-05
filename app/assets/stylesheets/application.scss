@@ -21,7 +21,16 @@
 $main-color: #1B5E20;
 $highlight-color: #FFAB40;
 
-/* TOP LEVEL ELEMENTS */
+/* GENERAL USE */
+
+.mainColor {
+	background-color: $main-color;
+}
+
+.highlightColor {
+	background-color: $highlight-color;
+	color: black;
+}
 
 a {
 	color: white;
@@ -37,15 +46,15 @@ a:hover{
 	height: 667px;
 }
 
-.mainColor {
-	background-color: $main-color;
-}
-
-.highlightColor {
-	background-color: $highlight-color;
+.makeBlack {
+	color: black;
 }
 
 /* NAVBAR */
+
+.nav {
+	height: 30px;
+}
 
 .navbar {
 	background-color: $main-color;
@@ -73,15 +82,22 @@ a:hover{
 	margin-top: 40px;
 }
 
-.makeBlack {
-	color: black;
-}
-
 .moveLater {
     position: fixed;
 	margin: 10px;
 	top: 509px;
 	left: 215px;
+	background-color: $main-color;
+	width: 120px;
+	height: 120px;
+	color: white;
+}
+
+.moveLaterRelocate {
+    position: fixed;
+	margin: 10px;
+	top: 516px;
+	left: 85px;
 	background-color: $main-color;
 	width: 120px;
 	height: 120px;
@@ -239,7 +255,7 @@ a:hover{
 .itemLifeSpanQuantity {
 	position: fixed;
 	top: 540px;
-	left: 15px;
+	left: 10px;
 }
 
 .quantityField {
@@ -263,7 +279,8 @@ input.quantityField {
 /* Breadcrumbs */
 
 .crumbles {
-	font-size: medium;
+	font-size: 140%;
+	line-height: 20px;
 	color: black;
 }
 

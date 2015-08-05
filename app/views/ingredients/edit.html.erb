@@ -1,15 +1,13 @@
 <ul class="breadcrumbs" id="">
-<br>
-  <li class="crumbles"><strong>MOVING: <%= @ingredient.name %></strong></li><br><br>
-<br>
-    <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
-  <li class="crumbles"><%= @location.parent.parent.parent.name %></li><br><br>
+    <li class="crumbles"><strong>MOVING: <%= @ingredient.name %></strong></li><br><br>
+  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
+    <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
   <% end %>
   <% if @location.parent != nil && @location.parent.parent != nil%>
-  <li class="crumbles"><%= @location.parent.parent.name %></li><br><br>
+    <li class="crumbles"><%= @location.parent.parent.name %></li>
   <% end %>
   <% if @location.parent != nil %>
-  <li class="crumbles"><%= @location.parent.name %></li><br><br>
+    <li class="crumbles"><%= @location.parent.name %></li>
   <% end %>
     <li class="crumbles"><strong>TO: <%= @location.name %></strong></li><br>
 </ul>

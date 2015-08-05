@@ -1,4 +1,5 @@
 <% items ||= @items %>
+<% link_type ||= nil %>
 
 <ul class="breadcrumbs">
 <br>
@@ -18,9 +19,10 @@
   <% items.each do |item| %>
     <li>
       <!-- if link_type is :store, the link leads to a page where a new ingredient can be added -->
-      <%= item.hierarchy_link(@category, item, "button listButtons") %>
+      <%= item.hierarchy_link(link_type, @category, item, "button listButtons") %>
     </li>
   <% end %>
 </ul>
+
 
 <a href="javascript:history.back()" class="btn fatButtonBack"><i class="fi-arrow-left size-48"></i></a>

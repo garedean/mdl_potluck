@@ -12,7 +12,7 @@
     <tbody>
       <% @cart_items.each do |cart_item| %>
         <tr>
-          <td><%= cart_item.name %></td>
+          <td><h5><%= cart_item.name %></h5></td>
           <td><%= cart_item.id %></td>
           <td class="tableCell"> 
             <% if cart_item.expiring_at != nil %>

@@ -43,7 +43,6 @@ $highlight-color: #FFD54F;
 
 a {
 	color: white;
-
 }
 
 a:hover{
@@ -129,7 +128,7 @@ a:hover{
 	line-height: 45px;
 	font-size: 270%;
 	text-align: left;
-	border-radius: 10px;
+	border-radius: 5px;
 	font-weight: bold;
 }
 
@@ -137,6 +136,12 @@ a:hover{
 	position: relative;
 	bottom: 5px;
 	left: 7px;
+}
+
+.adminButton {
+	position: relative;
+	top: 60px;
+	opacity: .5;
 }
 
 .arrangeReturn {
@@ -249,4 +254,11 @@ input.quantityField {
 
 .deviseColor a {
 	color: black;
+}
+
+/* ADMIN */
+
+.adminContainer {
+	margin-left: 35px;
+	width: 300px;
 }

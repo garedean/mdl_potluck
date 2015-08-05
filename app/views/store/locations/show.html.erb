@@ -1,0 +1,7 @@
+<ul class="theList">
+  <% @sublocations.each do |location| %>
+    <li>
+      <%= hierarchy_link(location, :place_in_location, @ingredient, "button listButtons") %>
+    </li>
+  <% end %>
+</ul>

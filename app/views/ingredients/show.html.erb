@@ -3,6 +3,7 @@
     <li class="crumbles"><strong>MOVING: <%= @ingredient.name %></strong></li><br>
   </ul>
   <ul class="theList">
+
     <% @locations.where(:parent_id => nil).each do |location| %>
       <li>
         <% if location.children.any? %>

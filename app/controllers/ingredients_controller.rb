@@ -45,8 +45,9 @@ class IngredientsController < ApplicationController
   def update
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.update(ingredient_params)
-      flash[:notice] = "LOCATION SAVED"
-      redirect_to store_path
+      flash[:notice] = "LOCATION SET"
+      # redirect_to store_path
+      redirect_to ingredient_path(@ingredient)
     else
       render :edit
     end

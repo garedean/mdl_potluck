@@ -18,8 +18,8 @@
 
 /* COLOR VARIABLES */
 
-$main-color: #1B5E20;
-$highlight-color: #FFAB40;
+$main-color: #2E7D32;
+$highlight-color: #FFCA28;
 
 /* GENERAL USE */
 
@@ -30,6 +30,9 @@ $highlight-color: #FFAB40;
 .highlightColor {
 	background-color: $highlight-color;
 	color: black;
+	a {
+	color: black;
+	}
 }
 
 .makeBlack {

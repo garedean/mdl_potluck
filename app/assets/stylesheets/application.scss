@@ -43,6 +43,7 @@ $highlight-color: #FFD54F;
 
 a {
 	color: white;
+
 }
 
 a:hover{
@@ -130,6 +131,12 @@ a:hover{
 	text-align: left;
 	border-radius: 10px;
 	font-weight: bold;
+}
+
+.cartButton {
+	position: relative;
+	bottom: 5px;
+	left: 7px;
 }
 
 .arrangeReturn {

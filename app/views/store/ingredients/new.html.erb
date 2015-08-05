@@ -15,11 +15,12 @@
 
 <div class="addButton">
 	<%= form_for [:store, @category, @ingredient], :html => {:class => "form"} do |f| %>
-	  <!--<span class="quantityLabel">QUANTITY</span>-->
+	  <!-- <span class="quantityLabel">QUANTITY</span> -->
 	  <%#= f.number_field :quantity, :class => 'quantityField', cols: "30" %>
 	  <%#= f.hidden_field :category_id, :value => @category.id %>
-	  <%#= f.hidden_field :location_id, :value => nil %>
-	  <%#= f.hidden_field :name, :value => @category.name %>
+	  <%#= f.hidden_field :expiring_at, :value => @category.expiring_at %>
+	  <%= f.hidden_field :location_id, :value => nil %>
+	  <%= f.hidden_field :name, :value => @category.name %>
 	  <%= f.button :submit, :class => "button bigBottomButtonRight" do %>
       <i class="fi-plus size-48 yellowPlusButton"></i><br>COMMIT
 	  <% end %>

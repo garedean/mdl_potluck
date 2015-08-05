@@ -1,26 +1,14 @@
 <% link_type ||= nil %>
 
 <ul class="breadcrumbs">
-<<<<<<< HEAD
-    <% if @category.parent != nil && @category.parent.parent != nil && @category.parent.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.parent.name %></li>
-	<% end %>
-	<% if @category.parent != nil && @category.parent.parent != nil%>
-	<li class="crumbles"><%= @category.parent.parent.name %></li>
-	<% end %>
-	<% if @category.parent != nil %>
-	<li class="crumbles"><%= @category.parent.name %></li>
-=======
-<br>
     <% if @food_category.parent != nil && @food_category.parent.parent != nil && @food_category.parent.parent.parent != nil%>
-	<li class="crumbles"><%= @food_category.parent.parent.parent.name %></li><br><br>
+		<li class="crumbles"><%= @food_category.parent.parent.parent.name %></li>
 	<% end %>
 	<% if @food_category.parent != nil && @food_category.parent.parent != nil%>
-	<li class="crumbles"><%= @food_category.parent.parent.name %></li><br><br>
+		<li class="crumbles"><%= @food_category.parent.parent.name %></li>
 	<% end %>
 	<% if @food_category.parent != nil %>
-	<li class="crumbles"><%= @food_category.parent.name %></li><br><br>
->>>>>>> fa77e071cf93353cb4de91bb0d57ce62686d1158
+		<li class="crumbles"><%= @food_category.parent.name %></li>
 	<% end %>
     <li class="crumbles"><%= @food_category.name %></li><br>
 </ul>
@@ -33,6 +21,5 @@
     </li>
   <% end %>
 </ul>
-
 
 <a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

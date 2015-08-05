@@ -2,9 +2,8 @@
   <table >
     <thead>
       <tr>
-        <th width="120">ITEM</th>
         <th width="50">ITEM ID</th>
-        <th width="80">MOVED ON</th>
+        <th width="80">EXPIRING ON</th>
         <th>LOCATION</th>
         <th width="30">CART</th>
       </tr>
@@ -12,14 +11,23 @@
     <tbody>
       <% @ingredients.each do |ingredient| %>
         <tr>
-          <td class="button tableCell mainColor"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
-          <td > <%= ingredient.id %><br><br></td>
-          <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
+          <td class="button tableCell highlightColor"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+           <td class="tableCell"> 
+           <% if ingredient.expiring_at != nil %>
+            <% if ingredient.expiring_at.future? %>
+              <div class="freshItem">FRESH</div>
+            <% else %>
+              <div class="expiredItem">EXPIRED</div>
+            <% end %>
+            <%= ingredient.expiring_at %>
+            <% else %>
+              N/A
+            <% end %>
+          </td>
           <td class="tableCell"> <%= ingredient.location_id %></td>
-
           <td>
             <%= link_to add_to_cart_path(ingredient), method: :post do %>
-              <div class="button">
+              <div class="button highlightColor" id="listButton">
                 <i class="fi-shopping-cart size-24 makeBlack"></i>
               </div >
             <% end %>

@@ -17,7 +17,7 @@
           <td><%= cart_item.expiring_at %></td>
           <td> 
              <%= link_to remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart do %>
-             	<i class="fi-x-circle size-24 makeBlack"></i>
+             	<i class="fi-x-circle size-24 makeBlack" id="listButton"></i>
              <% end %>
           </td>
         </tr>

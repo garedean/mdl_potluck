@@ -38,8 +38,8 @@ class IngredientsController < ApplicationController
   def edit
     @ingredient = Ingredient.find(params[:id])
     @locations = Location.all
-    #@location = Location.find(params[:location_id])
-    #@sublocations = Location.where(parent_id: @location.id)
+    @location = Location.find(params[:location_id])
+    @sublocations = Location.where(parent_id: @location.id)
   end
 
   def update

@@ -4,10 +4,8 @@ class LocationsController < ApplicationController
   end
 
   def show
-    #@locations = Location.all
     @location = Location.find(params[:id])
     @sublocations = Location.where(parent_id: @location.id)
-    #@ingredient = Ingredient.find(params[:id])
   end
 
   def edit

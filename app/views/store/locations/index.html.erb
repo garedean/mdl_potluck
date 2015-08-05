@@ -1,0 +1,7 @@
+<ul>
+  <% @locations.each do |location| %>
+    <li>
+      <%= link_to location.name, store_ingredient_location_path(@ingredient, location), class: "button listButtons" %>
+    </li>
+  <% end %>
+</ul>

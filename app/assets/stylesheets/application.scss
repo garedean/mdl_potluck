@@ -129,6 +129,11 @@ a:hover{
 	text-align: left;
 }
 
+.arrangeReturn {
+	margin-left: 55px;
+	margin-top: 50px;
+}
+
 .listButtons:hover {
 	color: $highlight-color;
 }
@@ -140,7 +145,7 @@ a:hover{
 /* TABLES */
 
 .tableCell {
-	font-size: 75%;
+	font-size: 85%;
 }
 
 .ingredientTable {
@@ -166,6 +171,14 @@ a:hover{
 	overflow: hidden;
 	overflow-y: scroll;
 	text-align: right;
+}
+
+.expiredItem {
+	color: red;
+}
+
+.freshItem {
+	color: green;
 }
 
 /* INPUT FIELDS */

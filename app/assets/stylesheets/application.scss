@@ -47,6 +47,7 @@ a {
 
 a:hover{
 	color: $highlight-color;
+	text-decoration: none;
 }
 
 .mobileBlock {
@@ -127,6 +128,8 @@ a:hover{
 	line-height: 45px;
 	font-size: 270%;
 	text-align: left;
+	border-radius: 10px;
+	font-weight: bold;
 }
 
 .arrangeReturn {

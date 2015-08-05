@@ -1,39 +1,46 @@
-<div class="ingredientTable">
-  <table >
-    <thead>
-      <tr>
-        <th width="50">ITEM ID</th>
-        <th width="80">EXPIRING ON</th>
-        <th>LOCATION</th>
-        <th width="30">CART</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @ingredients.each do |ingredient| %>
+<% if @ingredients.any? %>
+  <div class="ingredientTable">
+    <table >
+      <thead>
         <tr>
-          <td class="button tableCell highlightColor"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
-           <td class="tableCell"> 
-           <% if ingredient.expiring_at != nil %>
-            <% if ingredient.expiring_at.future? %>
-              <div class="freshItem">FRESH</div>
-            <% else %>
-              <div class="expiredItem">EXPIRED</div>
-            <% end %>
-            <%= ingredient.expiring_at %>
-            <% else %>
-              N/A
-            <% end %>
-          </td>
-          <td class="tableCell"> <%= ingredient.location_id %></td>
-          <td>
-            <%= link_to add_to_cart_path(ingredient), method: :post do %>
-              <div class="button highlightColor" id="listButton">
-                <i class="fi-shopping-cart size-24 makeBlack"></i>
-              </div >
-            <% end %>
-          </td>
+          <th width="50">ITEM ID</th>
+          <th width="80">EXPIRING ON</th>
+          <th>LOCATION</th>
+          <th width="30">CART</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <% @ingredients.each do |ingredient| %>
+          <tr>
+            <td class="button tableCell highlightColor"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+             <td class="tableCell"> 
+              <% if ingredient.expiring_at != nil %>
+                <% if ingredient.expiring_at.future? %>
+                  <div class="freshItem">FRESH</div>
+                <% else %>
+                  <div class="expiredItem">EXPIRED</div>
+                <% end %>
+                <%= ingredient.expiring_at %>
+                <% else %>
+                  N/A
+              <% end %>
+            </td>
+            <td class="tableCell"> <%= ingredient.location_id %></td>
+            <td>
+              <%= link_to add_to_cart_path(ingredient), method: :post do %>
+                <div class="button highlightColor" id="listButton">
+                  <i class="fi-shopping-cart size-24 makeBlack"></i>
+                </div >
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <a href="javascript:history.back()" class="button arrangeReturn highlightColor">
+    <br><h3>NO ITEMS STORED</h3><br>
+    <h5><strong>RETURN</strong></h5><i class="fi-arrow-left size-48"></i>
+  </a>
+<% end %>

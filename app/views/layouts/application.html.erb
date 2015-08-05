@@ -15,8 +15,7 @@
       <div class="navbar-header">
       <!-- CLICK STORE/PREPARE change state in user model -->
         <%= link_to root_path, class: "navbar-brand" do %>
-          <i class="fa fa-cubes"></i>
-          <% current_user.update_attribute(:state, "store") %>
+          <i class="fa fa-cube"></i>
         <% end %>
         <% if current_user == nil %>
           <%= link_to new_user_session_path, class: "navbar-brand" do %>
@@ -25,7 +24,6 @@
         <% else%>
           <%= link_to prepare_path, class: "navbar-brand" do %>
             <i class="fa fa-spoon"></i>
-            <% current_user.update_attribute(:state, "prepare") %>
           <% end %>
         <% end %>
         <% if current_user != nil %>

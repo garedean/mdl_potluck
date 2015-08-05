@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
     cart_items = current_user.cart.ingredients
   	@ingredients = @searchQuery.ingredients - cart_items
   end
-  
+
   def new
     @ingredient = Ingredient.new
     @categories = Category.all
@@ -45,7 +45,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.update(ingredient_params)
       flash[:notice] = "LOCATION SET"
-      redirect_to root_path
+      redirect_to ingredient_path(@ingredient)
     else
       render :edit
     end

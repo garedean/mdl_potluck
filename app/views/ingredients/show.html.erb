@@ -1,7 +1,6 @@
 <% if @ingredient.location_id == nil %>
   <ul class="breadcrumbs" id="">
-      <br>
-    <li class="crumbles"><strong><%= @ingredient.name %></strong></li><br>
+    <li class="crumbles"><strong>MOVING: <%= @ingredient.name %></strong></li><br>
   </ul>
   <ul class="theList">
     <% @locations.where(:parent_id => nil).each do |location| %>
@@ -23,18 +22,17 @@
     <% end %>
   </ul>
   <% else %>
- <ul class="breadcrumbs" id="">
-    <br>
+  <ul class="breadcrumbs" id="">
     <li class="crumbles"><strong><%= @ingredient.name %></strong></li><br>
-    <br><br>
+    <br>
     <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
-      <li class="crumbles"><%= @ingredient.location.parent.parent.parent.name %></li><br><br>
+      <li class="crumbles"><%= @ingredient.location.parent.parent.parent.name %></li>
     <% end %>
     <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
-      <li class="crumbles"><%= @ingredient.location.parent.parent.name %></li><br><br>
+      <li class="crumbles"><%= @ingredient.location.parent.parent.name %></li>
     <% end %>
     <% if @ingredient.location.parent != nil %>
-      <li class="crumbles"><%= @ingredient.location.parent.name %></li><br><br>
+      <li class="crumbles"><%= @ingredient.location.parent.name %></li>
     <% end %>
       <li class="crumbles"><strong><%= @ingredient.location.name %></strong></li><br>
   </ul>
@@ -51,4 +49,24 @@
       <i class="fi-clock size-48"></i><br>MOVE LATER</i>
     </button>
   <% end %>
+<% end %>
+
+<% if @ingredient.location_id != nil %>
+  <div class="addButton">
+    <%= form_for [@ingredient], :html => {:class => "form"} do |f| %>
+      <%= f.hidden_field :location_id, :value => nil %>
+      <br>
+      <%= f.button :submit, :class => "btn fatButtonSpecific" do %>
+      <i class="fi-map size-48 yellowPlusButton"></i>
+      <br>RELOCATE
+      <% end %>
+    <% end %>
+  </div>
+  <!-- user state will shift between root path and prepare path -->
+  <%= link_to root_path do %>
+    <button class="btn moveLaterRelocate">
+      <i class="fi-check size-48"></i><br>DONE</i>
+    </button>
+  <% end %>
+<% else %>
 <% end %>

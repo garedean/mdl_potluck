@@ -2,10 +2,10 @@
   <table >
     <thead>
       <tr>
-        <th width="90">ITEM</th>
-        <th width="30">ITEM ID</th>
-        <th width="60">MOVED ON</th>
-        <th>QUANTITY</th>
+        <th width="120">ITEM</th>
+        <th width="50">ITEM ID</th>
+        <th width="80">MOVED ON</th>
+        <th>LOCATION</th>
         <th width="30">CART</th>
       </tr>
     </thead>
@@ -15,7 +15,7 @@
           <td class="button tableCell mainColor"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
           <td > <%= ingredient.id %><br><br></td>
           <td class="tableCell"> <%= ingredient.formatted_time_update %></td>
-          <td class="tableCell"> <%= ingredient.quantity %></td>
+          <td class="tableCell"> <%= ingredient.location_id %></td>
 
           <td>
             <%= link_to add_to_cart_path(ingredient), method: :post do %>

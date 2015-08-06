@@ -64,7 +64,7 @@ a:hover{
 
 .userLogin {
 	position: fixed;
-	top: 5px;
+	top: 4px;
 	left: 320px;
 }
 
@@ -225,10 +225,25 @@ input.quantityField {
 
 /* Breadcrumbs */
 
+.breadcrumbs {
+  display:inline-block;
+  position: relative;
+  bottom: 20px;
+  height: 45px;
+  border-style: none;
+  box-shadow: 0 5px 0 0 #BDBDBD;
+  overflow:auto;
+  white-space: nowrap;
+}
+
 .crumbles {
 	font-size: 140%;
-	line-height: 20px;
-	color: black;
+	line-height: 35px;
+  color: $main-color;
+}
+
+ul.breadcrumbs li:before {
+  content: ">";
 }
 
 /* FOUNDATION ICON SIZES */

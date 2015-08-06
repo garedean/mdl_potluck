@@ -5,6 +5,7 @@ class Store::IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
+    @locations = Location.all()
   end
 
   def create

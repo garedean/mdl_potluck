@@ -15,7 +15,7 @@
     <li class="crumbles"><%= @location.name %></li><br><br>
 </ul>
 
-<!-- <div class="addButton">
+<div class="addButton">
 	<%= form_for [:store, @ingredient, @location] do |f| %>
 	  <%= f.hidden_field :location_id, :value => @location.id %>
 	  <br>
@@ -23,12 +23,12 @@
 	  <i class="fi-plus size-48 yellowPlusButton"></i>
 	  <% end %>
 	<% end %>
-</div> -->
+</div>
 
-<%= form_for(@ingredient) do |f| %>
-  <%= f.hidden_field :location_id, :value => @location.id %>
+<%#= form_for(@ingredient) do |f| %>
+  <%#= f.hidden_field :location_id, :value => @location.id %>
 
-  <%= f.button :submit, :class => "button fatButtonSpecific" do %>
-    <i class="fi-plus size-48 yellowPlusButton"></i>
-  <% end %>
-<% end %>
+  <%#= f.button :submit, :class => "button fatButtonSpecific" do %>
+    <!--<i class="fi-plus size-48 yellowPlusButton"></i>-->
+  <%# end %>
+<%# end %>

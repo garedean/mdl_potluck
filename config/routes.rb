@@ -9,10 +9,8 @@ Rails.application.routes.draw do
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
   get '/ingredients/unarranged', to: 'ingredients#unarranged'
 
-  resources :ingredients
-  resources :locations
+  resources :locations, :categories
   resource :cart
-  resources :categories
   resource :store, only: [:show]
 
   namespace :store do
@@ -26,7 +24,7 @@ Rails.application.routes.draw do
 
     resources :ingredients do
       resources :locations
-      
+
       member do
         post 'add_with_location'
       end

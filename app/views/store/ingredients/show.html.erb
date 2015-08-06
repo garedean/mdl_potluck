@@ -1,72 +1,41 @@
-<% if @ingredient.location_id == nil %>
-  <ul class="breadcrumbs" id="">
-    <li class="crumbles"><strong>MOVING: <%= @ingredient.name %></strong></li><br>
-  </ul>
-  <ul class="theList">
-
-    <% @locations.where(:parent_id => nil).each do |location| %>
-      <li>
-        <% if location.children.any? %>
-          <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
-            <span class="button listButtons">
-              <%= location.name %>
-            </span><br>
-          <% end %>
-        <% else %>
-          <%= link_to edit_location_ingredient_path(location, @ingredient) do%>
-            <span class="button listButtons">
-               <strong><%= location.name %></strong>
-            </span>
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-  <% else %>
-  <ul class="breadcrumbs" id="">
-    <li class="crumbles"><strong><%= @ingredient.name %></strong></li><br>
-    <br>
+<div class="itemContainer">
+  <h2><%= @ingredient.name %></h2>
+  <hr>
+  <h6>LOCATION:</h6>
+  <% if @ingredient.location_id != nil %>
     <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
-      <li class="crumbles"><%= @ingredient.location.parent.parent.parent.name %></li>
+      <strong><%= @ingredient.location.parent.parent.parent.name %><br></strong>
     <% end %>
     <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
-      <li class="crumbles"><%= @ingredient.location.parent.parent.name %></li>
+      <strong><%= @ingredient.location.parent.parent.name %><br></strong>
     <% end %>
     <% if @ingredient.location.parent != nil %>
-      <li class="crumbles"><%= @ingredient.location.parent.name %></li>
+      <strong><%= @ingredient.location.parent.name %></strong><br>
     <% end %>
-      <li class="crumbles"><strong><%= @ingredient.location.name %></strong></li><br>
-  </ul>
-<% end %>
-
-<div class="itemLifeSpanQuantity">
-  <span>EXPIRING:<br><%= @ingredient.expiring_at %></span><br><br>
-  <span>QUANTITY:<br><%= @ingredient.quantity %></span>
+      <strong><%= @ingredient.location.name %></strong>
+    <% else %>
+    NOT SET
+  <% end %><hr>
+  <h6>CONDITION:</h6>
+  <% if @ingredient.expiring_at != nil %>
+    <% if @ingredient.expiring_at.future? %>
+      <div class="freshItem">FRESH</div>
+    <% else %>
+      <div class="expiredItem">EXPIRED</div>
+    <% end %>
+      <strong><%= @ingredient.expiring_at %></strong>
+    <% else %>
+      N/A
+  <% end %>
+  <hr>
+  <h6>QUANTITY:</h6><br>
+    <strong><%= @ingredient.quantity %></strong><br>
 </div>
 
-<% if @ingredient.location_id == nil %>
-  <%= link_to store_path do %>
-    <button class="button bigBottomButtonRight">
-      <i class="fi-clock size-48"></i><br>MOVE LATER
-    </button>
-  <% end %>
+<%= link_to  store_ingredient_locations_path(@ingredient) do %>
+  <button class="bigBottomButtonLeft"> <i class="fi-map size-48"></i></button>
 <% end %>
 
-<% if @ingredient.location_id != nil %>
-  <div class="addButton">
-    <%= form_for [@ingredient], :html => {:class => "form"} do |f| %>
-      <%= f.hidden_field :location_id, :value => nil %>
-      <br>
-      <%= f.button :submit, :class => "buttons bigBottomButtonLeft" do %>
-      <i class="fi-map size-48"></i>RELOCATE
-      <% end %>
-    <% end %>
-  </div>
-  <!-- user state will shift between root path and prepare path -->
-  <%= link_to store_path do %>
-    <button class="button bigBottomButtonRight">
-      <i class="fi-check size-48 yellowPlusButton"></i><br>DONE
-    </button>
-  <% end %>
-<% else %>
+<%= link_to store_path do %>
+  <button class="bigBottomButtonRight"> <i class="fi-home size-48"></i></button>
 <% end %>

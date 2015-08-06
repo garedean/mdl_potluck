@@ -2,15 +2,15 @@
   <table>
     <thead>
       <tr>
-        <th >ITEM</th>
-        <th width="110">EXPIRING ON</th>
+        <th width="180">ITEM</th>
+        <th width="90">EXPIRING ON</th>
         <th>CART</th>
       </tr>
     </thead>
     <tbody>
       <% @ingredients.each do |ingredient| %>
         <tr>
-          <td class="button highlightColor tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> 
+          <td class="button highlightColor tableCell tableCellWidth"> <%= link_to ingredient.name, ingredient_path(ingredient)%>
           </td>
           <td class="tableCell">
             <% if ingredient.expiring_at != nil %>

@@ -73,17 +73,17 @@
 
 
 <h2><%= @ingredient.name %></h2>
-
+<% if @ingredient.location != nil %>
+  <h4><%= @ingredient.location.name %></h2>
+  <% else %>
+  LOCATION NOT SET<br>
+<% end %>
 
 <div class="itemLifeSpanQuantity">
   <span>EXPIRING:<br><%= @ingredient.expiring_at %></span><br><br>
   <span>QUANTITY:<br><%= @ingredient.quantity %></span><br><br>
-  <% if @ingredient.location != nil %>
-    <h4><%= @ingredient.location.name %></h2>
-    <% else %>
-    LOCATION NOT SET<br>
-  <% end %>
 </div>
+
 
 <%= link_to store_ingredient_locations_path(@ingredient) do %>
   <button class="bigBottomButtonLeft">UPDATE LOCATION</button>

@@ -20,13 +20,16 @@ Rails.application.routes.draw do
       resources :ingredients
 
       member do
-        post 'add_with_location'
-       get 'review'
+        get 'review'
       end
     end
 
     resources :ingredients do
       resources :locations
+      
+      member do
+        post 'add_with_location'
+      end
     end
   end
 

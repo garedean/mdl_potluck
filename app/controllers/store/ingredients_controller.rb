@@ -8,12 +8,13 @@ class Store::IngredientsController < ApplicationController
     @locations = Location.all()
   end
 
+
   def create
     @category = Category.find(params[:category_id])
 	  @ingredient = Ingredient.new(category_id: params[:category_id])
 
     if @ingredient.save
-      redirect_to ingredient_path(@ingredient), notice: "Item added!"
+      redirect_to store_ingredient_path(@ingredient), notice: "+ITEM ADDED"
   	else
   		render 'new'
   	end
@@ -24,16 +25,10 @@ class Store::IngredientsController < ApplicationController
     @ingredient = Ingredient.new(category_id: category.id)
 
     if @ingredient.save
-      redirect_to store_ingredient_locations_path(@ingredient), notice: "Item added!"
+      redirect_to store_ingredient_locations_path(@ingredient), notice: "+ITEM ADDED!"
     else
       render 'new'
     end
-  end
-
-  def save_location
-    ingredient = Ingredient.find(params[:id])
-    ingredient.update(location_id: params[:location_id])
-    redirect_to ingredient_path(ingredient)
   end
 
   private

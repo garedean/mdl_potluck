@@ -13,7 +13,7 @@ class Store::IngredientsController < ApplicationController
 	  @ingredient = Ingredient.new(category_id: params[:category_id])
 
     if @ingredient.save
-      redirect_to store_ingredient_path(@ingredient), notice: "Item added!"
+      redirect_to ingredient_path(@ingredient), notice: "Item added!"
   	else
   		render 'new'
   	end
@@ -28,6 +28,12 @@ class Store::IngredientsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def save_location
+    ingredient = Ingredient.find(params[:id])
+    ingredient.update(location_id: params[:location_id])
+    redirect_to ingredient_path(ingredient)
   end
 
   private

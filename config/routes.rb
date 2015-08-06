@@ -21,12 +21,23 @@ Rails.application.routes.draw do
         get 'review'
       end
     end
+  end
 
+  resources :ingredients do
+    resources :locations
+
+    member do
+      post 'add_with_location'
+    end
+  end
+
+  namespace :store do
     resources :ingredients do
       resources :locations
 
       member do
         post 'add_with_location'
+        post 'save-location'
       end
     end
   end

@@ -1,3 +1,5 @@
+<!-- comment out erb -->
+<% if false %>
 <% if @ingredient.location_id == nil %>
   <ul class="breadcrumbs" id="">
     <li class="crumbles"><strong>MOVING: <%= @ingredient.name %></strong></li><br>
@@ -39,11 +41,6 @@
   </ul>
 <% end %>
 
-<div class="itemLifeSpanQuantity">
-  <span>EXPIRING:<br><%= @ingredient.expiring_at %></span><br><br>
-  <span>QUANTITY:<br><%= @ingredient.quantity %></span>
-</div>
-
 <% if @ingredient.location_id == nil %>
   <%= link_to store_path do %>
     <button class="button bigBottomButtonRight">
@@ -62,11 +59,25 @@
       <% end %>
     <% end %>
   </div>
+  <% end %>
+
   <!-- user state will shift between root path and prepare path -->
   <%= link_to store_path do %>
     <button class="button bigBottomButtonRight">
       <i class="fi-check size-48 yellowPlusButton"></i><br>DONE
     </button>
   <% end %>
-<% else %>
+  
 <% end %>
+
+
+
+<h2><%= @ingredient.name %></h2>
+<h4><%= @ingredient.location.name %></h2>
+
+<div class="itemLifeSpanQuantity">
+  <span>EXPIRING:<br><%= @ingredient.expiring_at %></span><br><br>
+  <span>QUANTITY:<br><%= @ingredient.quantity %></span>
+</div>
+
+<%= link_to "Update location", store_ingredient_locations_path(@ingredient) %>

@@ -126,10 +126,8 @@ a:hover{
 	width: 420px;
 	height: 70px;
 	line-height: 45px;
-	font-size: 270%;
+	font-size: 250%;
 	text-align: left;
-	border-radius: 5px;
-	font-weight: bold;
 }
 
 .cartButton {
@@ -151,10 +149,6 @@ a:hover{
 }
 
 .listButtons:hover {
-	color: $highlight-color;
-}
-
-.yellowPlusButton {
 	color: $highlight-color;
 }
 
@@ -198,12 +192,6 @@ a:hover{
 }
 
 /* INPUT FIELDS */
-
-.itemLifeSpanQuantity {
-	position: fixed;
-	top: 540px;
-	left: 10px;
-}
 
 .quantityField {
 	position: fixed;
@@ -276,4 +264,8 @@ ul.breadcrumbs li:before {
 .adminContainer {
 	margin-left: 35px;
 	width: 300px;
+}
+
+.itemContainer {
+  margin: 50px;
 }

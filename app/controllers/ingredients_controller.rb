@@ -73,6 +73,7 @@ class IngredientsController < ApplicationController
     item_to_remove = Ingredient.find(params[:id])
 
     current_user.cart.remove_item(item_to_remove)
+    flash[:notice] = "REMOVED ITEM"
     redirect_to :back
   end
 

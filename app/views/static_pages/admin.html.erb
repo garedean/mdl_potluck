@@ -1,12 +1,58 @@
-<%= link_to new_location_path do %>
-  <button class="fatButton button">
-    <i class="fi-plus size-48"></i><br>LOCATION
-  </button>
-<% end %>
+<div class="adminContainer">
 
-<%= link_to new_category_path do %>
-  <button class="fatButton button">
-    <i class="fi-plus size-48"></i><br>CATEGORY
-  </button>
-<% end %>
+	<table>
+	  <tr>
+	    <th class="tableCell">Users</th>
+	    <th class="tableCell">Items</th>
+	    <th class="tableCell">Categories</th>
+	    <th class="tableCell">Locations</th>
+	  </tr>
+	  <tr>
+	    <td class="tableCell"><%= @users.count %></th>
+	    <td class="tableCell" data-dropdown="drop"><%= @ingredients.count %></td>
+	    <td class="tableCell"><%= @categories.count %></td>
+	    <td class="tableCell"><%= @locations.count %></td>
+	  </tr>
+	</table>
+<hr>
+<h4>USER SETTINGS</h4>
+	<%= link_to new_category_path do %>
+	  <button class="fatButton button">
+	    MANAGE USERS
+	  </button>
+	<% end %>
+<br>
+	<%= link_to new_category_path do %>
+	  <button class="fatButton button">
+	    CART SUMMARIES
+	  </button>
+	<% end %>
+<hr>
+<h4>INVENTORY SETTINGS</h4>
+	<%= link_to new_location_path do %>
+	  <button class="fatButton button">
+	    MANAGE LOCATIONS
+	  </button>
+	<% end %>
+<br>
+	<%= link_to new_category_path do %>
+	  <button class="fatButton button">
+	    MANAGE CATEGORIES
+	  </button>
+	<% end %>
 
+<br>
+	<%= link_to new_category_path do %>
+	  <button class="fatButton button">
+	    INVENTORY SUMMARY
+	  </button>
+	<% end %>
+<br>
+	<%= link_to new_category_path do %>
+	  <button class="fatButton button">
+	    EXPIRED SUMMARY
+	  </button>
+	<% end %>
+
+
+</div>

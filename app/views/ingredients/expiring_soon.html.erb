@@ -1,5 +1,5 @@
 <div class="ingredientTable">
-  <table >
+  <table>
     <thead>
       <tr>
         <th >ITEM</th>
@@ -13,16 +13,20 @@
           <td class="button highlightColor tableCell"> <%= link_to ingredient.name, ingredient_path(ingredient)%> 
           </td>
           <td class="tableCell"> 
-            <% if ingredient.expiring_at.future? %>
-              <div class="freshItem">FRESH</div>
-            <% else %>
-              <div class="expiredItem">EXPIRED</div>
+            <% if ingredient.expiring_at != nil %>
+              <% if ingredient.expiring_at.future? %>
+                <div class="freshItem">FRESH</div>
+              <% else %>
+                <div class="expiredItem">EXPIRED</div>
+              <% end %>
+              <%= ingredient.expiring_at %>
+              <% else %>
+                N/A
             <% end %>
-            <%= ingredient.expiring_at %>
           </td>
           <td> 
             <%= link_to add_to_cart_path(ingredient), method: :post do %>
-              <div class="button highlightColor" id="listButton">
+              <div class="button highlightColor cartButton" id="listButton">
                 <i class="fi-shopping-cart size-24 makeBlack"></i>
               </div >
             <% end %>

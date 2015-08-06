@@ -5,7 +5,7 @@ class CartsController < ApplicationController
 
   def empty_cart
     remove_cart_items
-    redirect_to :back, notice: "CART EMPTIED"
+    redirect_to prepare_path, notice: "CART EMPTIED"
   end
 
   def use_all_items
@@ -14,7 +14,7 @@ class CartsController < ApplicationController
     end
 
     remove_cart_items
-    redirect_to :back , notice: "ITEMS CLAIMED"
+    redirect_to prepare_path , notice: "ITEMS CLAIMED"
   end
   
   private

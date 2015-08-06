@@ -226,14 +226,12 @@ input.quantityField {
 /* Breadcrumbs */
 
 .breadcrumbs {
-  display:inline-block;
   position: relative;
   bottom: 20px;
   height: 45px;
   border-style: none;
   box-shadow: 0 5px 0 0 #BDBDBD;
-  overflow:auto;
-  white-space: nowrap;
+  overflow-y: scroll;
 }
 
 .crumbles {
@@ -241,6 +239,7 @@ input.quantityField {
 	line-height: 35px;
   color: $main-color;
 }
+
 
 ul.breadcrumbs li:before {
   content: ">";

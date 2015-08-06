@@ -1,5 +1,5 @@
 <ul class="breadcrumbs">
-    <% if @food_item.parent != nil && @food_item.parent.parent != nil && @food_item.parent.parent.parent != nil%>
+  <% if @food_item.parent != nil && @food_item.parent.parent != nil && @food_item.parent.parent.parent != nil%>
 		<li class="crumbles"><%= @food_item.parent.parent.parent.name %></li>
 	<% end %>
 	<% if @food_item.parent != nil && @food_item.parent.parent != nil%>
@@ -11,7 +11,9 @@
     	<li class="crumbles"><strong><%= @food_item.name %></strong></li><br>
 </ul>
 
-<%= link_to "Add in location", add_with_location_store_ingredient_path(@food_item), method: :post, :class => "bigBottomButtonLeft" %>
+<%= link_to add_with_location_store_ingredient_path(@food_item), method: :post do %>
+  <button class="bigBottomButtonLeft">ADD LOCATION</button>
+<% end %>
 
 <!-- <div class="addButton">
 	<%#= form_for [:store, @category, @ingredient], :html => {:class => "form"} do |f| %>
@@ -29,7 +31,6 @@
 
 <br>
 
-<%= link_to "Add without location", store_category_ingredients_path(@food_item), method: :post, :class => "bigBottomButtonRight" %>
-
-
-<a href="javascript:history.back()" class="button fatButtonBackCommit"><br><i class="fi-arrow-left size-48"></i></a>
+<%= link_to store_category_ingredients_path(@food_item), method: :post do %>
+  <button class="bigBottomButtonRight">ADD W/O LOCATION</button>
+<% end %>

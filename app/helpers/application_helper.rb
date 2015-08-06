@@ -23,7 +23,7 @@ module ApplicationHelper
         link_to object.name, store_ingredient_location_path(category, object), class: css_classes
       else
         #link_to object.name, edit_store_ingredient_location_path(category, object), class: css_classes
-        link_to object.name, save_location_store_ingredient_path(category, location_id: object), method: :post, class: css_classes, data: {confirm: "Are you sure?"}
+        link_to object.name, save_location_store_ingredient_path(category, location_id: object), method: :post, class: css_classes, data: {confirm: "SET LOCATION?"}
       end
     # standard 'prepare' category hierarchy link
     else

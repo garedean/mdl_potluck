@@ -20,9 +20,3 @@ $(function() {
       $(this).delay(4000).fadeOut();
    });
 });
-
-$(function() {
-	$('#listButton').click(function(){
-	   $('#cartIcon').fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200);
-	});
-});

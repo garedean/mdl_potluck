@@ -147,146 +147,118 @@ Category.create(name: 'Dairy+Eggs', children:[
 # location seeds
 # ------------------------------------------------
 
-Location.create(name: 'Kitchen', children:[
-  Location.create(name: 'Under Counter'),
-  Location.create(name: 'Spice Area', children:[
-    Location.create(name: 'Spice Top Shelves'),
-    Location.create(name: 'Spice Middle Shelves'),
-    Location.create(name: 'Spice Bottom Shelves')
-  ])
-])
+l1 = Location.create(name: 'Kitchen')
+  l1.children.create(name: 'Under Counter')
+    l2 = l1.children.create(name: 'Spice Area')
+      l2.children.create(name: 'Spice Top Shelves')
+      l2.children.create(name: 'Spice Middle Shelves')
+      l2.children.create(name: 'Spice Bottom Shelves')
 
-Location.create(name: 'Dishwasher Room', children:[
-  Location.create(name: 'Deli Fridge #2', children:[
-    Location.create(name: 'Deli Left Door', children:[
-      Location.create(name: 'Left Door Top'),
-      Location.create(name: 'Left Door Middle'),
-      Location.create(name: 'Left Door Bottom')
-    ]),
-    Location.create(name: 'Deli Middle Door', children:[
-      Location.create(name: 'Middle Door Top'),
-      Location.create(name: 'Middle Door Middle'),
-      Location.create(name: 'Middle Door Bottom')
-    ]),
-    Location.create(name: 'Deli Right Door', children:[
-      Location.create(name: 'Right Door Top'),
-      Location.create(name: 'Right Door Middle'),
-      Location.create(name: 'Right Door Bottom')
-    ])
-  ]),
-  Location.create(name: 'Fridge #1', children:[
-    Location.create(name: 'Freezer (Left)', children:[
-      Location.create(name: 'Door'),
-      Location.create(name: 'Top Shelves'),
-      Location.create(name: 'Middle Shelves'),
-      Location.create(name: 'Bottom Shelves')
-    ]),
-    Location.create(name: 'Fridge (Right)', children:[
-      Location.create(name: 'Door'),
-      Location.create(name: 'Top Shelves'),
-      Location.create(name: 'Middle Shelves'),
-      Location.create(name: 'Bottom Shelves')
-    ])
-  ])
-])
+l3 = Location.create(name: 'Dishwasher Room')
+  l3.children.create(name: 'Deli Fridge #2')
+    l4 = l3.children.create(name: 'Deli Left Door')
+      l4.children.create(name: 'Left Door Top')
+      l4.children.create(name: 'Left Door Middle')
+      l4.children.create(name: 'Left Door Bottom')
+    l5 = l3.children.create(name: 'Deli Left Door')
+      l5.children.create(name: 'Middle Door Top')
+      l5.children.create(name: 'Middle Door Middle')
+      l5.children.create(name: 'Middle Door Bottom')
+    l6 = l3.children.create(name: 'Deli Left Door')
+      l6.children.create(name: 'Right Door Top')
+      l6.children.create(name: 'Right Door Middle')
+      l6.children.create(name: 'Right Door Bottom')
 
-Location.create(name: 'Loading Dock', children:[
-  Location.create(name: 'Floor'),
-  Location.create(name: 'Shelves')
-])
+  l7 = Location.create(name: 'Dishwasher Room')
+    l7.children.create(name: 'Deli Fridge #2')
+      l8 = l7.children.create(name: 'Deli Left Door')
+        l8.children.create(name: 'Door')
+        l8.children.create(name: 'Top Shelves')
+        l8.children.create(name: 'Middle Shelves')
+        l8.children.create(name: 'Bottom Shelves')
+      l9 = l3.children.create(name: 'Deli Left Door')
+        l9.children.create(name: 'Door')
+        l9.children.create(name: 'Top Shelves')
+        l9.children.create(name: 'Middle Shelves')
+        l9.children.create(name: 'Bottom Shelves')
 
-Location.create(name: 'Back Hall', children:[
-  Location.create(name: 'Shelves'),
-  Location.create(name: 'Floor'),
-  Location.create(name: 'Fridge #8', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ]),
-  Location.create(name: 'Freezer #7', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ])
-])
+  l10 = Location.create(name: 'Loading Dock')
+    l10.children.create(name: 'Floor')
+    l10.children.create(name: 'Shelves')
 
-Location.create(name: 'Back Room', children:[
-  Location.create(name: 'Freezer #3', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ]),
-  Location.create(name: 'Freezer #4', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ]),
-  Location.create(name: 'Freezer #5', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ]),
-  Location.create(name: 'Freezer #6', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ]),
-  Location.create(name: 'Shelves', children:[
-    Location.create(name: 'Cove/Closet'),
-    Location.create(name: 'Metal Racks')
-  ]),
-  Location.create(name: 'Table', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Lower Shelf')
-  ]),
-  Location.create(name: 'Floor')
-])
+  l11 = Location.create(name: 'Black Hall')
+    l11.children.create(name: 'Shelves')
+    l11.children.create(name: 'Floor')
+    l12 = l11.children.create(name: 'Fridge #8')
+      l12.children.create(name: 'Top')
+      l12.children.create(name: 'Middle')
+      l12.children.create(name: 'Bottom')
+    l13 = l3.children.create(name: 'Freezer #7')
+      l9.children.create(name: 'Top')
+      l9.children.create(name: 'Middle')
+      l9.children.create(name: 'Bottom')
 
-Location.create(name: 'Walk-In Fridge', children:[
-  Location.create(name: 'Front', children:[
-    Location.create(name: 'Left', children: [
-      Location.create(name: 'Top'),
-      Location.create(name: 'Middle'),
-      Location.create(name: 'Bottom')
-    ]),
-    Location.create(name: 'Right', children:[
-      Location.create(name: 'Top'),
-      Location.create(name: 'Middle'),
-      Location.create(name: 'Bottom')
-    ])
-  ]),
-  Location.create(name: 'Back', children:[
-    Location.create(name: 'Left', children: [
-      Location.create(name: 'Top'),
-      Location.create(name: 'Middle'),
-      Location.create(name: 'Bottom')
-    ]),
-    Location.create(name: 'Right', children:[
-      Location.create(name: 'Top'),
-      Location.create(name: 'Middle'),
-      Location.create(name: 'Bottom')
-    ])
-  ])
-])
+  l14 = Location.create(name: 'Back Room')
+    l15 = l14.children.create(name: 'Freezer #3')
+      l15.children.create(name: 'Top')
+      l15.children.create(name: 'Middle')
+      l15.children.create(name: 'Bottom')
 
-Location.create(name: 'Alleyway', children:[
-  Location.create(name: 'Building Side', children: [
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ]),
-  Location.create(name: 'Opposite Side', children:[
-    Location.create(name: 'Top'),
-    Location.create(name: 'Middle'),
-    Location.create(name: 'Bottom')
-  ])
-])
+  l16 = Location.create(name: 'Freezer #4')
+    l17 = l16.children.create(name: 'Top')
+      l17.children.create(name: 'Middle')
+      l17.children.create(name: 'Bottom')
 
-Location.create(name: 'Basement', children:[
-  Location.create(name: 'Shelves'),
-  Location.create(name: 'Table'),
-  Location.create(name: 'Floor')
-])
+  l17 = Location.create(name: 'Freezer #5')
+    l18 = l17.children.create(name: 'Top')
+      l18.children.create(name: 'Middle')
+      l18.children.create(name: 'Bottom')
+
+  l19 = Location.create(name: 'Freezer #6')
+    l20 = l19.children.create(name: 'Top')
+      l20.children.create(name: 'Middle')
+      l20.children.create(name: 'Bottom')
+
+  l21 = Location.create(name: 'Shelves')
+    l21.children.create(name: 'Cove/Closet')
+    l21.children.create(name: 'Metal Racks')
+
+  l22 = Location.create(name: 'Table')
+    l22.children.create(name: 'Top')
+    l22.children.create(name: 'Lower Shelf')
+
+  l23 = Location.create(name: 'Walk-In Fridge')
+    l24 = l23.children.create(name: 'Front')
+      l25 = l24.children.create(name: 'Left')
+        l25.children.create(name: 'Top')
+        l25.children.create(name: 'Middle')
+        l25.children.create(name: 'Bottom')
+
+      l26 = l24.children.create(name: 'Right')
+        l26.children.create(name: 'Top')
+        l26.children.create(name: 'Middle')
+        l26.children.create(name: 'Bottom')
+
+    l27 = l23.children.create(name: 'Back')
+      l28 = l27.children.create(name: 'Left')
+        l29 = l28.children.create(name: 'Top')
+          l29.children.create(name: 'Middle')
+          l29.children.create(name: 'Bottom')
+
+    l30 = Location.create(name: 'Right')
+      l31 = l30.children.create(name: 'Top')
+        l31.children.create(name: 'Middle')
+        l31.children.create(name: 'Bottom')
+
+    l32 = Location.create(name: 'Alleyway')
+      l33 = l32.children.create(name: 'Building Side')
+        l33.children.create(name: 'Top')
+        l33.children.create(name: 'Middle')
+        l33.children.create(name: 'Bottom')
+      l34 = l32.children.create(name: 'Opposite Side')
+        l34.children.create(name: 'Top')
+        l34.children.create(name: 'Middle')
+        l34.children.create(name: 'Bottom')
 
 # ingredient seeds
 # ------------------------------------------------
@@ -315,8 +287,8 @@ end
 # cart seeds
 # ------------------------------------------------
 
-# cart = Cart.create
-#
-# 40.times do
-#   cart.ingredients << Ingredient.find(r.rand(1..10))
-# end
+cart = Cart.create
+
+40.times do
+  cart.ingredients << Ingredient.find(r.rand(1..10))
+end

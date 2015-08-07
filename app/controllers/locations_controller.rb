@@ -1,11 +1,11 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.where(parent_id: nil)
+    @locations = Location.where(ancestry: nil)
   end
 
   def show
     @location = Location.find(params[:id])
-    @sublocations = Location.where(parent_id: @location.id)
+    @sublocations = @location.children
   end
 
   def edit

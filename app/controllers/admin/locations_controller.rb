@@ -1,12 +1,7 @@
 class Admin::LocationsController < ApplicationController
   def index
     @locations = Location.all
-  end
-
-  def destroy
-    @location = Location.find(params[:id])
-    @location.destroy
-    redirect_to :back, notice: "Location deleted!"
+    @location = Location.new
   end
 
   def new
@@ -14,9 +9,16 @@ class Admin::LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new(location_params)
+    @location = Location.new(location_params, parent_id: location_params[:parent_id])
+    binding.pry
     @location.save
     redirect_to admin_locations_path
+  end
+
+  def destroy
+    @location = Location.find(params[:id])
+    @location.destroy
+    redirect_to admin_locations_path, notice: "Location deleted!"
   end
 
   private

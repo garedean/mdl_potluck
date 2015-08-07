@@ -1,10 +1,7 @@
-<h2>Add Location</h2>
-
-<%= render @location.parent if @location.parent %>
+<%= @location.parent.name if @location.parent %>
 
 <%= form_for [:admin, @location] do |f| %>
   <%= f.hidden_field :parent_id %>
-  <%= f.label :name, "Location" %>
   <%= f.text_field :name %>
   <%= f.submit "Save" %>
 <% end %>

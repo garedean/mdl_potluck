@@ -2,11 +2,12 @@
 <html>
 <head>
   <title>Potluck in the Park</title>
+  <link rel="stylesheet" href="Documents/git repos/potlock/potluck/app/assets/stylesheets/foundation-icons/foundation-icons.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="Documents/git repos/potlock/potluck/app/assets/stylesheets/foundation-icons/foundation-icons.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
   <script src="http://code.angularjs.org/1.4.3/angular.min.js"></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
       <div class="navbar-header">
 
         <%= link_to store_path, class: "navbar-brand transition" do %>
-          <i class="fa fa-cubes" ></i>
+          <i class="fa fa-cube" ></i>
         <% end %>
         <% if current_user == nil %>
           <%= link_to new_user_session_path, class: "navbar-brand transition" do %>
@@ -36,7 +37,7 @@
             <i class="fa fa-shopping-cart size-18" id="cartIcon"></i> <%= current_user.cart.ingredients.count %>
           <% end %>
         <% end %>
-      
+
         <% if current_user %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-user-times navbar-brand userLogin"></i>

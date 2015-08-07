@@ -12,11 +12,11 @@
 </ul>
 
 <%= link_to add_with_location_store_ingredient_path(@food_item), method: :post do %>
-  <button class="bigBottomButtonLeft">ADD LOCATION</button>
+  <button class="bigBottomButtonLeft"><i class="fi-marker size-36"></i><br>LOCATE</button>
 <% end %>
 
 <%= link_to store_category_ingredients_path(@food_item), method: :post do %>
-  <button class="bigBottomButtonRight">ADD W/O LOCATION</button>
+  <button class="bigBottomButtonRight"><i class="fi-plus size-36"></i><br>ITEM</button>
 <% end %>
 
 <!--

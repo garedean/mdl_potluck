@@ -40,16 +40,18 @@
 </div>
 
 <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
-  <button class="bigBottomButtonLeft">RELOCATE</button>
+  <button class="bigBottomButtonLeft"><i class="fi-marker size-48"></i><br>MOVE</button>
 <% end %>
 
 <%= link_to store_path do %>
-  <button class="bigBottomButtonRight"> <i class="fi-home size-48"></i></button>
+  <button class="bigBottomButtonRight"><i class="fi-home size-48"></i><br>HOME</button>
 <% end %>
+
 
 <% if @located_item %>
   <%= render "located_quick_add" %>
 <% end %>
+
 
 <% if @unlocated_item %>
   <%= render "unlocated_quick_add" %>

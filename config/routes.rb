@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get '/prepare' => 'static_pages#prepare'
   get '/admin' => 'static_pages#admin'
+  get '/cartsummary' => 'admin#cart_summaries'
+  get '/users' => 'admin#users'
+  get '/expiredsummary' => 'admin#expired_summary'
 
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
   get '/ingredients/unarranged', to: 'ingredients#unarranged'

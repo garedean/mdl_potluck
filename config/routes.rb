@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
     member do
       post 'add_with_location'
+      post 'add_another_same_location'
     end
   end
 

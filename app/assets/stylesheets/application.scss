@@ -39,6 +39,11 @@ $highlight-color: #FFD54F;
 	color: black;
 }
 
+
+ul {
+  list-style-type: none;
+}
+
 .hidden {
   display: none;
 }
@@ -304,4 +309,51 @@ ul.breadcrumbs li:before {
 
 .itemContainer {
   margin: 50px;
+}
+
+/* LIGHTBOXES */
+
+.mobileBlock {
+  position: relative;
+}
+
+.backdrop {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(#000, .5);
+  z-index: 9998;
+}
+
+.lightbox-wrapper {
+  display: none;
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(#000, .5);
+  z-index: 9999;
+}
+
+.lightbox {
+  background: white;
+  height: 350px;
+  width: 250px;
+  padding: 20px;
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  margin: auto;
+  background: white;
+  z-index: 9999;
+}
+
+.lightbox a {
+  color: black;
+}
+
+.close-lightbox:hover {
+  cursor: pointer;
+}
+
+.fi-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

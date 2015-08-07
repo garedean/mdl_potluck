@@ -20,6 +20,12 @@ $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
       $(this).delay(4000).fadeOut();
    });
+
+   $('.fade-in').delay(100).fadeIn(500);
+
+   $('.close-lightbox').click(function() {
+     $(".lightbox-wrapper").hide();
+   });
 });
 
 $(function () {

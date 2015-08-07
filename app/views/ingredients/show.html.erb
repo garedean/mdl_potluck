@@ -30,6 +30,7 @@
       <% else %>
         N/A
     <% end %>
+
     <hr>
   </div>
   <div id="quantityFade" class="hidden">
@@ -37,10 +38,38 @@
       <strong><%= @ingredient.quantity %></strong><br>
   </div>
 </div>
-<%= link_to store_path do %>
+
+<%= link_to store_ingredient_locations_path(@ingredient) do %>
   <button class="bigBottomButtonLeft">RELOCATE</button>
 <% end %>
 
 <%= link_to store_path do %>
   <button class="bigBottomButtonRight"> <i class="fi-home size-48"></i></button>
+<% end %>
+
+<% if @show_quick_add %>
+  <div class="lightbox-wrapper fade-in">
+
+    <div class="lightbox">
+      <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
+        close
+      <% end %>
+
+      <h2>Success!</h2>
+
+      <p>You just added another '<%= @ingredient.name %>.'
+      <p>Total: <%= Ingredient.count_all_locations(@ingredient) %></p>
+      <p>This location: <%= Ingredient.count_this_location(@ingredient) %>
+
+      <ul>
+        <li>
+          <%= link_to "Add another in this location", add_another_same_location_ingredient_path(@ingredient), method: :post %>
+
+        </li>
+        <li>
+          <%= link_to "Add another somewhere else", new_store_category_ingredient_path(@ingredient.category) %>
+        </li>
+      </ul>
+    </div>
+  </div>
 <% end %>

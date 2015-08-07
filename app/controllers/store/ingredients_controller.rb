@@ -11,13 +11,15 @@ class Store::IngredientsController < ApplicationController
 
   def create
     @category = Category.find(params[:category_id])
-	  @ingredient = Ingredient.new(category_id: params[:category_id])
+    @ingredient = Ingredient.new(category_id: params[:category_id])
+    @ingredient.save
 
-    if @ingredient.save
-      redirect_to store_ingredient_path(@ingredient), notice: "+ITEM ADDED"
-  	else
-  		render 'new'
-  	end
+    if params[:create_and_place]
+      redirect_to store_ingredient_locations_path(@ingredient), notice: "Item added!"
+    else
+      redirect_to ingredient_path(@ingredient), notice: "Item added!"
+    end
+
   end
 
   def add_with_location
@@ -29,6 +31,12 @@ class Store::IngredientsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def save_location
+    ingredient = Ingredient.find(params[:id])
+    ingredient.update(location_id: params[:location_id])
+    redirect_to ingredient_path(ingredient, show_quick_add: true)
   end
 
   private

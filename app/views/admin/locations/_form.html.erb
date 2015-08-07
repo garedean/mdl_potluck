@@ -1,0 +1,7 @@
+<%= @location.parent.name if @location.parent %>
+
+<%= form_for [:admin, @location] do |f| %>
+  <%= f.hidden_field :parent_id %>
+  <%= f.text_field :name %>
+  <%= f.submit "Save" %>
+<% end %>

@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   before_filter :authenticate_user!, except: [:home]
 
-  def admin
+  def admin_main
   	@ingredients = Ingredient.all()
   	@categories = Category.all()
   	@locations = Location.all()

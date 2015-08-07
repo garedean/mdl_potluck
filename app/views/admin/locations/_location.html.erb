@@ -1,0 +1,5 @@
+<li>
+  <%= location.name %>
+  <%= link_to "Add sublocation", new_admin_location_path(parent_id: location) %>
+  <%= link_to "Delete", admin_location_path(location), confirm: "You sure?", method: :delete %>
+</li>

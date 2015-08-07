@@ -39,6 +39,14 @@ $highlight-color: #FFD54F;
 	color: black;
 }
 
+.hidden {
+  display: none;
+}
+
+.selected {
+  color: $highlight-color;
+}
+
 /* PAGE SETTINGS */
 
 a {

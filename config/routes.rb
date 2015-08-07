@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'stores#show'
 
   get '/prepare' => 'static_pages#prepare'
-  get '/admin' => 'static_pages#admin'
+  get '/admin' => 'static_pages#admin_main'
   get '/cartsummary' => 'admin#cart_summaries'
   get '/users' => 'admin#users'
   get '/expiredsummary' => 'admin#expired_summary'
@@ -54,6 +54,10 @@ Rails.application.routes.draw do
         post 'save-location'
       end
     end
+  end
+
+  namespace :admin do
+    resources :locations
   end
 
   resources :categories do

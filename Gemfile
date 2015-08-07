@@ -15,6 +15,7 @@ gem 'foundation-rails'
 gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'jquery-turbolinks'
+gem 'ancestry'
 
 group :development do
   gem 'byebug'

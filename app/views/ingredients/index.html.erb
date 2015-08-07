@@ -3,9 +3,16 @@
     <table >
       <thead>
         <tr>
-          <th width="180">ITEM ID</th>
-          <th width="90">EXPIRING ON</th>
-          <th width="30">CART</th>
+          <th width="180">
+            <% if @location != nil %>
+              <%= @location.name %>
+            <% end %>
+            <% if @category != nil %>
+              <%= @category.name %>
+            <% end %>
+          </th>
+          <th width="90"></th>
+          <th width="30"></th>
         </tr>
       </thead>
       <tbody>

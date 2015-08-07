@@ -24,7 +24,7 @@
                   <%= ingredient.name %>
                 </div >
               <% end %>
-                <span>
+                <span class="littleBreadcrumbs">
                   <% if ingredient.location_id != nil %>
                     <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
                       <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>
@@ -37,7 +37,7 @@
                     <% end %>
                       <strong><%= ingredient.location.name %></strong>
                     <% else %>
-                    NOT SET
+                    NO LOCATION
                   <% end %>
                 </span>
               </td>

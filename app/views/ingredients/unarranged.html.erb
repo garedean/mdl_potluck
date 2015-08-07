@@ -6,7 +6,7 @@
           <th width="120">NAME</th>
           <th>ITEM ID</th>
           <th>LOCATION</th>
-          <th></th>
+          <th width="100"></th>
         </tr>
       </thead>
       <tbody>
@@ -15,7 +15,13 @@
           <td class="tableCell"> <%= ingredient.name %></td>
           <td class="tableCell"> <%= ingredient.id %> </td>
           <td class="tableCell"> N/A</td>
-          <td class="button highlightColor"> <%= link_to "SET LOCATION", store_ingredient_locations_path(ingredient) %></td>
+          <td>
+            <%= link_to store_ingredient_locations_path(ingredient) do %>
+              <div class="button highlightColor setLocationButton">
+                SET LOCATION
+              </div>
+            <% end %>
+          </td>
         </tr>
         <% end %>
       </tbody>

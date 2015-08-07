@@ -1,9 +1,16 @@
-<%= @food_item.name %>
+<h3>Adding: <%= @food_item.name %></h3>
 
+<%= form_tag({controller: "ingredients", action: "create"}, method: "post") do %>
+	<label>Days until expired:</label>
+	<%= number_field_tag :days_until_expiry, "30" %>
+
+	<%= submit_tag 'Add with Location', name: 'create_and_place' %>
+	<%= submit_tag 'Add without Location' %>
+<% end %>
+
+<%#= link_to "Add in location", add_with_location_store_ingredient_path(@food_item), method: :post %>
 <br>
-
-
-<%= link_to "Add in location", add_with_location_store_ingredient_path(@food_item), method: :post %>
+<%#= link_to "Add without location", store_category_ingredients_path(@food_item), method: :post %>
 
 <!-- <div class="addButton">
 	<%#= form_for [:store, @category, @ingredient], :html => {:class => "form"} do |f| %>
@@ -18,7 +25,3 @@
 	  <%# end %>
 	<%# end %>
 </div> -->
-
-<br>
-
-<%= link_to "Add without location", store_category_ingredients_path(@food_item), method: :post %>

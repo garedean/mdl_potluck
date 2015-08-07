@@ -31,8 +31,9 @@ class IngredientsController < ApplicationController
   end
 
   def show
+    @show_quick_add = true if params[:show_quick_add]
     @ingredient = Ingredient.find(params[:id])
-    @locations = Location.all
+    #@locations = Location.all
   end
 
   def edit
@@ -75,6 +76,20 @@ class IngredientsController < ApplicationController
     current_user.cart.remove_item(item_to_remove)
     flash[:notice] = "REMOVED ITEM"
     redirect_to :back
+  end
+
+  def add_another_same_location
+    cloned_ingredient = Ingredient.find(params[:id])
+    cloned_location = cloned_ingredient.location.id
+    cloned_category = cloned_ingredient.category.id
+
+    new_ingredient = Ingredient.new(category_id: cloned_category, location_id: cloned_location)
+
+    if new_ingredient.save
+      redirect_to ingredient_path(new_ingredient, show_quick_add: true)
+    else
+      render 'new'
+    end
   end
 
   private

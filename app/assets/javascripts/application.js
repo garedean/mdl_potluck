@@ -19,4 +19,6 @@ $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
       $(this).delay(4000).fadeOut();
    });
+
+   $('.fade-in').delay(100).fadeIn(500);
 });

@@ -39,6 +39,10 @@ $highlight-color: #FFD54F;
 	color: black;
 }
 
+ul {
+  list-style-type: none;
+}
+
 /* PAGE SETTINGS */
 
 a {
@@ -262,4 +266,35 @@ input.quantityField {
 .adminContainer {
 	margin-left: 35px;
 	width: 300px;
+}
+
+/* LIGHTBOXES */
+
+.mobileBlock {
+  position: relative;
+}
+
+.backdrop {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(#000, .3);
+}
+
+.lightbox-wrapper {
+  display: none;
+}
+
+.lightbox {
+  background: white;
+  height: 350px;
+  width: 250px;
+  padding: 20px;
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  margin: auto;
+  background: white;
+}
+
+.lightbox a {
+  color: black;
 }

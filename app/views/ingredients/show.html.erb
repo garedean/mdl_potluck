@@ -70,8 +70,6 @@
 
 <% end %>
 
-
-
 <h2><%= @ingredient.name %></h2>
 <h4><%= @ingredient.location.name %></h2>
 
@@ -81,3 +79,23 @@
 </div>
 
 <%= link_to "Update location", store_ingredient_locations_path(@ingredient) %>
+
+<% if @show_quick_add %>
+<div class="lightbox-wrapper fade-in">
+
+  <div class="backdrop"></div>
+  <div class="lightbox">
+    <h1>Success!</h1>
+
+    <ul>
+      <li>
+        <%= link_to "Add another in this location", add_another_same_location_ingredient_path(@ingredient), method: :post %>
+
+      </li>
+      <li>
+        <%= link_to "Add another somewhere else", new_store_category_ingredient_path(@ingredient.category) %>
+      </li>
+    </ul>
+  </div>
+</div>
+<% end %>

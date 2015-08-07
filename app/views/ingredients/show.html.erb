@@ -31,36 +31,34 @@
         N/A
     <% end %>
 
-<<<<<<< HEAD
-    <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
-      <strong><%= @ingredient.location.parent.parent.name %><br></strong>
-    <% end %>
-    <% if @ingredient.location.parent != nil %>
-      <strong><%= @ingredient.location.parent.name %></strong><br>
-    <% end %>
-      <strong><%= @ingredient.location.name %></strong>
-    <% else %>
-    NOT SET
-  <% end %><hr>
-  <h6>CONDITION:</h6>
-  <% if @ingredient.expiring_at != nil %>
-    <% if @ingredient.expiring_at.future? %>
-      <div class="freshItem">FRESH</div>
-    <% else %>
-      <div class="expiredItem">EXPIRED</div>
-    <% end %>
-      <strong><%= @ingredient.expiring_at %></strong>
-    <% else %>
-      N/A
-  <% end %>
+    <hr>
+  </div>
+  <div id="quantityFade" class="hidden">
+    <h6>QUANTITY:</h6><br>
+      <strong><%= @ingredient.quantity %></strong><br>
+  </div>
+</div>
+<%= link_to store_ingredient_locations_path(@ingredient) do %>
+  <button class="bigBottomButtonLeft">RELOCATE</button>
+<% end %>
+
+<%= link_to store_path do %>
+  <button class="bigBottomButtonRight"> <i class="fi-home size-48"></i></button>
+<% end %>
 
 <% if @show_quick_add %>
   <div class="lightbox-wrapper fade-in">
 
     <div class="lightbox">
-      <span class="close-lightbox">close</span>
+      <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
+        close
+      <% end %>
 
-      <h1>Success!</h1>
+      <h2>Success!</h2>
+
+      <p>You just added another '<%= @ingredient.name %>.'
+      <p>Total: <%= Ingredient.count_all_locations(@ingredient) %></p>
+      <p>This location: <%= Ingredient.count_this_location(@ingredient) %>
 
       <ul>
         <li>
@@ -73,33 +71,4 @@
       </ul>
     </div>
   </div>
-<% end %>
-
-  <hr>
-
-  <h6>QUANTITY:</h6><br>
-    <strong>
-      <%= @ingredient.quantity %>
-    </strong><br>
-</div>
-
-<%= link_to store_ingredient_locations_path(@ingredient) do %>
-  <button class="bigBottomButtonLeft">RELOCATE</button>
-<% end %>
-=======
-
-    <hr>
-  </div>
-  <div id="quantityFade" class="hidden">
-    <h6>QUANTITY:</h6><br>
-      <strong><%= @ingredient.quantity %></strong><br>
-  </div>
-</div>
-<%= link_to store_path do %>
-  <button class="bigBottomButtonLeft">RELOCATE</button>
-<% end %>
-
-
-<%= link_to store_path do %>
-  <button class="bigBottomButtonRight"> <i class="fi-home size-48"></i></button>
 <% end %>

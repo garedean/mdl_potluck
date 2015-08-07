@@ -26,6 +26,16 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :relocate do
+    resources :ingredients do
+      resources :locations
+
+      member do
+        post 'change-location'
+      end
+    end
+  end
+
   resources :ingredients do
     resources :locations
 

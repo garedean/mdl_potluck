@@ -14,7 +14,7 @@
 <ul class="theList">
   <% @sublocations.each do |location| %>
     <li>
-      <%= link_to location.name, save_location_relocate_ingredient_path(@ingredient, location), method: :post, class: "button listButtons" %>
+      <%= link_to location.name, change_location_relocate_ingredient_path(@ingredient, location_id: location.id), class: "button listButtons", method: :post %>
     </li>
   <% end %>
 </ul>

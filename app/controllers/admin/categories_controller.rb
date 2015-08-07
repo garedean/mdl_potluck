@@ -1,0 +1,28 @@
+class Admin::CategoriesController < ApplicationController
+  def index
+    @categories = Category.all
+    @category = Category.new
+  end
+
+  def new
+    @category = Category.new(parent_id: params[:parent_id])
+  end
+
+  def create
+    @category = Category.new(category_params, parent_id: category_params[:parent_id])
+    @category.save
+    redirect_to admin_categories_path
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to admin_categories_path, notice: "category deleted!"
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:parent_id, :name)
+  end
+end

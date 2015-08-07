@@ -17,7 +17,7 @@ class Store::IngredientsController < ApplicationController
     if params[:create_and_place]
       redirect_to store_ingredient_locations_path(@ingredient), notice: "Item added!"
     else
-      redirect_to ingredient_path(@ingredient), notice: "Item added!"
+      redirect_to ingredient_path(@ingredient, unlocated: true), notice: "Item added!"
     end
 
   end

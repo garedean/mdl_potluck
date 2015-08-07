@@ -32,8 +32,10 @@ class Ingredient < ActiveRecord::Base
 	end
 
 	def self.count_this_location(ingredient)
-		Ingredient.where(category_id: ingredient.category.id,
-										 location_id: ingredient.location.id).size
+		if ingredient.location.class != NullLocation
+			Ingredient.where(category_id: ingredient.category.id,
+										 	 location_id: ingredient.location.id).size
+		end
 	end
 
 	def self.expiring_soon

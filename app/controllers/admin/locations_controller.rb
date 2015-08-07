@@ -10,7 +10,6 @@ class Admin::LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params, parent_id: location_params[:parent_id])
-    binding.pry
     @location.save
     redirect_to admin_locations_path
   end

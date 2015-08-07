@@ -14,6 +14,11 @@ class StaticPagesController < ApplicationController
   	  redirect_to "something"
   	else
   	  render "something"
-  	end 
+  	end
   end
+
+  def cart_summaries
+    @ingredients = Ingredient.all()
+  end
+
 end

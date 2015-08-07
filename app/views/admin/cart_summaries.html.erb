@@ -1,27 +1,19 @@
-<% if @ingredients.where(:location_id => nil).any? %>
+<% if @ingredients.where(:used_on => nil).any? %>
   <div class="ingredientTable">
     <table class="tableFontSize">
       <thead>
         <tr>
           <th width="120">NAME</th>
           <th>ITEM ID</th>
-          <th>LOCATION</th>
-          <th width="100"></th>
+          <th width="130">USED ON</th>
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where(:location_id => nil).each do |ingredient| %>
+        <% @ingredients.where.not(:used_on => nil).each do |ingredient| %>
         <tr>
           <td class="tableCell"> <%= ingredient.name %></td>
           <td class="tableCell"> <%= ingredient.id %> </td>
-          <td class="tableCell"> N/A</td>
-          <td>
-            <%= link_to store_ingredient_locations_path(ingredient) do %>
-              <div class="button highlightColor setLocationButton">
-                SET LOCATION
-              </div>
-            <% end %>
-          </td>
+          <td class="tableCell"> <%= ingredient.formatted_time_used %> </td>
         </tr>
         <% end %>
       </tbody>
@@ -35,3 +27,5 @@
     </button>
   <% end %>
 <% end %>
+
+<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

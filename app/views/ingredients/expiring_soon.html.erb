@@ -10,7 +10,12 @@
     <tbody>
       <% @ingredients.each do |ingredient| %>
         <tr>
-          <td class="button highlightColor tableCell tableCellWidth"> <%= link_to ingredient.name, ingredient_path(ingredient)%>
+          <td>
+          <%= link_to ingredient_path(ingredient) do %>
+            <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+              <%= ingredient.name %>
+            </div >
+          <% end %>
           </td>
           <td class="tableCell">
             <% if ingredient.expiring_at != nil %>

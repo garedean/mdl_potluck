@@ -11,9 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
 
 $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
@@ -26,3 +27,12 @@ $(function() {
      $(this).parent.hide();
    });
 });
+
+$(function () {
+    $('#titleFade').fadeIn(500).removeClass('hidden');
+    $('#locationFade').fadeIn(1000).removeClass('hidden');
+    $('#conditionFade').fadeIn(1500).removeClass('hidden');
+    $('#quantityFade').fadeIn(2000).removeClass('hidden');
+});
+
+//= require turbolinks

@@ -14,6 +14,7 @@ gem 'sqlite3'
 gem 'foundation-rails'
 gem 'breadcrumbs_on_rails'
 gem 'devise'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'byebug'

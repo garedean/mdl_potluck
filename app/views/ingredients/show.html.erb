@@ -1,11 +1,37 @@
 <div class="itemContainer">
-  <h2><%= @ingredient.name %></h2>
-  <hr>
-  <h6>LOCATION:</h6>
-  <% if @ingredient.location_id != nil %>
-    <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
-      <strong><%= @ingredient.location.parent.parent.parent.name %><br></strong>
+    <h2 id="titleFade" class="hidden"><%= @ingredient.name %></h2>
+    <hr>
+  <div id="locationFade" class="hidden">
+    <h6>LOCATION:</h6>
+    <% if @ingredient.location_id != nil %>
+      <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
+        <strong><%= @ingredient.location.parent.parent.parent.name %><br></strong>
+      <% end %>
+      <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
+        <strong><%= @ingredient.location.parent.parent.name %><br></strong>
+      <% end %>
+      <% if @ingredient.location.parent != nil %>
+        <strong><%= @ingredient.location.parent.name %></strong><br>
+      <% end %>
+        <strong><%= @ingredient.location.name %></strong>
+      <% else %>
+      NOT SET
+    <% end %><hr>
+  </div>
+  <div id="conditionFade" class="hidden">
+    <h6>CONDITION:</h6>
+    <% if @ingredient.expiring_at != nil %>
+      <% if @ingredient.expiring_at.future? %>
+        <div class="freshItem">FRESH</div>
+      <% else %>
+        <div class="expiredItem">EXPIRED</div>
+      <% end %>
+        <strong><%= @ingredient.expiring_at %></strong>
+      <% else %>
+        N/A
     <% end %>
+
+<<<<<<< HEAD
     <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
       <strong><%= @ingredient.location.parent.parent.name %><br></strong>
     <% end %>
@@ -60,6 +86,19 @@
 <%= link_to store_ingredient_locations_path(@ingredient) do %>
   <button class="bigBottomButtonLeft">RELOCATE</button>
 <% end %>
+=======
+
+    <hr>
+  </div>
+  <div id="quantityFade" class="hidden">
+    <h6>QUANTITY:</h6><br>
+      <strong><%= @ingredient.quantity %></strong><br>
+  </div>
+</div>
+<%= link_to store_path do %>
+  <button class="bigBottomButtonLeft">RELOCATE</button>
+<% end %>
+
 
 <%= link_to store_path do %>
   <button class="bigBottomButtonRight"> <i class="fi-home size-48"></i></button>

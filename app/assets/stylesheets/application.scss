@@ -39,8 +39,17 @@ $highlight-color: #FFD54F;
 	color: black;
 }
 
+
 ul {
   list-style-type: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.selected {
+  color: $highlight-color;
 }
 
 /* PAGE SETTINGS */

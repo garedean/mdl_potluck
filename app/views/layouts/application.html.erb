@@ -17,16 +17,16 @@
     </div>
     <nav class="navbar">
       <div class="navbar-header">
-      
-        <%= link_to store_path, class: "navbar-brand" do %>
+
+        <%= link_to store_path, class: "navbar-brand transition" do %>
           <i class="fa fa-cubes" ></i>
         <% end %>
         <% if current_user == nil %>
-          <%= link_to new_user_session_path, class: "navbar-brand" do %>
+          <%= link_to new_user_session_path, class: "navbar-brand transition" do %>
             <i class="fa fa-spoon "></i>
           <% end %>
         <% else%>
-          <%= link_to prepare_path, class: "navbar-brand" do %>
+          <%= link_to prepare_path, class: "navbar-brand transition" do %>
             <i class="fa fa-spoon" ></i>
           <% end %>
         <% end %>
@@ -36,7 +36,7 @@
             <i class="fa fa-shopping-cart size-18" id="cartIcon"></i> <%= current_user.cart.ingredients.count %>
           <% end %>
         <% end %>
-
+      
         <% if current_user %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-user-times navbar-brand userLogin"></i>

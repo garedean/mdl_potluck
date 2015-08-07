@@ -69,7 +69,7 @@ Category.create(name: 'Raw Fruits & Veggies', children:[
     Category.create(name: 'Beets'),
     Category.create(name: 'Parsnips')
   ]),
-  Category.create(name: 'Green Veg', children:[
+  Category.create(name: 'Green Veggies', children:[
     Category.create(name: 'Celery'),
     Category.create(name: 'Cucumber'),
     Category.create(name: 'Spinach'),

@@ -1,11 +1,13 @@
-<h4>Location Management</h4>
+<div class="adminControlContainer">
+  <h4>Location Management</h4>
 
-<p>This is where you can add, edit, or delete food bank locations. Be careful though! If you delete a top level location, all elements nested underneath it will be deleted too!</p>
+  <p>This is where you can add, edit, or delete food bank locations. Be careful though! If you delete a top level location, all elements nested underneath it will be deleted too!</p>
 
-<ul>
-  <%= nested_locations @locations.arrange(order: :name) %>
-</ul>
+  <ul>
+    <%= nested_locations @locations.arrange(order: :name) %>
+  </ul>
 
-<h4>Add a Top Level Location</h4>
+  <h4>Add a Top Level Location</h4>
 
-<%= render "form" %>
+  <%= render "form" %>
+</div>

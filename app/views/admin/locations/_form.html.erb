@@ -3,5 +3,5 @@
 <%= form_for [:admin, @location] do |f| %>
   <%= f.hidden_field :parent_id %>
   <%= f.text_field :name %>
-  <%= f.submit "Save" %>
+  <%= f.submit "Save", :class => "button" %>
 <% end %>

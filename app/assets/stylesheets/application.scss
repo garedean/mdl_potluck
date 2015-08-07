@@ -68,7 +68,7 @@ a:hover{
 
 .userLogin {
 	position: fixed;
-	top: 5px;
+	top: 4px;
 	left: 320px;
 }
 
@@ -130,10 +130,8 @@ a:hover{
 	width: 420px;
 	height: 70px;
 	line-height: 45px;
-	font-size: 270%;
+	font-size: 250%;
 	text-align: left;
-	border-radius: 5px;
-	font-weight: bold;
 }
 
 .cartButton {
@@ -149,6 +147,12 @@ a:hover{
 	opacity: .3;
 }
 
+.adminButtons {
+	width: 160px;
+  background-color: $highlight-color;
+  color: black;
+}
+
 .arrangeReturn {
 	margin-left: 55px;
 	margin-top: 50px;
@@ -158,14 +162,17 @@ a:hover{
 	color: $highlight-color;
 }
 
-.yellowPlusButton {
-	color: $highlight-color;
-}
 
 /* TABLES */
 
 .tableCell {
 	font-size: 85%;
+}
+
+.tableCellWidth {
+  width: 140px;
+  height: 50px;
+  line-height: 30px;
 }
 
 .ingredientTable {
@@ -203,12 +210,6 @@ a:hover{
 
 /* INPUT FIELDS */
 
-.itemLifeSpanQuantity {
-	position: fixed;
-	top: 540px;
-	left: 10px;
-}
-
 .quantityField {
 	position: fixed;
 	left: 86px;
@@ -229,10 +230,24 @@ input.quantityField {
 
 /* Breadcrumbs */
 
+.breadcrumbs {
+  position: relative;
+  bottom: 20px;
+  height: 45px;
+  border-style: none;
+  box-shadow: 0 5px 0 0 #BDBDBD;
+  overflow-y: scroll;
+}
+
 .crumbles {
 	font-size: 140%;
-	line-height: 20px;
-	color: black;
+	line-height: 35px;
+  color: $main-color;
+}
+
+
+ul.breadcrumbs li:before {
+  content: ">";
 }
 
 /* FOUNDATION ICON SIZES */
@@ -266,6 +281,11 @@ input.quantityField {
 .adminContainer {
 	margin-left: 35px;
 	width: 300px;
+  text-align: center;
+}
+
+.itemContainer {
+  margin: 50px;
 }
 
 /* LIGHTBOXES */
@@ -277,11 +297,16 @@ input.quantityField {
 .backdrop {
   position: absolute;
   top:0; left:0; right:0; bottom:0;
-  background: rgba(#000, .3);
+  background: rgba(#000, .5);
+  z-index: 9998;
 }
 
 .lightbox-wrapper {
   display: none;
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(#000, .5);
+  z-index: 9999;
 }
 
 .lightbox {
@@ -293,8 +318,13 @@ input.quantityField {
   top:0; left:0; right:0; bottom:0;
   margin: auto;
   background: white;
+  z-index: 9999;
 }
 
 .lightbox a {
   color: black;
+}
+
+.close-lightbox:hover {
+  cursor: pointer;
 }

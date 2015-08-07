@@ -1,3 +1,16 @@
+<ul class="breadcrumbs">
+  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
+  <% end %>
+  <% if @location.parent != nil && @location.parent.parent != nil%>
+  <li class="crumbles"><%= @location.parent.parent.name %></li>
+  <% end %>
+  <% if @location.parent != nil %>
+  <li class="crumbles"><%= @location.parent.name %></li>
+  <% end %>
+    <li class="crumbles"><%= @location.name %></li>
+</ul>
+
 <ul class="theList">
   <% @sublocations.each do |location| %>
     <li>
@@ -5,3 +18,5 @@
     </li>
   <% end %>
 </ul>
+
+<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

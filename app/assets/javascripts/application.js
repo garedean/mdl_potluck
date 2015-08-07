@@ -21,4 +21,8 @@ $(function() {
    });
 
    $('.fade-in').delay(100).fadeIn(500);
+
+   $('.close-lightbox').click(function() {
+     $(this).parent.hide();
+   });
 });

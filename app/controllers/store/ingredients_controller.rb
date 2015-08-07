@@ -5,7 +5,9 @@ class Store::IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
+    @locations = Location.all()
   end
+
 
   def create
     @category = Category.find(params[:category_id])
@@ -25,7 +27,7 @@ class Store::IngredientsController < ApplicationController
     @ingredient = Ingredient.new(category_id: category.id)
 
     if @ingredient.save
-      redirect_to store_ingredient_locations_path(@ingredient), notice: "Item added!"
+      redirect_to store_ingredient_locations_path(@ingredient), notice: "+ITEM ADDED!"
     else
       render 'new'
     end

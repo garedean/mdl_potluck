@@ -14,7 +14,7 @@
         <tr>
           <td><h5><%= cart_item.name %></h5></td>
           <td><%= cart_item.id %></td>
-          <td class="tableCell"> 
+          <td class="tableCell">
             <% if cart_item.expiring_at != nil %>
               <% if cart_item.expiring_at.future? %>
                 <div class="freshItem">FRESH</div>
@@ -26,7 +26,7 @@
                 N/A
             <% end %>
           </td>
-          <td> 
+          <td>
              <%= link_to remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart do %>
              	<i class="fi-x-circle size-24 makeBlack" id="listButton"></i>
              <% end %>
@@ -38,14 +38,13 @@
 </div>
 
 <%= link_to use_all_items_path, method: :post do %>
-  <button class="button bigBottomButtonRight">
+  <button class="bigBottomButtonRight">
     <i class="fa fa-spoon"></i><br>USE
   </button>
 <% end %>
 
 <%= link_to empty_cart_path, method: :post do %>
-  <button class="button bigBottomButtonLeft">
+  <button class="bigBottomButtonLeft">
     <i class="fa fa-cart-arrow-down"></i><br>EMPTY
   </button>
 <% end %>
-

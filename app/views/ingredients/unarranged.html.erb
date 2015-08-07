@@ -15,7 +15,7 @@
           <td class="tableCell"> <%= ingredient.name %></td>
           <td class="tableCell"> <%= ingredient.id %> </td>
           <td class="tableCell"> N/A</td>
-          <td class="button highlightColor"> <%= link_to "SET LOCATION", ingredient_path(ingredient) %></td>
+          <td class="button highlightColor"> <%= link_to "SET LOCATION", store_ingredient_locations_path(ingredient) %></td>
         </tr>
         <% end %>
       </tbody>

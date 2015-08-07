@@ -3,16 +3,15 @@
     <table >
       <thead>
         <tr>
-          <th width="50">ITEM ID</th>
-          <th width="80">EXPIRING ON</th>
-          <th>LOCATION</th>
+          <th width="180">ITEM ID</th>
+          <th width="90">EXPIRING ON</th>
           <th width="30">CART</th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.each do |ingredient| %>
           <tr>
-            <td class="button tableCell highlightColor"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
+            <td class="button tableCell highlightColor tableCellWidth"> <%= link_to ingredient.name, ingredient_path(ingredient)%> </td>
              <td class="tableCell">
               <% if ingredient.expiring_at != nil %>
                 <% if ingredient.expiring_at.future? %>
@@ -25,7 +24,6 @@
                   N/A
               <% end %>
             </td>
-            <td class="tableCell"> <%= ingredient.location_id %></td>
             <td>
               <%= link_to add_to_cart_path(ingredient), method: :post do %>
                 <div class="button highlightColor cartButton" id="listButton">

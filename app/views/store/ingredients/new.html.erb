@@ -1,27 +1,29 @@
-<h3>Adding: <%= @food_item.name %></h3>
+<ul class="breadcrumbs">
+  <% if @food_item.parent != nil && @food_item.parent.parent != nil && @food_item.parent.parent.parent != nil%>
+		<li class="crumbles"><%= @food_item.parent.parent.parent.name %></li>
+	<% end %>
+	<% if @food_item.parent != nil && @food_item.parent.parent != nil%>
+		<li class="crumbles"><%= @food_item.parent.parent.name %></li>
+	<% end %>
+	<% if @food_item.parent != nil %>
+		<li class="crumbles"><%= @food_item.parent.name %></li>
+	<% end %>
+    	<li class="crumbles"><strong><%= @food_item.name %></strong></li><br>
+</ul>
 
+<%= link_to add_with_location_store_ingredient_path(@food_item), method: :post do %>
+  <button class="bigBottomButtonLeft">ADD LOCATION</button>
+<% end %>
+
+<%= link_to store_category_ingredients_path(@food_item), method: :post do %>
+  <button class="bigBottomButtonRight">ADD W/O LOCATION</button>
+<% end %>
+
+<!--
 <%= form_tag({controller: "ingredients", action: "create"}, method: "post") do %>
 	<label>Days until expired:</label>
 	<%= number_field_tag :days_until_expiry, "30" %>
 
 	<%= submit_tag 'Add with Location', name: 'create_and_place' %>
 	<%= submit_tag 'Add without Location' %>
-<% end %>
-
-<%#= link_to "Add in location", add_with_location_store_ingredient_path(@food_item), method: :post %>
-<br>
-<%#= link_to "Add without location", store_category_ingredients_path(@food_item), method: :post %>
-
-<!-- <div class="addButton">
-	<%#= form_for [:store, @category, @ingredient], :html => {:class => "form"} do |f| %>
-	  <span class="quantityLabel">QUANTITY</span>
-	  <%#= f.number_field :quantity, :class => 'quantityField', cols: "30" %>
-	  <%#= f.hidden_field :category_id, :value => @category.id %>
-	  <%#= f.hidden_field :expiring_at, :value => @category.expiring_at %>
-	  <%#= f.hidden_field :location_id, :value => nil %>
-	  <%#= f.hidden_field :name, :value => @category.name %>
-	  <%#= f.button :submit, :class => "button bigBottomButtonRight" do %>
-      <i class="fi-plus size-48 yellowPlusButton"></i><br>COMMIT
-	  <%# end %>
-	<%# end %>
-</div> -->
+<% end %> -->

@@ -11,7 +11,8 @@ class IngredientsController < ApplicationController
       else
         Ingredient.all
       end
-
+      @location = Location.find_by_id(params[:location_id])
+      @category = Category.find_by_id(params[:category_id])
   	@ingredients = resource_ingredients - cart_items
   end
 

@@ -32,7 +32,7 @@ $(function () {
     $('#titleFade').fadeIn(500).removeClass('hidden');
     $('#locationFade').fadeIn(1000).removeClass('hidden');
     $('#conditionFade').fadeIn(1500).removeClass('hidden');
-    $('#quantityFade').fadeIn(2000).removeClass('hidden');
+    $('#quantityFade').fadeIn(2000).removeClassa('hidden');
 });
 
 //= require turbolinks

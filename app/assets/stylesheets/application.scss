@@ -178,10 +178,13 @@ a:hover{
 }
 
 .tableCellWidth {
-  width: 140px;
+  width: 160px;
   height: 50px;
+  bottom: 6px;
+  right: 5px;
   line-height: 30px;
   box-shadow: 0 2px 2px 0 #BDBDBD;
+  font-size: 150%;
 }
 
 .ingredientTable {

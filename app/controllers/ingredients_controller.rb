@@ -32,7 +32,8 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    @show_quick_add = true if params[:show_quick_add]
+    @located_item = true if params[:show_quick_add]
+    @unlocated_item = true if params[:unlocated]
     @ingredient = Ingredient.find(params[:id])
     #@locations = Location.all
   end

@@ -5,22 +5,22 @@
       	<i class="fi-x-circle size-24 makeBlack pull-right"></i>
     <% end %>
 
-    <h3>Success</h3>
     <hr>
     <h5>You just added '<%= @ingredient.name %>'</h5>
     <p>Total #: <%= Ingredient.count_all_locations(@ingredient) %></p>
     <p>Item was added without placing it in a location.</p>
-<hr>
-    <%= link_to store_category_ingredients_path(@ingredient, category_id: @ingredient.category.id), method: :post do %>
+    <hr>
+    <h4 style="text-align: center;">Add Another</h4><br>
+    <%= link_to new_store_category_ingredient_path(@ingredient.category) do %>
       <div class="button highlightColor cartButton lightboxButtonLeft">
-        <i class="fi-plus size-24 makeBlack"></i> Another w/o location
+        <br><i class="fi-plus size-24 makeBlack"></i><br>With Location
       </div >
     <% end %>
 
-    <%= link_to new_store_category_ingredient_path(@ingredient.category) do %>
+    <%= link_to store_category_ingredients_path(@ingredient, category_id: @ingredient.category.id), method: :post do %>
       <div class="button highlightColor cartButton lightboxButtonRight">
-        <i class="fi-plus size-24 makeBlack"></i><br> Another<br> w/<br> location
-      </div >
+        <br><i class="fi-plus size-24 makeBlack"></i><br>Without Location
+      </div>
     <% end %>
 
   </div>

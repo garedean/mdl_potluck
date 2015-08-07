@@ -24,6 +24,22 @@
                   <%= ingredient.name %>
                 </div >
               <% end %>
+                <span>
+                  <% if ingredient.location_id != nil %>
+                    <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
+                      <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>
+                    <% end %>
+                    <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil%>
+                      <strong><%= ingredient.location.parent.parent.name %> ></strong>
+                    <% end %>
+                    <% if ingredient.location.parent != nil %>
+                      <strong><%= ingredient.location.parent.name %> ></strong>
+                    <% end %>
+                      <strong><%= ingredient.location.name %></strong>
+                    <% else %>
+                    NOT SET
+                  <% end %>
+                </span>
               </td>
               <td class="tableCell">
               <% if ingredient.expiring_at != nil %>

@@ -5,6 +5,7 @@ r = Random.new
 # category seeds
 # ------------------------------------------------
 
+<<<<<<< HEAD
 c1 = Category.create(name: 'Meats')
   c2 = c1.children.create(name: 'Chicken')
     c2.children.create(name: 'Whole Chicken')

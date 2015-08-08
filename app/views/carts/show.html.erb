@@ -11,7 +11,26 @@
     <tbody>
       <% @cart_items.each do |cart_item| %>
         <tr>
-          <td><h5><%= cart_item.name %></h5></td>
+          <td><h5><%= cart_item.name %></h5>
+
+            <span class="littleBreadcrumbs">
+              <% if cart_item.location_id != nil %>
+                <% if cart_item.location.parent != nil && cart_item.location.parent.parent != nil && cart_item.location.parent.parent.parent != nil%>
+                  <strong><%= cart_item.location.parent.parent.parent.name %> ></strong>
+                <% end %>
+                <% if cart_item.location.parent != nil && cart_item.location.parent.parent != nil%>
+                  <strong><%= cart_item.location.parent.parent.name %> ></strong>
+                <% end %>
+                <% if cart_item.location.parent != nil %>
+                  <strong><%= cart_item.location.parent.name %> ></strong>
+                <% end %>
+                  <strong><%= cart_item.location.name %></strong>
+                <% else %>
+                NO LOCATION
+              <% end %>
+            </span>
+
+          </td>
           <td><%= cart_item.id %></td>
           <td class="tableCell">
             <% if cart_item.expiring_at != nil %>

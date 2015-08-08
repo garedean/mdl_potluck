@@ -274,6 +274,12 @@ input.quantityField {
   overflow-y: scroll;
 }
 
+.littleBreadcrumbs {
+  position: relative;
+  color: #616161;
+  bottom: 5px;
+}
+
 .crumbles {
 	font-size: 140%;
 	line-height: 35px;
@@ -319,8 +325,25 @@ ul.breadcrumbs li:before {
   text-align: center;
 }
 
+.adminControlContainer {
+  margin-left: 25px;
+  margin-right: 25px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 570px;
+}
+
 .itemContainer {
   margin: 50px;
+}
+
+.addSublocation {
+
+}
+
+.deleteSublocation {
+  position: relative;
+  left: 40px;
 }
 
 /* LIGHTBOXES */

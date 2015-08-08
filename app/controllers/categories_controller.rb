@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
   def index
-  	@food_categories = Category.where(parent_id: nil)
+  	@food_categories = Category.where(ancestry: nil)
   end
 
   def show
     @food_category = Category.find(params[:id])
-    @food_category_children = Category.where(parent_id: @food_category.id)
+    @food_category_children = @food_category.children
   end
 end

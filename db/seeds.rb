@@ -5,144 +5,135 @@ r = Random.new
 # category seeds
 # ------------------------------------------------
 
-Category.create(name: 'Meats', children:[
-  Category.create(name: 'Chicken', children:[
-    Category.create(name: 'Whole Chicken'),
-    Category.create(name: 'Chicken Breast'),
-    Category.create(name: 'Chicken Legs'),
-    Category.create(name: 'Chicken Drumstick'),
-    Category.create(name: 'Ground Chicken')
-  ]),
-  Category.create(name: 'Beef', children:[
-    Category.create(name: 'Beef Steak'),
-    Category.create(name: 'Beef Roast'),
-    Category.create(name: 'Ground Beef')
-  ]),
-  Category.create(name: 'Turkey', children:[
-    Category.create(name: 'Whole Turkey'),
-    Category.create(name: 'Turkey Breast'),
-    Category.create(name: 'Ground Turkey')
-  ]),
-  Category.create(name: 'Pork', children:[
-    Category.create(name: 'Pork Chops'),
-    Category.create(name: 'Pork Roast'),
-    Category.create(name: 'Ground Pork')
-  ]),
-  Category.create(name: 'Buffalo', children:[
-    Category.create(name: 'Buffalo Steak'),
-    Category.create(name: 'Buffalo Roast'),
-    Category.create(name: 'Ground Buffalo')
-  ]),
-  Category.create(name: 'Lamb', children:[
-    Category.create(name: 'Lamb Steak'),
-    Category.create(name: 'Lamb Roast'),
-    Category.create(name: 'Ground Lamb')
-  ]),
-  Category.create(name: 'Fish', children:[
-    Category.create(name: 'Salmon', children:[
-      Category.create(name: 'Whole Salmon'),
-      Category.create(name: 'Salmon Fillet'),
-      Category.create(name: 'Salmon Steaks')
-    ]),
-    Category.create(name: 'White fish', children:[
-      Category.create(name: 'Whole Whitefish'),
-      Category.create(name: 'Whitefish Fillet')
-    ])
-  ]),
-  Category.create(name: 'Shellfish', children:[
-    Category.create(name: 'Shrimp'),
-    Category.create(name: 'Clams'),
-    Category.create(name: 'Mussels')
-  ])
-])
+<<<<<<< HEAD
+c1 = Category.create(name: 'Meats')
+  c2 = c1.children.create(name: 'Chicken')
+    c2.children.create(name: 'Whole Chicken')
+    c2.children.create(name: 'Chicken Breast')
+    c2.children.create(name: 'Chicken Legs')
+    c2.children.create(name: 'Chicken Drumstick')
+    c2.children.create(name: 'Ground Chicken')
 
-Category.create(name: 'Raw Fruits & Veggies', children:[
-  Category.create(name: 'Potatoes', children:[
-    Category.create(name: 'Russet'),
-    Category.create(name: 'Red'),
-    Category.create(name: 'Yukon'),
-    Category.create(name: 'Sweet/Yams')
-  ]),
-  Category.create(name: 'Roots', children:[
-    Category.create(name: 'Carrots'),
-    Category.create(name: 'Radishes'),
-    Category.create(name: 'Beets'),
-    Category.create(name: 'Parsnips')
-  ]),
-  Category.create(name: 'Green Veggies', children:[
-    Category.create(name: 'Celery'),
-    Category.create(name: 'Cucumber'),
-    Category.create(name: 'Spinach'),
-    Category.create(name: 'Lettuce')
-  ]),
-  Category.create(name: 'Mushrooms', children:[
-    Category.create(name: 'White'),
-    Category.create(name: 'Portabello'),
-    Category.create(name: 'Crimini')
-  ]),
-  Category.create(name: 'Squashes', children:[
-    Category.create(name: 'Pumpkins'),
-    Category.create(name: 'Acorn Sq.'),
-    Category.create(name: 'Butternut Sq.'),
-    Category.create(name: 'Spaghetti Sq.')
-  ]),
-  Category.create(name: 'Onions+Garlic', children:[
-    Category.create(name: 'Yellow On.'),
-    Category.create(name: 'White On.'),
-    Category.create(name: 'Garlic'),
-    Category.create(name: 'Green On.'),
-    Category.create(name: 'Leeks'),
-    Category.create(name: 'Shallots')
-  ])
-])
+  c3 = c1.children.create(name: 'Beef')
+    c3.children.create(name: 'Beef Steak')
+    c3.children.create(name: 'Beef Roast')
+    c3.children.create(name: 'Ground Beef')
 
-Category.create(name: 'Grains+Beans', children:[
-  Category.create(name: 'Flour'),
-  Category.create(name: 'Whole Grains'),
-  Category.create(name: 'Beans')
-])
+  c4 = c1.children.create(name: 'Turkey')
+    c4.children.create(name: 'Whole Turkey')
+    c4.children.create(name: 'Turkey Breast')
+    c4.children.create(name: 'Ground Turkey')
 
-Category.create(name: 'Baked Goods+Sweets', children:[
-  Category.create(name: 'Bread'),
-  Category.create(name: 'Cake'),
-  Category.create(name: 'Candy'),
-  Category.create(name: 'Pastries')
-])
+  c5 = c1.children.create(name: 'Pork')
+    c5.children.create(name: 'Pork Chops')
+    c5.children.create(name: 'Pork Roast')
+    c5.children.create(name: 'Ground Pork')
 
-Category.create(name: 'Seasonings', children:[
-  Category.create(name: 'Herbs', children:[
-    Category.create(name: 'Rosemary'),
-    Category.create(name: 'Parsley'),
-    Category.create(name: 'Sage'),
-    Category.create(name: 'Thyme')
-  ]),
-  Category.create(name: 'Spices', children:[
-    Category.create(name: 'Cumin'),
-    Category.create(name: 'Paprika'),
-    Category.create(name: 'Coriander'),
-    Category.create(name: 'China 5 Spice')
-  ]),
-  Category.create(name: 'Salt')
-])
+  c6 = c1.children.create(name: 'Buffalo')
+    c6.children.create(name: 'Buffalo Steak')
+    c6.children.create(name: 'Buffalo Roast')
+    c6.children.create(name: 'Ground Buffalo')
 
-Category.create(name: 'Bottles+Cans+Jars+Bags', children:[
-  Category.create(name: 'Bottles', children:[
-    Category.create(name: 'Vinegar'),
-    Category.create(name: 'Oil'),
-    Category.create(name: 'Condiment'),
-    Category.create(name: 'Beverage')
-  ]),
-  Category.create(name: 'Cans'),
-  Category.create(name: 'Jars'),
-  Category.create(name: 'Bags')
-])
+  c7 = c1.children.create(name: 'Lamb')
+    c7.children.create(name: 'Lamb Steak')
+    c7.children.create(name: 'Lamb Roast')
+    c7.children.create(name: 'Ground Lamb')
 
-Category.create(name: 'Dairy+Eggs', children:[
-  Category.create(name: 'Milk'),
-  Category.create(name: 'Eggs'),
-  Category.create(name: 'Butter'),
-  Category.create(name: 'Cream')
-])
+  c8 = c1.children.create(name: 'Fish')
+    c9 = c8.children.create(name: 'Salmon')
+      c9.children.create(name: 'Whole Salmon')
+      c9.children.create(name: 'Salmon Fillet')
+      c9.children.create(name: 'Salmon Steaks')
+
+    c10 = c8.children.create(name: 'White fish')
+      c10.children.create(name: 'Whole Whitefish')
+      c10.children.create(name: 'Whitefish Fillet')
+
+  c11 = c1.children.create(name: 'Shellfish')
+    c11.children.create(name: 'Shrimp')
+    c11.children.create(name: 'Clams')
+    c11.children.create(name: 'Mussels')
+
+
+c12 = Category.create(name: 'Raw Fruits & Veggies')
+  c13 = c12.children.create(name: 'Potatoes')
+    c13.children.create(name: 'Russet')
+    c13.children.create(name: 'Red')
+    c13.children.create(name: 'Yukon')
+    c13.children.create(name: 'Sweet/Yams')
+
+  c14 = Category.create(name: 'Roots')
+    c14.children.create(name: 'Carrots')
+    c14.children.create(name: 'Radishes')
+    c14.children.create(name: 'Beets')
+    c14.children.create(name: 'Parsnips')
+
+  c16 = Category.create(name: 'Green Veg')
+    c16.children.create(name: 'Celery')
+    c16.children.create(name: 'Cucumber')
+    c16.children.create(name: 'Spinach')
+    c16.children.create(name: 'Lettuce')
+
+  c17 = Category.create(name: 'Mushrooms')
+    c17.children.create(name: 'White')
+    c17.children.create(name: 'Portabello')
+    c17.children.create(name: 'Crimini')
+
+  c18 = Category.create(name: 'Squashes')
+    c18.children.create(name: 'Pumpkins')
+    c18.children.create(name: 'Acorn Sq.')
+    c18.children.create(name: 'Butternut Sq.')
+    c18.children.create(name: 'Spaghetti Sq.')
+
+  c19 = Category.create(name: 'Onions+Garlic')
+    c19.children.create(name: 'Yellow On.')
+    c19.children.create(name: 'White On.')
+    c19.children.create(name: 'Garlic')
+    c19.children.create(name: 'Green On.')
+    c19.children.create(name: 'Leeks')
+    c19.children.create(name: 'Shallots')
+
+c20 = Category.create(name: 'Grains+Beans')
+  c20.children.create(name: 'Flour')
+  c20.children.create(name: 'Whole Grains')
+  c20.children.create(name: 'Beans')
+
+c21 = Category.create(name: 'Baked Goods+Sweets')
+  c21.children.create(name: 'Bread')
+  c21.children.create(name: 'Cake')
+  c21.children.create(name: 'Candy')
+  c21.children.create(name: 'Pastries')
+
+c22 = Category.create(name: 'Seasonings')
+  c23 = c22.children.create(name: 'Herbs')
+    c23.children.create(name: 'Rosemary')
+    c23.children.create(name: 'Parsley')
+    c23.children.create(name: 'Sage')
+    c23.children.create(name: 'Thyme')
+
+  c24 = c22.children.create(name: 'Spices')
+    c24.children.create(name: 'Cumin')
+    c24.children.create(name: 'Paprika')
+    c24.children.create(name: 'Coriander')
+    c24.children.create(name: 'China 5 Spice')
+    c24.children.create(name: 'Salt')
+
+c26 = Category.create(name: 'Bottles+Cans+Jars+Bags')
+  c27 = c26.children.create(name: 'Bottles')
+    c27.children.create(name: 'Vinegar')
+    c27.children.create(name: 'Oil')
+    c27.children.create(name: 'Condiment')
+    c27.children.create(name: 'Beverage')
+
+  c26.children.create(name: 'Cans')
+  c26.children.create(name: 'Jars')
+  c26.children.create(name: 'Bags')
+
+c28 = Category.create(name: 'Dairy+Eggs')
+  c28.children.create(name: 'Milk')
+  c28.children.create(name: 'Eggs')
+  c28.children.create(name: 'Butter')
+  c28.children.create(name: 'Cream')
 
 # location seeds
 # ------------------------------------------------

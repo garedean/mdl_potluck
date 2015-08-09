@@ -10,7 +10,7 @@
     <p>Total #: <%= Ingredient.count_all_locations(@ingredient) %></p>
     <p>Item was added without placing it in a location.</p>
     <hr>
-    <h4 style="text-align: center;">Add Another</h4><br>
+
     <%= link_to new_store_category_ingredient_path(@ingredient.category) do %>
       <div class="button highlightColor cartButton lightboxButtonLeft">
         <br><i class="fi-plus size-24 makeBlack"></i><br>With Location
@@ -22,6 +22,6 @@
         <br><i class="fi-plus size-24 makeBlack"></i><br>Without Location
       </div>
     <% end %>
-
+    <h4 style="text-align: center;">Add Another</h4><br>
   </div>
 </div>

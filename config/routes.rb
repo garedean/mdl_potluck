@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   namespace :store do
     resources :categories do
+      resources :locations
       resources :ingredients
 
       member do

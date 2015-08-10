@@ -215,6 +215,7 @@ a:hover{
 	width: 355px;
 	height: 580px;
 	overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .cartTable {
@@ -396,9 +397,21 @@ ul.breadcrumbs li:before {
   z-index: 9999;
 }
 
-.lightbox {
+.lightboxUnlocated {
   background: white;
-  height: 350px;
+  height: 355px;
+  width: 250px;
+  padding: 20px;
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  margin: auto;
+  background: white;
+  z-index: 9999;
+}
+
+.lightboxLocated {
+  background: white;
+  height: 380px;
   width: 250px;
   padding: 20px;
   position: absolute;
@@ -417,8 +430,10 @@ ul.breadcrumbs li:before {
 }
 
 .lightBoxClose {
+  background-color: white;
+  border-width: 2px;
+  border-color: black;
   width: 197px;
-  background-color: #BDBDBD;
   bottom: 50px;
   left: 7px;
 }

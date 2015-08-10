@@ -16,6 +16,7 @@ gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'jquery-turbolinks'
 gem 'ancestry'
+gem 'touch_action'
 
 group :development do
   gem 'byebug'

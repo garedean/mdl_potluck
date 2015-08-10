@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-
 $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
       $(this).delay(4000).fadeOut();

@@ -8,22 +8,28 @@
 	<% if @food_item.parent != nil %>
 		<li class="crumbles"><%= @food_item.parent.name %></li>
 	<% end %>
-    	<li class="crumbles"><strong><%= @food_item.name %></strong></li><br>
+    <li class="crumbles"><strong><%= @food_item.name %></strong></li><br>
 </ul>
+
+<div class="expirationSelector">
+    EXPIRATION DATE
+    <img src="https://forrst-live.s3.amazonaws.com/multiposts/images/15438/original.png?1350490049">
+</div>
 
 <%= link_to add_with_location_store_ingredient_path(@food_item), method: :post do %>
   <button class="bigBottomButtonLeft"><i class="fi-marker size-36"></i><br>LOCATE</button>
 <% end %>
 
 <%= link_to store_category_ingredients_path(@food_item), id: "add-item", method: :post do %>
-  <button class="bigBottomButtonRight"><i class="fi-plus size-36"></i><br>ITEM</button>
+  <button class="bigBottomButtonRight"><i class="fi-plus size-36"></i><br>ITEM W/O LOCATION</button>
 <% end %>
 
-<!--
-<%= form_tag({controller: "ingredients", action: "create"}, method: "post") do %>
-	<label>Days until expired:</label>
-	<%= number_field_tag :days_until_expiry, "30" %>
+<% if false %>
+  <%= form_tag({controller: "ingredients", action: "create"}, method: "post") do %>
+  	<label>Days until expired:</label>
+  	<%= number_field_tag :days_until_expiry, "30" %>
 
-	<%= submit_tag 'Add with Location', name: 'create_and_place' %>
-	<%= submit_tag 'Add without Location' %>
-<% end %> -->
+  	<%= submit_tag 'Add with Location', name: 'create_and_place' %>
+  	<%= submit_tag 'Add without Location' %>
+  <% end %>
+<% end %>

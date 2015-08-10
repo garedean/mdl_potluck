@@ -1,12 +1,12 @@
 <div class="lightbox-wrapper fade-in">
 
-  <div class="lightbox">
+  <div class="lightboxUnlocated">
     <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
       	<i class="fi-x-circle size-24 makeBlack pull-right"></i>
     <% end %>
 
-    <hr>
-    <h5>You just stored a new item: '<%= @ingredient.name %>'</h5>
+    <h5>You just added '<%= @ingredient.name %>'</h5>
+
     <p>Total #:
       <span id="item-count">
         <%= Ingredient.count_all_locations(@ingredient) %>
@@ -17,15 +17,20 @@
 
     <%= link_to new_store_category_ingredient_path(@ingredient.category) do %>
       <div class="button highlightColor cartButton lightboxButtonLeft">
-        <br><i class="fi-plus size-24 makeBlack"></i><br>With Location
+        <br><i class="fi-plus size-24 makeBlack"></i><br> Another With Location
       </div >
     <% end %>
 
     <%= link_to store_category_ingredients_path(@ingredient, category_id: @ingredient.category.id), method: :post do %>
       <div class="button highlightColor cartButton lightboxButtonRight">
-        <br><i class="fi-plus size-24 makeBlack"></i><br>Without Location
+        <br><i class="fi-plus size-24 makeBlack"></i><br>Another Without Location
       </div>
     <% end %>
-    <h4 style="text-align: center;">Add Another</h4><br>
+    <p style="text-align: center;">Add Another</p><br>
+
+    <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
+        <button class="lightBoxClose"><i class="fi-x-circle size-48 makeBlack"></i><br></button>
+    <% end %>
+
   </div>
 </div>

@@ -1,0 +1,58 @@
+<div class="adminContainer">
+	<h3>ADMIN CONTROLS</h3><hr>
+	<table>
+	  <tr>
+	    <th class="tableCell">Users</th>
+	    <th class="tableCell">Items</th>
+	    <th class="tableCell">Categories</th>
+	    <th class="tableCell">Locations</th>
+	  </tr>
+	  <tr>
+	    <td class="tableCell"><%= @users.count %></th>
+	    <td class="tableCell" data-dropdown="drop"><%= @ingredients.count %></td>
+	    <td class="tableCell"><%= @categories.count %></td>
+	    <td class="tableCell"><%= @locations.count %></td>
+	  </tr>
+	</table>
+<hr>
+<h4>USER SETTINGS</h4>
+	<%= link_to users_path do %>
+	  <button class="button adminButtons">
+	    MANAGE USERS
+	  </button>
+	<% end %>
+<br>
+	<%= link_to cartsummary_path do %>
+	  <button class="button adminButtons">
+	    CART SUMMARIES
+	  </button>
+	<% end %>
+<hr>
+<h4>INVENTORY SETTINGS</h4>
+	<%= link_to new_location_path do %>
+	  <button class="button adminButtons">
+	    MANAGE LOCATIONS
+	  </button>
+	<% end %>
+<br>
+	<%= link_to new_category_path do %>
+	  <button class="button adminButtons">
+	    MANAGE CATEGORIES
+	  </button>
+	<% end %>
+
+<br>
+	<%= link_to new_category_path do %>
+	  <button class="button adminButtons">
+	    INVENTORY SUMMARY
+	  </button>
+	<% end %>
+<br>
+	<%= link_to expiredsummary_path do %>
+	  <button class="button adminButtons">
+	    EXPIRED SUMMARY
+	  </button>
+	<% end %>
+
+
+</div>

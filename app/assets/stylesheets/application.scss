@@ -411,7 +411,7 @@ ul.breadcrumbs li:before {
 
 .lightboxLocated {
   background: white;
-  height: 380px;
+  height: 370px;
   width: 250px;
   padding: 20px;
   position: absolute;
@@ -430,12 +430,11 @@ ul.breadcrumbs li:before {
 }
 
 .lightBoxClose {
-  background-color: white;
-  border-width: 2px;
-  border-color: black;
+  background-color: $highlight-color;
   width: 197px;
   bottom: 50px;
   left: 7px;
+  box-shadow: 0 3px 0 0 #BDBDBD;
 }
 
 .fi-x {

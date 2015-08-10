@@ -8,19 +8,19 @@
 
     <%= link_to new_store_category_ingredient_path(@ingredient.category) do %>
       <div class="button highlightColor cartButton lightboxButtonLeft">
-        <br><i class="fi-plus size-24 makeBlack"></i><br>With Location
+        <br><i class="fi-plus size-24 makeBlack"></i><br> Another With Location
       </div >
     <% end %>
 
     <%= link_to store_category_ingredients_path(@ingredient, category_id: @ingredient.category.id), method: :post do %>
       <div class="button highlightColor cartButton lightboxButtonRight">
-        <br><i class="fi-plus size-24 makeBlack"></i><br>Without Location
+        <br><i class="fi-plus size-24 makeBlack"></i><br>Another Without Location
       </div>
     <% end %>
     <p style="text-align: center;">Add Another</p><br>
 
     <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
-        <button class="lightBoxClose"><i class="fi-x-circle size-48 makeBlack pull-right"></i></button>
+        <button class="lightBoxClose"><i class="fi-x-circle size-48 makeBlack"></i><br></button>
     <% end %>
 
   </div>

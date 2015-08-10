@@ -264,6 +264,12 @@ input.quantityField {
 	top: 430px;
 }
 
+.expirationSelector {
+  position: relative;
+  top: 30px;
+  text-align: center;
+}
+
 /* Breadcrumbs */
 
 .breadcrumbs {
@@ -272,7 +278,7 @@ input.quantityField {
   height: 45px;
   border-style: none;
   box-shadow: 0 5px 0 0 #BDBDBD;
-  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
 .littleBreadcrumbs {

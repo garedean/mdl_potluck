@@ -17,7 +17,7 @@ class Admin::LocationsController < ApplicationController
   def destroy
     @location = Location.find(params[:id])
     @location.destroy
-    redirect_to admin_locations_path, notice: "Location deleted!"
+    redirect_to admin_locations_path, notice: "LOCATION DELETED"
   end
 
   private

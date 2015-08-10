@@ -27,15 +27,16 @@
         <% end %>
       </span>
       <hr>
-    <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
+
+    <%= link_to new_store_category_ingredient_path(@ingredient.category) do %>
       <div class="button highlightColor cartButton lightboxButtonLeft">
-        <br><i class="fi-plus size-24 makeBlack"></i><br>At This Location
+        <br><i class="fi-plus size-24 makeBlack"></i> <br>Without Location
       </div >
     <% end %>
 
-    <%= link_to new_store_category_ingredient_path(@ingredient.category) do %>
+    <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
       <div class="button highlightColor cartButton lightboxButtonRight">
-        <br><i class="fi-plus size-24 makeBlack"></i> <br>Without Location
+        <br><i class="fi-plus size-24 makeBlack"></i><br>At This Location
       </div >
     <% end %>
     <p style="text-align: center;">Add Another</p>

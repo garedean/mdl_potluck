@@ -342,16 +342,19 @@ ul.breadcrumbs li:before {
 }
 
 .addSublocation {
-  position: relative;
-  right: 20px;
   float: right;
-  background-color: #BDBDBD;
+  background-color: #81C784;
+  border-radius: 10px;
+  bottom: 1px;
+  box-shadow: 0 1px 0 0 #BDBDBD;
 }
 
 .deleteSublocation {
-  position: relative;
-  left: 12px;
-  background-color: #BDBDBD;
+  right: 10px;
+  bottom: 1px;
+  border-radius: 10px;
+  background-color: #FF8A65;
+  box-shadow: 0 1px 0 0 #BDBDBD;
 }
 
 .adminLocationList {

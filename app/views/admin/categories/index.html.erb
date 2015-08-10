@@ -3,11 +3,11 @@
 
   <p>This is where you can add, edit, or delete food bank categories. Be careful though! If you delete a top level category, all elements nested underneath it will be deleted too!</p>
 <br>
-  <ul>
+  <ul class="adminLocationUL">
     <%= nested_categories @categories.arrange(order: :name) %>
   </ul>
 <br>
-  <h4>Add a Top Level Food</h4>
+  <h4>Add a Top Level Food Label</h4>
 
   <%= render "form" %>
 </div>

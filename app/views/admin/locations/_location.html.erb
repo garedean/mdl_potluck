@@ -3,10 +3,10 @@
 <% else %>
 <li class="adminLocationListRoot">
 <% end %>
-    <h4><%= location.name %></h4>
     <%= link_to admin_location_path(location), confirm: "You sure?", method: :delete do %>
       <button class="deleteSublocation"><i class="fi-x-circle size-24 makeBlack"></i></button>
     <% end %>
+    <%= location.name %>
     <%= link_to new_admin_location_path(parent_id: location) do %>
       <button class="addSublocation"><i class="fi-plus size-24 makeBlack"></i></button>
     <% end %>

@@ -1,7 +1,7 @@
 <%= @category.parent.name if @category.parent %>
-<br>
+
 <%= form_for [:admin, @category] do |f| %>
   <%= f.hidden_field :parent_id %>
   <%= f.text_field :name %>
-  <%= f.submit "Save" %>
+  <%= f.submit "Save", :class => "button highlightColor" %>
 <% end %>

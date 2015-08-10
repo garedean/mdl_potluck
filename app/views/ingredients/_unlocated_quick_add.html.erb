@@ -1,11 +1,6 @@
 <div class="lightbox-wrapper fade-in">
 
   <div class="lightbox">
-    <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
-      	<i class="fi-x-circle size-24 makeBlack pull-right"></i>
-    <% end %>
-
-    <hr>
     <h5>You just added '<%= @ingredient.name %>'</h5>
     <p>Total #: <%= Ingredient.count_all_locations(@ingredient) %></p>
     <p>Item was added without placing it in a location.</p>
@@ -22,6 +17,11 @@
         <br><i class="fi-plus size-24 makeBlack"></i><br>Without Location
       </div>
     <% end %>
-    <h4 style="text-align: center;">Add Another</h4><br>
+    <p style="text-align: center;">Add Another</p><br>
+
+    <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
+        <button class="lightBoxClose"><i class="fi-x-circle size-48 makeBlack pull-right"></i></button>
+    <% end %>
+
   </div>
 </div>

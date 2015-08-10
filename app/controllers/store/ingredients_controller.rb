@@ -15,9 +15,9 @@ class Store::IngredientsController < ApplicationController
     @ingredient.save
 
     if params[:create_and_place]
-      redirect_to store_ingredient_locations_path(@ingredient), notice: "Item added!"
+      redirect_to store_ingredient_locations_path(@ingredient), notice: "+ITEM ADDED"
     else
-      redirect_to ingredient_path(@ingredient, unlocated: true), notice: "Item added!"
+      redirect_to ingredient_path(@ingredient, unlocated: true), notice: "+ITEM ADDED"
     end
 
   end
@@ -27,7 +27,7 @@ class Store::IngredientsController < ApplicationController
     @ingredient = Ingredient.new(category_id: category.id)
 
     if @ingredient.save
-      redirect_to store_ingredient_locations_path(@ingredient), notice: "+ITEM ADDED!"
+      redirect_to store_ingredient_locations_path(@ingredient), notice: "+ITEM ADDED"
     else
       render 'new'
     end

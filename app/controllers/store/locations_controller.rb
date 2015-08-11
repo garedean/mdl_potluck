@@ -1,12 +1,13 @@
 class Store::LocationsController < LocationsController
   def index
     super
-    @ingredient = Ingredient.find(params[:ingredient_id])
+    @category = params[:category_id]
+    @locations = Location.where(ancestry: nil)
   end
 
   def show
     super
-    @ingredient = Ingredient.find(params[:ingredient_id])
+    @category = params[:category_id]
   end
 
   def edit

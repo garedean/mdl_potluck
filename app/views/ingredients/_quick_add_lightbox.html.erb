@@ -1,0 +1,47 @@
+<div class="lightbox-wrapper fade-in">
+
+  <div class="lightboxUnlocated">
+    <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
+      	<i class="fi-x-circle size-24 makeBlack pull-right"></i>
+    <% end %>
+
+    <h5>Item stored: '<%= @ingredient.name %>'</h5>
+
+    <hr>
+
+    <p>Location: <%= @ingredient.location.name %></p>
+
+    <p>Total count, all locations:
+      <span id="item-count">
+        <%= Ingredient.count_all_locations(@ingredient) %>
+      </span>
+    </p>
+
+    <h5>Quick links:</h5>
+
+    <% if @ingredient.location.class != NullLocation %>
+      <%= link_to "Store another, same location", add_another_same_location_ingredient_path(@ingredient), method: :post %>
+    <% end %>
+
+    <%= link_to "Store another, choose location", store_category_locations_path(@ingredient.category) %>
+
+    <%= link_to "Store another, no location", category_ingredients_path(@ingredient.category), method: :post %><br>
+
+    <%= link_to "Store a different item", store_categories_path %>
+
+    <!-- commented out -->
+    <% if false %>
+      <%= link_to store_category_locations_path(@ingredient.category) do %>
+        <div class="button highlightColor cartButton lightboxButtonLeft">
+          <br><i class="fi-plus size-24 makeBlack"></i><br> Another With Location
+        </div>
+      <% end %>
+
+      <%= link_to store_category_ingredients_path(@ingredient, category_id: @ingredient.category.id), method: :post do %>
+        <div class="button highlightColor cartButton lightboxButtonRight">
+          <br><i class="fi-plus size-24 makeBlack"></i><br>Another Without Location
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

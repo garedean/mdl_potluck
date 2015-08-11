@@ -25,17 +25,15 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new(category_id: params[:category_id])
 
     if @ingredient.save
-      redirect_to :back, notice: "+ITEM ADDED"
+      redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "+ITEM ADDED"
     else
       render 'new'
     end
   end
 
   def show
-    @located_item = true if params[:show_quick_add]
-    @unlocated_item = true if params[:unlocated]
+    @show_quick_add = true if params[:show_quick_add] == "true"
     @ingredient = Ingredient.find(params[:id])
-    #@locations = Location.all
   end
 
   def edit
@@ -96,6 +94,12 @@ class IngredientsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def save_location
+    ingredient = Ingredient.find(params[:ingredient_id])
+    ingredient.update(location_id: params[:id])
+    redirect_to ingredient_path(ingredient), notice: "Location updated!"
   end
 
   private

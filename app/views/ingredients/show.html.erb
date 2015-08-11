@@ -1,9 +1,9 @@
 <div class="itemContainer">
-    <span id="titleFade" class="hidden">
+    <span id="titleFade" class="">
       <h2><%= @ingredient.name %></h2> <small>ID: <%= @ingredient.id %></small>
       <hr>
     </span>
-  <div id="locationFade" class="hidden">
+  <div id="locationFade" class="">
     <h6>LOCATION:</h6>
       <% if @ingredient.location_id != nil %>
         <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
@@ -20,7 +20,7 @@
           NOT SET
       <% end %><hr>
   </div>
-  <div id="conditionFade" class="hidden">
+  <div id="conditionFade" class="">
     <h6>CONDITION:</h6>
     <% if @ingredient.expiring_at != nil %>
       <% if @ingredient.expiring_at.future? %>
@@ -34,7 +34,7 @@
     <% end %>
     <hr>
   </div>
-  <div id="quantityFade" class="hidden">
+  <div id="quantityFade" class="">
     <h6>TOTAL QUANTITY OF:   '<%= @ingredient.name %>'</h6>
       <strong>
         <span id="item-count">

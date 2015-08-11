@@ -9,6 +9,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+  <script>
+    Ajaxify.init();
+  </script>
     <div class="mobileBlock">
       <nav class="navbar">
         <div class="navbar-header">
@@ -19,7 +22,7 @@
             <%= link_to new_user_session_path, class: "navbar-brand" do %>
               <i class="fa fa-spoon"></i>
             <% end %>
-          <% else%>
+          <% else %>
             <%= link_to prepare_path, class: "navbar-brand" do %>
               <i class="fa fa-spoon"></i>
             <% end %>
@@ -44,7 +47,9 @@
           <%= flash[:alert] %>
         </div>
       </nav>
-      <%= yield %>
+      <div id="main">
+        <%= yield %>
+      <div>
     </div>
   </body>
 </html>

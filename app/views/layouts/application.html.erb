@@ -11,30 +11,30 @@
     <div class="mobileBlock">
       <nav class="navbar">
         <div class="navbar-header">
-          <%= link_to store_path, class: "navbar-brand transition" do %>
-            <i class="fa fa-cube" ></i>
+          <%= link_to store_path, class: "navbar-brand" do %>
+            <i class="fa fa-cube"></i>
           <% end %>
           <% if current_user == nil %>
-            <%= link_to new_user_session_path, class: "navbar-brand transition" do %>
-              <i class="fa fa-spoon "></i>
+            <%= link_to new_user_session_path, class: "navbar-brand" do %>
+              <i class="fa fa-spoon"></i>
             <% end %>
           <% else%>
-            <%= link_to prepare_path, class: "navbar-brand transition" do %>
-              <i class="fa fa-spoon" ></i>
+            <%= link_to prepare_path, class: "navbar-brand" do %>
+              <i class="fa fa-spoon"></i>
             <% end %>
           <% end %>
           <% if current_user && current_user.cart.ingredients.count > 0 %>
             <%= link_to cart_path, class: "navbar-brand" do %>
-              <i class="fa fa-shopping-cart size-18" id="cartIcon"></i> <%= current_user.cart.ingredients.count %>
+              <i class="fa fa-shopping-cart size-18"> <%= current_user.cart.ingredients.count %></i> 
             <% end %>
           <% end %>
           <% if current_user %>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-user-times navbar-brand userLogin"></i>
+            <%= link_to destroy_user_session_path, class: "navbar-brand", method: :delete do %>
+              <i class="fa fa-user-times userLogin navbar-brand"></i>
             <% end %>
           <% else %>
             <%= link_to new_user_session_path do %>
-              <i class="fa fa-user navbar-brand userLogin"></i>
+              <i class="fa fa-user userLogin navbar-brand"></i>
             <% end %>
           <% end %>
         </div>

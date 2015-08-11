@@ -47,12 +47,6 @@
   <button class="bigBottomButtonRight"><i class="fi-check size-48"></i><br>SET</button>
 <% end %>
 
-
-<% if @located_item %>
-  <%= render "located_quick_add" %>
-<% end %>
-
-
-<% if @unlocated_item %>
-  <%= render "unlocated_quick_add" %>
+<% if @show_quick_add %>
+  <%= render "quick_add_lightbox" %>
 <% end %>

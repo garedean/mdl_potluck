@@ -9,7 +9,6 @@ module ApplicationHelper
       if has_children
         link_to object.name, store_category_path(object), class: css_classes
       else
-        # link_to object.name, store_category_ingredients_path(object), class: css_classes, method: :post
         link_to object.name, new_store_category_ingredient_path(object), class: css_classes
       end
     elsif link_type == :location
@@ -23,6 +22,12 @@ module ApplicationHelper
         link_to object.name, store_category_location_path(category, object), class: css_classes
       else
         link_to object.name, add_with_location_store_ingredient_path(category, location_id: object), method: :post, class: css_classes
+      end
+    elsif link_type == :relocate
+      if has_children
+        link_to object.name, relocate_ingredient_location_path(category, object), class: css_classes
+      else
+        link_to object.name, save_location_ingredient_path(object, ingredient_id: category.id), method: :post, class: css_classes
       end
     # standard 'prepare' category hierarchy link
     else

@@ -7,7 +7,7 @@
     <h5>Item stored: '<%= @ingredient.name %>'</h5>
     <hr>
     <p>Location:</p>
-      <div class="littleBreadcrumbs">
+      <div class="lightboxBreadcrumbs">
         <% if @ingredient.location_id != nil %>
           <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
             <strong><%= @ingredient.location.parent.parent.parent.name %> ></strong>
@@ -29,7 +29,7 @@
       </span>
     </p>
     <hr>
-  <div class="lightboxButtonBlock">
+  <div class="lightboxButtonBlockTop">
     <% if @ingredient.location.class != NullLocation %>
       <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
         <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> SAME LOCATION</div>
@@ -38,6 +38,8 @@
     <%= link_to store_category_locations_path(@ingredient.category) do %>
       <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i> CHOOSE LOCATION</div>
     <% end %>
+  </div>
+  <div class="lightboxButtonBlockBottom">
     <%= link_to category_ingredients_path(@ingredient.category), method: :post do %><br>
       <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> NO LOCATION</div>
     <% end %>

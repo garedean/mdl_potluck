@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Potluck in the Park</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -25,7 +26,7 @@
           <% end %>
           <% if current_user && current_user.cart.ingredients.count > 0 %>
             <%= link_to cart_path, class: "navbar-brand" do %>
-              <i class="fa fa-shopping-cart size-18"> <%= current_user.cart.ingredients.count %></i> 
+              <i class="fa fa-shopping-cart size-18"> <%= current_user.cart.ingredients.count %></i>
             <% end %>
           <% end %>
           <% if current_user %>

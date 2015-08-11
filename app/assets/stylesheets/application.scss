@@ -282,6 +282,13 @@ a i:hover {
   font-size: 100%;
 }
 
+.lightboxBreadcrumbs {
+  position: relative;
+  color: #616161;
+  bottom: 5px;
+  font-size: 80%;
+}
+
 .crumbles {
 	font-size: 140%;
 	line-height: 35px;
@@ -397,10 +404,16 @@ ul.breadcrumbs li:before {
   z-index: 9998;
 }
 
-.lightboxButtonBlock {
+.lightboxButtonBlockTop {
   position: relative;
   left: 7px;
   bottom: 10px;
+}
+
+.lightboxButtonBlockBottom {
+  position: relative;
+  left: 7px;
+  bottom: 38px;
 }
 
 .lightbox-wrapper {

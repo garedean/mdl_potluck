@@ -11,9 +11,10 @@
     <li class="crumbles"><strong><%= @food_item.name %></strong></li><br>
 </ul>
 
-<div class="expirationSelector">
-    EXPIRATION DATE
-    <img src="https://forrst-live.s3.amazonaws.com/multiposts/images/15438/original.png?1350490049">
+<div class="expirationSelector itemContainer">
+    <h4>EXPIRATION DATE</h4>
+    <input type="date">
+</div>
 </div>
 
 <%= link_to store_category_locations_path(@food_item) do %>
@@ -24,7 +25,8 @@
 
 <%= link_to store_category_ingredients_path(@food_item), id: "add-item", method: :post do %>
   <span class="button bigBottomButtonRight"><br>
-  <i class="fi-plus size-36"></i><br>ADD W/O LOCATION</span>
+    <i class="fi-plus size-36"></i><br>ADD W/O LOCATION
+  </span>
 <% end %>
 
 <% if false %>

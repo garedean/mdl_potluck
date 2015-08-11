@@ -4,7 +4,13 @@
 <li class="adminLocationListRoot">
 <% end %>
     <%= link_to admin_location_path(location), confirm: "You sure?", method: :delete do %>
-      <button class="deleteSublocation"><i class="fi-x-circle size-24 makeBlack"></i></button>
+      <% if location.root? %>
+        <button class="deleteSublocation"><i class="fi-x-circle size-24 makeBlack"></i></button>
+      <% elsif location.children? %>
+        <button class="deleteSublocationLight"><i class="fi-x-circle size-24 makeBlack"></i></button>
+      <% else %>
+        <button class="deleteSublocationLighter"><i class="fi-x-circle size-24 makeBlack"></i></button>
+      <% end %>
     <% end %>
     <%= location.name %>
     <%= link_to new_admin_location_path(parent_id: location) do %>

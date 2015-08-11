@@ -72,6 +72,10 @@ class IngredientsController < ApplicationController
     redirect_to :back
   end
 
+  def recentlylogged
+    @ingredients = Ingredient.all
+  end
+
   def remove_from_cart
     item_to_remove = Ingredient.find(params[:id])
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/users' => 'admin#users'
   get '/expiredsummary' => 'admin#expired_summary'
 
+  get '/recentlylogged' => 'ingredients#recentlylogged'
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
   get '/ingredients/unarranged', to: 'ingredients#unarranged'
 

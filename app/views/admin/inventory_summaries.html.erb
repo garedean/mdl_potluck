@@ -1,14 +1,12 @@
-SEARCH BY ID: _____________________<br><br>
-
 <% if @ingredients.where.not(:expiring_at => nil).any? %>
   <div class="ingredientTable">
     <table class="tableFontSize">
       <thead>
         <tr>
-          <th width="120">NAME</th>
+          <th width="100">NAME</th>
           <th>ID</th>
           <th>CONDITION</th>
-          <th width="130">USED ON</th>
+          <th width="130">CREATED ON</th>
         </tr>
       </thead>
       <tbody>
@@ -18,7 +16,7 @@ SEARCH BY ID: _____________________<br><br>
           <td class="tableCell"> <%= ingredient.id %></td>
           <td class="tableCell">
             <% if ingredient.expiring_at != nil %>
-              <% if ingredient.expiring_at.past? %>
+              <% if ingredient.expiring_at.future? %>
                 <div class="freshItem">FRESH</div>
               <% else %>
                 <div class="expiredItem">EXPIRED</div>
@@ -27,7 +25,7 @@ SEARCH BY ID: _____________________<br><br>
                 N/A
             <% end %>
           </td>
-          <td class="tableCell"> </td>
+          <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
         </tr>
         <% end %>
       </tbody>

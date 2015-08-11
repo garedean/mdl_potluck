@@ -1,30 +1,25 @@
-<% if @ingredients.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight).any? %>
+<% if @ingredients.where(created_at: (Time.now.midnight - 3.hour)..Time.now.midnight).any? %>
   <div class="ingredientTable">
     <table class="tableFontSize">
       <thead>
         <tr>
-          <th width="120">NAME</th>
-          <th>CONDITION</th>
-          <th width="130">USED ON</th>
+          <th width="90">NAME</th>
+          <th>CREATED ON</th>
+          <th>LOCATION</th>
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight).each do |ingredient| %>
+        <% @ingredients.where(created_at: (Time.now.midnight - 3.hour)..Time.now.midnight).each do |ingredient| %>
         <tr>
-          <td class="tableCell"> <%= ingredient.name %></td>
           <td class="tableCell">
-            <% if ingredient.expiring_at != nil %>
-              <% if ingredient.expiring_at.past? %>
-                <div class="freshItem">FRESH</div>
-              <% else %>
-                <div class="expiredItem">EXPIRED</div>
-              <% end %>
-              <%= ingredient.expiring_at %>
-              <% else %>
-                N/A
+            <%= link_to ingredient_path(ingredient) do %>
+              <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+                <%= ingredient.name %>
+              </div >
             <% end %>
           </td>
-          <td class="tableCell"> </td>
+          <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
+          <td class="tableCell"> <%= ingredient.id %></td>
         </tr>
         <% end %>
       </tbody>

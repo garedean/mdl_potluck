@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @ingredients.where(expiring_at: (Time.now.midnight - 1.day) ).each do |ingredient| %>
+      <% @ingredients.where(expiring_at: Time.now - 3.day..Time.now + 3.day).each do |ingredient| %>
         <tr>
           <td>
           <%= link_to ingredient_path(ingredient) do %>
@@ -57,3 +57,5 @@
     </tbody>
   </table>
 </div>
+
+<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

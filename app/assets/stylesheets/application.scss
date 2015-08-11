@@ -212,7 +212,7 @@ a:hover{
   right: 5px;
   line-height: 30px;
   box-shadow: 0 2px 2px 0 #BDBDBD;
-  font-size: 150%;
+  font-size: 120%;
 }
 
 .ingredientTable {
@@ -271,7 +271,7 @@ input.quantityField {
 
 .expirationSelector {
   position: relative;
-  top: 30px;
+  top: 50px;
   text-align: center;
 }
 
@@ -331,7 +331,13 @@ ul.breadcrumbs li:before {
 
 /* ADMIN */
 
+#adminTable {
+  position: relative;
+  left: 30px;
+}
+
 .adminContainer {
+  padding-top: 5px;
 	margin-left: 35px;
 	width: 300px;
   text-align: center;

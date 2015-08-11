@@ -18,12 +18,12 @@ Rails.application.routes.draw do
 
   namespace :store do
     resources :categories do
-      resources :locations
-      resources :ingredients
-
       member do
         get 'review'
       end
+
+      resources :locations
+      resources :ingredients
     end
   end
 
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
 
     member do
       post 'add_with_location'
-      post 'add_another_same_location'
+      # post 'add_another_same_location'
     end
   end
 

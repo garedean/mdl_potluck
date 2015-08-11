@@ -16,12 +16,12 @@
     <img src="https://forrst-live.s3.amazonaws.com/multiposts/images/15438/original.png?1350490049">
 </div>
 
-<%= link_to add_with_location_store_ingredient_path(@food_item), method: :post do %>
-  <button class="bigBottomButtonLeft"><i class="fi-marker size-36"></i><br>LOCATE</button>
+<%= link_to store_category_locations_path do %>
+  <button class="bigBottomButtonLeft"><i class="fi-marker size-36"></i><br>ADD W/ LOCATION</button>
 <% end %>
 
 <%= link_to store_category_ingredients_path(@food_item), id: "add-item", method: :post do %>
-  <button class="bigBottomButtonRight"><i class="fi-plus size-36"></i><br>ITEM W/O LOCATION</button>
+  <button class="bigBottomButtonRight"><i class="fi-plus size-36"></i><br>ADD W/O LOCATION</button>
 <% end %>
 
 <% if false %>

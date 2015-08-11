@@ -1,5 +1,5 @@
 <div class="itemContainer">
-    <span class="hidden">
+    <span id="titleFade" class="hidden">
       <h2><%= @ingredient.name %></h2> <small>ID: <%= @ingredient.id %></small>
       <hr>
     </span>
@@ -20,7 +20,7 @@
           NOT SET
       <% end %><hr>
   </div>
-  <div class="hidden">
+  <div id="conditionFade" class="hidden">
     <h6>CONDITION:</h6>
     <% if @ingredient.expiring_at != nil %>
       <% if @ingredient.expiring_at.future? %>

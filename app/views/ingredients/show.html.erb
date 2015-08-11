@@ -1,6 +1,7 @@
 <div class="itemContainer">
-    <h2 id="titleFade" class="hidden"><%= @ingredient.name %></h2>
-    <hr>
+    <span class="hidden" id="titleFade"  >
+    <h2><%= @ingredient.name %></h2> <small>ID: <%= @ingredient.id %></small>
+    <hr></span>
   <div id="locationFade" class="hidden">
     <h6>LOCATION:</h6>
     <% if @ingredient.location_id != nil %>
@@ -34,17 +35,19 @@
     <hr>
   </div>
   <div id="quantityFade" class="hidden">
-    <h6>QUANTITY:</h6><br>
-      <strong><%= @ingredient.quantity %></strong><br>
+    <h6>TOTAL QUANTITY OF:   '<%= @ingredient.name %>'</h6>
+      <strong><span id="item-count">
+                <%= Ingredient.count_all_locations(@ingredient) %>
+              </span></strong><br>
   </div>
 </div>
 
 <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
-  <button class="bigBottomButtonLeft"><i class="fi-marker size-48"></i><br>MOVE</button>
+  <span class="button bigBottomButtonLeft"><br><i class="fi-marker size-48"></i><br>MOVE</span>
 <% end %>
 
 <%= link_to store_path do %>
-  <button class="bigBottomButtonRight"><i class="fi-check size-48"></i><br>DONE</button>
+  <span class="button bigBottomButtonRight"><br><i class="fi-check size-48"></i><br>DONE</span>
 <% end %>
 
 

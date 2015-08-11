@@ -89,6 +89,10 @@ a:hover{
 
 /* BUTTONS */
 
+.button:hover {
+  background-color: #757575;
+}
+
 .bigBottomButtonLeft {
 	position: fixed;
 	top: 525px;
@@ -134,15 +138,15 @@ a:hover{
 }
 
 .listButtons {
-	background-color: $main-color;
-	width: 420px;
+	background-color: #BDBDBD;
+	width: 480px;
 	height: 70px;
 	line-height: 45px;
 	font-size: 250%;
 	text-align: left;
   border-radius: 20px;
-  box-shadow: 0 4px 0 0 #BDBDBD;
-  color: white;
+  box-shadow: 0 4px 0 0 #9E9E9E;
+  color: black;
 }
 
 .cartButton {
@@ -278,7 +282,7 @@ input.quantityField {
   height: 45px;
   border-style: none;
   box-shadow: 0 5px 0 0 #BDBDBD;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .littleBreadcrumbs {
@@ -360,7 +364,23 @@ ul.breadcrumbs li:before {
   right: 10px;
   bottom: 1px;
   border-radius: 10px;
+  background-color: #FF5722;
+  box-shadow: 0 1px 0 0 #BDBDBD;
+}
+
+.deleteSublocationLight {
+  right: 10px;
+  bottom: 1px;
+  border-radius: 10px;
   background-color: #FF8A65;
+  box-shadow: 0 1px 0 0 #BDBDBD;
+}
+
+.deleteSublocationLighter {
+  right: 10px;
+  bottom: 1px;
+  border-radius: 10px;
+  background-color: #FFCCBC;
   box-shadow: 0 1px 0 0 #BDBDBD;
 }
 

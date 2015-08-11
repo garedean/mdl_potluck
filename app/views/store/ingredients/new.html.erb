@@ -17,11 +17,11 @@
 </div>
 
 <%= link_to add_with_location_store_ingredient_path(@food_item), method: :post do %>
-  <button class="bigBottomButtonLeft"><i class="fi-marker size-36"></i><br>LOCATE</button>
+  <span class="button bigBottomButtonLeft"><br><i class="fi-marker size-36"></i><br>LOCATE</span>
 <% end %>
 
 <%= link_to store_category_ingredients_path(@food_item), id: "add-item", method: :post do %>
-  <button class="bigBottomButtonRight"><i class="fi-plus size-36"></i><br>ITEM W/O LOCATION</button>
+  <span class="button bigBottomButtonRight"><br><i class="fi-plus size-36"></i><br>ITEM W/O LOCATION</span>
 <% end %>
 
 <% if false %>

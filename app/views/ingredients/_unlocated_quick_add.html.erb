@@ -1,11 +1,7 @@
 <div class="lightbox-wrapper fade-in">
 
   <div class="lightboxUnlocated">
-    <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
-      	<i class="fi-x-circle size-24 makeBlack pull-right"></i>
-    <% end %>
-
-    <h5>You just added '<%= @ingredient.name %>'</h5>
+        <h5>You just added '<%= @ingredient.name %>'</h5>
 
 
     <p>Total Quantity:
@@ -31,7 +27,7 @@
     <p style="text-align: center;">Add Another</p><br>
 
     <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
-        <button class="lightBoxClose"><i class="fi-x-circle size-48 makeBlack"></i><br></button>
+        <span class="button lightBoxClose"><i class="fi-x-circle size-48 makeBlack"></i><br></span>
     <% end %>
 
   </div>

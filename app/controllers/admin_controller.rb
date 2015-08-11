@@ -13,5 +13,9 @@ class AdminController < ApplicationController
     @ingredients = Ingredient.all()
   end
 
+  def inventory_summaries
+    @ingredients = Ingredient.all()
+  end
+
 
 end

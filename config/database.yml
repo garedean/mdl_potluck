@@ -4,15 +4,18 @@ default: &default
   pool: 5
 
 development:
+  adapter: postgresql
   <<: *default
   database: potluck_development
 
 test:
+  adapter: postgresql
   <<: *default
   database: potluck_test
 
-# production:
-#   <<: *default
-#   database: potluck_production
-#   username: potluck
-#   password: <%= ENV['POTLUCK_DATABASE_PASSWORD'] %>
+production:
+  adapter: postgresql
+  <<: *default
+  database: potluck_production
+  username: potluck
+  password: <%= ENV['POTLUCK_DATABASE_PASSWORD'] %>

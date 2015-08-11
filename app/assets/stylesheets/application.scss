@@ -12,9 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation
  */
+
+ @import "foundation_and_overrides";
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+ @import 'foundation-icons';
 
  /* FONT SIZES */
 

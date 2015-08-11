@@ -1,10 +1,12 @@
 Potluck in the Park Inventory System
 ==============
-
 An inventory organization system targeted towards soup kitchens and food banks that receive, store, and prepare a large amount of food at a time.
+
+View it on Heroku
+------
+https://potluckapp.herokuapp.com/
 
 Authors
 ------
-
 Garrett Olson & Michael Yanchar
 at EyeCue Lab

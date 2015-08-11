@@ -16,10 +16,24 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
+ /* FONT SIZES */
+
+ .size-12 { font-size: 12px; }
+ .size-14 { font-size: 14px; }
+ .size-16 { font-size: 16px; }
+ .size-18 { font-size: 18px; }
+ .size-21 { font-size: 21px; }
+ .size-24 { font-size: 24px; }
+ .size-36 { font-size: 36px; }
+ .size-48 { font-size: 48px; }
+ .size-60 { font-size: 60px; }
+ .size-72 { font-size: 72px; }
+
 /* COLOR VARIABLES */
 
 $main-color: #2E7D32;
 $highlight-color: #FFD54F;
+$gray-color: #BDBDBD;
 
 /* GENERAL USE */
 
@@ -51,6 +65,10 @@ $highlight-color: #FFD54F;
 
 a {
 	color: white;
+}
+
+a i {
+  color: white;
 }
 
 a:hover{
@@ -102,7 +120,7 @@ a:hover{
 	width: 120px;
 	height: 120px;
 	color: white;
-  box-shadow: 0 5px 0 0 #BDBDBD;
+  box-shadow: 0 5px 0 0 $gray-color;
 }
 
 .bigBottomButtonRight {
@@ -113,7 +131,7 @@ a:hover{
 	width: 120px;
 	height: 120px;
 	color: white;
-  box-shadow: 0 5px 0 0 #BDBDBD;
+  box-shadow: 0 5px 0 0 $gray-color;
 }
 
 .bigBottomButtonRightTop {
@@ -124,7 +142,7 @@ a:hover{
 	width: 120px;
 	height: 120px;
 	color: white;
-  box-shadow: 0 5px 0 0 #BDBDBD;
+  box-shadow: 0 5px 0 0 $gray-color;
 }
 
 .bigBottomButtonLeftTop {
@@ -135,11 +153,11 @@ a:hover{
 	width: 120px;
 	height: 120px;
 	color: white;
-  box-shadow: 0 5px 0 0 #BDBDBD;
+  box-shadow: 0 5px 0 0 $gray-color;
 }
 
 .listButtons {
-	background-color: #BDBDBD;
+	background-color: $gray-color;
 	width: 480px;
 	height: 70px;
 	line-height: 45px;
@@ -154,14 +172,7 @@ a:hover{
 	position: relative;
 	bottom: 11px;
 	left: 7px;
-  box-shadow: 0 2px 0 0 #BDBDBD;
-}
-
-.adminButton {
-	position: fixed;
-	top: 635px;
-	left: 307px;
-	opacity: .3;
+  box-shadow: 0 2px 0 0 $gray-color;
 }
 
 .adminButtons {
@@ -175,20 +186,10 @@ a:hover{
 	margin-top: 50px;
 }
 
-.listButtons:hover {
-	color: $highlight-color;
-}
-
 .lightboxButtonLeft {
   width: 90px;
   height: 90px;
   left: 7px;
-}
-
-.lightboxButtonRight {
-  width: 90px;
-  height: 90px;
-  left: 20px;
 }
 
 /* TABLES */
@@ -202,7 +203,7 @@ a:hover{
   height: 35px;
   bottom: 5px;
   left: 10px;
-  box-shadow: 0 2px 0 0 #BDBDBD;
+  box-shadow: 0 2px 0 0 $gray-color;
 }
 
 .tableCellWidth {
@@ -211,7 +212,7 @@ a:hover{
   bottom: 6px;
   right: 5px;
   line-height: 30px;
-  box-shadow: 0 2px 2px 0 #BDBDBD;
+  box-shadow: 0 2px 2px 0 $gray-color;
   font-size: 120%;
 }
 
@@ -251,24 +252,6 @@ a:hover{
 
 /* INPUT FIELDS */
 
-.quantityField {
-	position: fixed;
-	left: 86px;
-	top: 370px;
-}
-
-input.quantityField {
-	width: 200px;
-	height: 60px;
-	font-size: 200%;
-}
-
-.quantityLabel {
-	position: fixed;
-	left: 200px;
-	top: 430px;
-}
-
 .expirationSelector {
   position: relative;
   top: 50px;
@@ -282,7 +265,7 @@ input.quantityField {
   bottom: 20px;
   height: 45px;
   border-style: none;
-  box-shadow: 0 5px 0 0 #BDBDBD;
+  box-shadow: 0 5px 0 0 $gray-color;
   overflow-x: hidden;
 }
 
@@ -290,6 +273,7 @@ input.quantityField {
   position: relative;
   color: #616161;
   bottom: 5px;
+  font-size: 100%;
 }
 
 .crumbles {
@@ -298,24 +282,9 @@ input.quantityField {
   color: $main-color;
 }
 
-
 ul.breadcrumbs li:before {
   content: ">";
 }
-
-/* FOUNDATION ICON SIZES */
-
-.size-12 { font-size: 12px; }
-.size-14 { font-size: 14px; }
-.size-16 { font-size: 16px; }
-.size-18 { font-size: 18px; }
-.size-21 { font-size: 21px; }
-.size-24 { font-size: 24px; }
-.size-36 { font-size: 36px; }
-.size-48 { font-size: 48px; }
-.size-60 { font-size: 60px; }
-.size-72 { font-size: 72px; }
-
 
 /* DEVISE USER LOGIN/LOGOUT */
 
@@ -364,7 +333,7 @@ ul.breadcrumbs li:before {
   background-color: #81C784;
   border-radius: 10px;
   bottom: 1px;
-  box-shadow: 0 1px 0 0 #BDBDBD;
+  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .deleteSublocation {
@@ -372,7 +341,7 @@ ul.breadcrumbs li:before {
   bottom: 1px;
   border-radius: 10px;
   background-color: #FF5722;
-  box-shadow: 0 1px 0 0 #BDBDBD;
+  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .deleteSublocationLight {
@@ -380,7 +349,7 @@ ul.breadcrumbs li:before {
   bottom: 1px;
   border-radius: 10px;
   background-color: #FF8A65;
-  box-shadow: 0 1px 0 0 #BDBDBD;
+  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .deleteSublocationLighter {
@@ -388,7 +357,7 @@ ul.breadcrumbs li:before {
   bottom: 1px;
   border-radius: 10px;
   background-color: #FFCCBC;
-  box-shadow: 0 1px 0 0 #BDBDBD;
+  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .adminLocationList {
@@ -397,7 +366,7 @@ ul.breadcrumbs li:before {
   border-radius: 10px;
   padding-left: 10px;
   list-style: none;
-  box-shadow: 0 3px 0 0 #BDBDBD;
+  box-shadow: 0 3px 0 0 $gray-color;
 }
 
 .adminLocationListRoot {
@@ -406,10 +375,10 @@ ul.breadcrumbs li:before {
   border-radius: 10px;
   padding-left: 10px;
   list-style: none;
-  box-shadow: 0 3px 0 0 #BDBDBD;
+  box-shadow: 0 3px 0 0 $gray-color;
 }
 
-/* LIGHTBOXES */
+/* LIGHTBOX MODAL */
 
 .mobileBlock {
   position: relative;
@@ -422,6 +391,12 @@ ul.breadcrumbs li:before {
   z-index: 9998;
 }
 
+.lightboxButtonBlock {
+  position: relative;
+  left: 7px;
+  bottom: 10px;
+}
+
 .lightbox-wrapper {
   display: none;
   position: absolute;
@@ -432,7 +407,7 @@ ul.breadcrumbs li:before {
 
 .lightboxUnlocated {
   background: white;
-  height: 355px;
+  height: 415px;
   width: 250px;
   padding: 20px;
   position: absolute;
@@ -442,16 +417,15 @@ ul.breadcrumbs li:before {
   z-index: 9999;
 }
 
-.lightboxLocated {
-  background: white;
-  height: 370px;
-  width: 250px;
-  padding: 20px;
-  position: absolute;
-  top:0; left:0; right:0; bottom:0;
-  margin: auto;
-  background: white;
-  z-index: 9999;
+#newItem {
+  position: relative;
+  bottom: 11px;
+}
+
+#quickAdd {
+  position: relative;
+  left: 65px;
+  bottom: 10px;
 }
 
 .lightbox a {
@@ -462,28 +436,6 @@ ul.breadcrumbs li:before {
   cursor: pointer;
 }
 
-.lightBoxClose {
-  background-color: $highlight-color;
-  width: 197px;
-  bottom: 50px;
-  left: 7px;
-  box-shadow: 0 3px 0 0 #BDBDBD;
-}
-
-.fi-x {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
 .nested_elements {
   margin-left: 30px;
-}
-
-a i {
-  color: white;
-}
-
-a {
-  color: black;
 }

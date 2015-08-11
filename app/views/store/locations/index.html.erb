@@ -1,13 +1,13 @@
 <ul class="breadcrumbs">
-<br>
+  <br>
 </ul>
 
 <div class="listContainer">
   <ul class="theList" id="smoothScroll">
     <% @locations.each do |location| %>
-    <li>
-      <%= link_to location.name, store_category_location_path(@category, location), class: "button listButtons" %>
-    </li>
+      <li>
+        <%= link_to location.name, store_category_location_path(@category, location), class: "button listButtons" %>
+      </li>
     <% end %>
   </ul>
 </div>

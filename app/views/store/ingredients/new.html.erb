@@ -12,9 +12,8 @@
 </ul>
 
 <div class="expirationSelector itemContainer">
-    <h4>EXPIRATION DATE</h4>
-    <input type="date">
-</div>
+  <h4>EXPIRATION DATE</h4>
+  <input type="date">
 </div>
 
 <%= link_to store_category_locations_path(@food_item) do %>
@@ -33,7 +32,6 @@
   <%= form_tag({controller: "ingredients", action: "create"}, method: "post") do %>
   	<label>Days until expired:</label>
   	<%= number_field_tag :days_until_expiry, "30" %>
-
   	<%= submit_tag 'Add with Location', name: 'create_and_place' %>
   	<%= submit_tag 'Add without Location' %>
   <% end %>

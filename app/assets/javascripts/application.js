@@ -28,10 +28,10 @@ $(function() {
 });
 
 $(function () {
-    $('#titleFade').fadeIn(500).removeClass('hidden');
-    $('#locationFade').fadeIn(1000).removeClass('hidden');
-    $('#conditionFade').fadeIn(1500).removeClass('hidden');
-    $('#quantityFade').fadeIn(2000).removeClass('hidden');
+    $('#titleFade').fadeIn(300).removeClass('hidden');
+    $('#locationFade').fadeIn(600).removeClass('hidden');
+    $('#conditionFade').fadeIn(900).removeClass('hidden');
+    $('#quantityFade').fadeIn(1200).removeClass('hidden');
 });
 
 //= require turbolinks

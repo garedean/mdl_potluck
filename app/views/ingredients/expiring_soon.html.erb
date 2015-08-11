@@ -11,11 +11,11 @@
       <% @ingredients.where(expiring_at: Time.now - 3.day..Time.now + 3.day).each do |ingredient| %>
         <tr>
           <td>
-          <%= link_to ingredient_path(ingredient) do %>
-            <div class="button highlightColor tableCell tableCellWidth" id="listButton">
-              <%= ingredient.name %>
-            </div >
-          <% end %>
+            <%= link_to ingredient_path(ingredient) do %>
+              <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+                <%= ingredient.name %>
+              </div >
+            <% end %>
             <span class="littleBreadcrumbs">
               <% if ingredient.location_id != nil %>
                 <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
@@ -29,7 +29,7 @@
                 <% end %>
                   <strong><%= ingredient.location.name %></strong>
                 <% else %>
-                NO LOCATION
+                  NO LOCATION
               <% end %>
             </span>
           </td>
@@ -40,7 +40,7 @@
               <% else %>
                 <div class="expiredItem">EXPIRED</div>
               <% end %>
-              <%= ingredient.expiring_at %>
+                <%= ingredient.expiring_at %>
               <% else %>
                 N/A
             <% end %>

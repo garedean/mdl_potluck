@@ -11,22 +11,22 @@
       </thead>
       <tbody>
         <% @ingredients.where.not(:expiring_at => nil).each do |ingredient| %>
-        <tr>
-          <td class="tableCell"> <%= ingredient.name %></td>
-          <td class="tableCell"> <%= ingredient.id %></td>
-          <td class="tableCell">
-            <% if ingredient.expiring_at != nil %>
-              <% if ingredient.expiring_at.future? %>
-                <div class="freshItem">FRESH</div>
-              <% else %>
-                <div class="expiredItem">EXPIRED</div>
-              <% end %>
+          <tr>
+            <td class="tableCell"><%= ingredient.name %></td>
+            <td class="tableCell"><%= ingredient.id %></td>
+            <td class="tableCell">
+              <% if ingredient.expiring_at != nil %>
+                <% if ingredient.expiring_at.future? %>
+                  <div class="freshItem">FRESH</div>
+                <% else %>
+                  <div class="expiredItem">EXPIRED</div>
+                <% end %>
               <% else %>
                 N/A
-            <% end %>
-          </td>
-          <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
-        </tr>
+              <% end %>
+            </td>
+            <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>

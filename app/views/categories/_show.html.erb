@@ -1,7 +1,7 @@
 <% link_type ||= nil %>
 
 <ul class="breadcrumbs">
-    <% if @food_category.parent != nil && @food_category.parent.parent != nil && @food_category.parent.parent.parent != nil%>
+  <% if @food_category.parent != nil && @food_category.parent.parent != nil && @food_category.parent.parent.parent != nil%>
 		<li class="crumbles"><%= @food_category.parent.parent.parent.name %></li>
 	<% end %>
 	<% if @food_category.parent != nil && @food_category.parent.parent != nil%>

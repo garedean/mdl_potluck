@@ -2,33 +2,50 @@
 
   <div class="lightboxUnlocated">
     <%= link_to ingredient_path(@ingredient), class: "close-lightbox" do %>
-      	<i class="fi-x-circle size-24 makeBlack pull-right"></i>
+      <i class="fi-x-circle size-24 makeBlack pull-right"></i>
     <% end %>
-
     <h5>Item stored: '<%= @ingredient.name %>'</h5>
-
     <hr>
-
-    <p>Location: <%= @ingredient.location.name %></p>
-
+    <p>Location:</p>
+      <div class="littleBreadcrumbs">
+        <% if @ingredient.location_id != nil %>
+          <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
+            <strong><%= @ingredient.location.parent.parent.parent.name %> ></strong>
+          <% end %>
+          <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
+            <strong><%= @ingredient.location.parent.parent.name %> ></strong>
+          <% end %>
+          <% if @ingredient.location.parent != nil %>
+            <strong><%= @ingredient.location.parent.name %> ></strong>
+          <% end %>
+            <strong><%= @ingredient.location.name %></strong>
+          <% else %>
+            NO LOCATION
+        <% end %>
+      </div>
     <p>Total count, all locations:
       <span id="item-count">
         <%= Ingredient.count_all_locations(@ingredient) %>
       </span>
     </p>
-
-    <h5>Quick links:</h5>
-
+    <hr>
+  <div class="lightboxButtonBlock">
     <% if @ingredient.location.class != NullLocation %>
-      <%= link_to "Store another, same location", add_another_same_location_ingredient_path(@ingredient), method: :post %>
+      <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
+        <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> SAME LOCATION</div>
+      <% end %>
     <% end %>
-
-    <%= link_to "Store another, choose location", store_category_locations_path(@ingredient.category) %>
-
-    <%= link_to "Store another, no location", category_ingredients_path(@ingredient.category), method: :post %><br>
-
-    <%= link_to "Store a different item", store_categories_path %>
-
+    <%= link_to store_category_locations_path(@ingredient.category) do %>
+      <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i> CHOOSE LOCATION</div>
+    <% end %>
+    <%= link_to category_ingredients_path(@ingredient.category), method: :post do %><br>
+      <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> NO LOCATION</div>
+    <% end %>
+    <%= link_to  store_categories_path do %>
+      <div class="button highlightColor lightboxButtonLeft" id="newItem"><br><i class="fi-plus size-24 makeBlack"></i><br> NEW ITEM</div>
+    <% end %>
+      <span id="quickAdd">Quick Add</span>
+  </div>
     <!-- commented out -->
     <% if false %>
       <%= link_to store_category_locations_path(@ingredient.category) do %>
@@ -36,7 +53,6 @@
           <br><i class="fi-plus size-24 makeBlack"></i><br> Another With Location
         </div>
       <% end %>
-
       <%= link_to store_category_ingredients_path(@ingredient, category_id: @ingredient.category.id), method: :post do %>
         <div class="button highlightColor cartButton lightboxButtonRight">
           <br><i class="fi-plus size-24 makeBlack"></i><br>Another Without Location

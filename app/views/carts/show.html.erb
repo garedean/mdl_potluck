@@ -12,7 +12,6 @@
       <% @cart_items.each do |cart_item| %>
         <tr>
           <td><h5><%= cart_item.name %></h5>
-
             <span class="littleBreadcrumbs">
               <% if cart_item.location_id != nil %>
                 <% if cart_item.location.parent != nil && cart_item.location.parent.parent != nil && cart_item.location.parent.parent.parent != nil%>
@@ -29,25 +28,24 @@
                 NO LOCATION
               <% end %>
             </span>
-
           </td>
           <td><%= cart_item.id %></td>
-          <td class="tableCell">
-            <% if cart_item.expiring_at != nil %>
-              <% if cart_item.expiring_at.future? %>
-                <div class="freshItem">FRESH</div>
-              <% else %>
-                <div class="expiredItem">EXPIRED</div>
-              <% end %>
-              <%= cart_item.expiring_at %>
+            <td class="tableCell">
+              <% if cart_item.expiring_at != nil %>
+                <% if cart_item.expiring_at.future? %>
+                  <div class="freshItem">FRESH</div>
+                <% else %>
+                  <div class="expiredItem">EXPIRED</div>
+                <% end %>
+                  <%= cart_item.expiring_at %>
               <% else %>
                 N/A
-            <% end %>
-          </td>
+              <% end %>
+            </td>
           <td>
-             <%= link_to remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart do %>
-             	<i class="fi-x-circle size-24 makeBlack" id="listButton"></i>
-             <% end %>
+            <%= link_to remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart do %>
+            	<i class="fi-x-circle size-24 makeBlack" id="listButton"></i>
+            <% end %>
           </td>
         </tr>
       <% end %>
@@ -56,13 +54,13 @@
 </div>
 
 <%= link_to use_all_items_path, method: :post do %>
-  <button class="bigBottomButtonRight">
-    <i class="fa fa-spoon"></i><br>USE
-  </button>
+  <span class="button bigBottomButtonRight size-18">
+    <br><i class="fa fa-spoon size-36"></i><br>USE
+  </span>
 <% end %>
 
 <%= link_to empty_cart_path, method: :post do %>
-  <button class="bigBottomButtonLeft">
-    <i class="fa fa-cart-arrow-down"></i><br>EMPTY
-  </button>
+  <span class="button bigBottomButtonLeft size-18">
+    <br><i class="fa fa-cart-arrow-down size-36"></i><br>EMPTY
+  </span>
 <% end %>

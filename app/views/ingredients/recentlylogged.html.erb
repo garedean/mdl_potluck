@@ -10,17 +10,17 @@
       </thead>
       <tbody>
         <% @ingredients.where(created_at: (Time.now.midnight - 3.hour)..Time.now.midnight).each do |ingredient| %>
-        <tr>
-          <td class="tableCell">
-            <%= link_to ingredient_path(ingredient) do %>
-              <div class="button highlightColor tableCell tableCellWidth" id="listButton">
-                <%= ingredient.name %>
-              </div >
-            <% end %>
-          </td>
-          <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
-          <td class="tableCell"> <%= ingredient.id %></td>
-        </tr>
+          <tr>
+            <td class="tableCell">
+              <%= link_to ingredient_path(ingredient) do %>
+                <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+                  <%= ingredient.name %>
+                </div>
+              <% end %>
+            </td>
+            <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
+            <td class="tableCell"> <%= ingredient.id %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>

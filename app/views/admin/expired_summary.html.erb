@@ -10,22 +10,22 @@
       </thead>
       <tbody>
         <% @ingredients.where(expiring_at: Time.now - 14.day..Time.now.midnight + 1.day).each do |ingredient| %>
-        <tr>
-          <td class="tableCell"> <%= ingredient.name %></td>
-          <td class="tableCell">
-            <% if ingredient.expiring_at != nil %>
-              <% if ingredient.expiring_at.past? %>
-                <div class="expiredItem">EXPIRED</div>
-              <% else %>
-                <div class="freshItem">FRESH</div>
-              <% end %>
-              <%= ingredient.expiring_at %>
+          <tr>
+            <td class="tableCell"> <%= ingredient.name %></td>
+            <td class="tableCell">
+              <% if ingredient.expiring_at != nil %>
+                <% if ingredient.expiring_at.past? %>
+                  <div class="expiredItem">EXPIRED</div>
+                <% else %>
+                  <div class="freshItem">FRESH</div>
+                <% end %>
+                <%= ingredient.expiring_at %>
               <% else %>
                 N/A
-            <% end %>
-          </td>
-          <td class="tableCell">   <%= ingredient.id %></td>
-        </tr>
+              <% end %>
+            </td>
+            <td class="tableCell"><%= ingredient.id %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>

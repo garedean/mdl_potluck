@@ -1,4 +1,4 @@
-<% if @ingredients.where(created_at: (Time.now.midnight - 3.hour)..Time.now.midnight).any? %>
+<% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
   <div class="ingredientTable">
     <table class="tableFontSize">
       <thead>
@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where(created_at: (Time.now.midnight - 3.hour)..Time.now.midnight).each do |ingredient| %>
+        <% @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).each do |ingredient| %>
           <tr>
             <td class="tableCell">
               <%= link_to ingredient_path(ingredient) do %>

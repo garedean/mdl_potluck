@@ -29,7 +29,8 @@
           <% end %>
           <% if current_user && current_user.cart.ingredients.count > 0 %>
             <%= link_to cart_path, class: "navbar-brand" do %>
-              <i class="fa fa-shopping-cart size-18"> <%= current_user.cart.ingredients.count %></i>
+              <i class="fa fa-shopping-cart size-18">
+                <%= current_user.cart.ingredients.count %></i>
             <% end %>
           <% end %>
           <% if current_user %>

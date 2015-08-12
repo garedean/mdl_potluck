@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require ajaxify_rails
 //= require_tree .
 
 $(function() {
@@ -27,5 +26,6 @@ $(function() {
      $(".lightbox-wrapper").hide();
    });
 });
+
 
 //= require turbolinks

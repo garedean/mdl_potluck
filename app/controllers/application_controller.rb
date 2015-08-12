@@ -9,4 +9,5 @@ class ApplicationController < ActionController::Base
     current_user.cart = Cart.create
     store_path
   end
+
 end

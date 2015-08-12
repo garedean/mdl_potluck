@@ -1,0 +1,43 @@
+<div class="ingredientTable">
+  <table class="tableFontSize">
+    <thead>
+      <tr>
+        <th width="120">EMAIL</th>
+        <th>SIGN IN COUNT</th>
+        <th width="150">LAST SIGN IN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+
+      <tr>
+        <td class="tableCell">
+          <%= user.email %>
+        </td>
+
+        <td class="tableCell">
+          <%= user.sign_in_count %>
+        </td>
+
+        <td class="tableCell">
+          <%= user.formatted_time_signin %>
+        </td>
+
+        <% if current_user.admin? %>
+          <td>
+            <%= link_to "Edit", edit_admin_user_path(user) %>
+          </td>
+          <td>
+            <%= link_to "Delete", admin_user_path(user), confirm: "Are you sure?", method: :delete %>
+          </td>
+        <% end %>
+      </tr>
+
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "Add user", new_admin_user_path %>
+
+<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

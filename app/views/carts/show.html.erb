@@ -43,7 +43,7 @@
               <% end %>
             </td>
           <td>
-            <%= link_to remove_from_cart_path(cart_item), class: 'no_ajaxify' , method: :post, action: :remove_from_cart do %>
+            <%= link_to remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart do %>
             	<i class="fi-x-circle size-24 makeBlack" id="listButton"></i>
             <% end %>
           </td>
@@ -53,13 +53,13 @@
   </table>
 </div>
 
-<%= link_to use_all_items_path, class: 'no_ajaxify', method: :post do %>
+<%= link_to use_all_items_path, method: :post do %>
   <span class="button bigBottomButtonRight">
     <br><br><i class="fa fa-spoon size-36"></i><br><br>USE
   </span>
 <% end %>
 
-<%= link_to empty_cart_path, class: 'no_ajaxify', method: :post do %>
+<%= link_to empty_cart_path, method: :post do %>
   <span class="button bigBottomButtonLeft">
     <br><br><i class="fa fa-cart-arrow-down size-36"></i><br><br>EMPTY
   </span>

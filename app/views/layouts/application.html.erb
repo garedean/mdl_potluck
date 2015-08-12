@@ -9,9 +9,6 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-  <script>
-    Ajaxify.init();
-  </script>
     <div class="mobileBlock">
       <nav class="navbar">
         <div class="navbar-header">
@@ -34,7 +31,7 @@
             <% end %>
           <% end %>
           <% if current_user %>
-            <%= link_to destroy_user_session_path, class: "navbar-brand no-ajaxify", method: :delete do %>
+            <%= link_to destroy_user_session_path, class: "navbar-brand", method: :delete do %>
               <i class="fa fa-user-times userLogin navbar-brand"></i>
             <% end %>
           <% else %>

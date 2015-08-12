@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Potluck in the Park</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <script src="/app/bower_components/foundation-datepicker/js/foundation-datepicker.js"></script>
-  <link rel="stylesheet" href="/app/bower_components/foundation-datepicker/css/foundation-datepicker.css">
-</head>
-<body>
-
-  <div class="mobileBlock">
-    <div class="headerTop">
-
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Potluck in the Park</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  <script>
+    Ajaxify.init();
+  </script>
+    <div class="mobileBlock">
+      <nav class="navbar">
+        <div class="navbar-header">
+          <%= link_to store_path, class: "navbar-brand" do %>
+            <i class="fa fa-cube"></i>
+          <% end %>
+          <% if current_user == nil %>
+            <%= link_to new_user_session_path, class: "navbar-brand" do %>
+              <i class="fa fa-spoon"></i>
+            <% end %>
+          <% else %>
+            <%= link_to prepare_path, class: "navbar-brand" do %>
+              <i class="fa fa-spoon"></i>
+            <% end %>
+          <% end %>
+          <% if current_user && current_user.cart.ingredients.count > 0 %>
+            <%= link_to cart_path, class: "navbar-brand" do %>
+              <i class="fa fa-shopping-cart size-18">
+                <%= current_user.cart.ingredients.count %></i>
+            <% end %>
+          <% end %>
+          <% if current_user %>
+            <%= link_to destroy_user_session_path, class: "navbar-brand", method: :delete do %>
+              <i class="fa fa-user-times userLogin navbar-brand"></i>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <i class="fa fa-user userLogin navbar-brand"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class = "alertCenter" id="flash">
+          <%= flash[:notice] %>
+          <%= flash[:alert] %>
+        </div>
+      </nav>
+      <div id="main">
+        <%= yield %>
+      <div>
     </div>
-    <nav class="navbar">
-      <div class="navbar-header">
-
-        <%= link_to store_path, class: "navbar-brand transition" do %>
-          <i class="fa fa-cube" ></i>
-        <% end %>
-        <% if current_user == nil %>
-          <%= link_to new_user_session_path, class: "navbar-brand transition" do %>
-            <i class="fa fa-spoon "></i>
-          <% end %>
-        <% else%>
-          <%= link_to prepare_path, class: "navbar-brand transition" do %>
-            <i class="fa fa-spoon" ></i>
-          <% end %>
-        <% end %>
-
-        <% if current_user && current_user.cart.ingredients.count > 0 %>
-          <%= link_to cart_path, class: "navbar-brand" do %>
-            <i class="fa fa-shopping-cart size-18" id="cartIcon"></i> <%= current_user.cart.ingredients.count %>
-          <% end %>
-        <% end %>
-
-        <% if current_user %>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-user-times navbar-brand userLogin"></i>
-          <% end %>
-        <% else %>
-          <%= link_to new_user_session_path do %>
-            <i class="fa fa-user navbar-brand userLogin"></i>
-          <% end %>
-        <% end %>
-
-      </div>
-      <div class = "alertCenter" id="flash">
-        <%= flash[:notice] %>
-        <%= flash[:alert] %>
-      </div>
-    </nav>
-
-    <%= yield %>
-  </div>
-
-</body>
+  </body>
 </html>

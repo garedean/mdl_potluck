@@ -5,11 +5,9 @@
 <div class="listContainer">
   <ul class="theList" id="smoothScroll">
     <% @locations.each do |location| %>
-    <li>
-      <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>
-
-      <%#= link_to location.name, relocate_ingredient_location_path(@ingredient, location), class: "button listButtons" %>
-    </li>
+      <li>
+        <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>
+      </li>
     <% end %>
   </ul>
 </div>

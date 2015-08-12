@@ -10,11 +10,11 @@
       </thead>
       <tbody>
         <% @ingredients.where.not(:used_on => nil).each do |ingredient| %>
-        <tr>
-          <td class="tableCell"> <%= ingredient.name %></td>
-          <td class="tableCell"> <%= ingredient.id %> </td>
-          <td class="tableCell"> <%= ingredient.formatted_time_used %> </td>
-        </tr>
+          <tr>
+            <td class="tableCell"> <%= ingredient.name %></td>
+            <td class="tableCell"> <%= ingredient.id %> </td>
+            <td class="tableCell"> <%= ingredient.formatted_time_used %> </td>
+          </tr>
         <% end %>
       </tbody>
     </table>

@@ -1,23 +1,20 @@
 <ul class="breadcrumbs">
   <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
-  <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
+    <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
   <% end %>
   <% if @location.parent != nil && @location.parent.parent != nil%>
-  <li class="crumbles"><%= @location.parent.parent.name %></li>
+    <li class="crumbles"><%= @location.parent.parent.name %></li>
   <% end %>
   <% if @location.parent != nil %>
-  <li class="crumbles"><%= @location.parent.name %></li>
+    <li class="crumbles"><%= @location.parent.name %></li>
   <% end %>
-    <li class="crumbles"><%= @location.name %> <i class="fi-record size-12"></i>
-    </li>
+    <li class="crumbles"><%= @location.name %> <i class="fi-record size-12"></i></li>
 </ul>
 
 <ul class="theList">
   <% @sublocations.each do |location| %>
     <li>
-
       <%= hierarchy_link(location, :location, nil, "button listButtons") %>
-
     </li>
   <% end %>
 </ul>

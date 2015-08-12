@@ -1,7 +1,7 @@
 <div class="itemContainer">
-    <h2 id="titleFade" class="hidden"><%= @ingredient.name %></h2>
+    <h2 id="titleFade" class=""><%= @ingredient.name %></h2>
     <hr>
-  <div id="locationFade" class="hidden">
+  <div id="locationFade" class="">
     <h6>LOCATION:</h6>
     <% if @ingredient.location_id != nil %>
       <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
@@ -14,11 +14,11 @@
         <strong><%= @ingredient.location.parent.name %></strong><br>
       <% end %>
         <strong><%= @ingredient.location.name %></strong>
-      <% else %>
+    <% else %>
       NOT SET
     <% end %><hr>
   </div>
-  <div id="conditionFade" class="hidden">
+  <div id="conditionFade" class="">
     <h6>CONDITION:</h6>
     <% if @ingredient.expiring_at != nil %>
       <% if @ingredient.expiring_at.future? %>
@@ -27,16 +27,17 @@
         <div class="expiredItem">EXPIRED</div>
       <% end %>
         <strong><%= @ingredient.expiring_at %></strong>
-      <% else %>
-        N/A
+    <% else %>
+      N/A
     <% end %>
     <hr>
   </div>
-  <div id="quantityFade" class="hidden">
+  <div class="">
     <h6>QUANTITY:</h6><br>
       <strong><%= @ingredient.quantity %></strong><br>
   </div>
 </div>
+
 <%= link_to store_path do %>
   <button class="bigBottomButtonLeft">RELOCATE</button>
 <% end %>

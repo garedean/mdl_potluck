@@ -99,7 +99,7 @@ class IngredientsController < ApplicationController
   def save_location
     ingredient = Ingredient.find(params[:ingredient_id])
     ingredient.update(location_id: params[:id])
-    redirect_to ingredient_path(ingredient), notice: "Location updated!"
+    redirect_to ingredient_path(ingredient), notice: "LOCATION UPDATED"
   end
 
   private

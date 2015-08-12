@@ -1,58 +1,55 @@
 <div class="adminContainer">
-	<h3>ADMIN CONTROLS</h3><hr>
-	<table id="adminTable">
-	  <tr>
-	    <th class="tableCell">Users</th>
-	    <th class="tableCell">Items</th>
-	    <th class="tableCell">Categories</th>
-	    <th class="tableCell">Locations</th>
-	  </tr>
-	  <tr>
-	    <td class="tableCell"><%= @users.count %></th>
-	    <td class="tableCell" data-dropdown="drop"><%= @ingredients.count %></td>
-	    <td class="tableCell"><%= @categories.count %></td>
-	    <td class="tableCell"><%= @locations.count %></td>
-	  </tr>
-	</table>
-<hr>
-<h4>USER SETTINGS</h4>
-	<%= link_to admin_users_path do %>
-	  <button class="button adminButtons">
-	    MANAGE USERS
-	  </button>
-	<% end %>
-<br>
-	<%= link_to cartsummary_path do %>
-	  <button class="button adminButtons">
-	    USED INVENTORY ITEMS
-	  </button>
-	<% end %>
-<hr>
-<h4>INVENTORY SETTINGS</h4>
-	<%= link_to admin_locations_path do %>
-	  <button class="button adminButtons">
-	    MANAGE LOCATIONS
-	  </button>
-	<% end %>
-<br>
-	<%= link_to admin_categories_path do %>
-	  <button class="button adminButtons">
-	    MANAGE CATEGORIES
-	  </button>
-	<% end %>
-
-<br>
-	<%= link_to inventorysummary_path do %>
-	  <button class="button adminButtons">
-	    INVENTORY SUMMARY
-	  </button>
-	<% end %>
-<br>
-	<%= link_to expiredsummary_path do %>
-	  <button class="button adminButtons">
-	    EXPIRED SUMMARY
-	  </button>
-	<% end %>
-
-
+		<h3>ADMIN CONTROLS</h3><hr>
+		<table id="adminTable">
+		  <tr>
+		    <th class="tableCell">Users</th>
+		    <th class="tableCell">Items</th>
+		    <th class="tableCell">Categories</th>
+		    <th class="tableCell">Locations</th>
+		  </tr>
+		  <tr>
+		    <td class="tableCell"><%= @users.count %></th>
+		    <td class="tableCell"><%= @ingredients.count %></td>
+		    <td class="tableCell"><%= @categories.count %></td>
+		    <td class="tableCell"><%= @locations.count %></td>
+		  </tr>
+		</table>
+	<hr>
+	<h4>USER SETTINGS</h4>
+		<%= link_to admin_users_path do %>
+		  <button class="button adminButtons">
+		    MANAGE USERS
+		  </button>
+		<% end %>
+	<br>
+		<%= link_to cartsummary_path do %>
+		  <button class="button adminButtons">
+		    USED INVENTORY ITEMS
+		  </button>
+		<% end %>
+	<hr>
+	<h4>INVENTORY SETTINGS</h4>
+		<%= link_to admin_locations_path do %>
+		  <button class="button adminButtons">
+		    MANAGE LOCATIONS
+		  </button>
+		<% end %>
+	<br>
+		<%= link_to admin_categories_path do %>
+		  <button class="button adminButtons">
+		    MANAGE CATEGORIES
+		  </button>
+		<% end %>
+	<br>
+		<%= link_to inventorysummary_path do %>
+		  <button class="button adminButtons">
+		    INVENTORY SUMMARY
+		  </button>
+		<% end %>
+	<br>
+		<%= link_to expiredsummary_path do %>
+		  <button class="button adminButtons">
+		    EXPIRED SUMMARY
+		  </button>
+		<% end %>
 </div>

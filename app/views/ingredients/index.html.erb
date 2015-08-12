@@ -19,11 +19,11 @@
         <% @ingredients.each do |ingredient| %>
           <tr>
               <td>
-              <%= link_to ingredient_path(ingredient) do %>
-                <div class="button highlightColor tableCell tableCellWidth" id="listButton">
-                  <%= ingredient.name %>
-                </div >
-              <% end %>
+                <%= link_to ingredient_path(ingredient) do %>
+                  <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+                    <%= ingredient.name %>
+                  </div >
+                <% end %>
                 <span class="littleBreadcrumbs">
                   <% if ingredient.location_id != nil %>
                     <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
@@ -36,35 +36,35 @@
                       <strong><%= ingredient.location.parent.name %> ></strong>
                     <% end %>
                       <strong><%= ingredient.location.name %></strong>
-                    <% else %>
-                    NO LOCATION
+                  <% else %>
+                      NO LOCATION
                   <% end %>
                 </span>
               </td>
               <td class="tableCell">
-              <% if ingredient.expiring_at != nil %>
-                <% if ingredient.expiring_at.future? %>
-                  <div class="freshItem">FRESH</div>
-                <% else %>
-                  <div class="expiredItem">EXPIRED</div>
-                <% end %>
-                <%= ingredient.expiring_at %>
+                <% if ingredient.expiring_at != nil %>
+                  <% if ingredient.expiring_at.future? %>
+                    <div class="freshItem">FRESH</div>
+                  <% else %>
+                    <div class="expiredItem">EXPIRED</div>
+                  <% end %>
+                  <%= ingredient.expiring_at %>
                 <% else %>
                   N/A
-              <% end %>
-            </td>
-            <td>
-              <%= link_to add_to_cart_path(ingredient), method: :post do %>
-                <div class="button highlightColor cartButton" id="listButton">
-                  <i class="fi-shopping-cart size-24 makeBlack"></i>
-                </div >
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to add_to_cart_path(ingredient), method: :post do %>
+                  <div class="button highlightColor cartButton" id="listButton">
+                    <i class="fi-shopping-cart size-24 makeBlack"></i>
+                  </div>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>
 <% else %>
   <a href="javascript:history.back()" class="button arrangeReturn highlightColor">

@@ -11,22 +11,22 @@
       </thead>
       <tbody>
         <% @ingredients.where.not(:expiring_at => nil).each do |ingredient| %>
-        <tr>
-          <td class="tableCell"> <%= ingredient.name %></td>
-          <td class="tableCell"> <%= ingredient.id %></td>
-          <td class="tableCell">
-            <% if ingredient.expiring_at != nil %>
-              <% if ingredient.expiring_at.future? %>
-                <div class="freshItem">FRESH</div>
-              <% else %>
-                <div class="expiredItem">EXPIRED</div>
-              <% end %>
+          <tr>
+            <td class="tableCell"><%= ingredient.name %></td>
+            <td class="tableCell"><%= ingredient.id %></td>
+            <td class="tableCell">
+              <% if ingredient.expiring_at != nil %>
+                <% if ingredient.expiring_at.future? %>
+                  <div class="freshItem">FRESH</div>
+                <% else %>
+                  <div class="expiredItem">EXPIRED</div>
+                <% end %>
               <% else %>
                 N/A
-            <% end %>
-          </td>
-          <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
-        </tr>
+              <% end %>
+            </td>
+            <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>
@@ -39,5 +39,7 @@
     </button>
   <% end %>
 <% end %>
-
+<div class="bottomDescription">
+  <p>All items currently logged within the database will appear here.</p>
+</div>
 <a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

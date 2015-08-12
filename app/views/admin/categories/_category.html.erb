@@ -1,7 +1,7 @@
 <% if category.parent %>
-<li class="adminLocationList">
+  <li class="adminLocationList">
 <% else %>
-<li class="adminLocationListRoot">
+  <li class="adminLocationListRoot">
 <% end %>
   <%= link_to admin_category_path(category), confirm: "You sure?", method: :delete do %>
     <% if category.root? %>

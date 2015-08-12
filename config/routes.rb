@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/admin' => 'static_pages#admin_main'
   get '/cartsummary' => 'admin#cart_summaries'
   get '/inventorysummary' => 'admin#inventory_summaries'
-  get '/users' => 'admin#users'
+  #get '/users' => 'admin#users'
   get '/expiredsummary' => 'admin#expired_summary'
 
   get '/recentlylogged' => 'ingredients#recentlylogged'
@@ -64,6 +64,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :locations
     resources :categories
+    resources :users
   end
 
   resources :categories do

@@ -14,7 +14,7 @@
 <ul class="theList">
   <% @sublocations.each do |location| %>
     <li>
-      <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>
+      <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons no-ajaxify") %>
     </li>
   <% end %>
 </ul>

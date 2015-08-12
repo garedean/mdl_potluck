@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @ingredients.where(expiring_at: Time.now - 3.day..Time.now + 3.day).each do |ingredient| %>
+      <% @ingredients.where(expiring_at: Time.now - 3.day..Time.now + 2.day).each do |ingredient| %>
         <tr>
           <td>
             <%= link_to ingredient_path(ingredient) do %>
@@ -46,7 +46,7 @@
             <% end %>
           </td>
           <td>
-            <%= link_to add_to_cart_path(ingredient), method: :post do %>
+            <%= link_to add_to_cart_path(ingredient),class: 'no_ajaxify', method: :post do %>
               <div class="button highlightColor cartButton">
                 <i class="fi-shopping-cart size-24 makeBlack"></i>
               </div >

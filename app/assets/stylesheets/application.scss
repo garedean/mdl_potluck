@@ -20,6 +20,11 @@
  @import 'bootstrap';
  // @import 'foundation-icons';
 
+/* LOADING */
+
+.ajaxify_loader {
+}
+
  /* FONT SIZES */
 
  .size-12 { font-size: 12px; }
@@ -107,6 +112,15 @@ a:hover{
 	display: none;
 	font-size: 90%;
 	text-align: center;
+}
+
+/* FOOTER */
+
+.bottomDescription {
+  position: relative;
+  width: 180px;
+  left: 35px;
+  top: 70px;
 }
 
 /* BUTTONS */

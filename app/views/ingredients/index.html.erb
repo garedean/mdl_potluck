@@ -65,7 +65,9 @@
         </tbody>
       </table>
     </div>
-  <a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>
+    <%= link_to prepare_path do %>
+      <span class="bigBottomButtonRight button"><br><br><i class="fi-arrow-left size-48"></i></span>
+    <% end %>
 <% else %>
   <a href="javascript:history.back()" class="button arrangeReturn highlightColor">
     <br><h3>NO ITEMS STORED</h3><br>

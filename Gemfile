@@ -15,6 +15,7 @@ gem 'foundation-icons-sass-rails'
 gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'ancestry'
+gem 'nprogress-rails'
 
 group :development do
   gem 'byebug'

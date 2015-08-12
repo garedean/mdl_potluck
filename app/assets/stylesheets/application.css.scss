@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require foundation
+ *= require nprogress
+ *= require nprogress-bootstrap
  */
 
  @import "foundation_and_overrides";

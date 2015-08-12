@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th width="90">NAME</th>
-          <th>CREATED ON</th>
+          <th>EXPIRING ON</th>
           <th>LOCATION</th>
         </tr>
       </thead>
@@ -18,7 +18,11 @@
                 </div>
               <% end %>
             </td>
-            <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
+            <% if ingredient.expiring_at = nil %>
+              N/A
+            <% else %>
+              <td class="tableCell"> <%= ingredient.expiring_at %></td>
+            <% end %>
             <td class="tableCell"> <%= ingredient.location_id %></td>
           </tr>
         <% end %>

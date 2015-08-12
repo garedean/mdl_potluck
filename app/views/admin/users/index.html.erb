@@ -38,6 +38,10 @@
   </table>
 </div>
 
-<%= link_to "Add user", new_admin_user_path %>
+<%= link_to admin_path do %>
+  <span class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i><br></span>
+<% end %>
 
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>
+<%= link_to new_admin_user_path do %>
+  <span class="button bigBottomButtonLeft"><br><i class="fi-torso size-48"></i><br>NEW USER</span>
+<% end %>

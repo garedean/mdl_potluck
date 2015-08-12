@@ -11,10 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require ajaxify_rails
 //= require_tree .
+//= require turbolinks
 
 $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
@@ -27,5 +26,3 @@ $(function() {
      $(".lightbox-wrapper").hide();
    });
 });
-
-//= require turbolinks

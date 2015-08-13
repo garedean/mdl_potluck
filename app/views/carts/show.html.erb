@@ -11,7 +11,7 @@
     <tbody>
       <% @cart_items.each do |cart_item| %>
         <tr>
-          <td><h5><%= cart_item.name %></h5>
+          <td><h5><%= link_to cart_item.name, ingredient_path(cart_item) %></h5>
             <span class="littleBreadcrumbs">
               <% if cart_item.location_id != nil %>
                 <% if cart_item.location.parent != nil && cart_item.location.parent.parent != nil && cart_item.location.parent.parent.parent != nil%>

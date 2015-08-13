@@ -54,6 +54,13 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def destroy
+    ingredient = Ingredient.find(params[:id])
+    ingredient.destroy
+
+    redirect_to prepare_path, notice: "Item deleted!"
+  end
+
   def expiring_soon
     @ingredients = Ingredient.expiring_soon
   end
@@ -104,8 +111,7 @@ class IngredientsController < ApplicationController
 
   private
 
-  def ingredient_params
-  	params.require(:ingredient).permit(:location_id, :category_id, :quantity, :lifespan)
-  end
-
+    def ingredient_params
+    	params.require(:ingredient).permit(:location_id, :category_id, :quantity, :lifespan)
+    end
 end

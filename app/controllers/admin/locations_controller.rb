@@ -20,11 +20,8 @@ class Admin::LocationsController < ApplicationController
 
   def destroy
     @location = Location.find(params[:id])
-    if @location.destroy
-      @location.ingredients.each do |ingredient|
+    @location.destroy
 
-      end
-    end
     redirect_to admin_locations_path, notice: "LOCATION DELETED"
   end
 

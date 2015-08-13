@@ -25,16 +25,17 @@
                   </div >
                 <% end %>
                 <span class="littleBreadcrumbs">
-                  <% if ingredient.location_id != nil %>
-                    <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
+                  <% if ingredient.location_id %>
+                    <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent && ingredient.location.parent.parent.parent %>
                       <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>
                     <% end %>
-                    <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil%>
+                    <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent %>
                       <strong><%= ingredient.location.parent.parent.name %> ></strong>
                     <% end %>
-                    <% if ingredient.location.parent != nil %>
+                    <% if ingredient.location && ingredient.location.parent %>
                       <strong><%= ingredient.location.parent.name %> ></strong>
                     <% end %>
+
                       <strong><%= ingredient.location.name %></strong>
                   <% else %>
                       NO LOCATION

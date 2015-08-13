@@ -10,13 +10,21 @@ class Admin::LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params, parent_id: location_params[:parent_id])
-    @location.save
-    redirect_to admin_locations_path
+
+    if @location.save
+      redirect_to admin_locations_path
+    else
+      render :new
+    end
   end
 
   def destroy
     @location = Location.find(params[:id])
-    @location.destroy
+    if @location.destroy
+      @location.ingredients.each do |ingredient|
+
+      end
+    end
     redirect_to admin_locations_path, notice: "LOCATION DELETED"
   end
 

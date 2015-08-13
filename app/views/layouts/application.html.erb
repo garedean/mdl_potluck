@@ -31,6 +31,7 @@
             <% end %>
           <% end %>
           <% if current_user %>
+
             <%= link_to destroy_user_session_path, class: "navbar-brand", method: :delete do %>
               <i class="fa fa-user-times userLogin navbar-brand"></i>
             <% end %>
@@ -40,6 +41,9 @@
             <% end %>
           <% end %>
         </div>
+        <%= link_to admin_path do %>
+          <i class="fi fi-sheriff-badge adminLogin navbar-brand"></i>
+        <% end %>
         <div class = "alertCenter" id="flash">
           <%= flash[:notice] %>
           <%= flash[:alert] %>

@@ -16,6 +16,7 @@ gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'ancestry'
 gem 'nprogress-rails'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'byebug'

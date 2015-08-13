@@ -14,7 +14,7 @@ class Store::IngredientsController < ApplicationController
     @ingredient = Ingredient.new(category_id: params[:category_id])
     @ingredient.save
 
-    redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "+ITEM ADDED"
+    redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"
   end
 
   def add_with_location
@@ -23,7 +23,7 @@ class Store::IngredientsController < ApplicationController
     @ingredient = Ingredient.new(category_id: category.id, location_id: location_id)
 
     if @ingredient.save
-      redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "+ITEM ADDED"
+      redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"
     else
       render 'new'
     end

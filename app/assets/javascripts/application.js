@@ -24,10 +24,8 @@ $(function() {
    });
 
    $('.fade-in').delay(100).fadeIn(500);
+   $('.fade-out').delay(1000).fadeOut(800);
 
-   $('.close-lightbox').click(function() {
-     $(".lightbox-wrapper").hide();
-   });
 });
 
 $(function(){  // $(document).ready shorthand

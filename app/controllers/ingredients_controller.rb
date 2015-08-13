@@ -25,7 +25,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.new(category_id: params[:category_id])
 
     if @ingredient.save
-      redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "+ITEM ADDED"
+      redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"
     else
       render 'new'
     end
@@ -97,7 +97,7 @@ class IngredientsController < ApplicationController
     new_ingredient = Ingredient.new(category_id: cloned_category, location_id: cloned_location)
 
     if new_ingredient.save
-      redirect_to ingredient_path(new_ingredient, show_quick_add: true)
+      redirect_to ingredient_path(new_ingredient, show_quick_add: true), notice: "One more stored in this location"
     else
       render 'new'
     end

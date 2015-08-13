@@ -30,11 +30,16 @@
     </p>
     <hr>
   <div class="lightboxButtonBlockTop">
-    <% if @ingredient.location.class != NullLocation %>
-      <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
-        <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> SAME LOCATION</div>
+      <% if @ingredient.location.class != NullLocation %>
+        <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
+          <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> SAME LOCATION</div>
+        <% end %>
+      <% else %>
+        <%= link_to relocate_ingredient_locations_path(@ingredient.category) do %>
+          <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i> SET LOCATION</div>
+        <% end %>
       <% end %>
-    <% end %>
+
     <%= link_to store_category_locations_path(@ingredient.category) do %>
       <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i> CHOOSE LOCATION</div>
     <% end %>

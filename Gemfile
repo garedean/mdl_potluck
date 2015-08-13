@@ -14,9 +14,9 @@ gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
 gem 'breadcrumbs_on_rails'
 gem 'devise'
-gem 'jquery-turbolinks'
 gem 'ancestry'
-gem 'ajaxify_rails'
+gem 'nprogress-rails'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'byebug'

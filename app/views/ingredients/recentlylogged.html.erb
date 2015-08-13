@@ -3,23 +3,28 @@
     <table class="tableFontSize">
       <thead>
         <tr>
-          <th width="90">NAME</th>
-          <th>CREATED ON</th>
+          <th width="80">NAME</th>
+          <th>ITEM ID</th>
           <th>LOCATION</th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).each do |ingredient| %>
           <tr>
-            <td class="tableCell">
+            <td>
               <%= link_to ingredient_path(ingredient) do %>
                 <div class="button highlightColor tableCell tableCellWidth" id="listButton">
                   <%= ingredient.name %>
                 </div>
               <% end %>
             </td>
-            <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
-            <td class="tableCell"> <%= ingredient.location_id %></td>
+            <td class="tableCell"> <%= ingredient.id %></td>
+              <% if ingredient.location_id != nil %>
+                <td class="tableCell"> <%= ingredient.location.root.name %></td>
+              <% else %>
+                <td class="tableCell">NOT LOCATED
+            </td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

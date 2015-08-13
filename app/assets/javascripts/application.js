@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.turbolinks
+//= require nprogress
+//= require nprogress-turbolinks
 //= require turbolinks
+//= require_tree .
 
 $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
@@ -25,4 +28,8 @@ $(function() {
    $('.close-lightbox').click(function() {
      $(".lightbox-wrapper").hide();
    });
+});
+
+$(function(){  // $(document).ready shorthand
+  $('#rootTitle').fadeIn('slow');
 });

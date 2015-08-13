@@ -4,7 +4,8 @@
       <tr>
         <th width="120">EMAIL</th>
         <th>SIGN IN COUNT</th>
-        <th width="150">LAST SIGN IN</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -19,18 +20,18 @@
           <%= user.sign_in_count %>
         </td>
 
-        <td class="tableCell">
-          <%= user.formatted_time_signin %>
-        </td>
-
-        <% if current_user.admin? %>
+      <% if current_user.admin? %>
+        <%= link_to edit_admin_user_path(user) do %>
           <td>
-            <%= link_to "Edit", edit_admin_user_path(user) %>
-          </td>
-          <td>
-            <%= link_to "Delete", admin_user_path(user), confirm: "Are you sure?", method: :delete %>
+            <span class="button">EDIT</span>
           </td>
         <% end %>
+        <%= link_to admin_user_path(user), confirm: "Are you sure?", method: :delete do %>
+          <td>
+            <span class="button">DELETE</span>
+          </td>
+        <% end %>
+      <% end %>
       </tr>
 
       <% end %>
@@ -38,6 +39,10 @@
   </table>
 </div>
 
-<%= link_to "Add user", new_admin_user_path %>
+<%= link_to admin_path do %>
+  <span class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i><br></span>
+<% end %>
 
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>
+<%= link_to new_admin_user_path do %>
+  <span class="button bigBottomButtonLeft"><br><i class="fi-torso size-48"></i><br>NEW USER</span>
+<% end %>

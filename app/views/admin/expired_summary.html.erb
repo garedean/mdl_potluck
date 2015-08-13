@@ -3,15 +3,17 @@
     <table class="tableFontSize">
       <thead>
         <tr>
-          <th width="140">NAME</th>
+          <th width="130">NAME</th>
+          <th>ITEM ID</th>
           <th width="100">CONDITION</th>
-          <th>LOCATION ID</th>
+          <th>LOCATION</th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where(expiring_at: Time.now - 14.day..Time.now.midnight + 1.day).each do |ingredient| %>
           <tr>
             <td class="tableCell"> <%= ingredient.name %></td>
+            <td><%= ingredient.id %></td>
             <td class="tableCell">
               <% if ingredient.expiring_at != nil %>
                 <% if ingredient.expiring_at.past? %>
@@ -24,7 +26,11 @@
                 N/A
               <% end %>
             </td>
-            <td class="tableCell"><%= ingredient.id %></td>
+              <% if ingredient.location_id != nil %>
+                <td class="tableCell"> <%= ingredient.location.root.name %></td>
+              <% else %>
+                <td class="tableCell">NOT LOCATED</td>
+              <% end %>
           </tr>
         <% end %>
       </tbody>

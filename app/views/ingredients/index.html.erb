@@ -55,7 +55,7 @@
                 <% end %>
               </td>
               <td>
-                <%= link_to add_to_cart_path(ingredient), class: 'no_ajaxify', method: :post do %>
+                <%= link_to add_to_cart_path(ingredient), method: :post do %>
                   <div class="button highlightColor cartButton" id="listButton">
                     <i class="fi-shopping-cart size-24 makeBlack"></i>
                   </div>
@@ -66,7 +66,9 @@
         </tbody>
       </table>
     </div>
-  <a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>
+    <%= link_to prepare_path do %>
+      <span class="bigBottomButtonRight button"><br><br><i class="fi-arrow-left size-48"></i></span>
+    <% end %>
 <% else %>
   <a href="javascript:history.back()" class="button arrangeReturn highlightColor">
     <br><h3>NO ITEMS STORED</h3><br>

@@ -16,7 +16,7 @@ class CartsController < ApplicationController
     remove_cart_items
     redirect_to prepare_path , notice: "ITEMS CLAIMED"
   end
-  
+
   private
 
   def remove_cart_items

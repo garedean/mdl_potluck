@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-  	@food_categories = Category.where(ancestry: nil)
+  	@food_categories = Category.where(ancestry: nil).order(:name)
   end
 
   def show

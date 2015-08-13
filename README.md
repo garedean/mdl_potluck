@@ -30,6 +30,7 @@ http://www.eyecuelab.com/
 * `rake db:create1`
 * `rake db:migrate`
 * `rake db:seed`
+
 or
 * `rake db:reset`
 

@@ -11,31 +11,55 @@ https://potluckapp.herokuapp.com/
 Garrett Olson & Michael Yanchar
 at EyeCue Lab
 
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
+http://www.eyecuelab.com/
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * change into the new directory
-* `npm install`
-* `bower install`
 * `bundle`
 
 ## Running / Development
 
+* start server client
 * `rails s`
 * Visit the app at [http://localhost:3000]
 
-### Building
+## Building
 
-* `rake db:create'
-* `rake db:migrate'
-* `rake db:seed'
+* `rake db:create1`
+* `rake db:migrate`
+* `rake db:seed`
+or
+* `rake db:reset`
 
+## Site Features
+
+### Store
+  
+* Search by ID
+* View Recently Created Items
+* View Unlocated Items
+* Add New Item
+  
+### Prepare
+
+* Search By ID
+* Search by Location
+* Search by Category
+* View Expiring Items
+* Cart Items
+  -Use / Empty Cart
+
+### Admin
+
+* Manage Users
+  - Create / Delete / Edit User
+* Manage Locations
+  - Create / Delete / Location
+* Manage Categories
+  - Create / Delete / Categories
+* Inventory Summary
+* Expired Summary
+* Used Items Summary
 

@@ -1,17 +1,8 @@
-<% link_type ||= nil %>
+<% content_for :title do %>
+  Categories
+<% end %>
 
-<ul class="breadcrumbs">
-  <% if @food_category.parent != nil && @food_category.parent.parent != nil && @food_category.parent.parent.parent != nil%>
-		<li class="crumbles"><%= @food_category.parent.parent.parent.name %></li>
-	<% end %>
-	<% if @food_category.parent != nil && @food_category.parent.parent != nil%>
-		<li class="crumbles"><%= @food_category.parent.parent.name %></li>
-	<% end %>
-	<% if @food_category.parent != nil %>
-		<li class="crumbles"><%= @food_category.parent.name %></li>
-	<% end %>
-    <li class="crumbles"><%= @food_category.name %></i></li><br>
-</ul>
+<% link_type ||= nil %>
 
 <ul class="theList">
   <% @food_category_children.each do |item| %>

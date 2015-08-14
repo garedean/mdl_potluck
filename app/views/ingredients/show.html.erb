@@ -35,7 +35,7 @@
     <hr>
   </div>
   <div id="quantityFade" class="">
-    <h6>TOTAL QUANTITY OF:   '<%= @ingredient.name %>'</h6>
+    <h6>TOTAL QUANTITY OF:<br>'<%= @ingredient.name %>'</h6>
       <strong>
         <span id="item-count">
           <%= Ingredient.count_all_locations(@ingredient) %>
@@ -45,13 +45,15 @@
   </div>
 </div>
 
-<%= link_to relocate_ingredient_locations_path(@ingredient) do %>
-  <span class="button bigBottomButtonLeft"><br><i class="fi-marker size-48"></i><br>MOVE</span>
-<% end %>
+<div class="mainButtonRack">
+  <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
+    <div class="button"><i class="fi-marker"></i> MOVE</div>
+  <% end %>
 
-<%= link_to store_path do %>
-  <span class="button bigBottomButtonRight"><br><i class="fi-check size-48"></i><br>DONE</span>
-<% end %>
+  <%= link_to store_path do %>
+    <div class="button"><i class="fi-check"></i> DONE</div>
+  <% end %>
+</div>
 
 <% if @show_quick_add %>
   <%= render "quick_add_lightbox" %>

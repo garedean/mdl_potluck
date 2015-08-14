@@ -2,8 +2,8 @@
   <table>
     <thead>
       <tr>
-        <th width="200"></th>
-        <th width="90"></th>
+        <th></th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
@@ -12,9 +12,10 @@
         <tr>
           <td>
             <%= link_to ingredient_path(ingredient) do %>
-              <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+              <div class="makeBlack tableCellWidth">
                 <%= ingredient.name %>
               </div >
+              <br>
             <% end %>
             <span class="littleBreadcrumbs">
               <% if ingredient.location_id != nil %>
@@ -33,7 +34,7 @@
               <% end %>
             </span>
           </td>
-          <td class="tableCell">
+          <td>
             <% if ingredient.expiring_at != nil %>
               <% if ingredient.expiring_at.future? %>
                 <div class="freshItem">FRESH</div>
@@ -47,7 +48,7 @@
           </td>
           <td>
             <%= link_to add_to_cart_path(ingredient), method: :post do %>
-              <div class="button highlightColor cartButton">
+              <div>
                 <i class="fi-shopping-cart size-24 makeBlack"></i>
               </div >
             <% end %>
@@ -57,7 +58,3 @@
     </tbody>
   </table>
 </div>
-<div class="bottomDescription">
-
-</div>
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

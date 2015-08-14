@@ -1,31 +1,22 @@
 <div class="cartTable">
-  <table >
+  <table>
     <thead>
       <tr>
-        <th width="130">ITEM</th>
-        <th width="60">ITEM ID</th>
-        <th width="110">EXPIRING ON</th>
-        <th width="40">CART</th>
+        <th>ITEM</th>
+        <th>ID</th>
+        <th>CONDITION</th>
+        <th>CART</th>
       </tr>
     </thead>
     <tbody>
       <% @cart_items.each do |cart_item| %>
-        <tr>
-          <td><h5><%= cart_item.name %></h5>
+        <tr >
+          <td><h5h6><%= cart_item.name %></h6><br><br>
             <span class="littleBreadcrumbs">
               <% if cart_item.location_id != nil %>
-                <% if cart_item.location.parent != nil && cart_item.location.parent.parent != nil && cart_item.location.parent.parent.parent != nil%>
-                  <strong><%= cart_item.location.parent.parent.parent.name %> ></strong>
-                <% end %>
-                <% if cart_item.location.parent != nil && cart_item.location.parent.parent != nil%>
-                  <strong><%= cart_item.location.parent.parent.name %> ></strong>
-                <% end %>
-                <% if cart_item.location.parent != nil %>
-                  <strong><%= cart_item.location.parent.name %> ></strong>
-                <% end %>
-                  <strong><%= cart_item.location.name %></strong>
+                  <%= cart_item.location.root.name %>
                 <% else %>
-                NO LOCATION
+                  NO LOCATION
               <% end %>
             </span>
           </td>
@@ -52,15 +43,16 @@
     </tbody>
   </table>
 </div>
+<div class="mainButtonRack">
+  <%= link_to use_all_items_path, method: :post do %>
+    <span class="mainButton">
+      <i class="fa fa-spoon"></i><br>USE
+    </span>
+  <% end %>
 
-<%= link_to use_all_items_path, method: :post do %>
-  <span class="button bigBottomButtonRight">
-    <br><br><i class="fa fa-spoon size-36"></i><br><br>USE
-  </span>
-<% end %>
-
-<%= link_to empty_cart_path, method: :post do %>
-  <span class="button bigBottomButtonLeft">
-    <br><br><i class="fa fa-cart-arrow-down size-36"></i><br><br>EMPTY
-  </span>
-<% end %>
+  <%= link_to empty_cart_path, method: :post do %>
+    <span class="mainButton">
+      <i class="fa fa-cart-arrow-down"></i><br>EMPTY
+    </span>
+  <% end %>
+</div>

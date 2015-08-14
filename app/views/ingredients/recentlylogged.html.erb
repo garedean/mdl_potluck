@@ -3,7 +3,7 @@
     <table class="tableFontSize">
       <thead>
         <tr>
-          <th width="80">NAME</th>
+          <th>NAME</th>
           <th>ITEM ID</th>
           <th>LOCATION</th>
         </tr>
@@ -13,16 +13,16 @@
           <tr>
             <td>
               <%= link_to ingredient_path(ingredient) do %>
-                <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+                <div class="makeBlack tableCellWidth" >
                   <%= ingredient.name %>
                 </div>
               <% end %>
             </td>
-            <td class="tableCell"> <%= ingredient.id %></td>
+            <td> <%= ingredient.id %></td>
               <% if ingredient.location_id != nil %>
-                <td class="tableCell"> <%= ingredient.location.root.name %></td>
+                <td> <%= ingredient.location.root.name %></td>
               <% else %>
-                <td class="tableCell">NOT LOCATED
+                <td>NOT LOCATED
             </td>
             <% end %>
           </tr>
@@ -38,7 +38,3 @@
     </button>
   <% end %>
 <% end %>
-<div class="bottomDescription">
-  <p>Items will appear here if they were created in the past 3 hours.</p>
-</div>
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

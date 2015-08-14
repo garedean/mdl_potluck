@@ -32,26 +32,25 @@
   <div class="lightboxButtonBlockTop">
       <% if @ingredient.location.class != NullLocation %>
         <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
-          <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> SAME LOCATION</div>
+          <div class="highlightColor"><br><i class="fi-plus size-24 makeBlack"></i><br> SAME LOCATION</div>
         <% end %>
       <% else %>
         <%= link_to relocate_ingredient_locations_path(@ingredient.category) do %>
-          <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i> SET LOCATION</div>
+          <div class="highlightColor"><br><i class="fi-plus size-24 makeBlack"></i> SET LOCATION</div>
         <% end %>
       <% end %>
 
     <%= link_to store_category_locations_path(@ingredient.category) do %>
-      <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i> CHOOSE LOCATION</div>
+      <div class="highlightColor"><br><i class="fi-plus size-24 makeBlack"></i> CHOOSE LOCATION</div>
     <% end %>
   </div>
   <div class="lightboxButtonBlockBottom">
     <%= link_to category_ingredients_path(@ingredient.category), method: :post do %><br>
-      <div class="button highlightColor lightboxButtonLeft"><br><i class="fi-plus size-24 makeBlack"></i><br> NO LOCATION</div>
+      <div class="highlightColor"><br><i class="fi-plus size-24 makeBlack"></i><br> NO LOCATION</div>
     <% end %>
     <%= link_to  store_categories_path do %>
-      <div class="button highlightColor lightboxButtonLeft" id="newItem"><br><i class="fi-plus size-24 makeBlack"></i><br> NEW ITEM</div>
+      <div class="highlightColor" id="newItem"><br><i class="fi-plus size-24 makeBlack"></i><br> NEW ITEM</div>
     <% end %>
-      <span id="quickAdd">Quick Add</span>
   </div>
     <!-- commented out -->
     <% if false %>

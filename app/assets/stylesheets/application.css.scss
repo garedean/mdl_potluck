@@ -179,6 +179,7 @@ a i:hover {
   height: 4em;
   color: white;
   font-size: 1em;
+  border-radius: 3px;
 }
 
 .mainButtonRack{
@@ -251,6 +252,7 @@ a i:hover {
 .ingredientTable {
   margin-top: 3.3em;
 	height: 34em;
+  width: 100%;
 	overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -270,6 +272,10 @@ a i:hover {
 	height: 28em;
 	width: 100%;
 	overflow-y: scroll;
+}
+
+table {
+  width: 100%;
 }
 
 .expiredItem {
@@ -541,7 +547,7 @@ ul {
   .circle {
     height: 65px;
     width: 65px;
-    border: 1px solid #ccc;
+    border: 1px solid #BDBDBD;
     border-radius: 50%;
     margin: auto;
 
@@ -565,7 +571,7 @@ ul {
       display: inline-block;
       width: 100%;
       padding: 10px 10px;
-      border: 1px solid #ddd;
+      border: 1px solid #BDBDBD;
       font-size: 13px;
       color: blue;
       &:hover {

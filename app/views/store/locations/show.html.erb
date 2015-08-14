@@ -11,7 +11,7 @@
     <li class="crumbles"><%= @location.name %></li>
 </ul>
 
-<ul class="theList">
+<ul class="theList">      
   <% @sublocations.each do |location| %>
     <li>
       <%= hierarchy_link(location, :place_in_location, @category, "button listButtons") %>

@@ -9,6 +9,7 @@ class Store::IngredientsController < ApplicationController
   end
 
   def create
+    binding.pry
     @category = Category.find(params[:category_id])
     @location = Location.find(params[:id]) if params[:id]
     @ingredient = Ingredient.new(category_id: params[:category_id])

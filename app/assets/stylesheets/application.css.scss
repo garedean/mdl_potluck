@@ -464,7 +464,7 @@ ul.breadcrumbs li:before {
 
 .quick-links-lightbox {
   background: white;
-  height: 385px;
+  height: 415px;
   width: 270px;
   padding: 20px;
   position: absolute;
@@ -516,7 +516,7 @@ ul {
 
 .item-name {
   margin-top: 5px;
-  margin-bottom: 6px;
+  margin-bottom: 0px;
   font-weight: 300;
 }
 
@@ -584,7 +584,8 @@ ul {
   }
 }
 
-.lightboxBreadcrumbs {
+.lightbox-small {
   color: #999;
   font-size: 10px;
+  margin-bottom: 0;
 }

@@ -39,6 +39,8 @@
   </table>
 </div>
 
-<%= link_to new_admin_user_path do %>
-  <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
+<% if current_user.admin? %>
+  <%= link_to new_admin_user_path do %>
+    <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
+  <% end %>
 <% end %>

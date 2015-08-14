@@ -6,7 +6,9 @@
   <ul class="theList" id="smoothScroll">
     <li>
       <% unless @hide_no_location_option %>
-        <%= link_to "Add without location", store_category_ingredients_path(@category), class: "button listButtons", method: :post %>
+        <%= link_to store_category_ingredients_path(@category), class: "button listButtons", method: :post do %>
+          <i class="fi fi-minus-circle"></i>  Add without location
+        <% end %>
       <% end %>
     </li>
     <% @locations.each do |location| %>
@@ -16,5 +18,3 @@
     <% end %>
   </ul>
 </div>
-
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

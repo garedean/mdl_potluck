@@ -1,25 +1,32 @@
-<div id="rootTitle" class="rootTitle"><p class="size-48">STORE    <i class="fa fa-cube size-48"></i></p></div>
+<ul class="breadcrumbs">
+	<br>
+	<br>
+</ul>
 
-<%= link_to recentlylogged_path do %>
-  <span class="button bigBottomButtonLeftTop">
-    <br><i class="fi-magnifying-glass size-48"></i><br>SEARCH BY ID
-  </span>
-<% end %>
+<div class="mainButtonRack">
 
-<%= link_to recentlylogged_path do %>
-  <span class="button bigBottomButtonRightTop">
-    <br><i class="fi-clock size-48"></i><br>RECENT
-  </span>
-<% end %>
+  <%= link_to recentlylogged_path do %>
+    <div class="mainButton">
+      <i class="fi-magnifying-glass"></i><br>SEARCH BY ID
+    </div>
+  <% end %>
 
-<%= link_to ingredients_unarranged_path do %>
-  <span class="button bigBottomButtonLeft">
-    <br><i class="fi-marker size-48"></i><br>UNLOCATED
-  </span>
-<% end %>
+  <%= link_to recentlylogged_path do %>
+    <div class="mainButton">
+      <i class="fi-clock"></i><br>RECENTLY CREATED
+    </div>
+  <% end %>
 
-<%= link_to store_categories_path do %>
-  <span class="button bigBottomButtonRight">
-    <br><i class="fi-plus size-48"></i><br>ITEM
-  </span>
-<% end %>
+  <%= link_to ingredients_unarranged_path do %>
+    <div class="mainButton">
+      <i class="fi-marker"></i><br>UNLOCATED ITEMS
+    </div>
+  <% end %>
+
+  <%= link_to store_categories_path do %>
+    <div class="mainButton">
+      <i class="fi-plus"></i><br>ADD ITEM
+    </div>
+  <% end %>
+
+</div>

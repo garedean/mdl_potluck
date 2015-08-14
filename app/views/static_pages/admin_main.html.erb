@@ -1,5 +1,4 @@
 <div class="adminContainer">
-		<div id="rootTitle" class="rootTitleAdmin"><p class="size-36">ADMIN TOOLS<i class="fa fa-sheriff-badge size-48"></i></p></div>
 		<hr>
 		<table id="adminTable">
 		  <tr>
@@ -18,39 +17,39 @@
 	<hr>
 	<h4>USER SETTINGS</h4>
 		<%= link_to admin_users_path do %>
-		  <button class="button adminButtons">
+		  <div class="adminButtons">
 		    MANAGE USERS
-		  </button>
+		  </div>
 		<% end %>
 	<br>
 		<%= link_to cartsummary_path do %>
-		  <button class="button adminButtons">
+		  <div class="adminButtons">
 		    USED INVENTORY ITEMS
-		  </button>
+		  </div>
 		<% end %>
 	<hr>
 	<h4>INVENTORY SETTINGS</h4>
 		<%= link_to admin_locations_path do %>
-		  <button class="button adminButtons">
+		  <div class="adminButtons">
 		    MANAGE LOCATIONS
-		  </button>
+		  </div>
 		<% end %>
 	<br>
 		<%= link_to admin_categories_path do %>
-		  <button class="button adminButtons">
+		  <div class="adminButtons">
 		    MANAGE CATEGORIES
-		  </button>
+		  </div>
 		<% end %>
 	<br>
 		<%= link_to inventorysummary_path do %>
-		  <button class="button adminButtons">
+		  <div class="adminButtons">
 		    INVENTORY SUMMARY
-		  </button>
+		  </div>
 		<% end %>
 	<br>
 		<%= link_to expiredsummary_path do %>
-		  <button class="button adminButtons">
+		  <div class="adminButtons">
 		    EXPIRED SUMMARY
-		  </button>
+		  </div>
 		<% end %>
 </div>

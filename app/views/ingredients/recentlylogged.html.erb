@@ -1,11 +1,15 @@
+<ul class="breadcrumbs">
+<h1>RECENTLY LOGGED</h1>
+</ul>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
   <div class="ingredientTable">
-    <table class="tableFontSize">
+    <table>
       <thead>
         <tr>
-          <th width="80">NAME</th>
+          <th>NAME</th>
           <th>ITEM ID</th>
           <th>LOCATION</th>
+          <th><i class="fi-torso"></i></th>
         </tr>
       </thead>
       <tbody>
@@ -13,32 +17,30 @@
           <tr>
             <td>
               <%= link_to ingredient_path(ingredient) do %>
-                <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+                <div class="makeBlack tableCellWidth" >
                   <%= ingredient.name %>
                 </div>
               <% end %>
             </td>
-            <td class="tableCell"> <%= ingredient.id %></td>
+            <td> <%= ingredient.id %></td>
               <% if ingredient.location_id != nil %>
-                <td class="tableCell"> <%= ingredient.location.root.name %></td>
+                <td> <%= ingredient.location.root.name %></td>
               <% else %>
-                <td class="tableCell">NOT LOCATED
+                <td>NOT LOCATED
             </td>
             <% end %>
+            <td></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
+
 <% else %>
   <%= link_to store_path do%>
-    <button class="mainColor arrangeReturn highlightColor">
+    <button class="mainColor">
       <h3>ALL ITEMS PLACED</h3><br>
       <h5><strong>RETURN</strong></h5>
     </button>
   <% end %>
 <% end %>
-<div class="bottomDescription">
-  <p>Items will appear here if they were created in the past 3 hours.</p>
-</div>
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

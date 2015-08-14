@@ -3,18 +3,18 @@
     <table class="tableFontSize">
       <thead>
         <tr>
-          <th width="100">NAME</th>
+          <th>NAME</th>
           <th>ID</th>
           <th>CONDITION</th>
-          <th width="130">CREATED ON</th>
+          <th>CREATED ON</th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where.not(:expiring_at => nil).each do |ingredient| %>
           <tr>
-            <td class="tableCell"><%= ingredient.name %></td>
-            <td class="tableCell"><%= ingredient.id %></td>
-            <td class="tableCell">
+            <td><%= ingredient.name %></td>
+            <td><%= ingredient.id %></td>
+            <td>
               <% if ingredient.expiring_at != nil %>
                 <% if ingredient.expiring_at.future? %>
                   <div class="freshItem">FRESH</div>
@@ -25,7 +25,7 @@
                 N/A
               <% end %>
             </td>
-            <td class="tableCell"> <%= ingredient.formatted_created_at %></td>
+            <td> <%= ingredient.formatted_created_at %></td>
           </tr>
         <% end %>
       </tbody>
@@ -39,7 +39,4 @@
     </button>
   <% end %>
 <% end %>
-<div class="bottomDescription">
-  <p>All items currently logged within the database will appear here.</p>
-</div>
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>
+

@@ -1,11 +1,15 @@
+<ul class="breadcrumbs">
+<h1>RECENTLY LOGGED</h1>
+</ul>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
   <div class="ingredientTable">
-    <table class="tableFontSize">
+    <table>
       <thead>
         <tr>
           <th>NAME</th>
           <th>ITEM ID</th>
           <th>LOCATION</th>
+          <th><i class="fi-torso"></i></th>
         </tr>
       </thead>
       <tbody>
@@ -25,14 +29,16 @@
                 <td>NOT LOCATED
             </td>
             <% end %>
+            <td></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
+
 <% else %>
   <%= link_to store_path do%>
-    <button class="mainColor arrangeReturn highlightColor">
+    <button class="mainColor">
       <h3>ALL ITEMS PLACED</h3><br>
       <h5><strong>RETURN</strong></h5>
     </button>

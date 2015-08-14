@@ -35,7 +35,7 @@
 
 /* COLOR VARIABLES */
 
-$main-color: #004D40;
+$main-color: #1E88E5;
 $highlight-color: #FFD54F;
 $gray-color: #BDBDBD;
 
@@ -99,7 +99,7 @@ a:hover{
 }
 
 .mobileBlock {
-	background-color: #E0E0E0;
+	background-color: white;
 	width: 100%;
 	height: 100%;
 }
@@ -142,13 +142,20 @@ a:hover{
   font-size: 1.2em;
 }
 
+.itemMainButton {
+  width: 32%;
+  left: 1%;
+  right: 1%;
+  text-align: center;
+}
+
 .backButton {
   float: right;
   margin-right: 2em;
 }
 
 .button:hover {
-  background-color: #37474F;
+  background-color: #616161;
   i {
     color: $highlight-color;
   }
@@ -170,13 +177,14 @@ a i:hover {
   margin: .4em;
   width: 12em;
   height: 4em;
+  color: white;
   font-size: 1em;
 }
 
 .mainButtonRack{
   position: absolute;
-  bottom: 1%;
-  right: 1%;
+  width: 100%;
+  bottom: 0em;
 }
 
 .listButtons {
@@ -184,9 +192,8 @@ a i:hover {
 	width: 100%;
 	height: 3em;
 	font-size: 1.4em;
-  line-height: 2em;
+  line-height: 1.5em;
 	text-align: left;
-  box-shadow: 0 4px 0 0 #9E9E9E;
   color: black;
 }
 
@@ -233,20 +240,17 @@ a i:hover {
 }
 
 .tableCellWidth {
-  padding: .4em;
-  box-shadow: 0 2px 1px 0 black;
-  background-color: gray;
-  color: black;
+  padding: 1em;
+  box-shadow: 0 1px 0 0 gray;
+  background-color: $main-color;
+  color: white;
   height: 4em;
-  padding-left: 1em;
-  padding-top: .5em;
+  text-height: 2em;
 }
 
 .ingredientTable {
-	margin-top: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
-	height: 28em;
+  margin-top: 3.3em;
+	height: 34em;
 	overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -265,7 +269,6 @@ a i:hover {
 	list-style-type: none;
 	height: 28em;
 	width: 100%;
-  padding-right: 2em;
 	overflow-y: scroll;
 }
 
@@ -292,7 +295,7 @@ a i:hover {
   top: 3.5em;
   height: 3em;
   width: 100%;
-  box-shadow: 0 5px 0 0 $gray-color;
+  box-shadow: 0 5px 0 0 #BDBDBD;
   overflow-x: scroll;
 }
 
@@ -313,7 +316,7 @@ a i:hover {
 .crumbles {
 	font-size: 90%;
 	line-height: 35px;
-  color: $main-color;
+  color: #757575;
 }
 
 ul.breadcrumbs li:before {
@@ -353,7 +356,7 @@ ul.breadcrumbs li:before {
 
 
 .itemContainer {
-  margin: 2em;  
+  margin: 2em;
 }
 
 .adminControlContainer {

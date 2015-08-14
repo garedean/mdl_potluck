@@ -1,7 +1,7 @@
 <div class="itemContainer">
     <span id="titleFade" class="">
-      <h2><%= @ingredient.name %></h2> <small>ID: <%= @ingredient.id %></small>
-      <hr>
+      <h2><%= @ingredient.name %></h2> <p>ID: <%= @ingredient.id %></p>
+      <br>
     </span>
   <div id="locationFade" class="">
     <h6>LOCATION:</h6>
@@ -17,8 +17,9 @@
         <% end %>
           <strong><%= @ingredient.location.name %></strong>
         <% else %>
-          NOT SET
-      <% end %><hr>
+          <strong>NOT SET</strong>
+      <% end %>
+      <br><br>
   </div>
   <div id="conditionFade" class="">
     <h6>CONDITION:</h6>
@@ -30,9 +31,9 @@
       <% end %>
         <strong><%= @ingredient.expiring_at %></strong>
     <% else %>
-      N/A
+      <strong>N/A</strong>
     <% end %>
-    <hr>
+    <br><br>
   </div>
   <div id="quantityFade" class="">
     <h6>TOTAL QUANTITY OF:<br>'<%= @ingredient.name %>'</h6>
@@ -41,22 +42,23 @@
           <%= Ingredient.count_all_locations(@ingredient) %>
         </span>
       </strong>
-      <br>
   </div>
 </div>
 
 <div class="mainButtonRack">
+  <%= link_to ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
+    <div class="button itemMainButton"><i class="fi-trash"></i>TRASH</div>
+  <% end %>
+
   <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
-    <div class="button"><i class="fi-marker"></i> MOVE</div>
+    <div class="button itemMainButton"><i class="fi-marker"></i>MOVE</div>
   <% end %>
 
   <%= link_to store_path do %>
-    <div class="button"><i class="fi-check"></i> DONE</div>
+    <div class="button itemMainButton"><i class="fi-check"></i>DONE</div>
   <% end %>
 </div>
 
 <% if @show_quick_add %>
   <%= render "quick_add_lightbox" %>
 <% end %>
-
-<%= link_to "Delete item", ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} %>

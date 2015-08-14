@@ -10,8 +10,9 @@
     </thead>
     <tbody>
       <% @cart_items.each do |cart_item| %>
-        <tr >
-          <td><h5h6><%= cart_item.name %></h6><br><br>
+        <tr>
+          <td><h5><%= link_to cart_item.name, ingredient_path(cart_item) %></h5>
+
             <span class="littleBreadcrumbs">
               <% if cart_item.location_id != nil %>
                   <%= cart_item.location.root.name %>

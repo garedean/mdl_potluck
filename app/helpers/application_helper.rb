@@ -9,7 +9,7 @@ module ApplicationHelper
       if has_children
         link_to object.name, store_category_path(object), class: css_classes
       else
-        link_to object.name, new_store_category_ingredient_path(object), class: css_classes
+        link_to object.name, store_category_locations_path(object), class: css_classes
       end
     elsif link_type == :location
       if has_children

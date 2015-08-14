@@ -4,6 +4,11 @@
 
 <div class="listContainer">
   <ul class="theList" id="smoothScroll">
+    <li>
+      <% unless @hide_no_location_option %>
+        <%= link_to "Add without location", store_category_ingredients_path(@category), class: "button listButtons", method: :post %>
+      <% end %>
+    </li>
     <% @locations.each do |location| %>
       <li>
         <%= link_to location.name, store_category_location_path(@category, location), class: "button listButtons" %>

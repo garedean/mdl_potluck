@@ -10,8 +10,12 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params, parent_id: category_params[:parent_id])
-    @category.save
-    redirect_to admin_categories_path
+
+    if @category.save
+      redirect_to admin_categories_path
+    else
+      redirect_to :back
+    end
   end
 
   def destroy

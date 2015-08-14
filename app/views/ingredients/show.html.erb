@@ -58,3 +58,5 @@
 <% if @show_quick_add %>
   <%= render "quick_add_lightbox" %>
 <% end %>
+
+<%= link_to "Delete item", ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} %>

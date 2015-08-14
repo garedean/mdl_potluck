@@ -31,6 +31,8 @@ $(function() {
    });
 });
 
-$(function(){  // $(document).ready shorthand
-  $('#rootTitle').fadeIn('slow');
+$("#titleHeading").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".ingredientTable").offset().top},
+        'slow');
 });

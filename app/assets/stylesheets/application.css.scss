@@ -53,30 +53,9 @@ $gray-color: #BDBDBD;
   color: $highlight-color;
 }
 
-.rootTitle {
-  position: relative;
-  left: 2em;
-  top: 4em;
-  color: black;
-  opacity: .1;
-  display: none;
-}
-
-.rootTitlePrepare {
-  position: relative;
-  left: 55px;
-  top: 4em;
-  color: black;
-  opacity: .1;
-  display: none;
-}
-
-.rootTitleAdmin {
-  position: relative;
-  top: 1em;
-  color: black;
-  opacity: .1;
-  display: none;
+.titleHeading {
+  font-size: 1em;
+  margin-top: .5em;
 }
 
 ::-webkit-scrollbar {
@@ -143,10 +122,18 @@ a:hover{
 }
 
 .itemMainButton {
-  width: 32%;
+  width: 33.3%;
   left: 1%;
+  border: 1px solid #BDBDBD;
+  background-color: white;
+  height: 4em;
+  float: left;
   right: 1%;
+  line-height: 4em;
   text-align: center;
+  i {
+    color: black;
+  }
 }
 
 .backButton {
@@ -155,9 +142,10 @@ a:hover{
 }
 
 .button:hover {
-  background-color: #616161;
+  background-color: #BDBDBD;
+  color: black;
   i {
-    color: $highlight-color;
+    color: red;
   }
 }
 
@@ -170,16 +158,20 @@ a i:hover {
 }
 
 .mainButton {
-  background-color: $main-color;
+  background-color: white;
   padding-left: 1em;
   padding-top: .60em;
   float:right;
+  border: 1px solid #BDBDBD;
   margin: .4em;
   width: 12em;
   height: 4em;
-  color: white;
+  color: #424242;
   font-size: 1em;
   border-radius: 3px;
+  i {
+    color: #424242;
+  }
 }
 
 .mainButtonRack{
@@ -189,13 +181,17 @@ a i:hover {
 }
 
 .listButtons {
-	background-color: $gray-color;
+	background-color: white;
+  border: 1px solid #BDBDBD;
 	width: 100%;
 	height: 3em;
 	font-size: 1.4em;
   line-height: 1.5em;
 	text-align: left;
-  color: black;
+  color: #424242;
+  i {
+    color: red;
+  }
 }
 
 .cartButton {
@@ -206,9 +202,13 @@ a i:hover {
 }
 
 .adminButtons {
-  background-color: $highlight-color;
-  height: 2em;
-  color: black;
+  position: relative;
+  background-color: $main-color;
+  width: 66%;
+  left: 17%;
+  line-height: 4em;
+  height: 3em;
+  color: white;
 }
 
 .arrangeReturn {
@@ -243,9 +243,11 @@ a i:hover {
 .tableCellWidth {
   padding: 1em;
   box-shadow: 0 1px 0 0 gray;
-  background-color: $main-color;
-  color: white;
+  background-color: white;
+  border: 1px solid #BDBDBD;
+  color: #424242;
   height: 4em;
+  width: 12em;
   text-height: 2em;
 }
 
@@ -301,7 +303,7 @@ table {
   top: 3.5em;
   height: 3em;
   width: 100%;
-  box-shadow: 0 5px 0 0 #BDBDBD;
+  box-shadow: 0 5px 0 0 #757575;
   overflow-x: scroll;
 }
 
@@ -366,6 +368,7 @@ ul.breadcrumbs li:before {
 }
 
 .adminControlContainer {
+  margin-top: 4em;
   margin-left: 25px;
   margin-right: 5px;
   padding-right: 10px;

@@ -1,3 +1,6 @@
+<ul class="breadcrumbs">
+  <h1 id="titleHeading" class="titleHeading">EXPIRED SUMMARY</h1>
+</ul>
 <% if @ingredients.where(expiring_at: Time.now - 14.day..Time.now.midnight + 1.day) %>
   <div class="ingredientTable">
     <table class="tableFontSize">

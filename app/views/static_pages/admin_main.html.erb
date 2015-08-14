@@ -1,21 +1,5 @@
 <div class="adminContainer">
-		<hr>
-		<table id="adminTable">
-		  <tr>
-		    <th class="tableCell">Users</th>
-		    <th class="tableCell">Items</th>
-		    <th class="tableCell">Categories</th>
-		    <th class="tableCell">Locations</th>
-		  </tr>
-		  <tr>
-		    <td class="tableCell"><%= @users.count %></th>
-		    <td class="tableCell"><%= @ingredients.count %></td>
-		    <td class="tableCell"><%= @categories.count %></td>
-		    <td class="tableCell"><%= @locations.count %></td>
-		  </tr>
-		</table>
-	<hr>
-	<h4>USER SETTINGS</h4>
+	<h4>USER SETTINGS</h4><br>
 		<%= link_to admin_users_path do %>
 		  <div class="adminButtons">
 		    MANAGE USERS
@@ -27,8 +11,8 @@
 		    USED INVENTORY ITEMS
 		  </div>
 		<% end %>
-	<hr>
-	<h4>INVENTORY SETTINGS</h4>
+	<br><br>
+	<h4>INVENTORY SETTINGS</h4><br>
 		<%= link_to admin_locations_path do %>
 		  <div class="adminButtons">
 		    MANAGE LOCATIONS

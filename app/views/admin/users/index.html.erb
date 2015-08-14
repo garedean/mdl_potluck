@@ -18,17 +18,17 @@
         <td>
           <%= user.sign_in_count %>
         </td>
-      <% if current_user.admin? %>
-        <%= link_to edit_admin_user_path(user) do %>
-          <td>
-            <div class="button">EDIT</div>
-          </td>
-        <% end %>
-        <%= link_to admin_user_path(user), confirm: "Are you sure?", method: :delete do %>
-          <td>
+        <td>
+          <% if current_user.admin? %>
+            <%= link_to edit_admin_user_path(user) do %>
+              <div class="button">EDIT</div>
+            <% end %>
+        </td>
+        <td>
+          <%= link_to admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete do %>
             <div class="button">DELETE</div>
-          </td>
-        <% end %>
+          <% end %>
+        </td>
       <% end %>
       </tr>
       <% end %>
@@ -36,6 +36,8 @@
   </table>
 </div>
 
-<%= link_to new_admin_user_path do %>
-  <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
+<% if current_user.admin? %>
+  <%= link_to new_admin_user_path do %>
+    <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
+  <% end %>
 <% end %>

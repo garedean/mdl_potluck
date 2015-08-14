@@ -56,6 +56,7 @@ $gray-color: #BDBDBD;
 .titleHeading {
   font-size: 1em;
   margin-top: .5em;
+  color: #757575;
 }
 
 ::-webkit-scrollbar {
@@ -119,6 +120,16 @@ a:hover{
   margin-top: 1em;
   margin-left: 1.2em;
   font-size: 1.2em;
+}
+
+.shoppingCartButton {
+  width: 4em;
+  height: 4em;
+  border: 1px solid #BDBDBD;
+  text-align: center;
+  line-height: 4em;
+  margin-bottom: 3em;
+  background-color: white;
 }
 
 .itemMainButton {
@@ -242,13 +253,13 @@ a i:hover {
 
 .tableCellWidth {
   padding: 1em;
-  box-shadow: 0 1px 0 0 gray;
   background-color: white;
   border: 1px solid #BDBDBD;
   color: #424242;
   height: 4em;
   width: 12em;
-  text-height: 2em;
+  line-height: 2em;
+  text-align: center;
 }
 
 .ingredientTable {
@@ -357,7 +368,6 @@ ul.breadcrumbs li:before {
 }
 
 .adminContainer {
-  padding-top: 1em;
 	width: 100%;
   text-align: center;
 }
@@ -383,31 +393,24 @@ ul.breadcrumbs li:before {
 .addSublocation {
   float: right;
   background-color: #81C784;
-  border-radius: 10px;
   bottom: 1px;
-  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .deleteSublocation {
   right: 10px;
-  bottom: 1px;
-  border-radius: 10px;
+
   background-color: #FF5722;
-  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .deleteSublocationLight {
   right: 10px;
   bottom: 1px;
-  border-radius: 10px;
   background-color: #FF8A65;
-  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .deleteSublocationLighter {
   right: 10px;
   bottom: 1px;
-  border-radius: 10px;
   background-color: #FFCCBC;
   box-shadow: 0 1px 0 0 $gray-color;
 }
@@ -415,19 +418,16 @@ ul.breadcrumbs li:before {
 .adminLocationList {
   padding-top: 1px;
   background-color: white;
-  border-radius: 10px;
   padding-left: 10px;
   list-style: none;
-  box-shadow: 0 3px 0 0 $gray-color;
+  border: 1px solid black;
 }
 
 .adminLocationListRoot {
   padding-top: 1px;
   background-color: $highlight-color;
-  border-radius: 10px;
   padding-left: 10px;
   list-style: none;
-  box-shadow: 0 3px 0 0 $gray-color;
 }
 
 /* LIGHTBOX MODAL */

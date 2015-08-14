@@ -1,26 +1,28 @@
 When does this expire?
 
 
-<%= form_for Ingredient.new do |f| %>
-  <%= f.radio_button :name, 'test' %> Test
-  <%= f.radio_button :name, 'test' %> test2
-  <%= f.radio_button :name, 'test' %> test3
-  <%= f.radio_button :name, 'test' %> Test4
+<%= form_for @ingredient do |f| %>
+  <%= hidden_field_tag :location_id, @location.try(:id) %>
+  <%= hidden_field_tag :category_id, @category.id %>
+
+  <div>
+    <%= f.radio_button :expiring_at, '2' %> 2 weeks
+  </div>
+  <div>
+    <%= f.radio_button :expiring_at, '4' %> 1 month
+  </div>
+  <div>
+    <%= f.radio_button :expiring_at, '8' %> 2 months
+  </div>
+  <div>
+    <%= f.radio_button :expiring_at, '12' %> 3 months
+  </div>
+  <div>
+    <%= f.radio_button :expiring_at, '24' %> 6 months
+  </div>
+  <div>
+    <%= f.radio_button :expiring_at, '48' %> 1+ years
+  </div>
 
   <%= f.submit %>
 <% end %>
-
-
-
-
-
-
-<hr>
-
-<%#= link_to "Add Item", store_category_locations_path(@category) %>
-<br>
-debugging:
-<br>
-Category: <%= @category.name %>
-<br>
-Location: <%= @location.try(:name) %>

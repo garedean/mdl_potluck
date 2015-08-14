@@ -1,25 +1,32 @@
-<div id="rootTitle" class="rootTitlePrepare"><p class="size-48">PREPARE    <i class="fa fa-spoon size-48"></i></p></div>
+<ul class="breadcrumbs">
+  <br>
+  <br>
+</ul>
 
-<%= link_to admin_path do %>
-  <button class="bigBottomButtonLeftTop button">
-    <i class="fi-magnifying-glass size-48"></i><br>SEARCH BY ID
-  </button>
-<% end %>
+<div class="mainButtonRack">
 
-<%= link_to ingredients_expiring_path do %>
-  <button class="bigBottomButtonRightTop button">
-    <i class="fi-x-circle size-48"></i><br>EXPIRING
-  </button>
-<% end %>
+  <%= link_to ingredients_expiring_path do %>
+    <div class="mainButton">
+      <i class="fi-x-circle"></i><br>EXPIRING ITEMS
+    </div>
+  <% end %>
 
-<%= link_to categories_path do %>
-  <button class="bigBottomButtonRight button">
-    <i class="fi-magnifying-glass size-48"></i><br>CATEGORY
-  </button>
-<% end %>
+  <%= link_to admin_path do %>
+    <div class="mainButton">
+      <i class="fi-magnifying-glass"></i><br>SEARCH BY ID
+    </div>
+  <% end %>
 
-<%= link_to locations_path do %>
-  <button class="bigBottomButtonLeft button">
-    <i class="fi-magnifying-glass size-48"></i><br>LOCATION
-  </button>
-<% end %>
+  <%= link_to categories_path do %>
+    <div class="mainButton">
+      <i class="fi-magnifying-glass"></i><br>CATEGORY SEARCH
+    </div>
+  <% end %>
+
+  <%= link_to locations_path do %>
+    <div class="mainButton">
+      <i class="fi-magnifying-glass"></i><br>LOCATION SEARCH
+    </div>
+  <% end %>
+
+</div>

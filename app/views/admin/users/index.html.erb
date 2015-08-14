@@ -1,8 +1,8 @@
 <div class="ingredientTable">
-  <table class="tableFontSize">
+  <table>
     <thead>
       <tr>
-        <th width="120">EMAIL</th>
+        <th>EMAIL</th>
         <th>SIGN IN COUNT</th>
         <th></th>
         <th></th>
@@ -12,37 +12,30 @@
       <% @users.each do |user| %>
 
       <tr>
-        <td class="tableCell">
+        <td>
           <%= user.email %>
         </td>
-
-        <td class="tableCell">
+        <td>
           <%= user.sign_in_count %>
         </td>
-
       <% if current_user.admin? %>
         <%= link_to edit_admin_user_path(user) do %>
           <td>
-            <span class="button">EDIT</span>
+            <div class="button">EDIT</div>
           </td>
         <% end %>
         <%= link_to admin_user_path(user), confirm: "Are you sure?", method: :delete do %>
           <td>
-            <span class="button">DELETE</span>
+            <div class="button">DELETE</div>
           </td>
         <% end %>
       <% end %>
       </tr>
-
       <% end %>
     </tbody>
   </table>
 </div>
 
-<%= link_to admin_path do %>
-  <span class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i><br></span>
-<% end %>
-
 <%= link_to new_admin_user_path do %>
-  <span class="button bigBottomButtonLeft"><br><i class="fi-torso size-48"></i><br>NEW USER</span>
+  <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
 <% end %>

@@ -3,7 +3,7 @@
 </ul>
 
 <div class="listContainer">
-  <ul class="theList" id="smoothScroll">
+  <ul class="theList">
     <% @locations.each do |location| %>
       <li>
         <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>
@@ -12,4 +12,3 @@
   </ul>
 </div>
 
-<a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>

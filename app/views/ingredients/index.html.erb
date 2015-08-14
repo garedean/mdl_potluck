@@ -1,18 +1,19 @@
+<ul class="breadcrumbs">
+  <% if @location != nil %>
+    <li><%= @location.name %></li>
+  <% end %>
+  <% if @category != nil %>
+    <li><%= @category.name %></li>
+  <% end %>
+</ul>
 <% if @ingredients.any? %>
   <div class="ingredientTable">
     <table >
       <thead>
         <tr>
-          <th width="180">
-            <% if @location != nil %>
-              <%= @location.name %>
-            <% end %>
-            <% if @category != nil %>
-              <%= @category.name %>
-            <% end %>
-          </th>
-          <th width="90"></th>
-          <th width="30"></th>
+          <th></th>
+            <th></th>
+              <th></th>
         </tr>
       </thead>
       <tbody>
@@ -20,9 +21,10 @@
           <tr>
               <td>
                 <%= link_to ingredient_path(ingredient) do %>
-                  <div class="button highlightColor tableCell tableCellWidth" id="listButton">
+                  <div class="tableCellWidth" id="listButton">
                     <%= ingredient.name %>
                   </div >
+                  <br>
                 <% end %>
                 <span class="littleBreadcrumbs">
                   <% if ingredient.location_id %>
@@ -56,7 +58,7 @@
               </td>
               <td>
                 <%= link_to add_to_cart_path(ingredient), method: :post do %>
-                  <div class="button highlightColor cartButton" id="listButton">
+                  <div class="highlightColor">
                     <i class="fi-shopping-cart size-24 makeBlack"></i>
                   </div>
                 <% end %>
@@ -67,7 +69,7 @@
       </table>
     </div>
     <%= link_to prepare_path do %>
-      <span class="bigBottomButtonRight button"><br><br><i class="fi-arrow-left size-48"></i></span>
+
     <% end %>
 <% else %>
   <a href="javascript:history.back()" class="button arrangeReturn highlightColor">

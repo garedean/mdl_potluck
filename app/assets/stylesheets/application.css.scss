@@ -18,11 +18,7 @@
  */
 
  @import "foundation_and_overrides";
- @import 'bootstrap-sprockets';
- @import 'bootstrap';
  @import 'foundation-icons';
-
-/* LOADING */
 
  /* FONT SIZES */
 
@@ -39,23 +35,11 @@
 
 /* COLOR VARIABLES */
 
-$main-color: #004D40;
+$main-color: #1E88E5;
 $highlight-color: #FFD54F;
 $gray-color: #BDBDBD;
 
 /* GENERAL USE */
-
-.mainColor {
-	background-color: $main-color;
-}
-
-.highlightColor {
-	background-color: $highlight-color;
-	color: black;
-	a {
-	color: black;
-	}
-}
 
 .makeBlack {
 	color: black;
@@ -71,8 +55,8 @@ $gray-color: #BDBDBD;
 
 .rootTitle {
   position: relative;
-  left: 70px;
-  top: 20px;
+  left: 2em;
+  top: 4em;
   color: black;
   opacity: .1;
   display: none;
@@ -81,7 +65,7 @@ $gray-color: #BDBDBD;
 .rootTitlePrepare {
   position: relative;
   left: 55px;
-  top: 20px;
+  top: 4em;
   color: black;
   opacity: .1;
   display: none;
@@ -89,7 +73,7 @@ $gray-color: #BDBDBD;
 
 .rootTitleAdmin {
   position: relative;
-  top: 5px;
+  top: 1em;
   color: black;
   opacity: .1;
   display: none;
@@ -115,14 +99,15 @@ a:hover{
 }
 
 .mobileBlock {
-	background-color: #E0E0E0;
-	width: 375px;
-	height: 667px;
+	background-color: white;
+	width: 100%;
+	height: 100%;
 }
 
 /* NAVBAR */
 
 .navbar {
+  height: 3.5em;
 	background-color: $main-color;
 }
 
@@ -133,13 +118,10 @@ a:hover{
 }
 
 .alertCenter {
-	position: fixed;
-	width: 170px;
-	top: 18px;
-	left: 125px;
-	color: $highlight-color;
+	margin-top: 1.6em;
+	color: $main-color;
 	display: none;
-	font-size: 90%;
+	font-size: 100%;
 	text-align: center;
 }
 
@@ -154,8 +136,26 @@ a:hover{
 
 /* BUTTONS */
 
+.navbar-icon {
+  margin-top: 1em;
+  margin-left: 1.2em;
+  font-size: 1.2em;
+}
+
+.itemMainButton {
+  width: 32%;
+  left: 1%;
+  right: 1%;
+  text-align: center;
+}
+
+.backButton {
+  float: right;
+  margin-right: 2em;
+}
+
 .button:hover {
-  background-color: #37474F;
+  background-color: #616161;
   i {
     color: $highlight-color;
   }
@@ -165,59 +165,36 @@ a i:hover {
   color: $highlight-color;
 }
 
-.bigBottomButtonLeft {
-	position: fixed;
-	top: 525px;
-	left: 105px;
-	background-color: $main-color;
-	width: 120px;
-	height: 120px;
-	color: white;
-  box-shadow: 0 5px 0 0 $gray-color;
+.button {
+  background-color: $main-color;
 }
 
-.bigBottomButtonRight {
-	position: fixed;
-	top: 525px;
-	left: 235px;
-	background-color: $main-color;
-	width: 120px;
-	height: 120px;
-	color: white;
-  box-shadow: 0 5px 0 0 $gray-color;
+.mainButton {
+  background-color: $main-color;
+  padding-left: 1em;
+  padding-top: .60em;
+  float:right;
+  margin: .4em;
+  width: 12em;
+  height: 4em;
+  color: white;
+  font-size: 1em;
+  border-radius: 3px;
 }
 
-.bigBottomButtonRightTop {
-	position: fixed;
-	top: 395px;
-	left: 235px;
-	background-color: $main-color;
-	width: 120px;
-	height: 120px;
-	color: white;
-  box-shadow: 0 5px 0 0 $gray-color;
-}
-
-.bigBottomButtonLeftTop {
-	position: fixed;
-	top: 395px;
-	left: 105px;
-	background-color: $main-color;
-	width: 120px;
-	height: 120px;
-	color: white;
-  box-shadow: 0 5px 0 0 $gray-color;
+.mainButtonRack{
+  position: absolute;
+  width: 100%;
+  bottom: 0em;
 }
 
 .listButtons {
 	background-color: $gray-color;
-	width: 480px;
-	height: 70px;
-	line-height: 45px;
-	font-size: 250%;
+	width: 100%;
+	height: 3em;
+	font-size: 1.4em;
+  line-height: 1.5em;
 	text-align: left;
-  border-radius: 20px;
-  box-shadow: 0 4px 0 0 #9E9E9E;
   color: black;
 }
 
@@ -229,8 +206,8 @@ a i:hover {
 }
 
 .adminButtons {
-	width: 160px;
   background-color: $highlight-color;
+  height: 2em;
   color: black;
 }
 
@@ -247,6 +224,10 @@ a i:hover {
 
 /* TABLES */
 
+.underLine {
+  box-shadow: 0 2px 0 0 black;
+}
+
 .tableCell {
 	font-size: 85%;
 }
@@ -260,39 +241,41 @@ a i:hover {
 }
 
 .tableCellWidth {
-  width: 175px;
-  height: 50px;
-  bottom: 6px;
-  right: 5px;
-  line-height: 30px;
-  box-shadow: 0 2px 2px 0 $gray-color;
-  font-size: 120%;
+  padding: 1em;
+  box-shadow: 0 1px 0 0 gray;
+  background-color: $main-color;
+  color: white;
+  height: 4em;
+  text-height: 2em;
 }
 
 .ingredientTable {
-	margin-left: 10px;
-	width: 355px;
-	height: 440px;
+  margin-top: 3.3em;
+	height: 34em;
+  width: 100%;
 	overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .cartTable {
-	margin-left: 10px;
-	width: 355px;
-	height: 430px;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+	height: 22em;
 	overflow-y: scroll;
 }
 
 .theList {
-	display: inline;
-	float: right;
+  position: relative;
+  top: 4em;
 	list-style-type: none;
-	height:354px;
-	width: 93%;
-	overflow: hidden;
+	height: 28em;
+	width: 100%;
 	overflow-y: scroll;
-	text-align: right;
+}
+
+table {
+  width: 100%;
 }
 
 .expiredItem {
@@ -314,19 +297,19 @@ a i:hover {
 /* Breadcrumbs */
 
 .breadcrumbs {
-  position: relative;
-  bottom: 20px;
-  height: 45px;
-  border-style: none;
-  box-shadow: 0 5px 0 0 $gray-color;
-  overflow-x: hidden;
+  position: absolute;
+  top: 3.5em;
+  height: 3em;
+  width: 100%;
+  box-shadow: 0 5px 0 0 #BDBDBD;
+  overflow-x: scroll;
 }
 
 .littleBreadcrumbs {
   position: relative;
   color: #616161;
   bottom: 5px;
-  font-size: 100%;
+  font-size: 80%;
 }
 
 .lightboxBreadcrumbs {
@@ -337,9 +320,9 @@ a i:hover {
 }
 
 .crumbles {
-	font-size: 140%;
+	font-size: 90%;
 	line-height: 35px;
-  color: $main-color;
+  color: #757575;
 }
 
 ul.breadcrumbs li:before {
@@ -372,10 +355,14 @@ ul.breadcrumbs li:before {
 }
 
 .adminContainer {
-  padding-top: 5px;
-	margin-left: 35px;
-	width: 300px;
+  padding-top: 1em;
+	width: 100%;
   text-align: center;
+}
+
+
+.itemContainer {
+  margin: 2em;
 }
 
 .adminControlContainer {
@@ -388,10 +375,6 @@ ul.breadcrumbs li:before {
   ul {
     margin-right: 10px;
   }
-}
-
-.itemContainer {
-  margin: 50px;
 }
 
 .addSublocation {
@@ -478,7 +461,7 @@ ul.breadcrumbs li:before {
 
 .quick-links-lightbox {
   background: white;
-  height: 385px;
+  height: 415px;
   width: 270px;
   padding: 20px;
   position: absolute;
@@ -530,7 +513,7 @@ ul {
 
 .item-name {
   margin-top: 5px;
-  margin-bottom: 6px;
+  margin-bottom: 0px;
   font-weight: 300;
 }
 
@@ -564,7 +547,7 @@ ul {
   .circle {
     height: 65px;
     width: 65px;
-    border: 1px solid #ccc;
+    border: 1px solid #BDBDBD;
     border-radius: 50%;
     margin: auto;
 
@@ -588,7 +571,7 @@ ul {
       display: inline-block;
       width: 100%;
       padding: 10px 10px;
-      border: 1px solid #ddd;
+      border: 1px solid #BDBDBD;
       font-size: 13px;
       color: blue;
       &:hover {
@@ -598,7 +581,8 @@ ul {
   }
 }
 
-.lightboxBreadcrumbs {
+.lightbox-small {
   color: #999;
   font-size: 10px;
+  margin-bottom: 0;
 }

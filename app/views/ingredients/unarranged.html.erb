@@ -1,25 +1,26 @@
+<ul class="breadcrumbs">
+<h1>UNLOCATED</h1>
+</ul>
 <% if @ingredients.where(:location_id => nil).any? %>
   <div class="ingredientTable">
-    <table class="tableFontSize">
+    <table>
       <thead>
         <tr>
-          <th width="120">NAME</th>
+          <th>NAME</th>
           <th>ITEM ID</th>
-          <th>LOCATION</th>
-          <th width="100"></th>
+          <th><i class="fi-torso"></i>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where(:location_id => nil).each do |ingredient| %>
           <tr>
-            <td class="tableCell"><%= ingredient.name %></td>
-            <td class="tableCell"><%= ingredient.id %> </td>
-            <td class="tableCell">N/A</td>
+            <td><%= ingredient.name %></td>
+            <td><%= ingredient.id %> </td>
+            <td></td>
             <td>
               <%= link_to relocate_ingredient_locations_path(ingredient) do %>
-                <div class="button highlightColor setLocationButton">
-                  SET LOCATION
-                </div>
+                <div class="tableCellWidth">SET LOCATION</div>
               <% end %>
             </td>
           </tr>
@@ -27,7 +28,6 @@
       </tbody>
     </table>
   </div>
-  <a href="javascript:history.back()" class="button bigBottomButtonRight"><br><br><i class="fi-arrow-left size-48"></i></a>
 <% else %>
   <%= link_to store_path do%>
     <button class="mainColor arrangeReturn highlightColor">

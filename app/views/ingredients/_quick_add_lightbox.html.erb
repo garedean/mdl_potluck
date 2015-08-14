@@ -10,7 +10,7 @@
     <center>
       <h2 class="item-name"><%= @ingredient.name %></h2>
 
-      <div class="lightboxBreadcrumbs">
+      <p class="lightbox-small">
         <% if @ingredient.location_id %>
 
           <% if @ingredient.location.parent &&
@@ -31,7 +31,12 @@
           <% else %>
             NO LOCATION
         <% end %>
-      </div>
+      </p>
+
+      <p class="lightbox-small">Expiring on
+        <%= @ingredient.expiring_at.try(:strftime, "%A, %b, %d") %>
+      </p>
+
     </center>
 
     <div class="circle-metrics">
@@ -40,6 +45,7 @@
           <p>
             <%= Ingredient.count_all_locations(@ingredient) %>
           </p>
+
         </div>
         <p>All locations</p>
       </div>
@@ -62,11 +68,11 @@
       <ul>
         <% if @ingredient.location.class == NullLocation %>
           <li>
-            <%= link_to "Store another, no location", category_ingredients_path(@ingredient.category), method: :post %><br>
+            <%= link_to "Store another, no location", add_another_same_location_ingredient_path(@ingredient), method: :post %>
           </li>
 
           <li>
-            <%= link_to "Store another, different location", store_category_locations_path(@ingredient.category, hide_no_location_option: true) %><br>
+            <%= link_to "Store another, different location", store_category_locations_path(@ingredient.category, hide_no_location_option: true) %>
           </li>
         <% else %>
           <li>
@@ -82,8 +88,6 @@
           <%= link_to "Close", ingredient_path(@ingredient) %>
         </li>
       </ul>
-
     </div>
-
   </div>
 </div>

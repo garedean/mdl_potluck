@@ -5317,7 +5317,7 @@ table {
     font-size: 1rem;
     font-weight: bold; }
   table thead {
-    background: #F5F5F5; }
+    background: #EEEEEE; }
     table thead tr th,
     table thead tr td {
       color: #222222;
@@ -5339,7 +5339,7 @@ table {
     padding: 0.5625rem 0.625rem;
     text-align: left; }
   table tr.even, table tr.alt, table tr:nth-of-type(even) {
-    background: #F9F9F9; }
+    background: #EEEEEE; }
   table thead tr th,
   table tfoot tr th,
   table tfoot tr td,

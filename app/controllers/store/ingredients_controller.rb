@@ -9,6 +9,7 @@ class Store::IngredientsController < ApplicationController
   end
 
   def create
+    binding.pry
     @category = Category.find(params[:category_id])
     @location = Location.find(params[:id]) if params[:id]
     @ingredient = Ingredient.new(category_id: params[:category_id])
@@ -34,7 +35,7 @@ class Store::IngredientsController < ApplicationController
     ingredient.update(location_id: params[:location_id])
     redirect_to ingredient_path(ingredient, show_quick_add: true)
   end
-  
+
   private
 
   def ingredient_params

@@ -6,5 +6,6 @@ class Store::CategoriesController < CategoriesController
   def choose_expiration
     @category = Category.find(params[:id])
     @location = Location.find(params[:location_id]) if params[:location_id]
+    @ingredient = Ingredient.new
   end
 end

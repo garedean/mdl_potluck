@@ -1,0 +1,98 @@
+[33mb5a9d85[m HEAD@{0}: reset: moving to b5a9d85
+[33m12cbe04[m HEAD@{1}: pull origin master: Fast-forward
+[33m739d514[m HEAD@{2}: checkout: moving from responsive_rework to master
+[33mb5a9d85[m HEAD@{3}: commit (merge): Post-merge
+[33mf6abd25[m HEAD@{4}: commit: Button and navigation revision.
+[33mc5cb4ea[m HEAD@{5}: commit: Fixed misdiplaying navbar on scrolling.
+[33m72530b7[m HEAD@{6}: commit: Responsive rework
+[33md91c33f[m HEAD@{7}: commit (merge): Post-merge commit
+[33mf2f078d[m HEAD@{8}: commit: Responsive Rework
+[33m739d514[m HEAD@{9}: checkout: moving from master to responsive_rework
+[33m739d514[m HEAD@{10}: pull origin master: Merge made by the 'recursive' strategy.
+[33m5ebcb7a[m HEAD@{11}: commit: Added jquery-turbo links to allow jquery functions. Various formatting changes including showing root locations instead of location IDs. Various style changes including main page titles and color changes.
+[33m33068f6[m HEAD@{12}: commit: Removed loading circle animation.
+[33mf7b8623[m HEAD@{13}: commit: Removed loading circle animation.
+[33m278298f[m HEAD@{14}: commit: Add nprogress loading animations on turbolinks requests.
+[33mc6ce386[m HEAD@{15}: commit (merge): post-merge
+[33m0bdb9e3[m HEAD@{16}: commit: Pre-pull
+[33m75a5358[m HEAD@{17}: commit: AJAX integration and linking foundation icons.
+[33m69a04b5[m HEAD@{18}: pull origin master: Merge made by the 'recursive' strategy.
+[33mf3f3c0b[m HEAD@{19}: commit: Reconfigured AJAX to remove calls where db changes are made.
+[33mbfdd262[m HEAD@{20}: commit: Removed ajax implementation to push onto branch.
+[33m082c605[m HEAD@{21}: commit: Ajax hotfix.
+[33me368cbb[m HEAD@{22}: commit: Ajax integration. Cart is no updating automatically.
+[33m8acbd33[m HEAD@{23}: commit (merge): Post-merge commit.
+[33m9a8da77[m HEAD@{24}: commit: Fxed modal buttons positioning.
+[33m360f754[m HEAD@{25}: commit: Fixed link/button hover color inconsistency.
+[33m50c8278[m HEAD@{26}: commit: Fixed jquery ID on ingredient/show/#
+[33m5b90652[m HEAD@{27}: commit: Refactored CSS file. Reorganized all views for proper spacing and indentation.
+[33m10be90a[m HEAD@{28}: commit (merge): Post-merge commit.
+[33m3cf3849[m HEAD@{29}: commit: Date selector on new item creation. Changed database calls for admin summaries.
+[33m220653b[m HEAD@{30}: commit: Recently created routes and template.
+[33m56fc552[m HEAD@{31}: commit: Added recently created button to store root.
+[33m6efa337[m HEAD@{32}: commit: Changed hover color. Added mark to breadcrumbes.
+[33md6e12aa[m HEAD@{33}: commit: Various style changes to get rid of inconsistent hovering. Lightened the list page so it is easier to read. Gradient delete buttons for admin location/category controls.
+[33md786839[m HEAD@{34}: commit (merge): Pre-merge commit.
+[33m5566570[m HEAD@{35}: commit: Removed unused admin.html.erb. Modal is now properly displaying.
+[33m6cda93e[m HEAD@{36}: pull origin master: Merge made by the 'recursive' strategy.
+[33m0fb63f1[m HEAD@{37}: commit: Deleted integrated datepicker.
+[33mfb0c04d[m HEAD@{38}: commit: Proper redirect on item creation.
+[33m66615d7[m HEAD@{39}: commit: Fixed modal exit button.
+[33m81c6b8c[m HEAD@{40}: commit: Remove touch-functionality.
+[33m0a9b712[m HEAD@{41}: commit: Model css split to adjust height independently.
+[33mfce873d[m HEAD@{42}: commit: Modal styling, moved exit button to the bottom.
+[33m3d1ab53[m HEAD@{43}: commit: Styling for admin/location and admin/category controls. Fixed improperly linked stylesheets and javascript errors.
+[33m4e50666[m HEAD@{44}: commit (merge): Merge commit
+[33mb3ec063[m HEAD@{45}: commit: Merge commit.
+[33m7106fe8[m HEAD@{46}: pull origin master: Fast-forward
+[33m1a052f9[m HEAD@{47}: pull origin master: Fast-forward
+[33m12b5bd1[m HEAD@{48}: commit: Added touch-action for touch functionality testing.
+[33m79fd328[m HEAD@{49}: pull origin master: Merge made by the 'recursive' strategy.
+[33m23e83eb[m HEAD@{50}: commit: Modal styling.
+[33m437e5e0[m HEAD@{51}: commit: Styling admin/location_management.
+[33m5d70f25[m HEAD@{52}: pull origin master: Merge made by the 'recursive' strategy.
+[33ma0aa600[m HEAD@{53}: commit: Added location view to cart.
+[33m4c06101[m HEAD@{54}: commit: Added location view on lists for expiring, item location search, item category search.
+[33mf1ca5dd[m HEAD@{55}: commit: Modal styling for add new item pages.
+[33m20edcb0[m HEAD@{56}: commit (merge): Styling and formatting for lightbox.
+[33mf869b40[m HEAD@{57}: commit: Page optimization.
+[33m2d01245[m HEAD@{58}: commit (merge): Post-merge commit.
+[33me007218[m HEAD@{59}: commit: Added admin pages for manage users, cart summaries, expired summary.
+[33m95d8c92[m HEAD@{60}: pull origin master: Merge made by the 'recursive' strategy.
+[33m02bab39[m HEAD@{61}: commit: Fixed set location button. Now the entire button is active rather than just the text.
+[33m4a7e8f5[m HEAD@{62}: commit: Fixed ingredient button on ingredient/index and expiring_soon pages. Now the entire button is active rather than just the text.
+[33m0877edf[m HEAD@{63}: commit: Fixed display bug.
+[33mf4489c8[m HEAD@{64}: commit: Various stylings to various views. Drop shadows on buttons. Deleted unused views from locations and categories views, and others for sanity.
+[33m09a9671[m HEAD@{65}: commit: Added fade to individual item reveal page.
+[33m175c390[m HEAD@{66}: commit: End of day commit. save_location bug at the end of the location selection chain still present.
+[33m2369917[m HEAD@{67}: commit: Delete unused routes and view.
+[33mc832301[m HEAD@{68}: commit: Individual item page formatting and styling.
+[33m141d81b[m HEAD@{69}: commit: Fixed button routes so that they no longer redirect to old locations index.
+[33maebc929[m HEAD@{70}: pull origin master: Merge made by the 'recursive' strategy.
+[33m2101a2b[m HEAD@{71}: commit: Pre-merge commit.
+[33m7b529d9[m HEAD@{72}: pull origin master: Merge made by the 'recursive' strategy.
+[33ma50e074[m HEAD@{73}: commit: Breadcrumb styling.
+[33me36ef4d[m HEAD@{74}: pull origin master: Fast-forward
+[33md6ed520[m HEAD@{75}: commit: End of day commit.
+[33mf212acd[m HEAD@{76}: commit (merge): Post-merge commit.
+[33m8a345e2[m HEAD@{77}: commit: Admin button added to edit user page. Formatted admin page.
+[33m3c055c9[m HEAD@{78}: commit: Created admin page with links to functions and summary of database values.
+[33m85190fc[m HEAD@{79}: commit: List styling and cart button alignment.
+[33mc152cc5[m HEAD@{80}: commit: Styling on list selector. Lists reformatted to show fresh/expired on most searches.
+[33me824685[m HEAD@{81}: commit: Stable Commit. All functions operating.
+[33m2e76503[m HEAD@{82}: commit: Color scheme.
+[33mb02dfc1[m HEAD@{83}: commit: Changed color scheme.
+[33m82bfd9b[m HEAD@{84}: commit (merge): Post-merge commit.
+[33ma11c9fe[m HEAD@{85}: commit: Fixed bug where category listings was returning category = nil. Replaced with @food_category.
+[33m934f5e1[m HEAD@{86}: commit (merge): Post-merge commit.
+[33m6cf4291[m HEAD@{87}: commit: Refactored the css file. Fixed breadcrumbs on location index navigation. Set all buttons with foundation. Realigned alertCenter.
+[33m5fa43d2[m HEAD@{88}: pull origin master: Fast-forward
+[33m22c0895[m HEAD@{89}: commit: Added hr
+[33m0ce84c4[m HEAD@{90}: commit: Devise pages styling.
+[33m69911fa[m HEAD@{91}: commit: Added user edit link from prepare.
+[33m26e989a[m HEAD@{92}: pull origin master: Merge made by the 'recursive' strategy.
+[33mb6ba5b4[m HEAD@{93}: pull origin master: Merge made by the 'recursive' strategy.
+[33m40eaca0[m HEAD@{94}: commit: Fixed category/location search bug. Ingredients index controller.
+[33m2690c00[m HEAD@{95}: commit: Various styling and formatting. Streamlined button presentation based on user state.
+[33mbb2ce78[m HEAD@{96}: commit: Preparing for user states to control UI for store/prepare/admin states.
+[33mc088c27[m HEAD@{97}: clone: from https://github.com/myanchar/potluck_proto.git

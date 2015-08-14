@@ -20,11 +20,18 @@ Rails.application.routes.draw do
 
   namespace :store do
     resources :categories do
+
       member do
         get 'review'
+        get 'choose-expiration'
       end
 
-      resources :locations
+      resources :locations do
+        member do
+          get 'choose-expiration'
+        end
+      end
+
       resources :ingredients
     end
   end

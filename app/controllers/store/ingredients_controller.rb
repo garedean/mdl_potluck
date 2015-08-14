@@ -34,7 +34,7 @@ class Store::IngredientsController < ApplicationController
     ingredient.update(location_id: params[:location_id])
     redirect_to ingredient_path(ingredient, show_quick_add: true)
   end
-
+  
   private
 
   def ingredient_params

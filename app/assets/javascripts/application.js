@@ -26,6 +26,9 @@ $(function() {
    $('.fade-in').delay(200).fadeIn(500);
    $('.fade-out').delay(1000).fadeOut(800);
 
+   $('#close-expiration-lightbox').click(function() {
+     $('#expiration-lightbox').hide();
+   });
 });
 
 $(function(){  // $(document).ready shorthand

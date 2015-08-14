@@ -14,4 +14,9 @@ class Store::LocationsController < LocationsController
   def edit
     super
   end
+
+  def choose_expiration
+    @category = Category.find(params[:category_id])
+    @location = Location.find(params[:id])
+  end
 end

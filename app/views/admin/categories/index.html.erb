@@ -3,7 +3,6 @@
 </ul>
 <div class="adminControlContainer">
   <p>This is where you can add, edit, or delete food bank categories. Be careful though! If you delete a top level category, all elements nested underneath it will be deleted too!</p>
-<br>
   <ul class="adminLocationUL">
     <%= nested_categories @categories.arrange(order: :name) %>
   </ul>

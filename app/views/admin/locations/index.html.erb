@@ -3,7 +3,6 @@
 </ul>
 <div class="adminControlContainer">
   <p>This is where you can add, edit, or delete food bank locations. Be careful though! If you delete a top level location, all elements nested underneath it will be deleted as well!</p>
-<br>
   <ul class="adminLocationUL">
     <%= nested_locations @locations.arrange(order: :name) %>
   </ul>
@@ -11,3 +10,4 @@
   <h4>Add a Top Level Location</h4>
   <%= render "form" %>
 </div>
+at

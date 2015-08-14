@@ -1,5 +1,5 @@
 <ul class="breadcrumbs">
-<h1 id="titleHeading" class="titleHeading">RECENTLY LOGGED ITEMS</h1>
+  <h1 id="titleHeading" class="titleHeading">RECENTLY LOGGED ITEMS</h1>
 </ul>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
   <div class="ingredientTable">
@@ -9,7 +9,6 @@
           <th>NAME</th>
           <th>ITEM ID</th>
           <th>LOCATION</th>
-          <th><i class="fi-torso"></i></th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +28,6 @@
                 <td>NOT LOCATED
             </td>
             <% end %>
-            <td></td>
           </tr>
         <% end %>
       </tbody>

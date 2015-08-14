@@ -55,7 +55,7 @@ $gray-color: #BDBDBD;
 
 .titleHeading {
   font-size: 1em;
-  margin-top: .5em;
+  margin-top: .6em;
   color: #757575;
 }
 
@@ -132,6 +132,10 @@ a:hover{
   background-color: white;
 }
 
+.shoppingCartButton:hover {
+  background-color: #BDBDBD;
+}
+
 .itemMainButton {
   width: 33.3%;
   left: 1%;
@@ -185,6 +189,13 @@ a i:hover {
   }
 }
 
+.mainButton:hover {
+  background-color: #BDBDBD;
+  i {
+    color: $highlight-color;
+  }
+}
+
 .mainButtonRack{
   position: absolute;
   width: 100%;
@@ -217,7 +228,7 @@ a i:hover {
   background-color: $main-color;
   width: 66%;
   left: 17%;
-  line-height: 4em;
+  line-height: 3em;
   height: 3em;
   color: white;
 }
@@ -262,8 +273,12 @@ a i:hover {
   text-align: center;
 }
 
+.tableCellWidth:hover {
+  background-color: #BDBDBD;
+}
+
 .ingredientTable {
-  margin-top: 3.3em;
+  margin-top: 3.2em;
 	height: 34em;
   width: 100%;
 	overflow-y: scroll;
@@ -271,9 +286,7 @@ a i:hover {
 }
 
 .cartTable {
-  margin-top: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-top: 3.2em;
 	height: 22em;
 	overflow-y: scroll;
 }
@@ -314,7 +327,7 @@ table {
   top: 3.5em;
   height: 3em;
   width: 100%;
-  box-shadow: 0 5px 0 0 #757575;
+  box-shadow: 0 3px 0 0 #757575;
   overflow-x: scroll;
 }
 
@@ -334,7 +347,7 @@ table {
 
 .crumbles {
 	font-size: 90%;
-	line-height: 35px;
+	line-height: 2.3em;
   color: #757575;
 }
 
@@ -388,46 +401,57 @@ ul.breadcrumbs li:before {
   ul {
     margin-right: 10px;
   }
-}
+}a
 
 .addSublocation {
-  float: right;
+  padding: .75em;
+  margin-right: 1em;
+  text-align: center;
+  height: 2.5em;
+  line-height: 3em;
   background-color: #81C784;
-  bottom: 1px;
 }
 
 .deleteSublocation {
-  right: 10px;
-
+  margin-left: .25em;
+  padding: .75em;
+  width: 4em;
+  height: 2.8em;
+  text-align: center;
+  line-height: 3em;
   background-color: #FF5722;
 }
 
 .deleteSublocationLight {
-  right: 10px;
-  bottom: 1px;
+  margin-left: .25em;
+  padding: .75em;
+  width: 4em;
+  height: 2.8em;
+  text-align: center;
+  line-height: 3em;
   background-color: #FF8A65;
 }
 
 .deleteSublocationLighter {
-  right: 10px;
-  bottom: 1px;
+  margin-left: .25em;
+  padding: .75em;
+  width: 4em;
+  height: 3em;
+  text-align: center;
+  line-height: 3em;
   background-color: #FFCCBC;
-  box-shadow: 0 1px 0 0 $gray-color;
 }
 
 .adminLocationList {
-  padding-top: 1px;
   background-color: white;
-  padding-left: 10px;
   list-style: none;
   border: 1px solid black;
 }
 
 .adminLocationListRoot {
-  padding-top: 1px;
   background-color: $highlight-color;
-  padding-left: 10px;
   list-style: none;
+  border: 1px solid black;
 }
 
 /* LIGHTBOX MODAL */

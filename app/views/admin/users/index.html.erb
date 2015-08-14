@@ -13,7 +13,6 @@
     </thead>
     <tbody>
       <% @users.each do |user| %>
-
       <tr>
         <td>
           <%= user.email %>
@@ -22,25 +21,24 @@
           <%= user.sign_in_count %>
         </td>
       <% if current_user.admin? %>
-        <%= link_to edit_admin_user_path(user) do %>
-          <td>
-            <div class="shoppingCartButton">EDIT</div>
-          </td>
-        <% end %>
-        <%= link_to admin_user_path(user), confirm: "Are you sure?", method: :delete do %>
-          <td>
-            <div class="shoppingCartButton">DELETE</div>
-          </td>
-        <% end %>
+        <td>
+          <%= link_to edit_admin_user_path(user) do %>
+            <div class="">EDIT</div>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to admin_user_path(user), confirm: "Are you sure?", method: :delete do %>
+            <div class="">DELETE</div>
+          <% end %>
+        </td>
       <% end %>
       </tr>
       <% end %>
     </tbody>
   </table>
-</div>
-
-<% if current_user.admin? %>
-  <%= link_to new_admin_user_path do %>
-    <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
+  <% if current_user.admin? %>
+    <%= link_to new_admin_user_path do %>
+      <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

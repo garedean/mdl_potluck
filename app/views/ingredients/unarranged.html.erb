@@ -6,21 +6,21 @@
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>NAME</th>
           <th>ITEM ID</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where(:location_id => nil).each do |ingredient| %>
           <tr>
-            <td><%= ingredient.name %></td>
-            <td><%= ingredient.id %> </td>
             <td>
               <%= link_to relocate_ingredient_locations_path(ingredient) do %>
                 <div class="tableCellWidth">SET LOCATION</div>
               <% end %>
             </td>
+            <td><%= ingredient.name %></td>
+            <td><%= ingredient.id %> </td>
           </tr>
         <% end %>
       </tbody>

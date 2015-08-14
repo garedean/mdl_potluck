@@ -2225,8 +2225,7 @@ meta.foundation-mq-topbar {
   overflow: hidden;
   padding: 0.5625rem 0.875rem 0.5625rem;
   background-color: #f4f4f4;
-  border-color: gainsboro;
-  border-radius: 3px; }
+  border-color: gainsboro; }
   .breadcrumbs > * {
     color: #008CBA;
     float: left;

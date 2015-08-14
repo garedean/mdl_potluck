@@ -76,11 +76,19 @@
           </li>
         <% else %>
           <li>
-            <%= link_to "Store another, same location", add_another_same_location_ingredient_path(@ingredient), method: :post %>
+            <%= link_to add_another_same_location_ingredient_path(@ingredient), method: :post do %>
+              <center>
+                Store another here
+              </center>
+            <% end %>
           </li>
 
           <li>
-            <%= link_to "Store another, different location", store_category_locations_path(@ingredient.category) %>
+            <%= link_to store_category_locations_path(@ingredient.category) do %>
+              <center>
+                Store another with changes
+              </center>
+            <% end %>
           </li>
         <% end %>
 

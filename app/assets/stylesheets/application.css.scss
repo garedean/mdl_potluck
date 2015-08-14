@@ -16,38 +16,14 @@
  *= require nprogress
  *= require nprogress-bootstrap
  */
-
  @import "foundation_and_overrides";
  @import 'foundation-icons';
-
- /* FONT SIZES */
-
- .size-12 { font-size: 12px; }
- .size-14 { font-size: 14px; }
- .size-16 { font-size: 16px; }
- .size-18 { font-size: 18px; }
- .size-21 { font-size: 21px; }
- .size-24 { font-size: 24px; }
- .size-36 { font-size: 36px; }
- .size-48 { font-size: 48px; }
- .size-60 { font-size: 60px; }
- .size-72 { font-size: 72px; }
 
 /* COLOR VARIABLES */
 
 $main-color: #1E88E5;
 $highlight-color: #FFD54F;
 $gray-color: #BDBDBD;
-
-/* RESPONSIVE */
-
-@media screen and (min-width: 600px) {
-  .desktopContainer {
-    margin-left: 15%;
-    margin-right: 15%;
-    height: 100%
-  }
-}
 
 /* GENERAL USE */
 
@@ -57,10 +33,6 @@ $gray-color: #BDBDBD;
 
 .hidden {
   display: none;
-}
-
-.selected {
-  color: $highlight-color;
 }
 
 .titleHeading {
@@ -73,7 +45,13 @@ $gray-color: #BDBDBD;
     display: none;
 }
 
-/* PAGE SETTINGS */
+.mobileBlock {
+	background-color: white;
+	width: 100%;
+	height: 100%;
+}
+
+/* LINKS */
 
 a {
 	color: white;
@@ -88,10 +66,8 @@ a:hover{
 	text-decoration: none;
 }
 
-.mobileBlock {
-	background-color: white;
-	width: 100%;
-	height: 100%;
+a i:hover {
+  color: $highlight-color;
 }
 
 /* NAVBAR */
@@ -99,12 +75,6 @@ a:hover{
 .navbar {
   height: 3.5em;
 	background-color: $main-color;
-}
-
-.userLogin {
-	position: fixed;
-	top: 1px;
-	left: 320px;
 }
 
 .alertCenter {
@@ -115,22 +85,13 @@ a:hover{
 	text-align: center;
 }
 
-/* FOOTER */
-
-.bottomDescription {
-  position: relative;
-  width: 180px;
-  left: 35px;
-  top: 70px;
-}
-
-/* BUTTONS */
-
 .navbar-icon {
   margin-top: 1em;
   margin-left: 1.2em;
   font-size: 1.2em;
 }
+
+/* BUTTONS */
 
 .shoppingCartButton {
   width: 4em;
@@ -172,10 +133,6 @@ a:hover{
   i {
     color: red;
   }
-}
-
-a i:hover {
-  color: $highlight-color;
 }
 
 .button {
@@ -262,13 +219,6 @@ a i:hover {
   }
 }
 
-.cartButton {
-	position: relative;
-	bottom: 11px;
-	left: 7px;
-  box-shadow: 0 2px 0 0 $gray-color;
-}
-
 .adminButtons {
   position: relative;
   background-color: $main-color;
@@ -279,33 +229,10 @@ a i:hover {
   color: white;
 }
 
-.arrangeReturn {
-	margin-left: 55px;
-	margin-top: 50px;
-}
-
-.lightboxButtonLeft {
-  width: 90px;
-  height: 90px;
-  left: 7px;
-}
-
 /* TABLES */
-
-.underLine {
-  box-shadow: 0 2px 0 0 black;
-}
 
 .tableCell {
 	font-size: 85%;
-}
-
-.setLocationButton{
-  width: 120px;
-  height: 35px;
-  bottom: 6px;
-  left: 7px;
-  box-shadow: 0 2px 0 0 $gray-color;
 }
 
 .tableCellWidth {
@@ -358,14 +285,6 @@ table {
 	color: green;
 }
 
-/* INPUT FIELDS */
-
-.expirationSelector {
-  position: relative;
-  top: 50px;
-  text-align: center;
-}
-
 /* Breadcrumbs */
 
 .breadcrumbs {
@@ -401,36 +320,13 @@ ul.breadcrumbs li:before {
   content: ">";
 }
 
-/* DEVISE USER LOGIN/LOGOUT */
-
-.loginContainer {
-	margin-left: 35px;
-	width: 300px;
-	text-align: center;
-}
-
-.deviseColor a {
-	color: black;
-}
-
 /* ADMIN */
-
-.adminLogin {
-	position: fixed;
-	top: 1px;
-	left: 280px;
-}
-
-#adminTable {
-  position: relative;
-  left: 30px;
-}
 
 .adminContainer {
 	width: 100%;
   text-align: center;
+  margin-top: 3.4em;
 }
-
 
 .itemContainer {
   margin: 2em;

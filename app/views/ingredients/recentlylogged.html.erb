@@ -1,5 +1,10 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">RECENTLY LOGGED ITEMS</h1>
+  <span class="breadButtonRack">
+    <%= link_to :back do %>
+      <span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
+    <% end %>
+  </span>
 </ul>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
   <div class="ingredientTable">

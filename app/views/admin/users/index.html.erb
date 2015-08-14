@@ -1,5 +1,15 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">USER MANAGEMENT</h1>
+  <% if current_user.admin? %>
+  <span class="breadButtonRack">
+    <%= link_to :back do %>
+			<span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
+		<% end %>
+    <%= link_to new_admin_user_path do %>
+      <div class="cartBreadButton"><i class="fi-torso"></i><br>NEW USER</div>
+    <% end %>
+	</span>
+  <% end %>
 </ul>
 <div class="ingredientTable">
   <table>
@@ -36,9 +46,4 @@
       <% end %>
     </tbody>
   </table>
-  <% if current_user.admin? %>
-    <%= link_to new_admin_user_path do %>
-      <div class="mainButton"><i class="fi-torso"></i><br>NEW USER</div>
-    <% end %>
-  <% end %>
 </div>

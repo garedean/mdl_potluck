@@ -1,5 +1,10 @@
 <ul class="breadcrumbs">
-<h1 id="titleHeading" class="titleHeading">USED INVENTORY ITEMS</h1>
+  <h1 id="titleHeading" class="titleHeading">USED INVENTORY ITEMS</h1>
+  <span class="breadButtonRack">
+    <%= link_to :back do %>
+      <span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
+    <% end %>
+  </span>
 </ul>
 <% if @ingredients.where(:used_on => nil).any? %>
   <div class="ingredientTable">

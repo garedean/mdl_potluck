@@ -11,6 +11,11 @@
 		<li class="crumbles"><%= @food_category.parent.name %></li>
 	<% end %>
     <li class="crumbles"><%= @food_category.name %></i></li><br>
+    <span class="breadButtonRack">
+  		<%= link_to :back do %>
+  			<span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
+  		<% end %>
+  	</span>
 </ul>
 
 <ul class="theList">

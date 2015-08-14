@@ -9,6 +9,11 @@
     <li class="crumbles"><%= @location.parent.name %></li>
   <% end %>
     <li class="crumbles"><%= @location.name %></li>
+    <span class="breadButtonRack">
+      <%= link_to :back do %>
+        <span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
+      <% end %>
+    </span>
 </ul>
 
 <ul class="theList">

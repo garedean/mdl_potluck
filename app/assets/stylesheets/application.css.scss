@@ -91,6 +91,10 @@ a i:hover {
   font-size: 1.2em;
 }
 
+.navbar-icon-right {
+  margin-right: 1em;
+}
+
 /* BUTTONS */
 
 .shoppingCartButton {
@@ -170,7 +174,7 @@ a i:hover {
   float:right;
   border: 1px solid #BDBDBD;
   margin: .4em;
-  width: 8em;
+  width: 20%;
   height: 3em;
   color: #424242;
   font-size: 1em;
@@ -329,6 +333,7 @@ ul.breadcrumbs li:before {
 }
 
 .itemContainer {
+  padding-top: 2.8em;
   margin: 2em;
 }
 

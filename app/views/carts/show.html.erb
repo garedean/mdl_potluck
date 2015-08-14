@@ -1,12 +1,16 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">CART</h1>
   <span class="breadButtonRack">
+    <%= link_to :back do %>
+      <span class="cartBreadButton">
+        <i class="fi-arrow-left"></i><br>BACK
+      </span>
+    <% end %>
     <%= link_to use_all_items_path, method: :post do %>
       <span class="cartBreadButton">
         <i class="fa fa-spoon"></i><br>USE
       </span>
     <% end %>
-
     <%= link_to empty_cart_path, method: :post do %>
       <span class="cartBreadButton">
         <i class="fa fa-cart-arrow-down"></i><br>EMPTY

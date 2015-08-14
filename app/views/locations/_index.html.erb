@@ -2,9 +2,18 @@
 	<% @locations.each do |location| %>
 		<li>
 			<%= link_to location_path(location) do %>
-        <span><%= location.item_count %></span>
-        <span><%= location.name %></span>
-      <% end %>
+
+				<ul class="inner-link-list">
+					<li class="list-item-count">
+						<span class="circle">
+							<%= location.item_count %>
+						</span>
+					</li>
+					<li class="list-item-name">
+						<%= location.name %>
+					</li>
+				</ul>
+			<% end %>
 		</li>
 	<% end %>
 </ul>

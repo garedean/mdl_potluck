@@ -2,11 +2,41 @@
   Locations
 <% end %>
 
-<ul class="theList">
-  <% @sublocations.each do |location| %>
-    <li>
-      <span><%= location.item_count %></span>
-      <%= hierarchy_link(location, :location, nil, "button listButtons") %>
-    </li>
-  <% end %>
+<ul class="mdl-list">
+	<% @sublocations.each do |location| %>
+		<li>
+
+      <% if location.children.any? %>
+
+        <%= link_to location_path(location) do %>
+          <ul class="inner-link-list">
+  					<li class="list-item-count">
+  						<span class="circle">
+  							<%= location.item_count %>
+  						</span>
+  					</li>
+  					<li class="list-item-name">
+  						<%= location.name %>
+  					</li>
+  				</ul>
+        <% end %>
+
+      <% else %>
+        <%= link_to location_ingredients_path(location) do %>
+
+          <ul class="inner-link-list">
+  					<li class="list-item-count">
+  						<span class="circle">
+  							<%= location.item_count %>
+  						</span>
+  					</li>
+  					<li class="list-item-name">
+  						<%= location.name %>
+  					</li>
+  				</ul>
+        <% end %>
+
+      <% end %>
+		</li>
+	<% end %>
 </ul>

@@ -2,12 +2,41 @@
   Categories
 <% end %>
 
-<% link_type ||= nil %>
+<ul class="mdl-list">
+	<% @subcategories.each do |category| %>
+		<li>
 
-<ul class="theList">
-  <% @food_category_children.each do |item| %>
-    <li>
-      <%= hierarchy_link(item, link_type, @food_category, "button listButtons") %>
-    </li>
-  <% end %>
+      <% if category.children.any? %>
+
+        <%= link_to category_path(category) do %>
+          <ul class="inner-link-list">
+  					<li class="list-item-count">
+  						<span class="circle">
+  							<%= category.item_count %>
+  						</span>
+  					</li>
+  					<li class="list-item-name">
+  						<%= category.name %>
+  					</li>
+  				</ul>
+        <% end %>
+
+      <% else %>
+        <%= link_to category_ingredients_path(category) do %>
+
+          <ul class="inner-link-list">
+  					<li class="list-item-count">
+  						<span class="circle">
+  							<%= category.item_count %>
+  						</span>
+  					</li>
+  					<li class="list-item-name">
+  						<%= category.name %>
+  					</li>
+  				</ul>
+        <% end %>
+
+      <% end %>
+		</li>
+	<% end %>
 </ul>

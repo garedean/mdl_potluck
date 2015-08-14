@@ -1,3 +1,6 @@
+<ul class="breadcrumbs">
+  <h1 id="titleHeading" class="titleHeading">INVENTORY SUMMARY</h1>
+</ul>
 <% if @ingredients.where.not(:expiring_at => nil).any? %>
   <div class="ingredientTable">
     <table class="tableFontSize">
@@ -39,4 +42,3 @@
     </button>
   <% end %>
 <% end %>
-

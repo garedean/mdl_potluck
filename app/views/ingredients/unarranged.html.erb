@@ -1,5 +1,5 @@
 <ul class="breadcrumbs">
-<h1>UNLOCATED</h1>
+<h1 id="titleHeading" class="titleHeading">UNLOCATED ITEMS</h1>
 </ul>
 <% if @ingredients.where(:location_id => nil).any? %>
   <div class="ingredientTable">
@@ -8,7 +8,6 @@
         <tr>
           <th>NAME</th>
           <th>ITEM ID</th>
-          <th><i class="fi-torso"></i>
           <th></th>
         </tr>
       </thead>
@@ -17,7 +16,6 @@
           <tr>
             <td><%= ingredient.name %></td>
             <td><%= ingredient.id %> </td>
-            <td></td>
             <td>
               <%= link_to relocate_ingredient_locations_path(ingredient) do %>
                 <div class="tableCellWidth">SET LOCATION</div>

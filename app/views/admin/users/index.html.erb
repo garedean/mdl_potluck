@@ -1,3 +1,6 @@
+<ul class="breadcrumbs">
+  <h1 id="titleHeading" class="titleHeading">USER MANAGEMENT</h1>
+</ul>
 <div class="ingredientTable">
   <table>
     <thead>
@@ -21,12 +24,12 @@
       <% if current_user.admin? %>
         <%= link_to edit_admin_user_path(user) do %>
           <td>
-            <div class="button">EDIT</div>
+            <div class="listButtons">EDIT</div>
           </td>
         <% end %>
         <%= link_to admin_user_path(user), confirm: "Are you sure?", method: :delete do %>
           <td>
-            <div class="button">DELETE</div>
+            <div class="listButtons">DELETE</div>
           </td>
         <% end %>
       <% end %>

@@ -1,9 +1,9 @@
 <ul class="breadcrumbs">
   <% if @location != nil %>
-    <li><%= @location.name %></li>
+    <h1 id="titleHeading" class="titleHeading"><%= @location.name %></h1>
   <% end %>
   <% if @category != nil %>
-    <li><%= @category.name %></li>
+    <h1 id="titleHeading" class="titleHeading"><%= @category.name %></h1>
   <% end %>
 </ul>
 <% if @ingredients.any? %>

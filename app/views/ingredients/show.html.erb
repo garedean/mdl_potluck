@@ -47,15 +47,15 @@
 
 <div class="mainButtonRack">
   <%= link_to ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
-    <div class="button itemMainButton"><i class="fi-trash"></i>TRASH</div>
+    <div class="itemMainButton"><i class="fi-trash"></i>  TRASH</div>
   <% end %>
 
   <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
-    <div class="button itemMainButton"><i class="fi-marker"></i>MOVE</div>
+    <div class="itemMainButton"><i class="fi-marker"></i>  MOVE</div>
   <% end %>
 
   <%= link_to store_path do %>
-    <div class="button itemMainButton"><i class="fi-check"></i>DONE</div>
+    <div class="itemMainButton"><i class="fi-check"></i>  DONE</div>
   <% end %>
 </div>
 

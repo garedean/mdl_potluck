@@ -12,10 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
-//= require nprogress
-//= require nprogress-turbolinks
 //= require turbolinks
+//= require material
 //= require_tree .
 
 $(function() {

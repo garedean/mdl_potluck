@@ -4,6 +4,10 @@ class Location < ActiveRecord::Base
   validates_presence_of :name
   has_ancestry
 
+  def item_count
+    ingredients.size
+  end
+
   private
 
     def remove_child_associations

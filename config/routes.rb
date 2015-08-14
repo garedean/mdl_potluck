@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}, skip: :registration
 
-  root to: 'stores#show'
+  #root to: 'stores#show'
+  root to: "static_pages#home"
 
   get '/prepare' => 'static_pages#prepare'
   get '/admin' => 'static_pages#admin_main'

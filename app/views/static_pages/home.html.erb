@@ -1,0 +1,36 @@
+<% content_for :tabs do %>
+  <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+    <%= link_to "Categories", "#fixed-tab-1", class: "mdl-layout__tab is-active" %>
+    <%= link_to "Locations", "#fixed-tab-2", class: "mdl-layout__tab is" %>
+    <%= link_to "Use Soon", "#fixed-tab-3", class: "mdl-layout__tab is" %>
+  </div>
+<% end %>
+
+<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+  <%= render "categories/index" %>
+</section>
+
+<section class="mdl-layout__tab-panel" id="fixed-tab-2">
+  <%= render "locations/index" %>
+</section>
+
+<section class="mdl-layout__tab-panel" id="fixed-tab-3">
+  <div class="page-content">page 3</div>
+</section>
+
+<% if false %>
+<!-- Add food item -->
+<%= link_to store_categories_path(Ingredient.new) do %>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-food-item">
+    <i class="material-icons">add</i>
+  </button>
+<% end %>
+
+<% end %>
+<!--
+<style>
+  .mdl-layout__tab-panel {
+    height: calc(100vh 0 112px) !important;
+  }
+</style>
+-->

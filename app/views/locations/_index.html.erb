@@ -1,0 +1,10 @@
+<ul class="mdl-list">
+	<% @locations.each do |location| %>
+		<li>
+			<%= link_to location_path(location) do %>
+        <span><%= location.item_count %></span>
+        <span><%= location.name %></span>
+      <% end %>
+		</li>
+	<% end %>
+</ul>

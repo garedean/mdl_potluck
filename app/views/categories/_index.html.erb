@@ -1,0 +1,20 @@
+<ul class="mdl-list">
+	<% @categories.each do |category| %>
+		<li>
+			<%= link_to category_path(category) do %>
+
+				<ul class="inner-link-list">
+					<li class="list-item-count">
+						<span class="circle">
+							<%= category.item_count %>
+						</span>
+					</li>
+					<li class="list-item-name">
+						<%= category.name %>
+					</li>
+				</ul>
+
+			<% end %>
+		</li>
+	<% end %>
+</ul>

@@ -1,6 +1,20 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">CART</h1>
+  <span class="breadButtonRack">
+    <%= link_to use_all_items_path, method: :post do %>
+      <span class="cartBreadButton">
+        <i class="fa fa-spoon"></i><br>USE
+      </span>
+    <% end %>
+
+    <%= link_to empty_cart_path, method: :post do %>
+      <span class="cartBreadButton">
+        <i class="fa fa-cart-arrow-down"></i><br>EMPTY
+      </span>
+    <% end %>
+  </span>
 </ul>
+
 <div class="cartTable">
   <table>
     <thead>
@@ -46,17 +60,4 @@
       <% end %>
     </tbody>
   </table>
-</div>
-<div class="mainButtonRack">
-  <%= link_to use_all_items_path, method: :post do %>
-    <span class="mainButton">
-      <i class="fa fa-spoon"></i><br>USE
-    </span>
-  <% end %>
-
-  <%= link_to empty_cart_path, method: :post do %>
-    <span class="mainButton">
-      <i class="fa fa-cart-arrow-down"></i><br>EMPTY
-    </span>
-  <% end %>
 </div>

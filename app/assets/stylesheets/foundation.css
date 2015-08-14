@@ -2256,7 +2256,7 @@ meta.foundation-mq-topbar {
         text-decoration: none; }
     .breadcrumbs > *:before {
       color: #AAAAAA;
-      content: "/";
+      content: " ";
       margin: 0 0.75rem;
       position: relative;
       top: 1px; }

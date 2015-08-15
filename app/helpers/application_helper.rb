@@ -39,4 +39,16 @@ module ApplicationHelper
       end
     end
   end
+
+  def header_link(destination)
+    if destination == :back
+      link_to :back do
+        content_tag(:i, "arrow_back", class: "material-icons")
+      end
+    elsif destination == :potluck_icon
+      link_to root_path do
+        content_tag(:i, "", class: "zmdi zmdi-cutlery home-icon")
+      end
+    end
+  end
 end

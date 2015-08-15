@@ -110,3 +110,38 @@ button.add-food-item {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.mdl-layout__tab-bar {
+  height: initial !important;
+}
+
+/* Breadcrumb Menu */
+/*****************************************/
+
+#breadcrumbs {
+  height: 50px;
+  background: white;
+  line-height: 50px;
+  padding-left: 20px;
+  color: #666;
+  a {
+    color: #3F51B5;
+  }
+}
+
+/* Header */
+/*****************************************/
+
+header {
+  i {
+    font-size: 30px !important;
+  }
+}
+
+i.cart {
+  float: right;
+}
+
+.mdl-layout__header-row {
+  padding: 0 5px 0 30px !important;
+}

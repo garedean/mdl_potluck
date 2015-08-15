@@ -2,6 +2,10 @@
   Home
 <% end %>
 
+<% content_for :header_icon do %>
+  <i class="zmdi zmdi-cutlery"></i>
+<% end %>
+
 <% content_for :tabs do %>
   <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
     <%= link_to "Categories", "#fixed-tab-1", class: "mdl-layout__tab is-active" %>

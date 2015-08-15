@@ -2,6 +2,12 @@
   Locations
 <% end %>
 
+<div id="breadcrumbs">
+  <% @location.ancestors.each do |location| %>
+    <%= link_to location.name, location %> &gt;
+  <% end %>
+</div>
+
 <ul class="mdl-list">
 	<% @sublocations.each do |location| %>
 		<li>

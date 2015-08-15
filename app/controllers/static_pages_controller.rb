@@ -20,7 +20,5 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    @categories = Category.where(ancestry: nil).order(:name)
-    @locations = Location.where(ancestry: nil).order(:name)
   end
 end

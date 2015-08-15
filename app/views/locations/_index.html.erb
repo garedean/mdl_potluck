@@ -1,5 +1,5 @@
 <ul class="mdl-list">
-	<% @locations.each do |location| %>
+	<% Location.roots.order(:name).each do |location| %>
 		<li>
 			<%= link_to location_path(location) do %>
 

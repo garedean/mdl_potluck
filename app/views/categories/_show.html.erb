@@ -3,7 +3,7 @@
 <% end %>
 
 <ul class="mdl-list">
-	<% @subcategories.each do |category| %>
+	<% @category.children.each do |category| %>
 		<li>
 
       <% if category.children.any? %>

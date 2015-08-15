@@ -30,9 +30,3 @@ $(function() {
      $('#expiration-lightbox').hide();
    });
 });
-
-$("#titleHeading").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".ingredientTable").offset().top},
-        'slow');
-});

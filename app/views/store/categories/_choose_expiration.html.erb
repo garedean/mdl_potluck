@@ -6,32 +6,32 @@
 		<% end %>
 	</span>
 </ul>
+<div class="adminContainer">
+  <br>
+  When does this expire?
 
-When does this expire?
+  <%= form_for @ingredient do |f| %>
+    <%= hidden_field_tag :location_id, @location.try(:id) %>
+    <%= hidden_field_tag :category_id, @category.id %>
 
-
-<%= form_for @ingredient do |f| %>
-  <%= hidden_field_tag :location_id, @location.try(:id) %>
-  <%= hidden_field_tag :category_id, @category.id %>
-
-  <div>
-    <%= f.radio_button :expiring_at, '2' %> 2 weeks
-  </div>
-  <div>
-    <%= f.radio_button :expiring_at, '4' %> 1 month
-  </div>
-  <div>
-    <%= f.radio_button :expiring_at, '8' %> 2 months
-  </div>
-  <div>
-    <%= f.radio_button :expiring_at, '12' %> 3 months
-  </div>
-  <div>
-    <%= f.radio_button :expiring_at, '24' %> 6 months
-  </div>
-  <div>
-    <%= f.radio_button :expiring_at, '48' %> 1+ years
-  </div>
-
-  <%= f.submit %>
-<% end %>
+    <div>
+      <%= f.radio_button :expiring_at, '2' %> 2 weeks
+    </div>
+    <div>
+      <%= f.radio_button :expiring_at, '4' %> 1 month
+    </div>
+    <div>
+      <%= f.radio_button :expiring_at, '8' %> 2 months
+    </div>
+    <div>
+      <%= f.radio_button :expiring_at, '12' %> 3 months
+    </div>
+    <div>
+      <%= f.radio_button :expiring_at, '24' %> 6 months
+    </div>
+    <div>
+      <%= f.radio_button :expiring_at, '48' %> 1+ years
+    </div>
+    <%= f.submit 'CREATE ITEM', :class => 'createIngredient' %>
+  <% end %>
+</div>

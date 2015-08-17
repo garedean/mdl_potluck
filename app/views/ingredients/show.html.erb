@@ -31,13 +31,13 @@
   </div>
   <div id="conditionFade" class="">
     <h6>CONDITION:</h6>
-    <% if @ingredient.expiring_at != nil %>
-      <% if @ingredient.expiring_at.future? %>
+    <% if @ingredient.expiration_date != nil %>
+      <% if @ingredient.expiration_date.future? %>
         <div class="freshItem">FRESH</div>
       <% else %>
         <div class="expiredItem">EXPIRED</div>
       <% end %>
-        <strong><%= @ingredient.expiring_at %></strong>
+        <strong><%= @ingredient.expiration_date %></strong>
     <% else %>
       <strong>N/A</strong>
     <% end %>

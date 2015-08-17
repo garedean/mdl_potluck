@@ -44,13 +44,13 @@
           </td>
           <td><%= cart_item.id %></td>
             <td class="tableCell">
-              <% if cart_item.expiring_at != nil %>
-                <% if cart_item.expiring_at.future? %>
+              <% if cart_item.expiration_date != nil %>
+                <% if cart_item.expiration_date.future? %>
                   <div class="freshItem">FRESH</div>
                 <% else %>
                   <div class="expiredItem">EXPIRED</div>
                 <% end %>
-                  <%= cart_item.expiring_at %>
+                  <%= cart_item.expiration_date %>
               <% else %>
                 N/A
               <% end %>

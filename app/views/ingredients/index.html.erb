@@ -45,13 +45,13 @@
                 </span>
               </td>
               <td class="tableCell">
-                <% if ingredient.expiring_at != nil %>
-                  <% if ingredient.expiring_at.future? %>
+                <% if ingredient.expiration_date != nil %>
+                  <% if ingredient.expiration_date.future? %>
                     <div class="freshItem">FRESH</div>
                   <% else %>
                     <div class="expiredItem">EXPIRED</div>
                   <% end %>
-                  <%= ingredient.expiring_at %>
+                  <%= ingredient.expiration_date %>
                 <% else %>
                   N/A
                 <% end %>

@@ -6,7 +6,7 @@
     <% end %>
   </span>
 </ul>
-<% if @ingredients.where.not(:expiring_at => nil).any? %>
+<% if @ingredients.where.not(:expiration_date => nil).any? %>
   <div class="ingredientTable">
     <table class="tableFontSize">
       <thead>
@@ -17,13 +17,13 @@
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where.not(:expiring_at => nil).each do |ingredient| %>
+        <% @ingredients.where.not(:expiration_date => nil).each do |ingredient| %>
           <tr>
             <td><%= ingredient.name %></td>
             <td><%= ingredient.id %></td>
             <td>
-              <% if ingredient.expiring_at != nil %>
-                <% if ingredient.expiring_at.future? %>
+              <% if ingredient.expiration_date != nil %>
+                <% if ingredient.expiration_date.future? %>
                   <div class="freshItem">FRESH</div>
                 <% else %>
                   <div class="expiredItem">EXPIRED</div>

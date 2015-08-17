@@ -14,7 +14,7 @@ User.create(email: "admin@test.com", password: "123abc!!", admin: true)
 
 c1 = Category.create(name: 'Meats')
   c2 = c1.children.create(name: 'Chicken')
-    c2.children.create(name: 'Whole Chicken')
+    c2.children.create(name: 'Whole Chicken', default_expiration: DateTime.now + 10)
     c2.children.create(name: 'Chicken Breast')
     c2.children.create(name: 'Chicken Legs')
     c2.children.create(name: 'Chicken Drumstick')
@@ -269,7 +269,7 @@ max_category_id = Category.maximum(:id)
 1000.times do
   Ingredient.create(category_id: r.rand(max_category_id),
                     location_id: locations.sample.id,
-                    expiring_at: Date.today + r.rand(-5..90))
+                    expiration_date: Date.today + r.rand(-5..90))
 end
 
 # cart seeds

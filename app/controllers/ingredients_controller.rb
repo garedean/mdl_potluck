@@ -22,12 +22,11 @@ class IngredientsController < ApplicationController
   end
 
   def create
+    expiration_date = ingredient_params[:expiration_date].to_date
 
-    expiration_date = Date.today + (ingredient_params[:expiring_at].to_i * 7)
-
-    @ingredient = Ingredient.new(category_id: params[:category_id],
-                                 location_id: params[:location_id],
-                                 expiring_at: expiration_date)
+    @ingredient = Ingredient.new(category_id: ingredient_params[:category_id],
+                                 location_id: ingredient_params[:location_id],
+                                 expiration_date: expiration_date)
 
     if @ingredient.save
       redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"
@@ -98,11 +97,11 @@ class IngredientsController < ApplicationController
     cloned_ingredient = Ingredient.find(params[:id])
     cloned_location = cloned_ingredient.location.try(:id)
     cloned_category = cloned_ingredient.category.id
-    cloned_expiry   = cloned_ingredient.expiring_at
+    cloned_expiry   = cloned_ingredient.expiration_date
 
     new_ingredient = Ingredient.new(category_id: cloned_category,
                                     location_id: cloned_location,
-                                    expiring_at: cloned_expiry)
+                                    expiration_date: cloned_expiry)
 
     if new_ingredient.save
       redirect_to ingredient_path(new_ingredient, show_quick_add: true), notice: "One more stored in this location"
@@ -122,8 +121,6 @@ class IngredientsController < ApplicationController
     def ingredient_params
     	params.require(:ingredient).permit(:location_id,
                                          :category_id,
-                                         :quantity,
-                                         :lifespan,
-                                         :expiring_at)
+                                         :expiration_date)
     end
 end

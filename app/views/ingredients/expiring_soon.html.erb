@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @ingredients.where(expiring_at: Time.now - 3.day..Time.now + 2.day).each do |ingredient| %>
+      <% @ingredients.where(expiration_date: Time.now - 3.day..Time.now + 2.day).each do |ingredient| %>
         <tr>
           <td>
             <%= link_to ingredient_path(ingredient) do %>
@@ -43,13 +43,13 @@
             </span>
           </td>
           <td>
-            <% if ingredient.expiring_at != nil %>
-              <% if ingredient.expiring_at.future? %>
+            <% if ingredient.expiration_date != nil %>
+              <% if ingredient.expiration_date.future? %>
                 <div class="freshItem">FRESH</div>
               <% else %>
                 <div class="expiredItem">EXPIRED</div>
               <% end %>
-                <%= ingredient.expiring_at %>
+                <%= ingredient.expiration_date %>
               <% else %>
                 N/A
             <% end %>

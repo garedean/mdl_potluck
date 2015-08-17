@@ -17,6 +17,7 @@ gem 'devise'
 gem 'ancestry'
 gem 'nprogress-rails'
 gem 'jquery-turbolinks'
+gem 'pickadate-rails'
 
 group :development do
   gem 'byebug'

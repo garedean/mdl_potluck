@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812164751) do
+ActiveRecord::Schema.define(version: 20150817213320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150812164751) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ancestry"
+    t.date     "default_expiration"
   end
 
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150812164751) do
     t.datetime "updated_at"
     t.datetime "used_on"
     t.integer  "location_id"
-    t.date     "expiring_at"
+    t.date     "expiration_date"
     t.integer  "quantity"
     t.integer  "cart_id"
   end

@@ -15,6 +15,8 @@
  *= require foundation
  *= require nprogress
  *= require nprogress-bootstrap
+ *= require pickadate/default
+ *= require pickadate/default.date
  */
  @import "foundation_and_overrides";
  @import 'foundation-icons';
@@ -581,4 +583,18 @@ ul {
   color: #999;
   font-size: 10px;
   margin-bottom: 0;
+}
+
+#choose-expiration-wrapper {
+  padding-top: 200px;
+  width: 50%;
+  margin: 0 auto;
+  button {
+    color: black !important;
+  }
+  input {
+    font-size: 30px;
+    height: 60px;
+    background: white;
+  }
 }

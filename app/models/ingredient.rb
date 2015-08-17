@@ -47,6 +47,6 @@ class Ingredient < ActiveRecord::Base
 	end
 
 	def self.expiring_soon
-		order(expiring_at: :asc).limit(500)
+		order(expiration_date: :asc).limit(500)
 	end
 end

@@ -18,6 +18,9 @@
 //= require turbolinks
 //= require_tree .
 
+//= require pickadate/picker
+//= require pickadate/picker.date
+
 $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
       $(this).delay(4000).fadeOut();
@@ -28,6 +31,10 @@ $(function() {
 
    $('#close-expiration-lightbox').click(function() {
      $('#expiration-lightbox').hide();
+   });
+
+   $(".datepicker").pickadate({
+     format: 'mmmm d, yyyy',
    });
 });
 

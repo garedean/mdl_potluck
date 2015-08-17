@@ -4,32 +4,18 @@
 				<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
 	</span>
 </ul>
-<div class="adminContainer">
-  <br>
-  When does this expire?
+
+<div id="choose-expiration-wrapper">
+
+  <h2>Expiration date:</h2>
+
+  <p>(The current value is the default expiration date for this item)</p>
 
   <%= form_for @ingredient do |f| %>
-    <%= hidden_field_tag :location_id, @location.try(:id) %>
-    <%= hidden_field_tag :category_id, @category.id %>
+    <%= f.hidden_field :location_id, value: @location.try(:id) %>
+    <%= f.hidden_field :category_id, value: @category.id %>
+    <%= f.text_field :expiration_date, class: "datepicker", value: @category.default_expiration.strftime("%B %-e, %Y") %>
 
-    <div>
-      <%= f.radio_button :expiring_at, '2' %> 2 weeks
-    </div>
-    <div>
-      <%= f.radio_button :expiring_at, '4' %> 1 month
-    </div>
-    <div>
-      <%= f.radio_button :expiring_at, '8' %> 2 months
-    </div>
-    <div>
-      <%= f.radio_button :expiring_at, '12' %> 3 months
-    </div>
-    <div>
-      <%= f.radio_button :expiring_at, '24' %> 6 months
-    </div>
-    <div>
-      <%= f.radio_button :expiring_at, '48' %> 1+ years
-    </div>
-    <%= f.submit 'CREATE ITEM', :class => 'createIngredient' %>
+    <%= submit_tag 'CREATE ITEM' %>
   <% end %>
 </div>

@@ -9,11 +9,7 @@
 	<ul class="theList">
 		<% @food_categories.each do |category| %>
 		  <li>
-			<%= link_to store_category_path(category) do %>
-		  		<span class="button listButtons">
-		  		  <%= category.name %>
-		  		</span><br>
-		  	<% end %>
+				<%= hierarchy_link(category, :store, @food_category, "button listButtons") %>
 		  </li>
 		<% end %>
 	</ul>

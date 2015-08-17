@@ -33,5 +33,7 @@ $(function() {
      $('#expiration-lightbox').hide();
    });
 
-   //$(".datepicker").pickadate();
+   $(".datepicker").pickadate({
+     format: 'mmmm d, yyyy',
+   });
 });

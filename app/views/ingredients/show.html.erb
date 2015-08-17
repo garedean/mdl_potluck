@@ -1,7 +1,7 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">ITEM SUMMARY</h1>
   <span class="breadButtonRack">
-		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
+		<input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="BACK"  />
   </span>
 </ul>
 
@@ -42,12 +42,7 @@
     <br><br>
   </div>
   <div id="quantityFade" class="">
-    <h6>TOTAL QUANTITY OF:<br>'<%= @ingredient.name %>'</h6>
-      <strong>
-        <span id="item-count">
-          <%= Ingredient.count_all_locations(@ingredient) %>
-        </span>
-      </strong>
+    <h6>STOCK OF : <strong><%= @ingredient.name %></strong> :  <strong><%= Ingredient.count_all_locations(@ingredient) %></strong></h6>
   </div>
 </div>
 

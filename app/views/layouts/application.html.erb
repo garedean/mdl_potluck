@@ -11,7 +11,7 @@
   <body>
       <div id="mobileBlock" class="mobileBlock">
         <nav class="navbar">
-                        <% if current_user %>
+            <% if current_user %>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-user-times navbar-icon"></i>
               <% end %>
@@ -20,8 +20,12 @@
                 <i class="fa fa-user userLogin navbar-icon"></i>
               <% end %>
             <% end %>
-            <%= link_to admin_path do %>
-              <i class="fa fa-cog navbar-icon"></i>
+            <% if current_user != nil %>
+              <% if current_user.admin %>
+                <%= link_to admin_path do %>
+                  <i class="fa fa-cog navbar-icon"></i>
+                <% end %>
+              <% end %>
             <% end %>
             <% if current_user && current_user.cart.ingredients.count > 0 %>
               <%= link_to cart_path do %>
@@ -29,6 +33,9 @@
                   <%= current_user.cart.ingredients.count %></i>
               <% end %>
             <% end %>
+            <span class = "alertCenter" id="notify">
+              <%= flash[:alert] %>
+            </span>
             <% if current_user == nil %>
               <%= link_to new_user_session_path do %>
                 <i class="fa fa-spoon navbar-icon pull-right navbar-icon-right"></i>
@@ -41,12 +48,9 @@
             <%= link_to store_path do %>
               <i class="fa fa-cube navbar-icon pull-right navbar-icon-right"></i>
             <% end %>
+
         </nav>
           <%= yield %>
-          <div class = "alertCenter" id="">
-            <%= flash[:notice] %>
-            <%= flash[:alert] %>
-          </div>
       </div>
   </body>
 </html>

@@ -37,3 +37,9 @@ $(function() {
      format: 'mmmm d, yyyy',
    });
 });
+
+$(function() {
+   $('#notify').delay(100).fadeIn('normal', function() {
+      $(this).delay(3000).fadeOut();
+   });
+});

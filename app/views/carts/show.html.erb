@@ -31,7 +31,7 @@
           <td>
             <%= link_to ingredient_path(cart_item) do %>
               <%= cart_item.name %>
-            <% end %>
+            <% end %><br>
             <span class="littleBreadcrumbs">
               <% if cart_item.location_id != nil %>
                   <%= cart_item.location.root.name %>

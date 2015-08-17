@@ -6,7 +6,7 @@
     <h1 id="titleHeading" class="titleHeading"><%= @category.name %></h1>
   <% end %>
   <span class="breadButtonRack">
-        <input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="BACK"  />
+        <input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
   </span>
 </ul>
 <% if @ingredients.any? %>

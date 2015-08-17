@@ -1,7 +1,7 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">EXPIRING ITEMS</h1>
   <span class="breadButtonRack">
-    		<input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="BACK"  />
+    		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
   </span>
 </ul>
 <div class="ingredientTable">
@@ -20,7 +20,7 @@
             <%= link_to ingredient_path(ingredient) do %>
                 <strong><%= ingredient.name %></strong>
               <br>
-            <% end %>
+            <% end %><br>
             <span class="littleBreadcrumbs">
               <% if ingredient.location_id != nil %>
                 <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>

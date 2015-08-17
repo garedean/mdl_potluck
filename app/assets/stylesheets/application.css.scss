@@ -93,12 +93,12 @@ a i {
 .navbar-icon {
   margin-top: .75em;
   margin-left: .75em;
-  margin-right: 1.25em;
+  margin-right: .5em;
   font-size: 1.2em;
 }
 
 .navbar-icon-right {
-  margin-right: 1em;
+  padding-right: .75em;
 }
 
 /* BUTTONS */
@@ -154,8 +154,7 @@ a i {
 }
 
 .backButton {
-  line-height: 1em;
-
+  padding-bottom: .5em;
 }
 
 .button:hover {
@@ -253,8 +252,8 @@ a i {
   width: 66%;
   margin-top: 0.5em;
   left: 17%;
-  line-height: 3em;
-  height: 3em;
+  line-height: 2.5em;
+  height: 2.5em;
   color: white;
 }
 
@@ -279,7 +278,7 @@ a i {
 
 .ingredientTable {
   margin-top: 3.2em;
-	height: 34em;
+	height: 25em;
   width: 100%;
 	overflow-y: scroll;
   overflow-x: hidden;
@@ -287,7 +286,7 @@ a i {
 
 .cartTable {
   margin-top: 3.2em;
-	height: 34em;
+	height: 25em;
 	overflow-y: scroll;
 }
 
@@ -357,6 +356,7 @@ ul.breadcrumbs li:before {
 .itemContainer {
   padding-top: 2.2em;
   margin: 2em;
+  font-size: 90%;
 }
 
 .adminControlContainer {

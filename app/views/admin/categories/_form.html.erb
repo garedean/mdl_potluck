@@ -2,6 +2,12 @@
 
 <%= form_for [:admin, @category] do |f| %>
   <%= f.hidden_field :parent_id %>
+
+  <label>Category name:</label>
   <%= f.text_field :name %>
+
+  <label>Default expiration date:</label>
+  <%= f.text_field :default_expiration, class: "datepicker", value: Time.now.strftime("%B %-e, %Y") %>
+
   <%= f.submit "Save", :class => "button highlightColor" %>
 <% end %>

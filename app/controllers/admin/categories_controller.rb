@@ -9,7 +9,8 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params, parent_id: category_params[:parent_id])
+    @category = Category.new(category_params,
+      parent_id: category_params[:parent_id])
 
     if @category.save
       redirect_to admin_categories_path
@@ -27,6 +28,8 @@ class Admin::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:parent_id, :name)
+    params.require(:category).permit(:parent_id,
+                                     :name,
+                                     :default_expiration)
   end
 end

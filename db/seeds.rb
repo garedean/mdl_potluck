@@ -272,6 +272,10 @@ max_category_id = Category.maximum(:id)
                     expiration_date: Date.today + r.rand(-5..90))
 end
 
+Category.all.each do |category|
+  category.update(default_expiration: Date.today + r.rand(30..365))
+end
+
 # cart seeds
 # ------------------------------------------------
 

@@ -62,7 +62,7 @@ class IngredientsController < ApplicationController
     ingredient = Ingredient.find(params[:id])
     ingredient.destroy
 
-    redirect_to prepare_path, notice: "Item deleted!"
+    redirect_to store_path, notice: "Item deleted!"
   end
 
   def expiring_soon

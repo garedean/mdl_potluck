@@ -78,7 +78,7 @@ class IngredientsController < ApplicationController
     item_to_add = Ingredient.find(params[:id])
 
     current_user.cart.add_item(item_to_add)
-    flash[:notice] = "ADDED"
+    flash[:alert] = "ADDED"
     redirect_to :back
   end
 
@@ -114,7 +114,7 @@ class IngredientsController < ApplicationController
   def save_location
     ingredient = Ingredient.find(params[:ingredient_id])
     ingredient.update(location_id: params[:id])
-    redirect_to ingredient_path(ingredient), notice: "UPDATED"
+    redirect_to ingredient_path(ingredient), alert: "UPDATED"
   end
 
   private

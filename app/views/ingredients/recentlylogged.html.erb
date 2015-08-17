@@ -1,7 +1,7 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">RECENTLY LOGGED ITEMS</h1>
   <span class="breadButtonRack">
-    		<input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="Back"  />
+    		<input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="BACK"  />
   </span>
 </ul>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
@@ -19,9 +19,7 @@
           <tr>
             <td>
               <%= link_to ingredient_path(ingredient) do %>
-                <div class="makeBlack tableCellWidth" >
-                  <%= ingredient.name %>
-                </div>
+                <strong><%= ingredient.name %></strong>
               <% end %>
             </td>
             <td> <%= ingredient.id %></td>

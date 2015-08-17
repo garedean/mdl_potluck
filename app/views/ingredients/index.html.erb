@@ -6,7 +6,7 @@
     <h1 id="titleHeading" class="titleHeading"><%= @category.name %></h1>
   <% end %>
   <span class="breadButtonRack">
-        <input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="Back"  />
+        <input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="BACK"  />
   </span>
 </ul>
 <% if @ingredients.any? %>
@@ -24,9 +24,7 @@
           <tr>
               <td>
                 <%= link_to ingredient_path(ingredient) do %>
-                  <div class="tableCellWidth" id="listButton">
-                    <%= ingredient.name %>
-                  </div >
+                  <strong><%= ingredient.name %></strong>
                   <br>
                 <% end %>
                 <span class="littleBreadcrumbs">
@@ -75,8 +73,10 @@
 
     <% end %>
 <% else %>
-  <a href="javascript:history.back()" class="button arrangeReturn highlightColor">
-    <br><h3>NO ITEMS STORED</h3><br>
-    <h5><strong>RETURN</strong></h5><i class="fi-arrow-left size-48"></i>
+  <a href="javascript:history.back()" class="highlightColor">
+    <div class="arrangeReturn">
+      <br><h3>NO ITEMS STORED</h3><br>
+      <h5><strong>RETURN</strong></h5><i class="fi-arrow-left size-48"></i>
+    </div>
   </a>
 <% end %>

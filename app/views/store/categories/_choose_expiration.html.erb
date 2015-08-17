@@ -1,3 +1,16 @@
+<script>
+  (".datepicker").pickadate({
+    format: 'mmmm d, yyyy',
+  });
+
+  //picker.set('select', <%= @category.default_expiration.to_time.to_i * 1000 %> );
+
+  //alert("<%= @category.default_expiration.strftime("%B %-e, %Y") %>");
+
+  //picker.set('select', '<%= @category.default_expiration.strftime("%B-%e, %Y") %>', { format: 'mm-dd-yyyy' });
+</script>
+
+
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">SELECT EXPIRATION DATE</h1>
   <span class="breadButtonRack">
@@ -14,18 +27,9 @@
   <%= form_for @ingredient do |f| %>
     <%= f.hidden_field :location_id, value: @location.try(:id) %>
     <%= f.hidden_field :category_id, value: @category.id %>
-
-    <%= f.text_field :expiration_date, class: "datepicker" %>
+    <%= f.text_field :expiration_date, class: "datepicker", value: @category.default_expiration.strftime("%B %-e, %Y") %>
 
     <%= submit_tag 'CREATE ITEM' %>
   <% end %>
 
 </div>
-
-<script>
-  var $input = $(".datepicker").pickadate();
-
-  var picker = $input.pickadate('picker');
-
-  picker.set('select', [2015, 3, 20]);
-</script>

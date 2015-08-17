@@ -19,7 +19,7 @@
 //= require_tree .
 
 $(function() {
-   $('#flash').delay(100).fadeIn('normal', function() {
+   $('#flash').delay(300).fadeIn('normal', function() {
       $(this).delay(4000).fadeOut();
    });
 
@@ -28,5 +28,11 @@ $(function() {
 
    $('#close-expiration-lightbox').click(function() {
      $('#expiration-lightbox').hide();
+   });
+});
+
+$(function() {
+   $('#notify').delay(100).fadeIn('normal', function() {
+      $(this).delay(3000).fadeOut();
    });
 });

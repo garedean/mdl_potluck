@@ -48,10 +48,15 @@ $gray-color: #BDBDBD;
 }
 
 .mobileBlock {
-	background-color: white;
+	background-color: #FAFAFA;
 	width: 100%;
 	height: 100%;
 }
+
+.size-48 {
+  font-size: 1.75em;
+}
+
 
 /* LINKS */
 
@@ -63,14 +68,14 @@ a i {
   color: white;
 }
 
-a:hover{
-	color: $highlight-color;
-	text-decoration: none;
-}
-
-a i:hover {
-  color: $highlight-color;
-}
+// a:hover{
+// 	color: $highlight-color;
+// 	text-decoration: none;
+// }
+//
+// a i:hover {
+//   color: $highlight-color;
+// }
 
 /* NAVBAR */
 
@@ -89,15 +94,27 @@ a i:hover {
 
 .navbar-icon {
   margin-top: .75em;
-  margin-left: 1.2em;
+  margin-left: .75em;
+  margin-right: .5em;
   font-size: 1.2em;
 }
 
 .navbar-icon-right {
-  margin-right: 1em;
+  padding-right: .75em;
 }
 
 /* BUTTONS */
+
+.arrangeReturn {
+  margin-top: 6em;
+  margin-left:20%;
+  margin-right:20%;
+  width: 60%;
+  background: white;
+  border: 1px solid black;
+  text-align: center;
+  radius: 3px;
+}
 
 .shoppingCartButton {
   width: 4em;
@@ -105,14 +122,9 @@ a i:hover {
   border: 1px solid #BDBDBD;
   text-align: center;
   line-height: 4em;
-  margin-bottom: 1.5em;
   background-color: white;
   box-shadow: 0 1px 0 0 #BDBDBD;
 
-}
-
-.shoppingCartButton:hover {
-  background-color: #BDBDBD;
 }
 
 .createIngredient {
@@ -144,16 +156,12 @@ a i:hover {
 }
 
 .backButton {
-  float: right;
-  margin-right: 2em;
+  padding-bottom: .5em;
 }
 
 .button:hover {
-  background-color: #BDBDBD;
+  background:  white;
   color: black;
-  i {
-    color: red;
-  }
 }
 
 .button {
@@ -178,12 +186,11 @@ a i:hover {
   }
 }
 
-.mainButton:hover {
-  background-color: #BDBDBD;
-  i {
-    color: $highlight-color;
-  }
-}
+// .mainButton:hover {
+//   i {
+//     color: $highlight-color;
+//   }
+// }
 
 .cartBreadButton {
   background-color: white;
@@ -202,12 +209,11 @@ a i:hover {
   }
 }
 
-.cartBreadButton:hover {
-  background-color: #BDBDBD;
-  i {
-    color: $highlight-color;
-  }
-}
+// .cartBreadButton:hover {
+//   i {
+//     color: $highlight-color;
+//   }
+// }
 
 .rootButtonRack{
   position: absolute;
@@ -231,9 +237,9 @@ a i:hover {
 	background-color: white;
   border: 1px solid #BDBDBD;
 	width: 100%;
-	height: 3em;
-	font-size: 1.4em;
-  line-height: 1.5em;
+	height: 4em;
+	font-size: 1em;
+  line-height: 2em;
 	text-align: left;
   color: #424242;
   box-shadow: 0 2px 0 0 #BDBDBD;
@@ -246,11 +252,13 @@ a i:hover {
   position: relative;
   background-color: $main-color;
   width: 66%;
+  margin-top: 0.5em;
   left: 17%;
-  line-height: 3em;
-  height: 3em;
+  line-height: 2.5em;
+  height: 2.5em;
   color: white;
 }
+
 
 /* TABLES */
 
@@ -264,19 +272,15 @@ a i:hover {
   border: 1px solid #BDBDBD;
   color: #424242;
   height: 4em;
-  width: 12em;
+  width: 100%;
   line-height: 2em;
   text-align: center;
   box-shadow: 0 1px 0 0 #BDBDBD;
 }
 
-.tableCellWidth:hover {
-  background-color: #BDBDBD;
-}
-
 .ingredientTable {
   margin-top: 3.2em;
-	height: 34em;
+	height: 25em;
   width: 100%;
 	overflow-y: scroll;
   overflow-x: hidden;
@@ -284,7 +288,7 @@ a i:hover {
 
 .cartTable {
   margin-top: 3.2em;
-	height: 34em;
+	height: 25em;
 	overflow-y: scroll;
 }
 
@@ -321,6 +325,7 @@ table {
 }
 
 .littleBreadcrumbs {
+  position: relative;
   color: #616161;
   font-size: 80%;
 }
@@ -353,6 +358,7 @@ ul.breadcrumbs li:before {
 .itemContainer {
   padding-top: 2.2em;
   margin: 2em;
+  font-size: 90%;
 }
 
 .adminControlContainer {
@@ -567,7 +573,6 @@ ul {
       font-size: 13px;
       color: blue;
       &:hover {
-        background: #f1f1f1;
       }
     }
   }

@@ -1,46 +1,39 @@
 <ul class="breadcrumbs">
-	<br>
+	<h1 id="titleHeading" class="titleHeading">ADMIN TOOLS</h1>
 	<span class="breadButtonRack">
-		<%= link_to :back do %>
-			<span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
-		<% end %>
+			<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
 	</span>
 </ul>
-
+<Br>
 <div class="adminContainer">
-	<br>
-	<h4>USER SETTINGS</h4><br>
+	<h4>USER SETTINGS</h4>
 		<%= link_to admin_users_path do %>
 		  <div class="adminButtons">
 		    MANAGE USERS
 		  </div>
 		<% end %>
-	<br>
 		<%= link_to cartsummary_path do %>
 		  <div class="adminButtons">
 		    USED INVENTORY ITEMS
 		  </div>
 		<% end %>
-	<br><br>
-	<h4>INVENTORY SETTINGS</h4><br>
+		<br>
+	<h4>INVENTORY SETTINGS</h4>
 		<%= link_to admin_locations_path do %>
 		  <div class="adminButtons">
 		    MANAGE LOCATIONS
 		  </div>
 		<% end %>
-	<br>
 		<%= link_to admin_categories_path do %>
 		  <div class="adminButtons">
 		    MANAGE CATEGORIES
 		  </div>
 		<% end %>
-	<br>
 		<%= link_to inventorysummary_path do %>
 		  <div class="adminButtons">
 		    INVENTORY SUMMARY
 		  </div>
 		<% end %>
-	<br>
 		<%= link_to expiredsummary_path do %>
 		  <div class="adminButtons">
 		    EXPIRED SUMMARY

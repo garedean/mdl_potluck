@@ -1,9 +1,7 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">EXPIRING ITEMS</h1>
   <span class="breadButtonRack">
-    <%= link_to :back do %>
-      <span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
-    <% end %>
+    		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
   </span>
 </ul>
 <div class="ingredientTable">
@@ -20,11 +18,9 @@
         <tr>
           <td>
             <%= link_to ingredient_path(ingredient) do %>
-              <div class="makeBlack tableCellWidth">
-                <%= ingredient.name %>
-              </div >
+                <strong><%= ingredient.name %></strong>
               <br>
-            <% end %>
+            <% end %><br>
             <span class="littleBreadcrumbs">
               <% if ingredient.location_id != nil %>
                 <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
@@ -57,7 +53,7 @@
           <td>
             <%= link_to add_to_cart_path(ingredient), method: :post do %>
               <div class="shoppingCartButton">
-                <i class="fi-shopping-cart size-24 makeBlack"></i>
+                <i class="fi-shopping-cart size-48 makeBlack"></i>
               </div >
             <% end %>
           </td>

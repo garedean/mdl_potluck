@@ -11,17 +11,17 @@
   <body>
       <div id="mobileBlock" class="mobileBlock">
         <nav class="navbar">
-            <%= link_to store_path do %>
-              <i class="fa fa-cube navbar-icon"></i>
-            <% end %>
-            <% if current_user == nil %>
-              <%= link_to new_user_session_path do %>
-                <i class="fa fa-spoon navbar-icon"></i>
+                        <% if current_user %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-user-times navbar-icon"></i>
               <% end %>
             <% else %>
-              <%= link_to prepare_path do %>
-                <i class="fa fa-spoon navbar-icon"></i>
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-user userLogin navbar-icon"></i>
               <% end %>
+            <% end %>
+            <%= link_to admin_path do %>
+              <i class="fa fa-cog navbar-icon"></i>
             <% end %>
             <% if current_user && current_user.cart.ingredients.count > 0 %>
               <%= link_to cart_path do %>
@@ -29,17 +29,17 @@
                   <%= current_user.cart.ingredients.count %></i>
               <% end %>
             <% end %>
-            <% if current_user %>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-user-times navbar-icon pull-right navbar-icon-right"></i>
+            <% if current_user == nil %>
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-spoon navbar-icon pull-right navbar-icon-right"></i>
               <% end %>
             <% else %>
-              <%= link_to new_user_session_path do %>
-                <i class="fa fa-user userLogin navbar-icon pull-right navbar-icon-right"></i>
+              <%= link_to prepare_path do %>
+                <i class="fa fa-spoon navbar-icon pull-right navbar-icon-right"></i>
               <% end %>
             <% end %>
-            <%= link_to admin_path do %>
-              <i class="fi fi-sheriff-badge navbar-icon pull-right navbar-icon-right"></i>
+            <%= link_to store_path do %>
+              <i class="fa fa-cube navbar-icon pull-right navbar-icon-right"></i>
             <% end %>
         </nav>
           <%= yield %>

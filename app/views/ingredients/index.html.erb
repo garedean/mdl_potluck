@@ -5,6 +5,9 @@
   <% if @category != nil %>
     <h1 id="titleHeading" class="titleHeading"><%= @category.name %></h1>
   <% end %>
+  <span class="breadButtonRack">
+        <input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="Back"  />
+  </span>
 </ul>
 <% if @ingredients.any? %>
   <div class="ingredientTable">
@@ -59,7 +62,7 @@
               <td>
                 <%= link_to add_to_cart_path(ingredient), method: :post do %>
                   <div class="shoppingCartButton">
-                    <i class="fi-shopping-cart size-24 makeBlack"></i>
+                    <i class="fi-shopping-cart size-48 makeBlack"></i>
                   </div>
                 <% end %>
               </td>

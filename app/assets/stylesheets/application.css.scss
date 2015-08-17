@@ -46,9 +46,13 @@ $gray-color: #BDBDBD;
 }
 
 .mobileBlock {
-	background-color: white;
+	background-color: #FAFAFA;
 	width: 100%;
 	height: 100%;
+}
+
+.size-48 {
+  font-size: 1.75em;
 }
 
 /* LINKS */
@@ -103,7 +107,7 @@ a i:hover {
   border: 1px solid #BDBDBD;
   text-align: center;
   line-height: 4em;
-  margin-bottom: 1.5em;
+  margin-bottom: 3.8em;
   background-color: white;
   box-shadow: 0 1px 0 0 #BDBDBD;
 
@@ -244,11 +248,13 @@ a i:hover {
   position: relative;
   background-color: $main-color;
   width: 66%;
+  margin-top: 0.5em;
   left: 17%;
   line-height: 3em;
   height: 3em;
   color: white;
 }
+
 
 /* TABLES */
 
@@ -262,7 +268,7 @@ a i:hover {
   border: 1px solid #BDBDBD;
   color: #424242;
   height: 4em;
-  width: 12em;
+  width: 100%;
   line-height: 2em;
   text-align: center;
   box-shadow: 0 1px 0 0 #BDBDBD;

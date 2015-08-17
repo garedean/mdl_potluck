@@ -1,9 +1,7 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">EXPIRED SUMMARY</h1>
   <span class="breadButtonRack">
-    <%= link_to :back do %>
-      <span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
-    <% end %>
+  		<input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="Back"  />
   </span>
 </ul>
 <% if @ingredients.where(expiring_at: Time.now - 14.day..Time.now.midnight + 1.day) %>

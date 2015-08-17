@@ -1,9 +1,7 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">EXPIRING ITEMS</h1>
   <span class="breadButtonRack">
-    <%= link_to :back do %>
-      <span class="cartBreadButton"><i class="fi fi-arrow-left"></i><br>BACK</span>
-    <% end %>
+    		<input type="button" class="cartBreadButton"   onclick="history.back(-1)" value="Back"  />
   </span>
 </ul>
 <div class="ingredientTable">
@@ -57,7 +55,7 @@
           <td>
             <%= link_to add_to_cart_path(ingredient), method: :post do %>
               <div class="shoppingCartButton">
-                <i class="fi-shopping-cart size-24 makeBlack"></i>
+                <i class="fi-shopping-cart size-48 makeBlack"></i>
               </div >
             <% end %>
           </td>

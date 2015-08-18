@@ -1,18 +1,10 @@
-<ul class="breadcrumbs">
-  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
-  <% end %>
-  <% if @location.parent != nil && @location.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.name %></li>
-  <% end %>
-  <% if @location.parent != nil %>
-    <li class="crumbles"><%= @location.parent.name %></li>
-  <% end %>
-    <li class="crumbles"><%= @location.name %></li>
-    <span class="breadButtonRack">
-      		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
-    </span>
-</ul>
+<div class="breadcrumbs">
+  <%= link_to @ingredient.name, @ingredient %> &gt;
+
+  <%= link_to "Select Location", relocate_ingredient_locations_path(@ingredient) %> &gt;
+
+  <%= @location.name.upcase %>
+</div>
 
 <ul class="theList">
   <% @sublocations.each do |location| %>

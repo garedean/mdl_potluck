@@ -7,7 +7,7 @@
 
 <div class="listContainer">
 	<ul class="theList" id="smoothScroll">
-		<% @food_categories.each do |category| %>
+		<% Category.roots.order(:name).each do |category| %>
 		  <li>
 				<%= link_to category_path(category) do %>
 		  		<span class="button listButtons">

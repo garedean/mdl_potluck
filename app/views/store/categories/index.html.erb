@@ -7,7 +7,7 @@
 
 <div>
 	<ul class="theList">
-		<% @food_categories.each do |category| %>
+		<% Category.roots.order(:name).each do |category| %>
 		  <li>
 				<%= hierarchy_link(category, :store, @food_category, "button listButtons") %>
 		  </li>

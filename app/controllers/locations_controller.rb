@@ -1,8 +1,4 @@
 class LocationsController < ApplicationController
-  def index
-    @locations = Location.where(ancestry: nil).order(:name)
-  end
-
   def show
     @location = Location.find(params[:id])
     @sublocations = @location.children.order(:name)

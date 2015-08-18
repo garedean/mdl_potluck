@@ -1,8 +1,14 @@
 <div class="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
+  <%= link_to "Locations", locations_path %> &gt;
+
   <% @location.ancestors.each do |location| %>
     <%= link_to location.name, location %> &gt;
   <% end %>
+
+  <%= @location.name %>
 </div>
+
 
 <ul class="theList">
   <% @location.children.order(:name).each do |location| %>

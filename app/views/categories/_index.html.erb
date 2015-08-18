@@ -1,0 +1,25 @@
+<% link_type ||= nil %>
+
+<div class="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
+  CATEGORIES
+</div>
+
+<div class="listContainer">
+	<ul class="theList" id="smoothScroll">
+		<% Category.roots.order(:name).each do |category| %>
+		  <li>
+        <%= hierarchy_link(category, link_type, @food_category, "button listButtons") %>
+
+        <% if false %>
+  				<%= link_to category_path(category) do %>
+  		  		<span class="button listButtons">
+  		  		  <%= category.name %>
+  		  		</span><br>
+  		  	<% end %>
+        <% end %>
+
+		  </li>
+		<% end %>
+	</ul>
+</div>

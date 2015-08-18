@@ -1,23 +1,19 @@
 <% link_type ||= nil %>
 
-<ul class="breadcrumbs">
-  <% if @food_category.parent != nil && @food_category.parent.parent != nil && @food_category.parent.parent.parent != nil%>
-		<li class="crumbles"><%= @food_category.parent.parent.parent.name %></li>
-	<% end %>
-	<% if @food_category.parent != nil && @food_category.parent.parent != nil%>
-		<li class="crumbles"><%= @food_category.parent.parent.name %></li>
-	<% end %>
-	<% if @food_category.parent != nil %>
-		<li class="crumbles"><%= @food_category.parent.name %></li>
-	<% end %>
-    <li class="crumbles"><%= @food_category.name %></i></li><br>
-    <span class="breadButtonRack">
-  				<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
-  	</span>
-</ul>
+<div class="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
+  <%= link_to "Categories", categories_path %> &gt;
+
+  <% @category.ancestors.each do |category| %>
+    <%= link_to category.name, category %> &gt;
+  <% end %>
+
+  <%= @category.name %>
+</div>
+
 
 <ul class="theList">
-  <% @food_category_children.each do |item| %>
+  <% @category.children.order(:name).each do |item| %>
     <li>
       <%= hierarchy_link(item, link_type, @food_category, "button listButtons") %>
     </li>

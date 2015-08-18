@@ -22,7 +22,6 @@ module ApplicationHelper
         link_to object.name, store_category_location_path(category, object), class: css_classes
       else
         link_to object.name, choose_expiration_store_category_location_path(category, object), class: css_classes
-        #link_to object.name, add_with_location_store_ingredient_path(category, location_id: object), method: :post, class: css_classes
       end
     elsif link_type == :relocate
       if has_children

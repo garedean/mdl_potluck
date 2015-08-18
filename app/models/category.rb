@@ -3,7 +3,8 @@ class Category < ActiveRecord::Base
 	validates_presence_of :name
 	has_ancestry
 
-	def default_expiration
-		super || Time.now
+	def default_expiration_date
+		expires_in = default_expiration || 0
+		Time.now + expires_in.days
 	end
 end

@@ -7,12 +7,14 @@
 
 <div id="choose-expiration-wrapper">
 
-  <p>The current value is the default expiration date for this item</p>
+  <% if @category.default_expiration %>
+    <p>This item's default expiration date is in <%= @category.default_expiration %> days:</p>
+  <% end %>
 
   <%= form_for @ingredient do |f| %>
     <%= f.hidden_field :location_id, value: @location.try(:id) %>
     <%= f.hidden_field :category_id, value: @category.id %>
-    <%= f.text_field :expiration_date, class: "datepicker", value: @category.default_expiration.strftime("%B %-e, %Y") %>
+    <%= f.text_field :expiration_date, class: "datepicker", value: @category.default_expiration_date.strftime("%B %-e, %Y") %>
     <%= button_tag(type: "submit", class: "createIngredient") do %>
       <i class="fi fi-plus"></i> ADD ITEM
     <% end %>

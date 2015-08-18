@@ -6,8 +6,8 @@
   <label>Category name:</label>
   <%= f.text_field :name %>
 
-  <label>Expires in (default):</label>
-  
+  <label>Default 'expires in' as days:</label>
+  <%= f.number_field :default_expiration %>
 
   <%= f.submit "Save", :class => "button highlightColor" %>
 <% end %>

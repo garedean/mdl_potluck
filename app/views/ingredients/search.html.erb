@@ -1,15 +1,6 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">SEARCH BY ID</h1>
   <span class="breadButtonRack">
-        <input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
+    <input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
   </span>
 </ul>
-
-<div class="adminContainer">
-  <%= form_tag ingredients_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-  <% end %>
-</div>

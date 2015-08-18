@@ -4,7 +4,7 @@
 </div>
 
 <div class="listContainer">
-  <ul class="theList" id="smoothScroll">
+  <ul class="mainUL">
     <% Location.roots.order(:name).each do |location| %>
       <li>
         <%= link_to location_path(location) do %>

@@ -6,7 +6,7 @@
   <%= @location.name.upcase %>
 </div>
 
-<ul class="theList">
+<ul class="mainUL">
   <% @sublocations.each do |location| %>
     <li>
       <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>

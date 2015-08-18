@@ -18,7 +18,7 @@
       NOT SET
     <% end %><hr>
   </div>
-  <div id="conditionFade" class="">
+  <div>
     <h6>CONDITION:</h6>
     <% if @ingredient.expiration_date != nil %>
       <% if @ingredient.expiration_date.future? %>
@@ -32,7 +32,7 @@
     <% end %>
     <hr>
   </div>
-  <div class="">
+  <div>
     <h6>QUANTITY:</h6><br>
       <strong><%= @ingredient.quantity %></strong><br>
   </div>

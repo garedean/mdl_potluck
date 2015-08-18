@@ -4,7 +4,7 @@
 </div>
 
 <div class="listContainer">
-	<ul class="theList" id="smoothScroll">
+	<ul class="mainUL">
 		<% Category.roots.order(:name).each do |category| %>
 		  <li>
         <%= hierarchy_link(category, :store, @food_category, "button listButtons") %>

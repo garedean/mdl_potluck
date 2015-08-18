@@ -16,7 +16,7 @@
   <%= @location.name.upcase %>
 </div>
 
-<ul class="theList">
+<ul class="mainUL">
   <% @location.children.order(:name).each do |location| %>
     <li>
       <%= hierarchy_link(location, :place_in_location, @category, "button listButtons") %>

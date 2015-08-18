@@ -6,7 +6,7 @@
 </div>
 
 <div class="listContainer">
-	<ul class="theList" id="smoothScroll">
+	<ul class="mainUL" id="smoothScroll">
 		<% Category.roots.order(:name).each do |category| %>
 		  <li>
         <%= hierarchy_link(category, link_type, @food_category, "button listButtons") %>

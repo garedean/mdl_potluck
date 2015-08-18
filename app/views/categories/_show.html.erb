@@ -12,7 +12,7 @@
 </div>
 
 
-<ul class="theList">
+<ul class="mainUL">
   <% @category.children.order(:name).each do |item| %>
     <li>
       <%= hierarchy_link(item, link_type, @food_category, "button listButtons") %>

@@ -5,7 +5,7 @@
 </div>
 
 <div class="listContainer">
-  <ul class="theList">
+  <ul class="mainUL">
     <% @locations.each do |location| %>
       <li>
         <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>

@@ -4,12 +4,17 @@
 		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
 	</span>
 </ul>
+
+<br>
+<br>
+
+<h4>Add a Top Level Food Label</h4>
+
+<%= render "form" %>
+
 <div class="adminControlContainer">
   <p>This is where you can add, edit, or delete food bank categories. Be careful though! If you delete a top level category, all elements nested underneath it will be deleted too!</p>
   <ul class="adminLocationUL">
     <%= nested_categories @categories.arrange(order: :name) %>
   </ul>
-<br>
-  <h4>Add a Top Level Food Label</h4>
-  <%= render "form" %>
 </div>

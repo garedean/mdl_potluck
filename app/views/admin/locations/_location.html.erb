@@ -5,15 +5,15 @@
 <% end %>
   <%= link_to admin_location_path(location), data: {confirm: "You sure?"}, method: :delete do %>
     <% if location.root? %>
-      <span class="deleteSublocation"><i class="fi-x-circle makeBlack"></i></span>
+      <span class="deleteSublocation"><i class="fi-x-circle colorBlack"></i></span>
     <% elsif location.children? %>
-      <span class="deleteSublocationLight"><i class="fi-x-circle makeBlack"></i></span>
+      <span class="deleteSublocationLight"><i class="fi-x-circle colorBlack"></i></span>
     <% else %>
-      <span class="deleteSublocationLighter"><i class="fi-x-circle makeBlack"></i></span>
+      <span class="deleteSublocationLighter"><i class="fi-x-circle colorBlack"></i></span>
     <% end %>
   <% end %>
   <%= link_to new_admin_location_path(parent_id: location) do %>
-    <span class="addSublocation"><i class="fi-plus makeBlack"></i></span>
+    <span class="addSublocation"><i class="fi-plus colorBlack"></i></span>
   <% end %>
   <%= location.name %>
 

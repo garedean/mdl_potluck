@@ -9,17 +9,8 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-      <div id="mobileBlock" class="mobileBlock">
+      <div id="bodyBackgroundColor" class="bodyBackgroundColor">
         <nav class="navbar">
-            <% if current_user %>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-user-times navbar-icon"></i>
-              <% end %>
-            <% else %>
-              <%= link_to new_user_session_path do %>
-                <i class="fa fa-user userLogin navbar-icon"></i>
-              <% end %>
-            <% end %>
             <% if current_user != nil %>
               <% if current_user.admin %>
                 <%= link_to admin_path do %>

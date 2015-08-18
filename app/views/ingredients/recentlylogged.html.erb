@@ -1,9 +1,8 @@
-<ul class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">RECENTLY LOGGED ITEMS</h1>
-  <span class="breadButtonRack">
-    		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
-  </span>
-</ul>
+<div class="breadcrumbs">
+  <%= link_to "Storage", store_path %> &gt;
+
+  RECENTLY LOGGED
+</div>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
   <div class="ingredientTable">
     <table>

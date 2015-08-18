@@ -5,15 +5,15 @@
 <% end %>
   <%= link_to admin_category_path(category), data: {confirm: "Deleting this category will remove ALL food items nested within it in every subcategory! Are you sure?"}, method: :delete do %>
     <% if category.root? %>
-      <span class="deleteSublocation"><i class="fi-x-circle makeBlack"></i></span>
+      <span class="deleteSublocation"><i class="fi-x-circle colorBlack"></i></span>
     <% elsif category.children? %>
-      <span class="deleteSublocationLight"><i class="fi-x-circle makeBlack"></i></span>
+      <span class="deleteSublocationLight"><i class="fi-x-circle colorBlack"></i></span>
     <% else %>
-      <span class="deleteSublocationLighter"><i class="fi-x-circle makeBlack"></i></span>
+      <span class="deleteSublocationLighter"><i class="fi-x-circle colorBlack"></i></span>
     <% end %>
   <% end %>
   <%= link_to new_admin_category_path(parent_id: category) do %>
-    <span class="addSublocation"><i class="fi-plus makeBlack"></i></span>
+    <span class="addSublocation"><i class="fi-plus colorBlack"></i></span>
   <% end %>
   <%= category.name %>
 </li><br>

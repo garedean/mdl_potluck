@@ -1,14 +1,20 @@
-<ul class="breadcrumbs">
+<div class="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
   <% if @location != nil %>
-    <h1 id="titleHeading" class="titleHeading"><%= @location.name %></h1>
+    <%= link_to "Locations", locations_path %> &gt;
+    <% @location.ancestors.each do |location| %>
+      <%= link_to location.name, location %> &gt;
+    <% end %>
+    <%= @location.name.upcase %>
   <% end %>
   <% if @category != nil %>
-    <h1 id="titleHeading" class="titleHeading"><%= @category.name %></h1>
+    <%= link_to "Categories", categories_path %> &gt;
+    <% @category.ancestors.each do |category| %>
+      <%= link_to category.name, category %> &gt;
+    <% end %>
+    <%= @category.name.upcase %>
   <% end %>
-  <span class="breadButtonRack">
-        <input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
-  </span>
-</ul>
+</div>
 <% if @ingredients.any? %>
   <div class="ingredientTable">
     <table >
@@ -60,7 +66,7 @@
               <td>
                 <%= link_to add_to_cart_path(ingredient), method: :post do %>
                   <div class="shoppingCartButton">
-                    <i class="fi-shopping-cart size-48 makeBlack"></i>
+                    <i class="fi-shopping-cart size-48 colorBlack"></i>
                   </div>
                 <% end %>
               </td>

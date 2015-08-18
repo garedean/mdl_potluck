@@ -128,12 +128,14 @@ a i {
 }
 
 .createIngredient {
-  margin-top: 2em;
-  width: 75%;
+  margin-top: 70%;
+  width: 100%;
+  float: right;
   border: 1px solid #BDBDBD;
+  box-shadow: 0 2px 0 0 #BDBDBD;
   background-color: white;
-  height: 4em;
-  line-height: 4em;
+  height: 6em;
+  line-height: 3em;
   text-align: center;
   i {
     color: black;
@@ -418,12 +420,14 @@ ul.breadcrumbs li:before {
   background-color: white;
   list-style: none;
   border: 1px solid black;
+  font-size: 80%;
 }
 
 .adminLocationListRoot {
   background-color: $highlight-color;
   list-style: none;
   border: 1px solid black;
+  font-size: 85%;
 }
 
 /* LIGHTBOX MODAL */
@@ -592,10 +596,16 @@ input.datepicker {
 }
 
 #choose-expiration-wrapper {
-  padding-top: 200px;
-  width: 50%;
+  padding-top: 6em;
+  width: 80%;
   margin: 0 auto;
+  text-align: center;
   button {
     color: black !important;
+  }
+  input {
+    font-size: 1.75em;
+    height: 2em;
+    background: white;
   }
 }

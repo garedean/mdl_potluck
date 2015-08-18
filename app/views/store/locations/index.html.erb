@@ -12,13 +12,11 @@
         <%= link_to choose_expiration_store_category_path(@category), class: "button listButtons" do %>
           <i class="fi fi-minus-circle"></i>  Add without location
         <% end %>
-
-        <%#= link_to "Add without location", store_category_ingredients_path(@category), class: "button listButtons", method: :post %>
       <% end %>
     </li>
     <% @locations.each do |location| %>
       <li>
-        <%= link_to location.name, store_category_location_path(@category, location), class: "button listButtons" %>
+        <%= hierarchy_link(location, :place_in_location, @category, "button listButtons") %>
       </li>
     <% end %>
   </ul>

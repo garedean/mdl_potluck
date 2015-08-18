@@ -6,8 +6,8 @@
   <label>Category name:</label>
   <%= f.text_field :name %>
 
-  <label>Default expiration date:</label>
-  <%= f.text_field :default_expiration, class: "datepicker", value: Time.now.strftime("%B %-e, %Y") %>
+  <label>Expires in (default):</label>
+  
 
   <%= f.submit "Save", :class => "button highlightColor" %>
 <% end %>

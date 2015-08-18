@@ -141,6 +141,12 @@ c28 = Category.create(name: 'Dairy + Eggs')
   c28.children.create(name: 'Butter')
   c28.children.create(name: 'Cream')
 
+c29 = Category.create(name: "AAA")
+  c30 = c29.children.create(name: "BBB")
+    c31 = c30.children.create(name: "CCC")
+      c32 = c31.children.create(name: "DDD")
+        c32.children.create(name: "EEE")
+
 # location seeds
 # ------------------------------------------------
 
@@ -247,6 +253,12 @@ l3 = Location.create(name: 'Dishwasher Room')
         l34.children.create(name: 'Top')
         l34.children.create(name: 'Middle')
         l34.children.create(name: 'Bottom')
+
+    l35 = Location.create(name: "AAA_location")
+      l36 = l35.children.create(name: "BBB_location")
+        l37 = l36.children.create(name: "CCC_location")
+          l38 = l37.children.create(name: "DDD_location")
+            l38.children.create(name: "EEE_location")
 
 # ingredient seeds
 # ------------------------------------------------

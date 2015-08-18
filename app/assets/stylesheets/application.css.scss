@@ -505,10 +505,6 @@ ul.breadcrumbs li:before {
 /* Garrett's Styles */
 /*----------------------------------------------*/
 
-a {
-  color: black !important;
-}
-
 ul {
   list-style-type: none;
   margin-left: 0;
@@ -607,5 +603,20 @@ input.datepicker {
     font-size: 1.75em;
     height: 2em;
     background: white;
+  }
+}
+
+.breadcrumbs {
+  a {
+    color: #08c;
+    padding: 0 3px;
+  }
+  > * {
+    float: initial;
+    font-size: .95em;
+      &:before {
+        content: "";
+        margin: 0;
+      }
   }
 }

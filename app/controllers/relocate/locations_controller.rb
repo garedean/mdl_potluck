@@ -1,7 +1,7 @@
-class Relocate::LocationsController < Store::LocationsController
+class Relocate::LocationsController < ApplicationController
   def index
-    super
-    @ingredient = params[:ingredient_id]
+    @ingredient = Ingredient.find(params[:ingredient_id]);
+    @locations   = Location.all
   end
 
   def show

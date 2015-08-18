@@ -1,9 +1,20 @@
-<ul class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">SELECT EXPIRATION DATE</h1>
-  <span class="breadButtonRack">
-				<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
-	</span>
-</ul>
+<div class="breadcrumbs">
+  <%= link_to "Storage", store_path %> &gt;
+
+  <%= link_to "Categories", store_categories_path %> &gt;
+
+  <% @category.ancestors.each do |category| %>
+    <%= link_to category.name, store_category_path(category) %> &gt;
+  <% end %>
+
+  <%= link_to "Locations", store_category_locations_path(@category) %> &gt;
+
+  <% @location.try(:ancestors).try(:each) do |location| %>
+    <%= link_to location.name, store_category_location_path(@category, location) %> &gt;
+  <% end %>
+
+  SET EXPIRATION DATE
+</div>
 
 <div id="choose-expiration-wrapper">
 

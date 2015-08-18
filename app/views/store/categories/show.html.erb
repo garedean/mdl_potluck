@@ -1,1 +1,19 @@
-<%= render "categories/show", link_type: :store %>
+<div class="breadcrumbs">
+  <%= link_to "Storage", store_path %> &gt;
+  <%= link_to "Categories", store_categories_path %> &gt;
+
+  <% @category.ancestors.each do |category| %>
+    <%= link_to category.name, category %> &gt;
+  <% end %>
+
+  <%= @category.name.upcase %>
+</div>
+
+
+<ul class="theList">
+  <% @category.children.order(:name).each do |item| %>
+    <li>
+      <%= hierarchy_link(item, :store, @food_category, "button listButtons") %>
+    </li>
+  <% end %>
+</ul>

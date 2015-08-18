@@ -1,18 +1,20 @@
-<ul class="breadcrumbs">
-  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
+<div class="breadcrumbs">
+  <%= link_to "Storage", store_path %> &gt;
+
+  <%= link_to "Categories", store_categories_path %> &gt;
+
+  <% @category.ancestors.each do |category| %>
+    <%= link_to category.name, store_category_path(category) %> &gt;
   <% end %>
-  <% if @location.parent != nil && @location.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.name %></li>
+
+  <%= link_to "Locations", store_category_locations_path(@category) %> &gt;
+
+  <% @location.ancestors.each do |location| %>
+    <%= link_to location.name, store_category_location_path(@category, location) %> &gt;
   <% end %>
-  <% if @location.parent != nil %>
-    <li class="crumbles"><%= @location.parent.name %></li>
-  <% end %>
-    <li class="crumbles"><%= @location.name %></li>
-    <span class="breadButtonRack">
-  				<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
-  	</span>
-</ul>
+
+  <%= @location.name.upcase %>
+</div>
 
 <ul class="theList">
   <% @location.children.order(:name).each do |location| %>

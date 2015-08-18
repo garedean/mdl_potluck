@@ -60,22 +60,9 @@ $gray-color: #BDBDBD;
 
 /* LINKS */
 
-a {
-	color: white;
-}
-
 a i {
   color: white;
 }
-
-// a:hover{
-// 	color: $highlight-color;
-// 	text-decoration: none;
-// }
-//
-// a i:hover {
-//   color: $highlight-color;
-// }
 
 /* NAVBAR */
 
@@ -572,7 +559,6 @@ ul {
       padding: 10px 10px;
       border: 1px solid #BDBDBD;
       font-size: 13px;
-      color: blue;
       &:hover {
       }
     }

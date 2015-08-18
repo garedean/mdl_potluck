@@ -3,11 +3,6 @@ class Store::IngredientsController < ApplicationController
     @food_item = Category.find(params[:category_id])
   end
 
-  def show
-    @ingredient = Ingredient.find(params[:id])
-    @locations = Location.all()
-  end
-
   def create
     binding.pry
     @category = Category.find(params[:category_id])

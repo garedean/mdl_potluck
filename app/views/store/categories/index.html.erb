@@ -1,20 +1,14 @@
-<%= render "categories/index", link_type: :store %>
+<div class="breadcrumbs">
+  <%= link_to "Storage", store_path %> &gt;
+  CATEGORIES
+</div>
 
-<% if false %>
-<ul class="breadcrumbs">
-	<br>
-	<span class="breadButtonRack">
-		<input type="button" class="cartBreadButton" onclick="history.back(-1)" value="BACK"  />
-	</span>
-</ul>
-
-<div>
-	<ul class="theList">
+<div class="listContainer">
+	<ul class="theList" id="smoothScroll">
 		<% Category.roots.order(:name).each do |category| %>
 		  <li>
-				<%= hierarchy_link(category, :store, @food_category, "button listButtons") %>
+        <%= hierarchy_link(category, :store, @food_category, "button listButtons") %>
 		  </li>
 		<% end %>
 	</ul>
 </div>
-<% end %>

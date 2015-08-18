@@ -5,6 +5,6 @@ class Category < ActiveRecord::Base
 
 	def default_expiration_date
 		expires_in = default_expiration || 0
-		Time.now + expires_in.days
+		DateTime.now + expires_in.days
 	end
 end

@@ -1,7 +1,6 @@
 class LocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
-    @sublocations = @location.children.order(:name)
   end
 
   def edit

@@ -15,7 +15,7 @@
 </ul>
 
 <ul class="theList">
-  <% @sublocations.each do |location| %>
+  <% @location.children.order(:name).each do |location| %>
     <li>
       <%= hierarchy_link(location, :location, nil, "button listButtons") %>
     </li>

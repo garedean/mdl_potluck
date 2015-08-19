@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where.not(:used_on => nil).each do |ingredient| %>
+        <% @ingredients.where.not(:used_on => nil).order('used_on DESC').each do |ingredient| %>
           <tr>
             <td class="tableCell">
               <%= link_to ingredient_path(ingredient) do %>

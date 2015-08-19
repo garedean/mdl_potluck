@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where(:location_id => nil).each do |ingredient| %>
+        <% @ingredients.where(:location_id => nil).order('created_at DESC').each do |ingredient| %>
           <tr>
             <td>
               <%= link_to relocate_ingredient_locations_path(ingredient) do %>

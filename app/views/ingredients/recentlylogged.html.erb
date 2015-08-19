@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).each do |ingredient| %>
+        <% @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).order('created_at DESC').each do |ingredient| %>
           <tr>
             <td>
               <%= link_to ingredient_path(ingredient) do %>

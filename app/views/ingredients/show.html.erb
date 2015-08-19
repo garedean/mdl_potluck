@@ -1,5 +1,6 @@
 <div class="breadcrumbs">
-  ITEM SUMMARY
+  <%= link_to "ITEM SUMMARY", :back %>
+
   <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
     <div class="cartNavButton"><i class="fi-marker"></i>  MOVE</div>
   <% end %>

@@ -45,7 +45,7 @@ a i {
 }
 
 .expiredItem {
-	color: #FF5722;
+	color: red;
 }
 
 .freshItem {
@@ -143,6 +143,14 @@ html,body{
 .button:hover {
   background:  white;
   color: black;
+}
+
+.managementButton {
+  border: 1px solid #BDBDBD;
+  background-color: $highlight-color;
+  width: 100%;
+  height: 2em;
+  margin-bottom: 1em;
 }
 
 .arrangeReturn {

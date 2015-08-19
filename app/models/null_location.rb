@@ -1,5 +1,9 @@
 class NullLocation
   def name
-    "No location"
+    "Not assigned a location."
+  end
+
+  def ancestors
+    []
   end
 end

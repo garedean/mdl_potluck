@@ -11,27 +11,13 @@
       <%= link_to ingredient_path(@ingredient) do %>
         <span class="item-name"><%= @ingredient.name %></span>
       <% end %>
-      <p class="lightbox-small">
-        <% if @ingredient.location_id %>
 
-          <% if @ingredient.location.parent &&
-                @ingredient.location.parent.parent && @ingredient.location.parent.parent.parent %>
-            <%= @ingredient.location.parent.parent.parent.name %> >
-          <% end %>
-
-          <% if @ingredient.location.parent && @ingredient.location.parent.parent %>
-            <%= @ingredient.location.parent.parent.name %> >
-          <% end %>
-
-          <% if @ingredient.location.parent %>
-            <%= @ingredient.location.parent.name %> >
-          <% end %>
-
-            <%= @ingredient.location.name %>
-
-          <% else %>
-            NO LOCATION
+      <p>
+        <% @ingredient.location.ancestors.each do |location| %>
+          <%= location.name %> &gt;
         <% end %>
+
+        <%= @ingredient.location.name %>
       </p>
 
       <p class="lightbox-small">Expiring on
@@ -95,7 +81,7 @@
 
         <li>
           <center>
-            <%= link_to "Close", store_path %>
+            <%= link_to "Close", ingredient_path(@ingredient) %>
           </center>
         </li>
       </ul>

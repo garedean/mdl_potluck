@@ -4,7 +4,7 @@
   UNLOCATED ITEMS
 </div>
 <% if @ingredients.where(:location_id => nil).any? %>
-  <div class="ingredientTable">
+  <div class="ingredientUL">
     <table>
       <thead>
         <tr>
@@ -18,7 +18,7 @@
           <tr>
             <td>
               <%= link_to relocate_ingredient_locations_path(ingredient) do %>
-                <div class="tableCellWidth">SET LOCATION</div>
+                <div class="tableCellButton">SET LOCATION</div>
               <% end %>
             </td>
             <td><%= ingredient.name %></td>

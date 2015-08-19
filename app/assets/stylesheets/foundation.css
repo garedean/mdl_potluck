@@ -1169,7 +1169,7 @@ button, .button {
   color: #FFFFFF;
   transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #007095; }
+    background-color: white; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: #FFFFFF; }
   button.secondary, .button.secondary {
@@ -3803,8 +3803,7 @@ dl {
   font-family: inherit;
   font-size: 1rem;
   line-height: 1.6;
-  list-style-position: outside;
-  margin-bottom: 1.25rem; }
+  list-style-position: outside; }
 
 ul {
   margin-left: 1.1rem; }

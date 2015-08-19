@@ -21,17 +21,45 @@
  @import "foundation_and_overrides";
  @import 'foundation-icons';
 
+/* PAGE DISPLAY */
+
+body, html {height: 100%;}
+div.wrap {height:100%; overflow:hidden;}
+ul {list-style-type: none; margin-left: 0;}
+table {width: 100%;}
+
 /* COLOR VARIABLES */
 
 $main-color: #1E88E5;
 $highlight-color: #FFD54F;
 $gray-color: #BDBDBD;
 .colorBlack {color: black;}
+.red {background-color: #FF5722;}
+.lightRed {background-color: #FF8A65;}
+.lighterRed {background-color: #FFCCBC;}
 
-/* COLOR GROUPS */
+/* COLOR ASSIGNMENTS */
 
 a i {
   color: white;
+}
+
+.expiredItem {
+	color: red;
+}
+
+.freshItem {
+	color: green;
+}
+
+.bodyBackgroundColor {
+	background-color: #FAFAFA;
+}
+
+/* FONT SETTINGS */
+
+.size-48 {
+  font-size: 2em;
 }
 
 /* HIDDEN */
@@ -48,18 +76,35 @@ html,body{
   overflow-x:hidden;
 }
 
-/* NAVIGATION */
+/* CONTAINERS */
 
-.titleHeading {
-  font-size: 1em;
-  color: #757575;
-  line-height: 48px;
+.adminContainer {
+	width: 100%;
+  text-align: center;
 }
 
-.bodyBackgroundColor {
-	background-color: #FAFAFA;
-	width: 100%;
-	height: 100%;
+.itemContainer {
+  margin: 2em;
+  height: 80%;
+  width: 100%;
+  font-size: 90%;
+}
+
+.listContainer {
+  width: 100%;
+  height: 80%;
+}
+
+.adminControlContainer {
+  margin: 1em;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.deviseContainer {
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
 }
 
 /* NAVBAR */
@@ -70,7 +115,7 @@ html,body{
 	background-color: $main-color;
 }
 
-.alertCenter {
+.notify-alert {
   position: relative;
 	color: $highlight-color;
 	font-size: 80%;
@@ -90,13 +135,22 @@ html,body{
 
 /* BUTTONS */
 
+.rootButtonRack{
+  position: absolute;
+  bottom: 1em;
+}
+
 .button:hover {
   background:  white;
   color: black;
 }
 
-.button {
-  background-color: $main-color;
+.managementButton {
+  border: 1px solid #BDBDBD;
+  background-color: $highlight-color;
+  width: 100%;
+  height: 2em;
+  margin-bottom: 1em;
 }
 
 .arrangeReturn {
@@ -118,39 +172,22 @@ html,body{
   line-height: 4em;
   background-color: white;
   box-shadow: 0 1px 0 0 #BDBDBD;
-
 }
 
-.createIngredient {
-  margin-top: 40%;
+.commitItemButton {
+  margin-top: 1em;
   width: 100%;
-  float: right;
   border: 1px solid #BDBDBD;
   box-shadow: 0 2px 0 0 #BDBDBD;
   background-color: white;
   height: 6em;
   line-height: 3em;
+  font-size: 1em;
   text-align: center;
   i {
     color: black;
   }
 }
-
-.itemMainButton {
-  width: 33.3%;
-  left: 1%;
-  border: 1px solid #BDBDBD;
-  background-color: white;
-  height: 3em;
-  float: left;
-  right: 1%;
-  line-height: 3em;
-  text-align: center;
-  i {
-    color: black;
-  }
-}
-
 
 .mainButton {
   border: 1px solid #BDBDBD;
@@ -170,51 +207,22 @@ html,body{
   }
 }
 
-// .mainButton:hover {
-//   i {
-//     color: $highlight-color;
-//   }
-// }
-
-.cartBreadButton {
-  background-color: white;
-  padding-left: 1em;
-  padding-top: .5em;
-  float:right;
+.cartNavButton {
   border: 1px solid #BDBDBD;
-  margin: .4em;
-  width: 20%;
-  height: 3em;
   color: #424242;
-  font-size: 1em;
+  background-color: white;
+  width: 25%;
+  height: 3em;
   border-radius: 3px;
+  float:right;
+  padding-top: .5em;
+  margin: .4em;
+  font-size: .8em;
+  text-align: center;
+  line-height: 2em;
   i {
     color: #424242;
   }
-}
-
-// .cartBreadButton:hover {
-//   i {
-//     color: $highlight-color;
-//   }
-// }
-
-.rootButtonRack{
-  position: absolute;
-  bottom: 1em;
-}
-
-.mainButtonRack{
-  position: absolute;
-  width: 100%;
-  bottom: 0em;
-}
-
-.breadButtonRack {
-  position: absolute;
-  width: 100%;
-  bottom: .1em;
-  right: .4em;
 }
 
 .listButtons {
@@ -234,13 +242,15 @@ html,body{
 
 .adminButtons {
   position: relative;
-  background-color: $main-color;
+  border: 1px solid black;
   width: 66%;
   margin-top: 0.5em;
   left: 17%;
   line-height: 2.5em;
   height: 2.5em;
-  color: white;
+  color: black;
+  text-align: left;
+  padding-left: 1em;
 }
 
 
@@ -250,73 +260,64 @@ html,body{
 	font-size: 85%;
 }
 
-.tableCellWidth {
+.tableCellButton {
   padding: 1em;
   background-color: white;
   border: 1px solid #BDBDBD;
   color: #424242;
   height: 4em;
   width: 100%;
+  font-size: .8em;
   line-height: 2em;
   text-align: center;
   box-shadow: 0 1px 0 0 #BDBDBD;
 }
 
-.ingredientTable {
+.ingredientUL {
 	height: 80%;
   width: 100%;
 	overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.cartTable {
-  margin-top: 3.2em;
-	height: 25em;
+.cartUL {
+	height: 100%;
 	overflow-y: scroll;
 }
 
 .mainUL {
-  position: relative;
-  top: 1em;
 	list-style-type: none;
-	height: 80%;
+  margin-top: 1em;
+  height: 100%;
 	width: 100%;
 	overflow-y: scroll;
 }
 
-table {
-  width: 100%;
-}
-
-.expiredItem {
-	color: red;
-}
-
-.freshItem {
-	color: green;
-}
-
 /* Breadcrumbs */
 
-.navbarExtended {
-  position: absolute;
-  top: 3em;
-  height: 3em;
-  width: 100%;
-  box-shadow: 0 3px 0 0 #757575;
+.breadcrumbs {
+  white-space:nowrap;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 10px 0 10px;
+  font-size: .9em;
+  line-height: 48px;
+  a {
+    color: #08c;
+  }
+  > * {
+    float: initial;
+    font-size: 1em;
+      &:before {
+        content: "";
+        margin: 0;
+      }
+  }
 }
 
-.littleBreadcrumbs {
+.breadcrumbsUL {
   position: relative;
   color: #616161;
-  font-size: 80%;
-}
-
-.lightboxBreadcrumbs {
-  position: relative;
-  color: #616161;
-  bottom: 5px;
   font-size: 80%;
 }
 
@@ -326,37 +327,8 @@ table {
   color: #757575;
 }
 
-ul.breadcrumbs li:before {
-  content: ">";
-}
 
 /* ADMIN */
-
-.adminContainer {
-	width: 100%;
-  text-align: center;
-  margin-top: 3.4em;
-}
-
-.itemContainer {
-  padding-top: 2.4em;
-  margin: 2em;
-  height: 100%;
-  font-size: 90%;
-}
-
-.adminControlContainer {
-  margin-top: 4em;
-  margin-left: 25px;
-  margin-right: 5px;
-  padding-right: 10px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 80%;
-  ul {
-    margin-right: 10px;
-  }
-}a
 
 .addSublocation {
   padding: .75em;
@@ -374,27 +346,6 @@ ul.breadcrumbs li:before {
   height: 2.8em;
   text-align: center;
   line-height: 3em;
-  background-color: #FF5722;
-}
-
-.deleteSublocationLight {
-  margin-left: .25em;
-  padding: .75em;
-  width: 4em;
-  height: 2.8em;
-  text-align: center;
-  line-height: 3em;
-  background-color: #FF8A65;
-}
-
-.deleteSublocationLighter {
-  margin-left: .25em;
-  padding: .75em;
-  width: 4em;
-  height: 3em;
-  text-align: center;
-  line-height: 3em;
-  background-color: #FFCCBC;
 }
 
 .adminLocationList {
@@ -412,10 +363,6 @@ ul.breadcrumbs li:before {
 }
 
 /* LIGHTBOX MODAL */
-
-.bodyBackgroundColor {
-  position: relative;
-}
 
 .backdrop {
   position: absolute;
@@ -483,20 +430,6 @@ ul.breadcrumbs li:before {
   margin-left: 30px;
 }
 
-/* Garrett's Styles */
-/*----------------------------------------------*/
-
-ul {
-  list-style-type: none;
-  margin-left: 0;
-}
-
-.item-name {
-  margin-top: 5px;
-  margin-bottom: 0px;
-  font-weight: 300;
-}
-
 .lightbox-flash {
   position: absolute;
   top: 0; right: 0; left: 0;
@@ -507,6 +440,11 @@ ul {
   margin: 0;
   height: 25px;
   line-height: 25px
+}
+
+.item-name {
+  margin-top: 5px;
+  font-size: 2em;
 }
 
 .circle-metrics {
@@ -527,7 +465,7 @@ ul {
   .circle {
     height: 65px;
     width: 65px;
-    border: 1px solid #BDBDBD;
+    border: 1px solid black;
     border-radius: 50%;
     margin: auto;
 
@@ -565,6 +503,8 @@ ul {
   margin-bottom: 0;
 }
 
+/* EXPIRATION DATE SELECTOR */
+
 input.datepicker {
   font-size: 30px;
   height: 60px;
@@ -586,22 +526,5 @@ input.datepicker {
   }
 }
 
-.breadcrumbs {
-  white-space:nowrap;
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 30px 0 10px;
-  font-size: .9em;
-  line-height: 48px;
-  a {
-    color: #08c;
-  }
-  > * {
-    float: initial;
-    font-size: 1em;
-      &:before {
-        content: "";
-        margin: 0;
-      }
-  }
-}
+/* Garrett's Styles */
+/*----------------------------------------------*/

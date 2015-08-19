@@ -8,8 +8,9 @@
     <% end %>
 
     <center>
-      <h2 class="item-name"><%= @ingredient.name %></h2>
-
+      <%= link_to ingredient_path(@ingredient) do %>
+        <span class="item-name"><%= @ingredient.name %></span>
+      <% end %>
       <p class="lightbox-small">
         <% if @ingredient.location_id %>
 
@@ -94,7 +95,7 @@
 
         <li>
           <center>
-            <%= link_to "Close", ingredient_path(@ingredient) %>
+            <%= link_to "Close", store_path %>
           </center>
         </li>
       </ul>

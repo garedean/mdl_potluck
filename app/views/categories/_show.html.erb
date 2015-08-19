@@ -11,11 +11,12 @@
   <%= @category.name.upcase %>
 </div>
 
-
-<ul class="mainUL">
-  <% @category.children.order(:name).each do |item| %>
-    <li>
-      <%= hierarchy_link(item, link_type, @food_category, "button listButtons") %>
-    </li>
-  <% end %>
-</ul>
+<div class="listContainer">
+  <ul class="mainUL">
+    <% @category.children.order(:name).each do |item| %>
+      <li>
+        <%= hierarchy_link(item, link_type, @food_category, "button listButtons") %>
+      </li>
+    <% end %>
+  </ul>
+</div>

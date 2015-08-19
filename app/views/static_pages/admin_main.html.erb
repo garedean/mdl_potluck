@@ -1,21 +1,39 @@
-<ul class="breadcrumbs">
-	<h1 id="titleHeading" class="titleHeading">ADMIN TOOLS</h1>
-</ul>
-<Br>
+<div class="breadcrumbs">
+	<% if current_user.admin %>
+		ADMIN TOOLS
+	<% else %>
+		SETTINGS
+	<% end %>
+	<% if current_user %>
+		<%= link_to destroy_user_session_path, method: :delete do %>
+			<span class="cartNavButton">SIGNOUT</span>
+		<% end %>
+	<% end %>
+</div>
+<br>
 <div class="adminContainer">
-	<h4>USER SETTINGS</h4>
-		<%= link_to admin_users_path do %>
-		  <div class="adminButtons">
-		    MANAGE USERS
-		  </div>
+	<% if current_user.admin %>
+		<%= link_to expiredsummary_path do %>
+			<div class="adminButtons">
+				EXPIRED SUMMARY
+			</div>
 		<% end %>
 		<%= link_to cartsummary_path do %>
 		  <div class="adminButtons">
-		    USED INVENTORY ITEMS
+		    CLAIMED SUMMARY
 		  </div>
 		<% end %>
+		<%= link_to inventorysummary_path do %>
+			<div class="adminButtons">
+				INVENTORY SUMMARY
+			</div>
+		<% end %>
 		<br>
-	<h4>INVENTORY SETTINGS</h4>
+		<%= link_to admin_users_path do %>
+			<div class="adminButtons">
+				MANAGE USERS
+			</div>
+		<% end %>
 		<%= link_to admin_locations_path do %>
 		  <div class="adminButtons">
 		    MANAGE LOCATIONS
@@ -26,24 +44,7 @@
 		    MANAGE CATEGORIES
 		  </div>
 		<% end %>
-		<%= link_to inventorysummary_path do %>
-		  <div class="adminButtons">
-		    INVENTORY SUMMARY
-		  </div>
-		<% end %>
-		<%= link_to expiredsummary_path do %>
-		  <div class="adminButtons">
-		    EXPIRED SUMMARY
-		  </div>
-		<% end %>
-		<br><br>
-			<% if current_user %>
-				<%= link_to destroy_user_session_path, method: :delete do %>
-					<i class="fa fa-user-times colorBlack">SIGNOUT</i>
-				<% end %>
-			<% else %>
-				<%= link_to new_user_session_path do %>
-					<i class="fa fa-user colorBlack">SIGNIN</i>
-				<% end %>
-			<% end %>
+	<% else %>
+		THANK YOU FOR YOUR SUPPORT.
+	<% end %>
 </div>

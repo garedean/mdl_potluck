@@ -1,13 +1,23 @@
-<ul class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">ITEM SUMMARY</h1>
-</ul>
+
+<div class="breadcrumbs">
+  <%= link_to "ITEM SUMMARY", :back %>
+
+  <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
+    <div class="cartNavButton"><i class="fi-marker"></i>  MOVE</div>
+  <% end %>
+
+  <%= link_to ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
+    <div class="cartNavButton"><i class="fi-trash"></i>  TRASH</div>
+  <% end %>
+</div>
+
 
 <div class="itemContainer">
-    <h1>Box #<%= @ingredient.id %></h1>
-    <span id="titleFade" class="">
+    <span>
+      <h1>Box #<%= @ingredient.id %></h1>
       <h2><%= @ingredient.name %></h2> <p>ID: <%= @ingredient.id %></p>
     </span>
-  <div id="locationFade" class="">
+  <div>
     <h6>LOCATION:</h6>
       <% if @ingredient.location_id != nil %>
         <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
@@ -25,7 +35,7 @@
       <% end %>
       <br><br>
   </div>
-  <div id="conditionFade" class="">
+  <div>
     <h6>CONDITION:</h6>
     <% if @ingredient.expiration_date != nil %>
       <% if @ingredient.expiration_date.future? %>
@@ -43,20 +53,6 @@
     <h6>ALL LOCATIONS COUNT:
     <strong><%= Ingredient.count_all_locations(@ingredient) %></strong></h6>
   </div>
-</div>
-
-<div class="mainButtonRack">
-  <%= link_to ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
-    <div class="itemMainButton"><i class="fi-trash"></i>  TRASH</div>
-  <% end %>
-
-  <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
-    <div class="itemMainButton"><i class="fi-marker"></i>  MOVE</div>
-  <% end %>
-
-  <%= link_to store_path do %>
-    <div class="itemMainButton"><i class="fi-check"></i>  DONE</div>
-  <% end %>
 </div>
 
 <% if @show_quick_add %>

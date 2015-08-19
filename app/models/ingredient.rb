@@ -16,7 +16,7 @@ class Ingredient < ActiveRecord::Base
 	end
 
 	def formatted_created_at
-		return self.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d %I:%M %p")
+		return self.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%B %d %I:%M %p")
 	end
 
   def name

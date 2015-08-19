@@ -16,7 +16,7 @@
   <% end %>
 </div>
 <% if @ingredients.any? %>
-  <div class="ingredientTable">
+  <div class="ingredientUL">
     <table >
       <thead>
         <tr>
@@ -33,7 +33,7 @@
                   <strong><%= ingredient.name %></strong>
                   <br>
                 <% end %>
-                <span class="littleBreadcrumbs">
+                <span class="breadcrumbsUL">
                   <% if ingredient.location_id %>
                     <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent && ingredient.location.parent.parent.parent %>
                       <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>

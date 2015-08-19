@@ -4,13 +4,14 @@
   RECENTLY LOGGED
 </div>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
-  <div class="ingredientTable">
+  <div class="ingredientUL">
     <table>
       <thead>
         <tr>
-          <th>NAME</th>
+          <th width="90">NAME</th>
           <th>ITEM ID</th>
           <th>LOCATION</th>
+          <th>CREATED</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +29,9 @@
                 <td>NOT LOCATED
             </td>
             <% end %>
+            <td>
+              <%= ingredient.formatted_created_at %>
+            </td>
           </tr>
         <% end %>
       </tbody>
@@ -36,9 +40,11 @@
 
 <% else %>
   <%= link_to store_path do%>
-    <button class="mainColor">
-      <h3>ALL ITEMS PLACED</h3><br>
-      <h5><strong>RETURN</strong></h5>
-    </button>
+  <button class="mainColor arrangeReturn highlightColor">
+    <br>
+    <h3>NO RECENT ITEMS</h3>
+    <br>
+    <h5><strong>RETURN</strong></h5>
+  </button>
   <% end %>
 <% end %>

@@ -2,6 +2,7 @@
 
 <%= form_for [:admin, @location] do |f| %>
   <%= f.hidden_field :parent_id %>
+  <label>Location name:</label>
   <%= f.text_field :name %>
-  <%= f.submit "Save", :class => "button highlightColor" %>
+  <%= f.submit "Save", :class => "managementButton" %>
 <% end %>

@@ -116,6 +116,16 @@ class IngredientsController < ApplicationController
     redirect_to ingredient_path(ingredient), notice: "Location Updated!"
   end
 
+  def find_by_id
+    result = Ingredient.find_by_id(params[:search_term])
+
+    if result
+      redirect_to ingredient_path(result)
+    else
+      redirect_to :back, notice: "This box does not exist in the database"
+    end
+  end
+
   private
 
     def ingredient_params

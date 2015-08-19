@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}, skip: :registration
 
-  root to: 'stores#show'
+  root to: 'static_pages#store'
 
   get '/prepare' => 'static_pages#prepare'
+  get '/store'   => 'static_pages#store'
   get '/admin' => 'static_pages#admin_main'
   get '/cartsummary' => 'admin#cart_summaries'
   get '/inventorysummary' => 'admin#inventory_summaries'
-  #get '/users' => 'admin#users'
   get '/expiredsummary' => 'admin#expired_summary'
 
   get '/recentlylogged' => 'ingredients#recentlylogged'
@@ -49,6 +49,11 @@ Rails.application.routes.draw do
 
   resources :ingredients do
     resources :locations
+
+    collection do
+      get 'lookup'
+      get 'find_by_id'
+    end
 
     member do
       post 'add_with_location'

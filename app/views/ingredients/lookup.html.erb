@@ -1,0 +1,7 @@
+<h1>Lookup a box by ID</h1>
+<p>Type the ID written on the box into the search field, then click the 'Lookup Box!' button.</p>
+
+<%= form_tag find_by_id_ingredients_path, method: "get" do %>
+  <%= text_field_tag(:search_term) %>
+  <%= submit_tag("Lookup Box!") %>
+<% end %>

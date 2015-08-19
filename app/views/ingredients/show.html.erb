@@ -1,9 +1,9 @@
 <ul class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">ITEM SUMMARY</h1>
-  
 </ul>
 
 <div class="itemContainer">
+    <h1>Box #<%= @ingredient.id %></h1>
     <span id="titleFade" class="">
       <h2><%= @ingredient.name %></h2> <p>ID: <%= @ingredient.id %></p>
     </span>
@@ -40,7 +40,8 @@
     <br><br>
   </div>
   <div id="quantityFade" class="">
-    <h6>STOCK OF : <strong><%= @ingredient.name %></strong> :  <strong><%= Ingredient.count_all_locations(@ingredient) %></strong></h6>
+    <h6>ALL LOCATIONS COUNT:
+    <strong><%= Ingredient.count_all_locations(@ingredient) %></strong></h6>
   </div>
 </div>
 

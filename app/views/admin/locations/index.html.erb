@@ -1,9 +1,8 @@
-<ul class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">LOCATION MANAGEMENT</h1>
-  <span class="breadButtonRack">
-  		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
-  </span>
-</ul>
+<div class="breadcrumbs">
+  <%= link_to "ADMIN TOOLS", admin_path %> &gt;
+
+  LOCATION MANAGEMENT
+</div>
 <div class="adminControlContainer">
   <p>This is where you can add, edit, or delete food bank locations. Be careful though! If you delete a top level location, all elements nested underneath it will be deleted as well!</p>
   <ul class="adminLocationUL">

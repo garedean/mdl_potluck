@@ -1,12 +1,9 @@
 <div class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">USERS</h1>
-  <% if current_user.admin? %>
-  <span class="breadButtonRack">
+  <%= link_to "ADMIN TOOLS", admin_path %> &gt;
     <%= link_to new_admin_user_path do %>
       <div class="cartBreadButton"><i class="fi-torso"></i><br>NEW</div>
     <% end %>
-	</span>
-  <% end %>
+  USER MANAGEMENT
 </div>
 <div class="ingredientUL">
   <table>

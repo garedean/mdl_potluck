@@ -3803,8 +3803,7 @@ dl {
   font-family: inherit;
   font-size: 1rem;
   line-height: 1.6;
-  list-style-position: outside;
-  margin-bottom: 1.25rem; }
+  list-style-position: outside; }
 
 ul {
   margin-left: 1.1rem; }

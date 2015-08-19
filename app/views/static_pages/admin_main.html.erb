@@ -1,5 +1,10 @@
 <div class="breadcrumbs">
-	<h1 class="titleHeading">ADMIN TOOLS</h1>
+	ADMIN TOOLS
+	<% if current_user %>
+		<%= link_to destroy_user_session_path, method: :delete do %>
+			<i class="fa fa-user-times cartBreadButton"><br>SIGNOUT</i>
+		<% end %>
+	<% end %>
 </div>
 <br>
 <div class="adminContainer">
@@ -36,14 +41,4 @@
 		    EXPIRED SUMMARY
 		  </div>
 		<% end %>
-		<br><br>
-			<% if current_user %>
-				<%= link_to destroy_user_session_path, method: :delete do %>
-					<i class="fa fa-user-times colorBlack">SIGNOUT</i>
-				<% end %>
-			<% else %>
-				<%= link_to new_user_session_path do %>
-					<i class="fa fa-user colorBlack">SIGNIN</i>
-				<% end %>
-			<% end %>
 </div>

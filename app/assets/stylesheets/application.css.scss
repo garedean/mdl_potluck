@@ -163,7 +163,22 @@ i.cart {
 .mdl-button--fab {
   &.add-button {
     position: absolute;
+    height: 65px;
+    width: 65px;
     bottom: 20px;
-    right: 35px
+    right: 35px;
+    z-index: 9999;
   }
+}
+
+/* Hide scrollbars */
+.mdl-layout__content {
+  /* Chrome and Safari */
+  &::-webkit-scrollbar {
+    width: 0 !important
+  }
+  /* IE 10 */
+  -ms-overflow-style: none;
+  /* Firefox */
+  overflow: -moz-scrollbars-none;
 }

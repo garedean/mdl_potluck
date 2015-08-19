@@ -36,6 +36,8 @@ $(function() {
    $(".datepicker").pickadate({
      format: 'mmmm d, yyyy',
    });
+
+   $('.breadcrumbs').scrollLeft(9999);
 });
 
 /* ALERT FADE */

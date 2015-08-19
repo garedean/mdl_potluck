@@ -1,4 +1,10 @@
-<h1>Lookup a box by ID</h1>
+<div class="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
+
+  LOOKUP A BOX
+</div>
+<br>
+
 <p>Type the ID written on the box into the search field, then click the 'Lookup Box!' button.</p>
 
 <%= form_tag find_by_id_ingredients_path, method: "get" do %>

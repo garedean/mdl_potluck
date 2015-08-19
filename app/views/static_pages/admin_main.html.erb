@@ -12,6 +12,7 @@
 </div>
 <br>
 <div class="adminContainer">
+
 	<% if current_user.admin %>
 		<%= link_to expiredsummary_path do %>
 			<div class="adminButtons">
@@ -47,4 +48,5 @@
 	<% else %>
 		THANK YOU FOR YOUR SUPPORT.
 	<% end %>
+
 </div>

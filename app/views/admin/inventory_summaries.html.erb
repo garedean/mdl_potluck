@@ -3,6 +3,7 @@
 
   INVENTORY SUMMARY
 </div>
+
 <% if @ingredients.where.not(:expiration_date => nil).any? %>
   <div class="ingredientUL">
     <table class="tableFontSize">
@@ -16,7 +17,11 @@
       <tbody>
         <% @ingredients.where.not(:expiration_date => nil).each do |ingredient| %>
           <tr>
-            <td><%= ingredient.name %></td>
+            <td class="tableCell">
+              <%= link_to ingredient_path(ingredient) do %>
+                <strong><%= ingredient.name %></strong>
+              <% end %>
+            </td>
             <td><%= ingredient.id %></td>
             <td>
               <% if ingredient.expiration_date != nil %>

@@ -9,16 +9,20 @@
     <table>
       <thead>
         <tr>
-          <th width="130">NAME</th>
+          <th>NAME</th>
           <th>ITEM ID</th>
-          <th width="100">CONDITION</th>
+          <th>CONDITION</th>
           <th>LOCATION</th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where(expiration_date: Time.now - 14.day..Time.now.midnight + 1.day).each do |ingredient| %>
           <tr>
-            <td class="tableCell"> <%= ingredient.name %></td>
+            <td class="tableCell">
+              <%= link_to ingredient_path(ingredient) do %>
+                <strong><%= ingredient.name %></strong>
+              <% end %>
+            </td>
             <td><%= ingredient.id %></td>
             <td class="tableCell">
               <% if ingredient.expiration_date != nil %>

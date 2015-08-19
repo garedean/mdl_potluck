@@ -1,9 +1,14 @@
+<div class="breadcrumbs">
+  <%= link_to "ADMIN TOOLS", admin_path %> &gt;
+  <%= link_to "USERS", admin_users_path %> &gt;
+  NEW
+</div>
+
 <div class="adminControlContainer">
   <h4>NEW USER</h4>
   <%= form_for [:admin, @user] do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %>
-
     <%= f.label :password %>
     <%= f.password_field :password %>
     <%= f.submit %>

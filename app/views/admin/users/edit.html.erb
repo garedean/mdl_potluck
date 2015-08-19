@@ -1,8 +1,15 @@
-<%= form_for [:admin, @user] do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<div class="breadcrumbs">
+  <%= link_to "ADMIN TOOLS", admin_path %> &gt;
+  <%= link_to "USERS", admin_users_path %> &gt;
+  EDIT
+</div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit %>
-<% end %>
+<div class="adminControlContainer">
+  <%= form_for [:admin, @user] do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "SAVE", :class => "managementButton" %>
+  <% end %>
+</div>

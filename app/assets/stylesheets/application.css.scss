@@ -160,8 +160,10 @@ i.cart {
 /* MDL Add Button */
 /*****************************************/
 
-.add-button {
-  position: absolute;
-  bottom: 20px;
-  right: 35px
+.mdl-button--fab {
+  &.add-button {
+    position: absolute;
+    bottom: 20px;
+    right: 35px
+  }
 }

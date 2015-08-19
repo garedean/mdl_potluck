@@ -27,6 +27,10 @@ $(function() {
    $('#close-expiration-lightbox').click(function() {
      $('#expiration-lightbox').hide();
    });
+
+   $('button.link').click(function() {
+     window.location.href = $(this).data('location');
+   }); 
 });
 
 $("#titleHeading").click(function() {

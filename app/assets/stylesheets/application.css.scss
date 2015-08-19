@@ -132,10 +132,20 @@ button.add-food-item {
 /* Header */
 /*****************************************/
 
+.mdl-layout__header-row {
+  position: relative;
+}
+
 header {
   i {
-    font-size: 30px !important;
+    font-size: 29px !important;
     color: white;
+  }
+  .main-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -144,5 +154,14 @@ i.cart {
 }
 
 .mdl-layout__header-row {
-  padding: 0 5px 0 30px !important;
+  padding: 0 5px 0 60px !important;
+}
+
+/* MDL Add Button */
+/*****************************************/
+
+.add-button {
+  position: absolute;
+  bottom: 20px;
+  right: 35px
 }

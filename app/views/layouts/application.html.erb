@@ -15,19 +15,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-
-    <!--
-
-    <i class="material-icons">arrow_back</i>
-
-  -->
-
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
         mdl-layout--fixed-tabs">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
 
-          <%= yield :header_icon %>
+          <div class="main-icon">
+            <%= yield :header_icon %>
+          </div>
 
           <!-- Title -->
           <span class="mdl-layout-title">
@@ -52,6 +47,11 @@
       <main class="mdl-layout__content">
 
         <%= yield %>
+
+        <!-- Colored FAB button with ripple -->
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-button link" data-location="<%= store_new_ingredient_path %>">
+          <i class="material-icons">add</i>
+        </button>
 
       </main>
     </div>

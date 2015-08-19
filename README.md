@@ -33,34 +33,3 @@ http://www.eyecuelab.com/
 
 or
 * `rake db:reset`
-
-## Site Features
-
-### Store
-  
-* Search by ID
-* View Recently Created Items
-* View Unlocated Items
-* Add New Item
-  
-### Prepare
-
-* Search By ID
-* Search by Location
-* Search by Category
-* View Expiring Items
-* Cart Items
-  -Use / Empty Cart
-
-### Admin
-
-* Manage Users
-  - Create / Delete / Edit User
-* Manage Locations
-  - Create / Delete / Location
-* Manage Categories
-  - Create / Delete / Categories
-* Inventory Summary
-* Expired Summary
-* Used Items Summary
-

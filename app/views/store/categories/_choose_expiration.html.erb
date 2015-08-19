@@ -19,8 +19,7 @@
 <div id="choose-expiration-wrapper">
 
   <% if @category.default_expiration %>
-    <p>This item's default expiration date is
-
+    <p>The food item in this box has a default expiration date
       <%= distance_of_time_in_words(DateTime.now, @category.default_expiration_date) %>
 
       from now. Click to change:</p>

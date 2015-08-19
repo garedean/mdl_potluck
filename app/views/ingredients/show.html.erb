@@ -7,48 +7,38 @@
   <% end %>
 
   <%= link_to ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
-    <div class="cartNavButton"><i class="fi-trash"></i>  TRASH</div>
+    <div class="cartNavButton"><i class="fi-trash"></i>TRASH</div>
   <% end %>
 </div>
 
 <div class="itemContainer">
-    <span>
-      <h1>Box #<%= @ingredient.id %></h1>
-      <h2><%= @ingredient.name %></h2> <p>ID: <%= @ingredient.id %></p>
-    </span>
+  <h2>Box <%= @ingredient.id %></h2>
+  <h2><%= @ingredient.name %></h2>
+
+  <% @ingredient.location.ancestors.each do |location| %>
+    <%= location.name %> &gt;
+  <% end %>
+
+  <%= @ingredient.location.name %>
+  <%= link_to "Place in location.", relocate_ingredient_locations_path(@ingredient) unless @ingredient.assigned_location? %>
+
   <div>
-    <h6>LOCATION:</h6>
-      <% if @ingredient.location_id != nil %>
-        <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil && @ingredient.location.parent.parent.parent != nil%>
-          <strong><%= @ingredient.location.parent.parent.parent.name %><br></strong>
-        <% end %>
-        <% if @ingredient.location.parent != nil && @ingredient.location.parent.parent != nil%>
-          <strong><%= @ingredient.location.parent.parent.name %><br></strong>
-        <% end %>
-        <% if @ingredient.location.parent != nil %>
-          <strong><%= @ingredient.location.parent.name %></strong><br>
-        <% end %>
-          <strong><%= @ingredient.location.name %></strong>
-        <% else %>
-          <strong>NOT SET</strong>
-      <% end %>
-      <br><br>
-  </div>
-  <div>
-    <h6>CONDITION:</h6>
-    <% if @ingredient.expiration_date != nil %>
+    Expires on <%= @ingredient.expiration_date.strftime("%b %d, %Y") %>
+
+    <% if @ingredient.expiration_date %>
       <% if @ingredient.expiration_date.future? %>
         <div class="freshItem">FRESH</div>
       <% else %>
         <div class="expiredItem">EXPIRED</div>
       <% end %>
-        <strong><%= @ingredient.expiration_date %></strong>
     <% else %>
       <strong>N/A</strong>
     <% end %>
     <br><br>
   </div>
+
   <div id="quantityFade" class="">
+
     <h6>ALL LOCATIONS COUNT:
     <strong><%= Ingredient.count_all_locations(@ingredient) %></strong></h6>
   </div>

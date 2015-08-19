@@ -35,6 +35,10 @@ class Ingredient < ActiveRecord::Base
 		end
 	end
 
+	def assigned_location?
+		return true unless location.class == NullLocation
+	end
+
 	def self.count_all_locations(ingredient)
 		Ingredient.where(category_id: ingredient.category.id).size
 	end

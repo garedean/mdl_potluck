@@ -4,7 +4,7 @@
   RECENTLY LOGGED
 </div>
 <% if @ingredients.where(created_at: (Time.now - 3.hour)..Time.now).any? %>
-  <div class="ingredientTable">
+  <div class="ingredientUL">
     <table>
       <thead>
         <tr>

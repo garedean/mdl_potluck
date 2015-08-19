@@ -3,7 +3,7 @@
 
   EXPIRING ITEMS
 </div>
-<div class="ingredientTable">
+<div class="ingredientUL">
   <table>
     <thead>
       <tr>
@@ -20,7 +20,7 @@
                 <strong><%= ingredient.name %></strong>
               <br>
             <% end %><br>
-            <span class="littleBreadcrumbs">
+            <span class="breadcrumbsUL">
               <% if ingredient.location_id != nil %>
                 <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
                   <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>

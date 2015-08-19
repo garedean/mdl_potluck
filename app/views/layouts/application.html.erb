@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-      <div id="bodyBackgroundColor" class="bodyBackgroundColor">
+      <div class="bodyBackgroundColor wrap">
         <nav class="navbar">
             <% if current_user != nil %>
               <% if current_user.admin %>
@@ -26,7 +26,6 @@
             <% end %>
             <span class = "alertCenter" id="notify">
               <%= flash[:alert] %>
-              <%= flash[:notice] %>
             </span>
             <% if current_user == nil %>
               <%= link_to new_user_session_path do %>

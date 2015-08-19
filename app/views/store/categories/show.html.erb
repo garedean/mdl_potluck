@@ -9,7 +9,7 @@
   <%= @category.name.upcase %>
 </div>
 
-<div class="itemContainer">
+<div class="listContainer">
   <ul class="mainUL">
     <% @category.children.order(:name).each do |item| %>
       <li>

@@ -1,7 +1,7 @@
 <div class="breadcrumbs">
   <%= link_to "ADMIN TOOLS", admin_path %> &gt;
 
-  EXPIRED SUMMARY
+  INVENTORY SUMMARY
 </div>
 <% if @ingredients.where.not(:expiration_date => nil).any? %>
   <div class="ingredientUL">

@@ -2,12 +2,12 @@
   <%= link_to "Prepare", prepare_path %> &gt;
   CART
   <%= link_to use_all_items_path, method: :post do %>
-    <span class="cartBreadButton">
+    <span class="cartNavButton">
       <i class="fa fa-spoon"></i>  USE
     </span>
   <% end %>
   <%= link_to empty_cart_path, method: :post do %>
-    <span class="cartBreadButton">
+    <span class="cartNavButton">
       <i class="fa fa-cart-arrow-down"></i>  EMPTY
     </span>
   <% end %>
@@ -15,7 +15,7 @@
 
 
 
-<div class="cartTable">
+<div class="cartUL">
   <table>
     <thead>
       <tr>

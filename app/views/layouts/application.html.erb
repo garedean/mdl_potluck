@@ -24,7 +24,7 @@
                   <%= current_user.cart.ingredients.count %></i>
               <% end %>
             <% end %>
-            <span class = "alertCenter" id="notify">
+            <span class = "notify-alert" id="notify">
               <%= flash[:alert] %>
             </span>
             <% if current_user == nil %>

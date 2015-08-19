@@ -1,11 +1,11 @@
 <div class="breadcrumbs">
   ITEM SUMMARY
   <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
-    <div class="cartBreadButton"><i class="fi-marker"></i>  MOVE</div>
+    <div class="cartNavButton"><i class="fi-marker"></i>  MOVE</div>
   <% end %>
 
   <%= link_to ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
-    <div class="cartBreadButton"><i class="fi-trash"></i>  TRASH</div>
+    <div class="cartNavButton"><i class="fi-trash"></i>  TRASH</div>
   <% end %>
 </div>
 

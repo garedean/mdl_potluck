@@ -8,9 +8,10 @@
     <table>
       <thead>
         <tr>
-          <th>NAME</th>
+          <th width="90">NAME</th>
           <th>ITEM ID</th>
           <th>LOCATION</th>
+          <th>CREATED</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +29,9 @@
                 <td>NOT LOCATED
             </td>
             <% end %>
+            <td>
+              <%= ingredient.formatted_created_at %>
+            </td>
           </tr>
         <% end %>
       </tbody>

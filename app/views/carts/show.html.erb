@@ -1,19 +1,19 @@
-<ul class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">CART</h1>
-  <span class="breadButtonRack">
-    <input type="button" class="cartBreadButton backButton" onclick="history.back(-1)" value="BACK"  />
-    <%= link_to use_all_items_path, method: :post do %>
-      <span class="cartBreadButton">
-        <i class="fa fa-spoon"></i><br>USE
-      </span>
-    <% end %>
-    <%= link_to empty_cart_path, method: :post do %>
-      <span class="cartBreadButton">
-        <i class="fa fa-cart-arrow-down"></i><br>EMPTY
-      </span>
-    <% end %>
-  </span>
-</ul>
+<div class="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
+  CART
+  <%= link_to use_all_items_path, method: :post do %>
+    <span class="cartBreadButton">
+      <i class="fa fa-spoon"></i>  USE
+    </span>
+  <% end %>
+  <%= link_to empty_cart_path, method: :post do %>
+    <span class="cartBreadButton">
+      <i class="fa fa-cart-arrow-down"></i>  EMPTY
+    </span>
+  <% end %>
+</div>
+
+
 
 <div class="cartTable">
   <table>

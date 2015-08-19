@@ -1,14 +1,13 @@
-<ul class="breadcrumbs">
+<div class="breadcrumbs">
   <h1 id="titleHeading" class="titleHeading">USERS</h1>
   <% if current_user.admin? %>
   <span class="breadButtonRack">
-  		<input type="button" class="cartBreadButton backButton"   onclick="history.back(-1)" value="BACK"  />
     <%= link_to new_admin_user_path do %>
       <div class="cartBreadButton"><i class="fi-torso"></i><br>NEW</div>
     <% end %>
 	</span>
   <% end %>
-</ul>
+</div>
 <div class="ingredientTable">
   <table>
     <thead>

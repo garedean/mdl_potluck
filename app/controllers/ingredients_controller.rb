@@ -126,6 +126,16 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def find_by_item_id
+    result = Ingredient.find_by_id(params[:search_term])
+
+    if result
+      redirect_to ingredient_path(result)
+    else
+      redirect_to :back, notice: "This item does not exist in the database"
+    end
+  end
+
   private
 
     def ingredient_params

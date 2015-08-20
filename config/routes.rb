@@ -53,6 +53,8 @@ Rails.application.routes.draw do
     collection do
       get 'lookup'
       get 'find_by_id'
+      get 'lookup_item'
+      get 'find_by_item_id'
     end
 
     member do

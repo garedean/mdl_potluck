@@ -1,0 +1,13 @@
+<div class="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
+
+  LOOKUP A ITEM
+</div>
+<br>
+
+<p>Type the ID written on the box into the search field, then click the 'Lookup Item!' button.</p>
+
+<%= form_tag find_by_item_id_ingredients_path, method: "get" do %>
+  <%= text_field_tag(:search_term) %>
+  <%= submit_tag("Lookup Box!") %>
+<% end %>

@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where.not(:expiration_date => nil).order('id ASC').each do |ingredient| %>
+        <% @ingredients.where.not(:expiration_date => nil).order('category_id ASC').each do |ingredient| %>
           <tr>
             <td class="tableCell">
               <%= link_to ingredient_path(ingredient) do %>

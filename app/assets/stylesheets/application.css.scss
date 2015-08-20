@@ -135,8 +135,23 @@ html,body{
 /* BUTTONS */
 
 .rootButtonRack{
-  position: absolute;
-  bottom: 1em;
+
+}
+
+.mainButton {
+  border: 1px solid #BDBDBD;
+  color: #424242;
+  padding-top: .5em;
+  width: 25%;
+  height: 4em;
+  float: right;
+  font-size: .75em;
+  box-shadow: 0 1px 0 0 #BDBDBD;
+  text-align: center;
+  background-color: white;
+  i {
+    color: #424242;
+  }
 }
 
 .button:hover {
@@ -185,24 +200,6 @@ html,body{
   text-align: center;
   i {
     color: black;
-  }
-}
-
-.mainButton {
-  border: 1px solid #BDBDBD;
-  color: #424242;
-  float: right;
-  background-color: white;
-  padding-left: 1em;
-  padding-top: .60em;
-  margin: .4em;
-  width: 12em;
-  height: 4em;
-  font-size: 1em;
-  border-radius: 3px;
-  box-shadow: 0 2px 0 0 #BDBDBD;
-  i {
-    color: #424242;
   }
 }
 
@@ -273,7 +270,7 @@ html,body{
 }
 
 .ingredientUL {
-	height: 80%;
+	height: 100%;
   width: 100%;
 	overflow-y: scroll;
   overflow-x: hidden;
@@ -391,7 +388,7 @@ html,body{
 
 .quick-links-lightbox {
   background: white;
-  height: 415px;
+  height: 430px;
   width: 270px;
   padding: 20px;
   position: absolute;

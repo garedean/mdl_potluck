@@ -4,33 +4,27 @@
 
 <div class="rootButtonRack">
 
-  <%= link_to ingredients_expiring_path do %>
+  <%= link_to lookup_item_ingredients_path do %>
     <div class="mainButton">
-      <i class="fi-x-circle"></i><br>EXPIRING ITEMS
+      <i class="fi-magnifying-glass"></i><br>ITEM
     </div>
   <% end %>
 
   <%= link_to lookup_ingredients_path do %>
     <div class="mainButton">
-      <i class="fi-magnifying-glass"></i><br>LOOKUP A BOX
-    </div>
-  <% end %>
-
-  <%= link_to lookup_item_ingredients_path do %>
-    <div class="mainButton">
-      <i class="fi-magnifying-glass"></i><br>LOOKUP AN ITEM
+      <i class="fi-magnifying-glass"></i><br>BOX
     </div>
   <% end %>
 
   <%= link_to categories_path do %>
     <div class="mainButton">
-      <i class="fi-magnifying-glass"></i><br>CATEGORY SEARCH
+      <i class="fi-magnifying-glass"></i><br>CATEGORY
     </div>
   <% end %>
 
-  <%= link_to locations_path do %>
+  <%= link_to ingredients_expiring_path do %>
     <div class="mainButton">
-      <i class="fi-magnifying-glass"></i><br>LOCATION SEARCH
+      <i class="fi-x-circle"></i><br>EXPIRING
     </div>
   <% end %>
 

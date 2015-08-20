@@ -4,28 +4,28 @@
 
 <div class="rootButtonRack">
 
-  <%= link_to lookup_ingredients_path do %>
-    <div class="mainButton">
-      <i class="fi-magnifying-glass"></i><br>LOOKUP A BOX
-    </div>
-  <% end %>
-
-  <%= link_to recentlylogged_path do %>
-    <div class="mainButton">
-      <i class="fi-clock"></i><br>RECENTLY CREATED
-    </div>
-  <% end %>
-
-  <%= link_to ingredients_unarranged_path do %>
-    <div class="mainButton">
-      <i class="fi-marker"></i><br>UNLOCATED ITEMS
-    </div>
-  <% end %>
-
   <%= link_to store_categories_path do %>
     <div class="mainButton">
       <i class="fi-plus"></i><br>ADD BOX
     </div>
   <% end %>
-  
+
+  <%= link_to lookup_ingredients_path do %>
+    <div class="mainButton">
+      <i class="fi-magnifying-glass"></i><br>LOOKUP
+    </div>
+  <% end %>
+
+  <%= link_to recentlylogged_path do %>
+    <div class="mainButton">
+      <i class="fi-clock"></i><br>RECENT
+    </div>
+  <% end %>
+
+  <%= link_to ingredients_unarranged_path do %>
+    <div class="mainButton">
+      <i class="fi-marker"></i><br>UNLOCATED
+    </div>
+  <% end %>
+
 </div>

@@ -32,7 +32,7 @@
           <div class="mdl-layout-spacer"></div>
 
           <nav class="mdl-navigation">
-            <% unless current_user.cart.empty? %>
+            <% unless user_signed_in? && current_user.cart.empty? %>
               <%= link_to cart_path, class: "mdl-navigation__link" do %>
                 <i class="material-icons cart">shopping_cart</i>
               <% end %>

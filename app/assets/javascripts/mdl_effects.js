@@ -1,5 +1,4 @@
-$(function() {
-
+$(document).on('page:change', function(event) {
   $('.ripple').on('mousedown', function (event) {
     //event.preventDefault();
 

@@ -42,7 +42,7 @@ module ApplicationHelper
 
   def header_link(destination)
     if destination == :back
-      link_to :back do
+      link_to root_path, data: { 'no-turbolink': true } do
         content_tag(:i, "arrow_back", class: "material-icons")
       end
     elsif destination == :potluck_icon

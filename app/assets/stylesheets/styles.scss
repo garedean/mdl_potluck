@@ -1,0 +1,163 @@
+
+@import "material";
+
+body {
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.mdl-list {
+  a {
+    color: #757575;
+  }
+  > li {
+    border-bottom: 1px solid #ddd;
+  }
+  li {
+    height: 70px;
+    line-height: 70px;
+  }
+}
+
+.inner-link-list {
+  li {
+    font-size: 16px;
+    font-weight: 300;
+    float: left;
+    box-sizing: border-box;
+  }
+  .list-item-count {
+    display: inline-block;
+    width: 40%;
+  }
+
+  .list-item-name {
+    display: inline-block;
+    width: 60%;
+  }
+}
+
+button.add-food-item {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.mdl-layout__tab-bar-container {
+  .mdl-layout__tab-bar {
+    background: #F1F1F1;
+  }
+  .mdl-layout__tab {
+    color: #ccc;
+    &.is-active {
+      color: #3F51B5 !important;
+    }
+  }
+}
+
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after {
+  background: #3F51B5 !important;
+}
+
+.circle {
+  display: block;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+  line-height: 54px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  color: #999;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mdl-layout__tab-bar {
+  height: initial !important;
+}
+
+/* Breadcrumb Menu */
+/*****************************************/
+
+#breadcrumbs {
+  height: 50px;
+  background: white;
+  line-height: 50px;
+  padding-left: 20px;
+  color: #666;
+  a {
+    color: #3F51B5;
+  }
+}
+
+/* Header */
+/*****************************************/
+
+.mdl-layout__header {
+  z-index: 1;
+}
+
+header {
+  i {
+    font-size: 28px !important;
+    color: white;
+  }
+  .main-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+i.cart {
+  float: right;
+}
+
+.mdl-layout__header-row {
+  padding: 0 5px 0 60px !important;
+  position: relative;
+}
+
+/* MDL Add Button */
+/*****************************************/
+
+.mdl-button--fab {
+  &.add-button {
+    position: absolute;
+    height: 65px;
+    width: 65px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+}
+
+/* Hide scrollbars */
+.mdl-layout__content {
+  /* Chrome and Safari */
+  &::-webkit-scrollbar {
+    width: 0 !important
+  }
+  /* IE 10 */
+  -ms-overflow-style: none;
+  /* Firefox */
+  overflow: -moz-scrollbars-none;
+}
+
+a {
+  text-decoration: none;
+}

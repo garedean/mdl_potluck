@@ -37,6 +37,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
+    airbrake (4.3.0)
+      builder
+      multi_json
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
     arel (6.0.2)
@@ -108,6 +111,7 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -211,6 +215,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   ancestry
   bootstrap-sass
   bootstrap_form
@@ -238,4 +243,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

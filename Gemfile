@@ -14,6 +14,7 @@ gem 'breadcrumbs_on_rails'
 gem 'devise'
 gem 'ancestry'
 gem 'material_design_lite-rails'
+gem 'airbrake'
 
 group :development do
   gem 'byebug'

@@ -26,20 +26,7 @@
   <div class="page-content">page 3</div>
 </section>
 
-<% if false %>
-<!-- Add food item -->
-<%= link_to store_categories_path(Ingredient.new) do %>
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-food-item">
-    <i class="material-icons">add</i>
-  </button>
-<% end %>
-
-<% end %>
-
-<!--
-<style>
-  .mdl-layout__tab-panel {
-    height: calc(100vh 0 112px) !important;
-  }
-</style>
--->
+<!-- Add New Box Button -->
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-button link" data-location="<%= store_categories_path %>">
+  <i class="material-icons">add</i>
+</button>

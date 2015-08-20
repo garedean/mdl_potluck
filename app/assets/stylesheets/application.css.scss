@@ -45,12 +45,6 @@ ul {
   li {
     height: 70px;
     line-height: 70px;
-    &:hover {
-      background: #eee;
-    }
-    &:last-child {
-      border: none;
-    }
   }
 }
 
@@ -138,7 +132,7 @@ button.add-food-item {
 
 header {
   i {
-    font-size: 29px !important;
+    font-size: 28px !important;
     color: white;
   }
   .main-icon {
@@ -166,7 +160,7 @@ i.cart {
     height: 65px;
     width: 65px;
     bottom: 20px;
-    right: 35px;
+    right: 30px;
     z-index: 9999;
   }
 }
@@ -174,9 +168,7 @@ i.cart {
 /* Hide scrollbars */
 .mdl-layout__content {
   /* Chrome and Safari */
-  &::-webkit-scrollbar {
-    width: 0 !important
-  }
+
   /* IE 10 */
   -ms-overflow-style: none;
   /* Firefox */

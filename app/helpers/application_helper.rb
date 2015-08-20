@@ -42,13 +42,11 @@ module ApplicationHelper
 
   def header_link(destination)
     if destination == :back
-      link_to root_path, data: { 'no-turbolink': true } do
+      link_to root_path, data: { 'no-turbolink' => true } do
         content_tag(:i, "arrow_back", class: "material-icons")
       end
-    end
-
-    if destination == :potluck_icon
-      link_to root_path do
+    elsif destination == :potluck_icon
+      link_to root_path, data: { 'no-turbolink' => true } do
         content_tag(:i, "", class: "zmdi zmdi-cutlery home-icon")
       end
     end

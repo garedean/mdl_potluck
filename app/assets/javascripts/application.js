@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require material
+//= require mdl_effects
 //= require_tree .
 
 $(function() {
@@ -30,7 +31,7 @@ $(function() {
 
    $('button.link').click(function() {
      window.location.href = $(this).data('location');
-   }); 
+   });
 });
 
 $("#titleHeading").click(function() {

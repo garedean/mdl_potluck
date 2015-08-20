@@ -1,7 +1,7 @@
 <% content_for :breadcrumbs do %>
   <div id="breadcrumbs">
 
-    <%= link_to "Categories", root_path, data: { 'no-turbolink': true } %> &gt;
+    <%= link_to "Categories", root_path, :data => { :'no-turbolink' => true } %> &gt;
 
     <% @category.ancestors.each do |category| %>
       <%= link_to category.name, category %> &gt;

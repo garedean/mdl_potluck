@@ -49,6 +49,7 @@ module ApplicationHelper
       link_to root_path do
         content_tag(:i, "", class: "zmdi zmdi-cutlery home-icon")
       end
+    else
     end
   end
 end

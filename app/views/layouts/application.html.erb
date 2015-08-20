@@ -32,8 +32,15 @@
           <div class="mdl-layout-spacer"></div>
 
           <nav class="mdl-navigation">
-            <%= link_to cart_path, class: "mdl-navigation__link" do %>
-              <i class="material-icons cart">shopping_cart</i>
+            <% unless current_user.cart.empty? %>
+              <%= link_to cart_path, class: "mdl-navigation__link" do %>
+                <i class="material-icons cart">shopping_cart</i>
+              <% end %>
+            <% end %>
+
+            <!-- show top right menu icon -->
+            <% if current_user %>
+              <%= render "shared/top_right_menu" %>
             <% end %>
           </nav>
 

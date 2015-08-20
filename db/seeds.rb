@@ -60,7 +60,6 @@ c1 = Category.create(name: 'Meats')
     c11.children.create(name: 'Clams')
     c11.children.create(name: 'Mussels')
 
-
 c12 = Category.create(name: 'Raw Fruits & Veggies')
   c13 = c12.children.create(name: 'Potatoes')
     c13.children.create(name: 'Russet Potatoes')
@@ -264,10 +263,14 @@ locations = Location.where({name: ["Bottom",
                                    "Spice Bottom Shelves",
                                    "Shelves"]} )
 
-max_category_id = Category.maximum(:id)
+bottom_level_categories = []
+
+Category.all.each do |category|
+  bottom_level_categories << category if category.is_childless?
+end
 
 1000.times do
-  Ingredient.create(category_id: r.rand(max_category_id),
+  Ingredient.create(category_id: bottom_level_categories.sample.id,
                     location_id: locations.sample.id,
                     expiring_at: Date.today + r.rand(-5..90))
 end

@@ -1,0 +1,18 @@
+<button id="demo-menu-lower-right"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    for="demo-menu-lower-right">
+
+  <% if current_user.admin %>
+    <li>
+      <%= link_to "Admin", admin_path, class: "mdl-menu__item" %>
+    </li>
+  <% end %>
+
+  <li>
+    <%= link_to "Log out", destroy_user_session_path, class: "mdl-menu__item", method: :delete %>
+  </li>
+</ul>

@@ -20,7 +20,7 @@ ul {
     color: #757575;
   }
   > li {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
   }
   li {
     height: 70px;
@@ -157,8 +157,16 @@ i.cart {
   -ms-overflow-style: none;
   /* Firefox */
   overflow: -moz-scrollbars-none;
+  z-index: 0;
 }
 
 a {
   text-decoration: none;
+}
+
+header {
+  .mdl-menu__container {
+    right: 5px;
+    z-index: 6;
+  }
 }

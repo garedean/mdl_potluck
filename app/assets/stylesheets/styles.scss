@@ -137,7 +137,7 @@ i.cart {
 
 .mdl-button--fab {
   &.add-button {
-    position: absolute;
+    position: fixed;
     height: 65px;
     width: 65px;
     bottom: 20px;
@@ -148,6 +148,7 @@ i.cart {
 
 /* Hide scrollbars */
 .mdl-layout__content {
+  height: 100%;
   /* Chrome and Safari */
   &::-webkit-scrollbar {
     width: 0 !important

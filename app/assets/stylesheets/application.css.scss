@@ -33,6 +33,7 @@ $main-color: #1E88E5;
 $highlight-color: #FFD54F;
 $gray-color: #BDBDBD;
 .colorBlack {color: black;}
+.colorBlue {color: #08c;}
 .red {background-color: #FF5722;}
 .lightRed {background-color: #FF8A65;}
 .lighterRed {background-color: #FFCCBC;}
@@ -61,6 +62,15 @@ a i {
   font-size: 2em;
 }
 
+.itemDetails {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.itemDetailsHeader {
+  margin-bottom: 1em;
+}
+
 /* HIDDEN */
 
 .hidden {
@@ -84,8 +94,8 @@ html,body{
 
 .itemContainer {
   margin: 2em;
+  margin-right: 2em;
   height: 80%;
-  width: 100%;
   font-size: 90%;
 }
 
@@ -104,6 +114,13 @@ html,body{
   width: 100%;
   text-align: center;
   margin-top: 1em;
+}
+
+.lookupContainer {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3em;
+  text-align: center;
 }
 
 /* NAVBAR */
@@ -135,20 +152,21 @@ html,body{
 /* BUTTONS */
 
 .rootButtonRack{
-
+  margin-top: 1em;
 }
 
 .mainButton {
   border: 1px solid #BDBDBD;
   color: #424242;
   padding-top: 1em;
-  margin-left: 0%;
+  margin-bottom: .75em;
   width: 100%;
   height: 5em;
   float: right;
   font-size: .8em;
   box-shadow: 0 1px 0 0 #BDBDBD;
-  text-align: center;
+  text-align: left;
+  padding-left: 2em;
   background-color: white;
   i {
     color: #424242;
@@ -225,6 +243,7 @@ html,body{
 .listButtons {
 	background-color: white;
   border: 1px solid #BDBDBD;
+  margin-bottom: .75em;
 	width: 100%;
 	height: 4em;
 	font-size: .8em;

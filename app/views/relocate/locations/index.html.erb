@@ -1,14 +1,18 @@
 <div class="breadcrumbs">
   <%= link_to @ingredient.name, @ingredient %> &gt;
-  
-  LOCATION
+
+  LOCATIONS
 </div>
 
 <div class="listContainer">
   <ul class="mainUL">
-    <% @locations.each do |location| %>
+    <% Location.roots.order(:name).each do |location| %>
       <li>
-        <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>
+        <%= link_to location_path(location) do %>
+  		    <span class="button listButtons">
+      	    <%= location.name %>
+      	  </span><br>
+        <% end %>
       </li>
     <% end %>
   </ul>

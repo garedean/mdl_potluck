@@ -4,12 +4,6 @@
 
 <div class="rootButtonRack">
 
-  <%= link_to lookup_item_ingredients_path do %>
-    <div class="mainButton">
-      <i class="fi-magnifying-glass"></i><br>LOOKUP ITEM
-    </div>
-  <% end %>
-
   <%= link_to lookup_ingredients_path do %>
     <div class="mainButton">
       <i class="fi-magnifying-glass"></i><br>LOOKUP BOX
@@ -19,6 +13,12 @@
   <%= link_to categories_path do %>
     <div class="mainButton">
       <i class="fi-magnifying-glass"></i><br>SEARCH CATEGORY
+    </div>
+  <% end %>
+
+  <%= link_to locations_path do %>
+    <div class="mainButton">
+      <i class="fi-magnifying-glass"></i><br>SEARCH LOCATION
     </div>
   <% end %>
 

@@ -16,7 +16,7 @@
   SET EXPIRATION DATE
 </div>
 
-<div id="choose-expiration-wrapper">
+<div class="lookupContainer">
 
   <% if @category.default_expiration %>
     <p>The food item in this box has a default expiration date
@@ -32,7 +32,7 @@
     <%= f.hidden_field :category_id, value: @category.id %>
     <%= f.text_field :expiration_date, class: "datepicker", value: @category.default_expiration_date.strftime("%B %-e, %Y") %>
     <%= button_tag(type: "submit", class: "commitItemButton") do %>
-      <i class="fi fi-plus"></i> CONFIRM
+      <i class="fi fi-plus"></i>  <span class="colorBlack">CONFIRM</span>
     <% end %>
   <% end %>
 </div>

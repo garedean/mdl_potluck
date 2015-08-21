@@ -12,36 +12,46 @@
 </div>
 
 <div class="itemContainer">
-  <h2>Box <%= @ingredient.id %></h2>
-  <h2><%= @ingredient.name %></h2>
 
-  <% @ingredient.location.ancestors.each do |location| %>
-    <%= location.name %> &gt;
+  <h2><%= @ingredient.name %></h2>
+  <h6>Box ID:  <%= @ingredient.id %></h6>
+  <% if @ingredient.expiration_date %>
+    <% if @ingredient.expiration_date.future? %>
+      <div class="freshItem">FRESH</div>
+    <% else %>
+      <div class="expiredItem">EXPIRED</div>
+    <% end %>
   <% end %>
 
-  <%= @ingredient.location.name %>
-  <%= link_to "Place in location.", relocate_ingredient_locations_path(@ingredient) unless @ingredient.assigned_location? %>
+  <hr>
 
-  <div>
-    Expires on <%= @ingredient.expiration_date.strftime("%b %d, %Y") %>
-
-    <% if @ingredient.expiration_date %>
-      <% if @ingredient.expiration_date.future? %>
-        <div class="freshItem">FRESH</div>
-      <% else %>
-        <div class="expiredItem">EXPIRED</div>
-      <% end %>
-    <% else %>
-      <strong>N/A</strong>
+  <span class="itemDetailsHeader">LOCATION:</span>
+  <span class="itemDetails"><br>
+    <% @ingredient.location.ancestors.each do |location| %>
+      <%= location.name %> &gt;
     <% end %>
-    <br><br>
-  </div>
+    <%= @ingredient.location.name %>
 
-  <div id="quantityFade" class="">
+  <% if @ingredient.assigned_location? %>
+  <% else %>
+    <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
+      <span class="colorBlue"><i class="fi-marker colorBlue"></i>  PLACE</span>
+    <% end %>
+  <% end %>
+  </span>
+  <br><br>
 
-    <h6>ALL LOCATIONS COUNT:
-    <strong><%= Ingredient.count_all_locations(@ingredient) %></strong></h6>
-  </div>
+  <span class="itemDetailsHeader">EXPIRATION DATE:</span>
+  <span class="itemDetails"><br>
+    <%= @ingredient.expiration_date.strftime("%b %d, %Y") %>
+  </span>
+  <br><br>
+
+  <span class="itemDetailsHeader">TOTAL STOCK:</span>
+  <span class="itemDetails"><br>
+    <%= Ingredient.count_all_locations(@ingredient) %>
+  </span>
+
 </div>
 
 <% if @show_quick_add %>

@@ -170,3 +170,28 @@ header {
     z-index: 6;
   }
 }
+
+.match-parent-height {
+  height: 100%;
+}
+
+form {
+  .form-control,
+  .btn-default {
+    border-radius: 0;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+.btn-stretch {
+  width: 100%;
+}
+
+.sign-in {
+  margin-top: 15px;
+  label {
+    font-weight: 300;
+    font-size: 16px;
+  }
+}

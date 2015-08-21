@@ -1,5 +1,5 @@
 $(document).on('page:change', function(event) {
-  $('.ripple').on('mousedown', function (event) {
+  $('.ripple').on('click', function (event) {
     //event.preventDefault();
 
     var $div = $('<div>'),

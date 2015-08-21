@@ -15,6 +15,7 @@ gem 'devise'
 gem 'ancestry'
 gem 'material_design_lite-rails'
 gem 'airbrake'
+gem 'simple_form'
 
 group :development do
   gem 'byebug'

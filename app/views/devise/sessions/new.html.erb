@@ -6,34 +6,38 @@
   <%= content_tag(:i, "", class: "zmdi zmdi-cutlery home-icon") %>
 <% end %>
 
-<div class="loginContainer">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+<div class="mdl-grid sign-in">
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
+  <div class="mdl-cell mdl-cell--4-col-phone">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.input :email, autofocus: true %>
       </div>
-    <% end -%>
-    <br>
-    <div class="actions">
-      <%= f.submit "Log in", :class => "button highlightColor" %>
-    </div>
-  <% end %>
-    <hr>
+
+      <div class="field">
+        <%= f.input :password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="actions btn-stretch ripple" data-ripple-color="#3f51b5">
+        <%= f.button :submit, "Sign in", class: "btn-stretch mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
+      </div>
+
+    <% end %>
+  </div>
   <%= render "devise/shared/links" %>
 </div>
 
 <script>
   $("#user_email").val("admin@test.com");
   $("#user_password").val("123abc!!");
+  // $("input[type='submit'], button").click(function(event) {
+  //   event.preventDefault();
+  // });
 </script>

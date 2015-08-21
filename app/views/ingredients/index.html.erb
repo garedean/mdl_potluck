@@ -1,79 +1,32 @@
-<ul class="breadcrumbs">
-  <% if @location != nil %>
-    <h1 id="titleHeading" class="titleHeading"><%= @location.name %></h1>
-  <% end %>
-  <% if @category != nil %>
-    <h1 id="titleHeading" class="titleHeading"><%= @category.name %></h1>
-  <% end %>
-</ul>
-<% if @ingredients.any? %>
-  <div class="ingredientTable">
-    <table >
-      <thead>
-        <tr>
-          <th></th>
-            <th></th>
-              <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @ingredients.each do |ingredient| %>
-          <tr>
-              <td>
-                <%= link_to ingredient_path(ingredient) do %>
-                  <div class="tableCellWidth" id="listButton">
-                    <%= ingredient.name %>
-                  </div >
-                  <br>
-                <% end %>
-                <span class="littleBreadcrumbs">
-                  <% if ingredient.location_id %>
-                    <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent && ingredient.location.parent.parent.parent %>
-                      <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>
-                    <% end %>
-                    <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent %>
-                      <strong><%= ingredient.location.parent.parent.name %> ></strong>
-                    <% end %>
-                    <% if ingredient.location && ingredient.location.parent %>
-                      <strong><%= ingredient.location.parent.name %> ></strong>
-                    <% end %>
-
-                      <strong><%= ingredient.location.name %></strong>
-                  <% else %>
-                      NO LOCATION
-                  <% end %>
-                </span>
-              </td>
-              <td class="tableCell">
-                <% if ingredient.expiring_at != nil %>
-                  <% if ingredient.expiring_at.future? %>
-                    <div class="freshItem">FRESH</div>
-                  <% else %>
-                    <div class="expiredItem">EXPIRED</div>
-                  <% end %>
-                  <%= ingredient.expiring_at %>
-                <% else %>
-                  N/A
-                <% end %>
-              </td>
-              <td>
-                <%= link_to add_to_cart_path(ingredient), method: :post do %>
-                  <div class="highlightColor">
-                    <i class="fi-shopping-cart size-24 makeBlack"></i>
-                  </div>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <%= link_to prepare_path do %>
-
-    <% end %>
-<% else %>
-  <a href="javascript:history.back()" class="button arrangeReturn highlightColor">
-    <br><h3>NO ITEMS STORED</h3><br>
-    <h5><strong>RETURN</strong></h5><i class="fi-arrow-left size-48"></i>
-  </a>
+<% content_for :title do %>
+  Find by Category
 <% end %>
+
+<% content_for :header_icon do %>
+  <%= header_link :back %>
+<% end %>
+
+<%= render "categories/breadcrumb" %>
+
+<ul class="mdl-list">
+	<% @ingredients.each do |ingredient| %>
+		<li>
+      <ul class="inner-link-list">
+				<li class="list-item-count">
+					<span class="circle">
+						<%= 1 %>
+					</span>
+				</li>
+				<li class="list-item-name">
+          <%= link_to ingredient.location.tree_format, ingredient_path(ingredient) %>
+				</li>
+
+        <li>
+          <%#= link_to "Add to cart", add_to_cart_path(ingredient), method: :post %>
+        </li>
+
+        <%#= ingredient.expiring_at %>
+			</ul>
+    </li>
+	<% end %>
+</ul>

@@ -141,11 +141,12 @@ html,body{
 .mainButton {
   border: 1px solid #BDBDBD;
   color: #424242;
-  padding-top: .5em;
-  width: 25%;
-  height: 4em;
+  padding-top: 1em;
+  margin-left: 0%;
+  width: 100%;
+  height: 5em;
   float: right;
-  font-size: .75em;
+  font-size: .8em;
   box-shadow: 0 1px 0 0 #BDBDBD;
   text-align: center;
   background-color: white;
@@ -226,11 +227,11 @@ html,body{
   border: 1px solid #BDBDBD;
 	width: 100%;
 	height: 4em;
-	font-size: 1em;
-  line-height: 2em;
+	font-size: .8em;
+  line-height: 1.5em;
 	text-align: left;
   color: #424242;
-  box-shadow: 0 2px 0 0 #BDBDBD;
+  box-shadow: 0 1px 0 0 #BDBDBD;
   i {
     color: red;
   }
@@ -389,6 +390,7 @@ html,body{
 .quick-links-lightbox {
   background: white;
   height: 430px;
+
   width: 270px;
   padding: 20px;
   position: absolute;

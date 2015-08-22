@@ -51,4 +51,12 @@ module ApplicationHelper
       end
     end
   end
+
+  def expiration_message(ingredient)
+    if ingredient.expiring_at < Time.now
+      "Expired"
+    else
+      "Expires in #{distance_of_time_in_words(DateTime.now, ingredient.expiring_at)}"
+    end
+  end
 end

@@ -12,20 +12,14 @@
 	<% @ingredients.each do |ingredient| %>
 		<li>
       <ul class="inner-link-list">
-				<li class="list-item-count">
-					<span class="circle">
-						<%= 1 %>
-					</span>
-				</li>
-				<li class="list-item-name">
-          <%= link_to ingredient.location.tree_format, ingredient_path(ingredient) %>
+				<li class="add-item-row">
+          <%= link_to ingredient.location.tree_format, ingredient_path(ingredient) %><br>
+          <%= expiration_message(ingredient) %>
 				</li>
 
         <li>
-          <%#= link_to "Add to cart", add_to_cart_path(ingredient), method: :post %>
+          <%= link_to "Add to cart", add_to_cart_path(ingredient), method: :post %>
         </li>
-
-        <%#= ingredient.expiring_at %>
 			</ul>
     </li>
 	<% end %>

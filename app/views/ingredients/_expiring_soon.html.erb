@@ -1,0 +1,8 @@
+<ul class="mdl-list">
+	<% @expiring_soons.each do |ingredient| %>
+    <li>
+      <%= ingredient.name %>
+      <%= expiration_message(ingredient) %>
+    </li>
+  <% end %>
+</ul>

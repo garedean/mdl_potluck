@@ -7,13 +7,14 @@ class IngredientsController < ApplicationController
 
     resource_ingredients =
       if method = (location || category)
-        method.ingredients
+        method.ingredients.order(:expiring_at)
       else
-        Ingredient.all
+        Ingredient.all.order(:expiring_at)
       end
-      @location = Location.find_by_id(params[:location_id])
-      @category = Category.find_by_id(params[:category_id])
-  	@ingredients = resource_ingredients - cart_items
+
+    @location = Location.find_by_id(params[:location_id])
+    @category = Category.find_by_id(params[:category_id])
+    @ingredients = (resource_ingredients - cart_items)
   end
 
   def new

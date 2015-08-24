@@ -1,17 +1,32 @@
-<ul class="breadcrumbs">
-  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
-  <% end %>
-  <% if @location.parent != nil && @location.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.name %></li>
-  <% end %>
-  <% if @location.parent != nil %>
-    <li class="crumbles"><%= @location.parent.name %></li>
-  <% end %>
-    <li class="crumbles"><%= @location.name %></li>
-</ul>
+<% content_for :title do %>
+  Add Inventory
+<% end %>
 
-<ul class="theList">      
+<% content_for :header_icon do %>
+  <%= header_link :back %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+  <div id="breadcrumbs">
+    <%= link_to "Choose Category", store_categories_path %> &gt;
+
+    <% @category.ancestors.each do |category| %>
+      <%= link_to category.name, store_category_path(category) %> &gt;
+    <% end %>
+
+    <%= link_to "Choose Location", store_category_locations_path(@category) %> &gt;
+
+    <% @location.ancestors.each do |location| %>
+      <%= link_to location.name, store_category_location_path(@category, location) %> &gt;
+    <% end %>
+
+    <strong>
+      <%= @location.name %>
+    </strong>
+  </div>
+<% end %>
+
+<ul class="mdl-list">
   <% @sublocations.each do |location| %>
     <li>
       <%= hierarchy_link(location, :place_in_location, @category, "button listButtons") %>

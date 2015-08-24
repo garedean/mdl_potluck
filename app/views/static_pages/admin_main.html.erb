@@ -1,39 +1,25 @@
-<div class="adminContainer">
-	<h4>USER SETTINGS</h4><br>
-		<%= link_to admin_users_path do %>
-		  <div class="adminButtons">
-		    MANAGE USERS
-		  </div>
-		<% end %>
-	<br>
-		<%= link_to cartsummary_path do %>
-		  <div class="adminButtons">
-		    USED INVENTORY ITEMS
-		  </div>
-		<% end %>
-	<br><br>
-	<h4>INVENTORY SETTINGS</h4><br>
-		<%= link_to admin_locations_path do %>
-		  <div class="adminButtons">
-		    MANAGE LOCATIONS
-		  </div>
-		<% end %>
-	<br>
-		<%= link_to admin_categories_path do %>
-		  <div class="adminButtons">
-		    MANAGE CATEGORIES
-		  </div>
-		<% end %>
-	<br>
-		<%= link_to inventorysummary_path do %>
-		  <div class="adminButtons">
-		    INVENTORY SUMMARY
-		  </div>
-		<% end %>
-	<br>
-		<%= link_to expiredsummary_path do %>
-		  <div class="adminButtons">
-		    EXPIRED SUMMARY
-		  </div>
-		<% end %>
-</div>
+<% content_for :title do %>
+  Admin
+<% end %>
+
+<% content_for :header_icon do %>
+  <%= header_link :back %>
+<% end %>
+
+<%= link_to admin_users_path do %>
+  <div class="adminButtons">
+    MANAGE USERS
+  </div>
+<% end %>
+
+<%= link_to admin_locations_path do %>
+  <div class="adminButtons">
+    MANAGE LOCATIONS
+  </div>
+<% end %>
+
+<%= link_to admin_categories_path do %>
+  <div class="adminButtons">
+    MANAGE CATEGORIES
+  </div>
+<% end %>

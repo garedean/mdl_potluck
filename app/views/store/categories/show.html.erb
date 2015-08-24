@@ -1,1 +1,29 @@
-<%= render "categories/show", link_type: :store %>
+<% content_for :title do %>
+  Add Inventory
+<% end %>
+
+<% content_for :header_icon do %>
+  <%= header_link :back %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+  <div id="breadcrumbs">
+    <%= link_to "Categories", store_categories_path %> &gt;
+
+    <% @category.ancestors.each do |category| %>
+      <%= link_to category.name, category %> &gt;
+    <% end %>
+
+    <strong>
+      <%= @category.name.upcase %>
+    </strong>
+  </div>
+<% end %>
+
+<ul class="mdl-list">
+  <% @category.children.order(:name).each do |item| %>
+    <li>
+      <%= hierarchy_link(item, :store, @food_category, "button listButtons") %>
+    </li>
+  <% end %>
+</ul>

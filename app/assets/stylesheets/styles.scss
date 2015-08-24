@@ -2,7 +2,6 @@
 @import "material";
 
 body {
-  max-width: 500px;
   position: relative;
   overflow: hidden;
   padding-bottom: 0;
@@ -93,9 +92,9 @@ button.add-food-item {
 /*****************************************/
 
 #breadcrumbs {
-  height: 50px;
+  height: 48px;
   background: white;
-  line-height: 50px;
+  line-height: 48px;
   padding-left: 20px;
   color: #666;
   a {
@@ -202,5 +201,5 @@ form {
 .mdl-list {
   .add-item-row {
     line-height: 20px;
-  }  
+  }
 }

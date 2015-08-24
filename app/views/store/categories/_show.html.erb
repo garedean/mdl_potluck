@@ -1,0 +1,20 @@
+<% link_type ||= nil %>
+
+<div id="breadcrumbs">
+  <%= link_to "Prepare", prepare_path %> &gt;
+  <%= link_to "Categories", categories_path %> &gt;
+
+  <% @category.ancestors.each do |category| %>
+    <%= link_to category.name, category %> &gt;
+  <% end %>
+
+  <%= @category.name.upcase %>
+</div>
+
+<ul class="mdl-list">
+	<% @category.children.order(:name).each do |item| %>
+		<li class="ripple" data-ripple-color="#3f51b5">
+      <%= hierarchy_link(item, link_type, @food_category, "button listButtons") %>
+		</li>
+	<% end %>
+</ul>

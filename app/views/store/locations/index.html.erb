@@ -1,22 +1,34 @@
-<ul class="breadcrumbs">
-  <br>
-</ul>
+<% content_for :title do %>
+  Add Inventory
+<% end %>
 
-<div class="listContainer">
-  <ul class="theList" id="smoothScroll">
-    <li>
-      <% unless @hide_no_location_option %>
-        <%= link_to choose_expiration_store_category_path(@category), class: "button listButtons" do %>
-          <i class="fi fi-minus-circle"></i>  Add without location
-        <% end %>
+<% content_for :header_icon do %>
+  <%= header_link :back %>
+<% end %>
 
-        <%#= link_to "Add without location", store_category_ingredients_path(@category), class: "button listButtons", method: :post %>
-      <% end %>
-    </li>
-    <% @locations.each do |location| %>
-      <li>
-        <%= link_to location.name, store_category_location_path(@category, location), class: "button listButtons" %>
-      </li>
+<% content_for :breadcrumbs do %>
+  <div id="breadcrumbs">
+    <%= link_to "Choose Category", store_categories_path %> &gt;
+
+    <% @category.ancestors.each do |category| %>
+      <%= link_to category.name, store_category_path(category) %> &gt;
     <% end %>
-  </ul>
-</div>
+
+    <strong>Choose Location</strong>
+  </div>
+<% end %>
+
+<ul class="mdl-list">
+  <li>
+    <% unless @hide_no_location_option %>
+      <%= link_to choose_expiration_store_category_path(@category), class: "button listButtons" do %>
+        <i class="fi fi-minus-circle"></i>  Add without location
+      <% end %>
+    <% end %>
+  </li>
+  <% @locations.each do |location| %>
+    <li>
+      <%= link_to location.name, store_category_location_path(@category, location), class: "button listButtons" %>
+    </li>
+  <% end %>
+</ul>

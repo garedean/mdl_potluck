@@ -1,18 +1,29 @@
-<ul class="breadcrumbs">
-	<br>
-	<br>
-</ul>
+<% content_for :title do %>
+  Add Inventory
+<% end %>
 
-<div>
-	<ul class="theList">
-		<% Category.all.roots.each do |category| %>
-		  <li>
-				<%= link_to store_category_path(category) do %>
-		  		<span class="button listButtons">
-		  		  <%= category.name %>
-		  		</span><br>
-		  	<% end %>
-		  </li>
-		<% end %>
-	</ul>
-</div>
+<% content_for :header_icon do %>
+  <%= header_link :back %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+  <div id="breadcrumbs">
+    <strong>
+			<%= "Categories" %>
+		</strong>
+  </div>
+<% end %>
+
+<ul class="mdl-list">
+	<% Category.roots.order(:name).each do |category| %>
+		<li class="ripple" data-ripple-color="#3f51b5">
+			<%= link_to store_category_path(category) do %>
+				<ul class="inner-link-list">
+					<li class="list-item-name">
+						<%= category.name %>
+					</li>
+				</ul>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

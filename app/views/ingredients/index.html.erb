@@ -28,11 +28,13 @@
       <tbody>
         <% @ingredients.each do |ingredient| %>
           <tr>
-              <td>
-                <%= link_to ingredient_path(ingredient) do %>
-                  <strong><%= ingredient.name %></strong>
-                  <br>
-                <% end %>
+            <td>
+              <%= link_to ingredient_path(ingredient) do %>
+                <strong><%= ingredient.name %></strong>
+                <br>
+                <span class="font80">BOX ID:  <%= ingredient.id %></span>
+              <% end %>
+            <br>
                 <span class="breadcrumbsUL">
                   <% if ingredient.location_id %>
                     <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent && ingredient.location.parent.parent.parent %>

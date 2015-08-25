@@ -9,20 +9,28 @@
     <table class="tableFontSize">
       <thead>
         <tr>
-          <th>NAME</th>
-          <th>ID</th>
+          <th></th>
           <th>CONDITION</th>
         </tr>
       </thead>
       <tbody>
-        <% @ingredients.where.not(:expiration_date => nil).order('category_id ASC').each do |ingredient| %>
+        <% @ingredients.order('category_id ASC').each do |ingredient| %>
           <tr>
-            <td class="tableCell">
+            <td>
               <%= link_to ingredient_path(ingredient) do %>
                 <strong><%= ingredient.name %></strong>
+                <br>
+                <span class="font80">BOX ID:  <%= ingredient.id %></span>
               <% end %>
+            <br>
+              <span class="breadcrumbsUL">
+                <% if ingredient.location_id != nil %>
+                  <%= ingredient.location.root.name %>
+                  <% else %>
+                    NO LOCATION
+                <% end %>
+              </span>
             </td>
-            <td><%= ingredient.id %></td>
             <td>
               <% if ingredient.expiration_date != nil %>
                 <% if ingredient.expiration_date.future? %>

@@ -194,7 +194,6 @@ html,body{
   height: 5em;
   float: right;
   font-size: .8em;
-  box-shadow: 0 1px 0 0 #BDBDBD;
   text-align: left;
   padding-left: 2em;
   background-color: white;
@@ -233,7 +232,16 @@ html,body{
   text-align: center;
   line-height: 4em;
   background-color: white;
-  box-shadow: 0 1px 0 0 #BDBDBD;
+}
+
+.locateButton {
+  width: 4em;
+  height: 4em;
+  border: 1px solid #BDBDBD;
+  margin-left: 1em;
+  text-align: center;
+  line-height: 4em;
+  background-color: white;
 }
 
 .trashCartButton {
@@ -243,7 +251,6 @@ html,body{
   text-align: center;
   line-height: 4em;
   background-color: white;
-  box-shadow: 0 1px 0 0 #BDBDBD;
 }
 
 .commitItemButton {
@@ -288,7 +295,6 @@ html,body{
   line-height: 1.5em;
 	text-align: left;
   color: #424242;
-  box-shadow: 0 1px 0 0 #BDBDBD;
   i {
     color: red;
   }

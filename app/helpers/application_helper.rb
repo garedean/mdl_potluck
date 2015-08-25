@@ -57,10 +57,14 @@ module ApplicationHelper
   end
 
   def expiration_message(ingredient)
-    if ingredient.expiration_date < Time.now
-      "Expired"
+    if ingredient.expiration_date
+      if ingredient.expiration_date < Time.now
+        "Expired"
+      else
+        "Expires in #{distance_of_time_in_words(DateTime.now, ingredient.expiration_date)}"
+      end
     else
-      "Expires in #{distance_of_time_in_words(DateTime.now, ingredient.expiration_date)}"
+      "(No expiration date set)"
     end
   end
 end

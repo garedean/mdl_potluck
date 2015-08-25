@@ -10,7 +10,7 @@
   <%= breadcrumb_menu do %>
     <%= breadcrumb_link "Categories", root_path %>
     <%= ancestor_chain @resource, :store %>
-    <%= pluralize(@ingredients.size, @resource.name) %>
+    <%= page_name "#{@resource.name.pluralize(2)} (#{@ingredients.size})" %>
   <% end %>
 <% end %>
 

@@ -8,21 +8,25 @@
     <table>
       <thead>
         <tr>
-          <th></th>
           <th>NAME</th>
-          <th>ITEM ID</th>
+          <th>BOX ID</th>
+          <th>CREATED</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where(:location_id => nil).order('created_at DESC').each do |ingredient| %>
           <tr>
-            <td>
-              <%= link_to relocate_ingredient_locations_path(ingredient) do %>
-                <div class="tableCellButton">SET LOCATION</div>
-              <% end %>
-            </td>
             <td><%= ingredient.name %></td>
             <td><%= ingredient.id %> </td>
+            <td>
+              <%= ingredient.formatted_created_at %>
+            </td>
+            <td>
+              <%= link_to relocate_ingredient_locations_path(ingredient) do %>
+                <div class="shoppingCartButton"><i class="fi-marker colorBlack size-48"></i></div>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

@@ -10,9 +10,9 @@
       <thead>
         <tr>
           <th>NAME</th>
-          <th>ITEM ID</th>
+          <th>BOX ID</th>
           <th>CONDITION</th>
-          <th>LOCATION</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -21,7 +21,24 @@
             <td class="tableCell">
               <%= link_to ingredient_path(ingredient) do %>
                 <strong><%= ingredient.name %></strong>
-              <% end %>
+              <% end %><br>
+              <span class="breadcrumbsUL">
+                <% if ingredient.location_id %>
+                  <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent && ingredient.location.parent.parent.parent %>
+                    <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>
+                  <% end %>
+                  <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent %>
+                    <strong><%= ingredient.location.parent.parent.name %> ></strong>
+                  <% end %>
+                  <% if ingredient.location && ingredient.location.parent %>
+                    <strong><%= ingredient.location.parent.name %> ></strong>
+                  <% end %>
+
+                    <strong><%= ingredient.location.name %></strong>
+                <% else %>
+                    NO LOCATION
+                <% end %>
+              </span>
             </td>
             <td><%= ingredient.id %></td>
             <td class="tableCell">
@@ -36,11 +53,13 @@
                 N/A
               <% end %>
             </td>
-              <% if ingredient.location_id != nil %>
-                <td class="tableCell"> <%= ingredient.location.root.name %></td>
-              <% else %>
-                <td class="tableCell">NOT LOCATED</td>
+            <td class="tableCell">
+              <%= link_to ingredient_path(ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
+                <div class="trashCartButton">
+                    <i class="fi-trash colorBlack size-48"></i>
+                </div >
               <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

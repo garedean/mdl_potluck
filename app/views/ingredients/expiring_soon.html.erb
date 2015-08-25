@@ -21,7 +21,9 @@
             <%= link_to ingredient_path(ingredient) do %>
                 <strong><%= ingredient.name %></strong>
               <br>
-            <% end %><br>
+              <span class="boxID">BOX ID:  <%= ingredient.id %></span>
+            <% end %>
+          <br>
             <span class="breadcrumbsUL">
               <% if ingredient.location_id != nil %>
                 <% if ingredient.location.parent != nil && ingredient.location.parent.parent != nil && ingredient.location.parent.parent.parent != nil%>
@@ -57,7 +59,6 @@
                 <i class="fi-shopping-cart size-48 colorBlack"></i>
               </div >
             <% end %>
-
           </td>
           <td>
             <%= link_to ingredient_path(ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>

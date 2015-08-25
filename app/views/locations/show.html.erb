@@ -2,11 +2,17 @@
   Locations
 <% end %>
 
-<div id="breadcrumbs">
-  <% @location.ancestors.each do |location| %>
-    <%= link_to location.name, location %> &gt;
+<% content_for :header_icon do %>
+  <%= header_link root_path %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+  <%= breadcrumb_menu do %>
+    <%= breadcrumb_link "Locations", root_path %>
+    <%= ancestor_chain @location %>
+    <%= page_name @location.name %>
   <% end %>
-</div>
+<% end %>
 
 <ul class="mdl-list">
 	<% @sublocations.each do |location| %>

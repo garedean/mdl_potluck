@@ -49,6 +49,10 @@ module ApplicationHelper
       link_to root_path, data: { 'no-turbolink' => true } do
         content_tag(:i, "", class: "zmdi zmdi-cutlery home-icon")
       end
+    else
+      link_to destination, data: { 'no-turbolink' => true } do
+        content_tag(:i, "arrow_back", class: "material-icons")
+      end
     end
   end
 

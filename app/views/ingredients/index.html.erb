@@ -6,7 +6,13 @@
   <%= header_link :back %>
 <% end %>
 
-<%= render "categories/breadcrumb" %>
+<% content_for :breadcrumbs do %>
+  <%= breadcrumb_menu do %>
+    <%= breadcrumb_link "Categories", root_path %>
+    <%= ancestor_chain @resource, :store %>
+    <%= pluralize(@ingredients.size, @resource.name) %>
+  <% end %>
+<% end %>
 
 <ul class="mdl-list">
 	<% @ingredients.each do |ingredient| %>

@@ -6,7 +6,13 @@
   <%= header_link :back %>
 <% end %>
 
-<%= render "breadcrumb" %>
+<% content_for :breadcrumbs do %>
+  <%= breadcrumb_menu do %>
+    <%= breadcrumb_link "Categories", root_path %>
+    <%= ancestor_chain @category %>
+    <%= page_name @category.name %>
+  <% end %>
+<% end %>
 
 <ul class="mdl-list">
 	<% @category.children.each do |category| %>

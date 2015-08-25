@@ -7,11 +7,9 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-  <div id="breadcrumbs">
-    <strong>
-			<%= "Categories" %>
-		</strong>
-  </div>
+  <%= breadcrumb_menu do %>
+    <%= page_name "Categories" %>
+  <% end %>
 <% end %>
 
 <ul class="mdl-list">

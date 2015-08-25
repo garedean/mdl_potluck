@@ -7,17 +7,11 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-  <div id="breadcrumbs">
-    <%= link_to "Categories", store_categories_path %> &gt;
-
-    <% @category.ancestors.each do |category| %>
-      <%= link_to category.name, category %> &gt;
-    <% end %>
-
-    <strong>
-      <%= @category.name.upcase %>
-    </strong>
-  </div>
+  <%= breadcrumb_menu do %>
+    <%= breadcrumb_link "Categories", store_categories_path %>
+    <%= ancestor_chain @category, :store %>
+    <%= page_name @category.name %>
+  <% end %>
 <% end %>
 
 <ul class="mdl-list">

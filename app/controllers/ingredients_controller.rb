@@ -3,17 +3,16 @@ class IngredientsController < ApplicationController
   def index
     location = Location.find_by_id(params[:location_id])
     category = Category.find_by_id(params[:category_id])
-    cart_items = current_user.cart.ingredients
+    @resource = location || category
 
     resource_ingredients =
-      if method = (location || category)
+      if method = @resource
         method.ingredients.order(:expiring_at)
       else
         Ingredient.all.order(:expiring_at)
       end
 
-    @location = Location.find_by_id(params[:location_id])
-    @category = Category.find_by_id(params[:category_id])
+    cart_items = current_user.cart.ingredients
     @ingredients = (resource_ingredients - cart_items)
   end
 

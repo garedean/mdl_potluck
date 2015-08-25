@@ -1,11 +1,21 @@
 <% content_for :title do %>
-  Add Inventory
+  Location & Expiration for <%= @category.name %>
 <% end %>
 
 <% content_for :header_icon do %>
-  <%= header_link :back %>
+  <%= header_link store_category_path(@category.parent) %>
 <% end %>
 
+<% content_for :breadcrumbs do %>
+  <%= breadcrumb_menu do %>
+    <%= breadcrumb_link "Locations", store_category_locations_path(@category) %>
+    <%= ancestor_chain @location, @category, :store_in_location %>
+    <%= breadcrumb_link @location.name, store_category_location_path(@category, @location.parent) %>
+    <%= page_name "Expiration Date for #{@category.name}" %>
+  <% end %>
+<% end %>
+
+<% if false %>
 <% content_for :breadcrumbs do %>
   <div id="breadcrumbs">
     <%= link_to "Choose Category", store_categories_path %> &gt;
@@ -27,6 +37,7 @@
     </strong>
 
   </div>
+<% end %>
 <% end %>
 
 When does this expire?

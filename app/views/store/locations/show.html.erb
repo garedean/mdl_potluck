@@ -1,29 +1,17 @@
 <% content_for :title do %>
-  Add Inventory
+  Location & Expiration for <%= @category.name %>
 <% end %>
 
 <% content_for :header_icon do %>
-  <%= header_link :back %>
+  <%= header_link store_category_path(@category.parent) %>
 <% end %>
 
 <% content_for :breadcrumbs do %>
-  <div id="breadcrumbs">
-    <%= link_to "Choose Category", store_categories_path %> &gt;
-
-    <% @category.ancestors.each do |category| %>
-      <%= link_to category.name, store_category_path(category) %> &gt;
-    <% end %>
-
-    <%= link_to "Choose Location", store_category_locations_path(@category) %> &gt;
-
-    <% @location.ancestors.each do |location| %>
-      <%= link_to location.name, store_category_location_path(@category, location) %> &gt;
-    <% end %>
-
-    <strong>
-      <%= @location.name %>
-    </strong>
-  </div>
+  <%= breadcrumb_menu do %>
+    <%= breadcrumb_link "Locations", store_category_locations_path(@category) %>
+    <%= ancestor_chain @location, @category, :store_in_location %>
+    <%= page_name @location.name %>
+  <% end %>
 <% end %>
 
 <ul class="mdl-list">

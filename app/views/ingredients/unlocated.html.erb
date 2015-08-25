@@ -7,19 +7,23 @@
   <div class="ingredientUL">
     <table>
       <thead>
-        <tr>
-          <th>NAME</th>
-          <th>BOX ID</th>
-          <th>CREATED</th>
+        <tr class="tableHeader">
           <th></th>
+          <th>CREATED</th>
+          <th>SET</th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where(:location_id => nil).order('created_at DESC').each do |ingredient| %>
           <tr>
-            <td><%= ingredient.name %></td>
-            <td><%= ingredient.id %> </td>
             <td>
+              <%= link_to ingredient_path(ingredient) do %>
+                  <strong><%= ingredient.name %></strong>
+                <br>
+                <span class="boxID noWrap">BOX ID:  <%= ingredient.id %></span>
+              <% end %>
+            </td>
+            <td class="boxID noWrap">
               <%= ingredient.formatted_created_at %>
             </td>
             <td>

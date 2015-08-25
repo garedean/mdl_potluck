@@ -7,9 +7,8 @@
   <div class="ingredientUL">
     <table>
       <thead>
-        <tr>
-          <th>NAME</th>
-          <th>BOX ID</th>
+        <tr class="tableHeader">
+          <th></th>
           <th>LOCATION</th>
           <th>CREATED</th>
         </tr>
@@ -19,17 +18,19 @@
           <tr>
             <td>
               <%= link_to ingredient_path(ingredient) do %>
-                <strong><%= ingredient.name %></strong>
+                  <strong><%= ingredient.name %></strong>
+                <br>
+                <span class="boxID noWrap">BOX ID:  <%= ingredient.id %></span>
               <% end %>
             </td>
-            <td> <%= ingredient.id %></td>
+            <td class="boxID noWrap">
               <% if ingredient.location_id != nil %>
-                <td> <%= ingredient.location.root.name %></td>
+                <%= ingredient.location.root.name %>
               <% else %>
-                <td>NOT LOCATED
+                N/A
+              <% end %>
             </td>
-            <% end %>
-            <td>
+            <td class=" boxID noWrap">
               <%= ingredient.formatted_created_at %>
             </td>
           </tr>

@@ -62,6 +62,19 @@ a i {
   font-size: 2em;
 }
 
+.tableHeader {
+  th {
+    font-size: .75em;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
 .boxID {
   font-size: 80%;
 }

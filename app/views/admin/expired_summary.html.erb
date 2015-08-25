@@ -10,7 +10,7 @@
       <thead>
         <tr>
           <th>NAME</th>
-          <th>BOX ID</th>
+          <th></th>
           <th>CONDITION</th>
           <th></th>
         </tr>
@@ -18,29 +18,22 @@
       <tbody>
         <% @ingredients.where(expiration_date: Time.now - 14.day..Time.now.midnight + 1.day).order('expiration_date ASC').each do |ingredient| %>
           <tr>
-            <td class="tableCell">
+            <td>
               <%= link_to ingredient_path(ingredient) do %>
-                <strong><%= ingredient.name %></strong>
-              <% end %><br>
+                  <strong><%= ingredient.name %></strong>
+                <br>
+                <span class="boxID">BOX ID:  <%= ingredient.id %></span>
+              <% end %>
+            <br>
               <span class="breadcrumbsUL">
-                <% if ingredient.location_id %>
-                  <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent && ingredient.location.parent.parent.parent %>
-                    <strong><%= ingredient.location.parent.parent.parent.name %> ></strong>
-                  <% end %>
-                  <% if ingredient.location && ingredient.location.parent && ingredient.location.parent.parent %>
-                    <strong><%= ingredient.location.parent.parent.name %> ></strong>
-                  <% end %>
-                  <% if ingredient.location && ingredient.location.parent %>
-                    <strong><%= ingredient.location.parent.name %> ></strong>
-                  <% end %>
-
-                    <strong><%= ingredient.location.name %></strong>
-                <% else %>
+                <% if ingredient.location_id != nil %>
+                  <%= ingredient.location.root.name %>
+                  <% else %>
                     NO LOCATION
                 <% end %>
               </span>
             </td>
-            <td><%= ingredient.id %></td>
+            <td></td>
             <td class="tableCell">
               <% if ingredient.expiration_date != nil %>
                 <% if ingredient.expiration_date.past? %>

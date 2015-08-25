@@ -10,19 +10,27 @@
       <thead>
         <tr>
           <th>NAME</th>
-          <th>BOX ID</th>
           <th>USED ON</th>
         </tr>
       </thead>
       <tbody>
         <% @ingredients.where.not(:used_on => nil).order('used_on DESC').each do |ingredient| %>
           <tr>
-            <td class="tableCell">
+            <td>
               <%= link_to ingredient_path(ingredient) do %>
-                <strong><%= ingredient.name %></strong>
+                  <strong><%= ingredient.name %></strong>
+                <br>
+                <span class="boxID">BOX ID:  <%= ingredient.id %></span>
               <% end %>
+            <br>
+              <span class="breadcrumbsUL">
+                <% if ingredient.location_id != nil %>
+                  <%= ingredient.location.root.name %>
+                  <% else %>
+                    NO LOCATION
+                <% end %>
+              </span>
             </td>
-            <td class="tableCell"> <%= ingredient.id %> </td>
             <td class="tableCell"> <%= ingredient.formatted_time_used %> </td>
           </tr>
         <% end %>

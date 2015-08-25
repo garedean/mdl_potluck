@@ -69,7 +69,7 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.expiring_soon
   end
 
-  def unarranged
+  def unlocated
     @ingredients = Ingredient.all
   end
 

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/recentlylogged' => 'ingredients#recentlylogged'
   get '/ingredients/expiring', to: 'ingredients#expiring_soon'
-  get '/ingredients/unarranged', to: 'ingredients#unarranged'
+  get '/ingredients/unlocated', to: 'ingredients#unlocated'
 
   resources :locations, :categories
   resource :cart

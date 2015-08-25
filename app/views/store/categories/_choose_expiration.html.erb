@@ -9,35 +9,16 @@
 <% content_for :breadcrumbs do %>
   <%= breadcrumb_menu do %>
     <%= breadcrumb_link "Locations", store_category_locations_path(@category) %>
-    <%= ancestor_chain @location, @category, :store_in_location %>
-    <%= breadcrumb_link @location.name, store_category_location_path(@category, @location.parent) %>
+
+    <% if @location %>
+      <%= ancestor_chain @location, @category, :store_in_location %>
+
+      <%= breadcrumb_link @location.name, store_category_location_path(@category, @location.parent) %>
+    <% end %>
+
     <%= page_name "Expiration Date for #{@category.name}" %>
+
   <% end %>
-<% end %>
-
-<% if false %>
-<% content_for :breadcrumbs do %>
-  <div id="breadcrumbs">
-    <%= link_to "Choose Category", store_categories_path %> &gt;
-
-    <% @category.ancestors.each do |category| %>
-      <%= link_to category.name, store_category_path(category) %> &gt;
-    <% end %>
-
-    <%= link_to "Choose Location", store_category_locations_path(@category) %> &gt;
-
-    <% @location.ancestors.each do |location| %>
-      <%= link_to location.name, store_category_location_path(@category, location) %> &gt;
-    <% end %>
-
-    <%= link_to @location.name, store_category_location_path(@category, @location) %> &gt;
-
-    <strong>
-      Select Expiration
-    </strong>
-
-  </div>
-<% end %>
 <% end %>
 
 When does this expire?

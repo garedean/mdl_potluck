@@ -1,7 +1,11 @@
 <div class="breadcrumbs">
   <%= link_to @ingredient.name, @ingredient %> &gt;
 
-  <%= link_to "Location", relocate_ingredient_locations_path(@ingredient) %> &gt;
+  <%= link_to "Locations", relocate_ingredient_locations_path(@ingredient) %> &gt;
+
+  <% @location.ancestors.each do |location| %>
+    <%= link_to location.name, relocate_ingredient_location_path(@ingredient, location) %> &gt;
+  <% end %>
 
   <%= @location.name.upcase %>
 </div>

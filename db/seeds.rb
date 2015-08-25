@@ -14,7 +14,7 @@ User.create(email: "admin@test.com", password: "123abc!!", admin: true)
 
 c1 = Category.create(name: 'Meats')
   c2 = c1.children.create(name: 'Chicken')
-    c2.children.create(name: 'Whole Chicken', default_expiration: DateTime.now + 10)
+    c2.children.create(name: 'Whole Chicken')
     c2.children.create(name: 'Chicken Breast')
     c2.children.create(name: 'Chicken Legs')
     c2.children.create(name: 'Chicken Drumstick')

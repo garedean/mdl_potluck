@@ -8,7 +8,7 @@
   <ul class="mainUL">
     <% Location.roots.order(:name).each do |location| %>
       <li>
-        <%= link_to location_path(location) do %>
+        <%= link_to relocate_ingredient_location_path(@ingredient, location) do %>
   		    <span class="button listButtons">
       	    <%= location.name %>
       	  </span><br>

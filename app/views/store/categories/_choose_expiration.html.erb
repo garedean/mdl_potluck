@@ -28,22 +28,22 @@ When does this expire?
   <%= hidden_field_tag :category_id, @category.id %>
 
   <div>
-    <%= f.radio_button :expiring_at, '2' %> 2 weeks
+    <%= f.radio_button :expiration_date, '2' %> 2 weeks
   </div>
   <div>
-    <%= f.radio_button :expiring_at, '4' %> 1 month
+    <%= f.radio_button :expiration_date, '4' %> 1 month
   </div>
   <div>
-    <%= f.radio_button :expiring_at, '8' %> 2 months
+    <%= f.radio_button :expiration_date, '8' %> 2 months
   </div>
   <div>
-    <%= f.radio_button :expiring_at, '12' %> 3 months
+    <%= f.radio_button :expiration_date, '12' %> 3 months
   </div>
   <div>
-    <%= f.radio_button :expiring_at, '24' %> 6 months
+    <%= f.radio_button :expiration_date, '24' %> 6 months
   </div>
   <div>
-    <%= f.radio_button :expiring_at, '48' %> 1+ years
+    <%= f.radio_button :expiration_date, '48' %> 1+ years
   </div>
 
   <%= f.submit %>

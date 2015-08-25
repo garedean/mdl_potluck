@@ -7,9 +7,9 @@ class IngredientsController < ApplicationController
 
     resource_ingredients =
       if method = @resource
-        method.ingredients.order(:expiring_at)
+        method.ingredients.order(:expiration_date)
       else
-        Ingredient.all.order(:expiring_at)
+        Ingredient.all.order(:expiration_date)
       end
 
     cart_items = current_user.cart.ingredients
@@ -23,11 +23,11 @@ class IngredientsController < ApplicationController
 
   def create
 
-    expiration_date = Date.today + (ingredient_params[:expiring_at].to_i * 7)
+    expiration_date = Date.today + (ingredient_params[:expiration_date].to_i * 7)
 
     @ingredient = Ingredient.new(category_id: params[:category_id],
                                  location_id: params[:location_id],
-                                 expiring_at: expiration_date)
+                                 expiration_date: expiration_date)
 
     if @ingredient.save
       redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"
@@ -98,11 +98,11 @@ class IngredientsController < ApplicationController
     cloned_ingredient = Ingredient.find(params[:id])
     cloned_location = cloned_ingredient.location.try(:id)
     cloned_category = cloned_ingredient.category.id
-    cloned_expiry   = cloned_ingredient.expiring_at
+    cloned_expiry   = cloned_ingredient.expiration_date
 
     new_ingredient = Ingredient.new(category_id: cloned_category,
                                     location_id: cloned_location,
-                                    expiring_at: cloned_expiry)
+                                    expiration_date: cloned_expiry)
 
     if new_ingredient.save
       redirect_to ingredient_path(new_ingredient, show_quick_add: true), notice: "One more stored in this location"
@@ -124,6 +124,6 @@ class IngredientsController < ApplicationController
                                          :category_id,
                                          :quantity,
                                          :lifespan,
-                                         :expiring_at)
+                                         :expiration_date)
     end
 end

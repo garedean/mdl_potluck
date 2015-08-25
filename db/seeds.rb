@@ -272,7 +272,7 @@ end
 1000.times do
   Ingredient.create(category_id: bottom_level_categories.sample.id,
                     location_id: locations.sample.id,
-                    expiring_at: Date.today + r.rand(-5..90))
+                    expiration_date: Date.today + r.rand(-5..90))
 end
 
 # cart seeds

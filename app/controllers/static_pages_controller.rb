@@ -20,6 +20,6 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    @expiring_soons = Ingredient.all.order(:expiring_at).limit(50)
+    @expiring_soons = Ingredient.all.order(:expiration_date).limit(50)
   end
 end

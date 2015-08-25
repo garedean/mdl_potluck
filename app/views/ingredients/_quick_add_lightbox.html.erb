@@ -34,7 +34,7 @@
       </p>
 
       <p class="lightbox-small">Expiring on
-        <%= @ingredient.expiring_at.try(:strftime, "%A, %b, %d") %>
+        <%= @ingredient.expiration_date.try(:strftime, "%A, %b, %d") %>
       </p>
 
     </center>

@@ -271,7 +271,7 @@ end
 
 1000.times do
   Ingredient.create(category_id: bottom_level_categories.sample.id,
-                    location_id: locations.sample.id)
+                    location_id: locations.sample.id,
                     expiration_date: Date.today + r.rand(-5..90))
 end
 

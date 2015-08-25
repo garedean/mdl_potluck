@@ -75,8 +75,13 @@ a i {
   white-space: nowrap;
 }
 
-.boxID {
+.font80 {
   font-size: 80%;
+}
+
+.warningLabel {
+  font-size: 75%;
+  color: red;
 }
 
 .itemDetails {
@@ -262,7 +267,6 @@ html,body{
   background-color: white;
   width: 25%;
   height: 3em;
-  border-radius: 3px;
   float:right;
   padding-top: .5em;
   margin: .4em;

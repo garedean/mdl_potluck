@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/prepare' => 'static_pages#prepare'
   get '/store'   => 'static_pages#store'
   get '/admin' => 'static_pages#admin_main'
-  get '/cartsummary' => 'admin#cart_summaries'
+  get '/usedsummary' => 'admin#used_summary'
   get '/inventorysummary' => 'admin#inventory_summaries'
   get '/expiredsummary' => 'admin#expired_summary'
 

@@ -21,7 +21,7 @@
             <%= link_to ingredient_path(ingredient) do %>
                 <strong><%= ingredient.name %></strong>
               <br>
-              <span class="boxID">BOX ID:  <%= ingredient.id %></span>
+              <span class="font80">BOX ID:  <%= ingredient.id %></span>
             <% end %>
           <br>
             <span class="breadcrumbsUL">
@@ -32,7 +32,7 @@
               <% end %>
             </span>
           </td>
-          <td class="boxID">
+          <td class="font80 noWrap">
             <% if ingredient.expiration_date != nil %>
               <% if ingredient.expiration_date.future? %>
                 <div class="freshItem">FRESH</div>

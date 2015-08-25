@@ -19,10 +19,9 @@
   <table>
     <thead>
       <tr>
-        <th>ITEM</th>
-        <th>ID</th>
-        <th>CONDITION</th>
         <th></th>
+        <th class="font80">CONDITION</th>
+        <th>REMOVE</th>
       </tr>
     </thead>
     <tbody>
@@ -30,17 +29,19 @@
         <tr>
           <td>
             <%= link_to ingredient_path(cart_item) do %>
-              <%= cart_item.name %>
-            <% end %><br>
+                <strong><%= cart_item.name %></strong>
+              <br>
+              <span class="font80">BOX ID:  <%= cart_item.id %></span>
+            <% end %>
+          <br>
             <span class="breadcrumbsUL">
               <% if cart_item.location_id != nil %>
-                  <%= cart_item.location.root.name %>
+                <%= cart_item.location.root.name %>
                 <% else %>
                   NO LOCATION
               <% end %>
             </span>
           </td>
-          <td><%= cart_item.id %></td>
             <td class="tableCell">
               <% if cart_item.expiration_date != nil %>
                 <% if cart_item.expiration_date.future? %>

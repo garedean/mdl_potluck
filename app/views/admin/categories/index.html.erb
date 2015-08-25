@@ -9,7 +9,7 @@
 
   <%= render "form" %>
   <hr>
-  <p>This is where you can add, edit, or delete food bank categories. Be careful though! If you delete a top level category, all elements nested underneath it will be deleted too!</p>
+  <p class="warningLabel">If you delete a top level category label, all labels nested underneath it will be deleted as well!</p>
   <ul class="adminLocationUL">
     <%= nested_categories @categories.arrange(order: :name) %>
   </ul>

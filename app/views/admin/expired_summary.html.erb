@@ -8,8 +8,8 @@
   <div class="ingredientUL">
     <table>
       <thead>
-        <tr>
-          <th>NAME</th>
+        <tr class="tableHeader">
+          <th></th>
           <th></th>
           <th>CONDITION</th>
           <th></th>
@@ -22,7 +22,7 @@
               <%= link_to ingredient_path(ingredient) do %>
                   <strong><%= ingredient.name %></strong>
                 <br>
-                <span class="boxID">BOX ID:  <%= ingredient.id %></span>
+                <span class="font80">BOX ID:  <%= ingredient.id %></span>
               <% end %>
             <br>
               <span class="breadcrumbsUL">
@@ -34,7 +34,7 @@
               </span>
             </td>
             <td></td>
-            <td class="tableCell">
+            <td class="tableCell noWrap">
               <% if ingredient.expiration_date != nil %>
                 <% if ingredient.expiration_date.past? %>
                   <div class="expiredItem">EXPIRED</div>

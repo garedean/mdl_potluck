@@ -32,7 +32,7 @@
     <%= f.hidden_field :category_id, value: @category.id %>
     <%= f.text_field :expiration_date, class: "datepicker", value: @category.default_expiration_date.strftime("%B %-e, %Y") %>
     <%= button_tag(type: "submit", class: "commitItemButton") do %>
-      <i class="fi fi-plus"></i>  <span class="colorBlack">CONFIRM</span>
+      <i class="fa fa-calendar-plus-o"></i>  <span class="colorGray">ADD DATE</span>
     <% end %>
   <% end %>
 </div>

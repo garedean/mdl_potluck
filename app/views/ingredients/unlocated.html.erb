@@ -23,12 +23,12 @@
                 <span class="font80 noWrap">BOX ID:  <%= ingredient.id %></span>
               <% end %>
             </td>
-            <td class="font80 noWrap">
+            <td class="font80 centerText">
               <%= ingredient.formatted_created_at %>
             </td>
             <td>
               <%= link_to relocate_ingredient_locations_path(ingredient) do %>
-                <div class="locateButton"><i class="fi-marker colorBlack size-48"></i></div>
+                <div class="locateButton"><i class="fi-marker colorGray size-48"></i></div>
               <% end %>
             </td>
           </tr>

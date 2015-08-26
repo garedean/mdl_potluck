@@ -7,7 +7,7 @@
   <% end %>
 
   <%= link_to ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
-    <div class="cartNavButton"><i class="fi-trash"></i>  TRASH</div>
+    <div class="cartNavButton"><i class="fa fa-trash"></i>  TRASH</div>
   <% end %>
 
 </div>
@@ -15,7 +15,7 @@
 <div class="itemContainer">
   <%= link_to add_to_cart_path(@ingredient), method: :post do %>
     <div class="cartItemButton">
-      <i class="fi-shopping-cart colorBlack"></i>  CART
+      <i class="fa fa-shopping-cart colorGray"></i>  CART
     </div>
   <% end %>
 

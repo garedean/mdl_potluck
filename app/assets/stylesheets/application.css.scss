@@ -32,7 +32,8 @@ table {width: 100%;}
 $main-color: #1E88E5;
 $highlight-color: #FFD54F;
 $gray-color: #BDBDBD;
-.colorBlack {color: black;}
+.colorGray {color: black;}
+.colorGray {color: #212121;}
 .colorBlue {color: #08c;}
 .red {background-color: #FF5722;}
 .lightRed {background-color: #FF8A65;}
@@ -89,6 +90,10 @@ a i {
 
 .font80 {
   font-size: 80%;
+}
+
+.centerText {
+  text-align: center;
 }
 
 .warningLabel {
@@ -234,7 +239,7 @@ a i {
   height: 4em;
   border: 1px solid #BDBDBD;
   text-align: center;
-  line-height: 4em;
+  line-height: 4.5em;
   background-color: white;
 }
 
@@ -255,7 +260,7 @@ a i {
   height: 4em;
   border: 1px solid #BDBDBD;
   text-align: center;
-  line-height: 4em;
+  line-height: 4.5em;
   background-color: white;
 }
 

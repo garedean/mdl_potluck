@@ -40,6 +40,7 @@
 
   <% if @ingredient.assigned_location? %>
   <% else %>
+  <br>
     <%= link_to relocate_ingredient_locations_path(@ingredient) do %>
       <span class="colorBlue"><i class="fi-marker colorBlue"></i>  PLACE</span>
     <% end %>

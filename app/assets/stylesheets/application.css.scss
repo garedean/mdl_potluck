@@ -291,6 +291,25 @@ a i {
   }
 }
 
+.cartItemButton {
+  position: relative;
+  left: 1em;
+  top: 6em;
+  border: 1px solid #BDBDBD;
+  color: #424242;
+  background-color: white;
+  width: 27%;
+  height: 3em;
+  float:right;
+  padding-top: .5em;
+  font-size: .8em;
+  text-align: center;
+  line-height: 2em;
+  i {
+    color: #424242;
+  }
+}
+
 .listButtons {
 	background-color: white;
   border: 1px solid #BDBDBD;
@@ -340,7 +359,7 @@ a i {
 }
 
 .ingredientUL {
-	height: 100%;
+	height: 85%;
   width: 100%;
 	overflow-y: scroll;
   overflow-x: hidden;

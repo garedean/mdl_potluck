@@ -13,6 +13,11 @@
 </div>
 
 <div class="itemContainer">
+  <%= link_to add_to_cart_path(@ingredient), method: :post do %>
+    <div class="cartItemButton">
+      <i class="fi-shopping-cart colorBlack"></i>  CART
+    </div>
+  <% end %>
 
   <h2><%= @ingredient.name %></h2>
   <h6>Box ID:  <%= @ingredient.id %></h6>
@@ -25,11 +30,7 @@
   <% end %>
 
   <hr>
-  <%= link_to add_to_cart_path(@ingredient), method: :post do %>
-    <div class="cartNavButton">
-      <i class="fi-shopping-cart colorBlack"></i>  CART
-    </div>
-  <% end %>
+
 
   <span class="itemDetailsHeader">LOCATION:</span>
   <span class="itemDetails"><br>

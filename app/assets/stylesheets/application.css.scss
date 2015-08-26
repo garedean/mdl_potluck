@@ -38,6 +38,18 @@ $gray-color: #BDBDBD;
 .lightRed {background-color: #FF8A65;}
 .lighterRed {background-color: #FFCCBC;}
 
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+    background-color: #EEEEEE;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $main-color;
+}
+
 /* COLOR ASSIGNMENTS */
 
 a i {
@@ -97,14 +109,6 @@ a i {
 
 .hidden {
   display: none;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-html,body{
-  overflow-x:hidden;
 }
 
 /* CONTAINERS */
@@ -245,6 +249,8 @@ html,body{
 }
 
 .trashCartButton {
+  position: relative;
+  right: 1em;
   width: 4em;
   height: 4em;
   border: 1px solid #BDBDBD;
@@ -589,70 +595,4 @@ input.datepicker {
     height: 2em;
     background: white;
   }
-}
-
-/* Garrett's Styles */
-/*----------------------------------------------*/
-
-.dropdown {
-
-  input[type=checkbox]{
-      display: none;
-  }
-
-  label{
-      box-sizing: border-box;
-      display: inline-block;
-      width: 100%;
-      background-color: #57A0D4;
-      padding: 15px 20px;
-
-      cursor: pointer;
-      text-align: center;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-  }
-
-  ul{
-      position: absolute;
-      list-style: none;
-      text-align: left;
-      width: 100%;
-      z-index: 1;
-      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-
-      display: none;
-  }
-
-  ul li{
-      padding: 15px;
-      background-color: #fff;
-      color: #4FB9A7;
-      margin-bottom: 1px;
-      cursor: pointer;
-  }
-
-  ul li:hover{
-      background-color: #4FB9A7;
-      color: #FFF;
-  }
-
-  ul li a{
-      color: inherit;
-      text-decoration: none;
-  }
-
-  input[type=checkbox]:checked ~ label {
-      background-color: #3D88BD;
-  }
-
-
-  input[type=checkbox]:checked ~ ul {
-      display: block;
-  }
-
 }

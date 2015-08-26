@@ -1,7 +1,17 @@
 class Ingredient < ActiveRecord::Base
+	before_save :update_location_descendant_counts, :update_category_descendant_counts
+	before_destroy :update_location_descendant_counts, :update_category_descendant_counts
+
 	belongs_to :category
 	belongs_to :location
 	belongs_to :cart
+
+	def self.reset_descendant_counts
+		Ingredient.all.each do |ingredient|
+			ingredient.update_category_descendant_counts
+			ingredient.update_location_descendant_counts
+		end
+	end
 
   def formatted_time
     return self.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d at %I:%M %p")
@@ -43,6 +53,36 @@ class Ingredient < ActiveRecord::Base
 		if ingredient.location.class != NullLocation
 			Ingredient.where(category_id: ingredient.category.id,
 										 	 location_id: ingredient.location.id).size
+		end
+	end
+
+	def update_location_descendant_counts
+		if location.class != NullLocation
+			(location.ancestors << location).each do |location|
+				descendant_count = count_descendants(location)
+				location.update(descendant_count: descendant_count)
+			end
+		end
+	end
+
+	def update_category_descendant_counts
+		(category.ancestors << category).each do |category|
+			descendant_count = count_descendants(category)
+			category.update(descendant_count: descendant_count)
+		end
+	end
+
+	def count_descendants(ancestor)
+		if ancestor.has_children?
+			total = 0
+			ancestor.subtree.each do |descendant|
+				if descendant.is_childless?
+					total += descendant.ingredients.size
+				end
+			end
+			return total
+		else
+			ancestor.ingredients.size
 		end
 	end
 

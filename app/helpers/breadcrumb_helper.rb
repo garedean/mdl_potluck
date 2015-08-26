@@ -11,8 +11,8 @@ module BreadcrumbHelper
     content_tag "strong", title
   end
 
-  def breadcrumb_link(link_name, path)
-    (link_to link_name, path) + " > "
+  def breadcrumb_link(link_name, path, data = {})
+    (link_to link_name, path, data) + " > "
   end
 
   def ancestor_chain(resource, subresource = nil, type = nil)

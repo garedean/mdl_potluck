@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825221130) do
+ActiveRecord::Schema.define(version: 20150826005324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150825221130) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ancestry"
+    t.integer  "descendant_count"
   end
 
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
@@ -45,8 +46,9 @@ ActiveRecord::Schema.define(version: 20150825221130) do
   add_index "ingredients", ["cart_id"], name: "index_ingredients_on_cart_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
-    t.string "name"
-    t.string "ancestry"
+    t.string  "name"
+    t.string  "ancestry"
+    t.integer "descendant_count"
   end
 
   add_index "locations", ["ancestry"], name: "index_locations_on_ancestry", using: :btree

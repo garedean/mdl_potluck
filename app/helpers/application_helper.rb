@@ -41,7 +41,7 @@ module ApplicationHelper
   end
 
   def header_link(destination)
-    if destination == :back
+    if destination == :root
       link_to root_path, data: { 'no-turbolink' => true } do
         content_tag(:i, "arrow_back", class: "material-icons")
       end

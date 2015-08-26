@@ -3,12 +3,12 @@
 <% end %>
 
 <% content_for :header_icon do %>
-  <%= header_link :back %>
+  <%= header_link :root %>
 <% end %>
 
 <% content_for :breadcrumbs do %>
   <%= breadcrumb_menu do %>
-    <%= breadcrumb_link "Categories", root_path %>
+    <%= breadcrumb_link "Categories", root_path, data: { 'no-turbolink' => true } %>
     <%= ancestor_chain @category %>
     <%= page_name @category.name %>
   <% end %>
@@ -19,12 +19,11 @@
 		<li class="ripple" data-ripple-color="#3f51b5">
 
       <% if category.children.any? %>
-
         <%= link_to category_path(category) do %>
           <ul class="inner-link-list">
   					<li class="list-item-count">
   						<span class="circle">
-  							<%= category.ingredients_count %>
+  							<%= category.descendant_count %>
   						</span>
   					</li>
   					<li class="list-item-name">
@@ -39,7 +38,7 @@
           <ul class="inner-link-list">
   					<li class="list-item-count">
   						<span class="circle">
-  							<%= category.ingredients_count %>
+  							<%= category.descendant_count %>
   						</span>
   					</li>
   					<li class="list-item-name">

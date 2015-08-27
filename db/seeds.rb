@@ -275,6 +275,9 @@ end
                     expiration_date: Date.today + r.rand(-5..90))
 end
 
+# this takes about 5 minutes to run
+Ingredient.reset_descendant_counts
+
 # cart seeds
 # ------------------------------------------------
 

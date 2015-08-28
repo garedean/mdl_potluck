@@ -1,6 +1,5 @@
 <div class="breadcrumbs">
   <%= link_to "ADMIN TOOLS", admin_path %> &gt;
-
   EXPIRED SUMMARY
 </div>
 
@@ -47,7 +46,7 @@
               <% end %>
             </td>
             <td class="tableCell">
-              <%= link_to ingredient_path(ingredient), method: :delete, data: {confirm: "Are you sure?"} do %>
+              <%= link_to ingredient_path(ingredient, redirect_back: true), method: :delete, data: {confirm: "Are you sure?"} do %>
                 <div class="trashCartButton pushRight">
                     <i class="fa fa-trash colorGray size-48"></i>
                 </div >

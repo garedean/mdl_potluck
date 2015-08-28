@@ -11,6 +11,7 @@
   <body>
       <div class="bodyBackgroundColor wrap">
         <nav class="navbar">
+
             <% if current_user != nil %>
               <%= link_to admin_path do %>
                 <i class="fa fa-cog navbar-icon"></i>
@@ -25,21 +26,19 @@
 
             <span class="notify-alert" id="notify">
               <%= flash[:alert] %>
+              <%= flash[:notice] %>
             </span>
 
-            <% if current_user == nil %>
+            <% if current_user %>
               <%= link_to new_user_session_path do %>
                 <i class="fa fa-spoon navbar-icon pull-right navbar-icon-right"></i>
               <% end %>
-            <% else %>
-              <%= link_to prepare_path do %>
-                <i class="fa fa-spoon navbar-icon pull-right navbar-icon-right"></i>
+
+              <%= link_to store_path do %>
+                <i class="fa fa-cube navbar-icon pull-right navbar-icon-right"></i>
               <% end %>
             <% end %>
-
-            <%= link_to store_path do %>
-              <i class="fa fa-cube navbar-icon pull-right navbar-icon-right"></i>
-            <% end %>
+            
         </nav>
           <%= yield %>
       </div>

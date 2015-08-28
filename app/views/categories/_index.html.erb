@@ -5,6 +5,12 @@
   CATEGORIES
 </div>
 
+<% if Category.roots.empty? %>
+  <center class="vertically-center">There aren't any food categories in the system yet.<br>
+    <%= link_to "Add a food category", admin_categories_path %>
+  </center>
+<% end %>
+
 <div class="listContainer">
 	<ul class="mainUL">
 		<% Category.roots.order(:name).each do |category| %>

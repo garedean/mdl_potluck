@@ -5,9 +5,7 @@ r = Random.new
 # initial user seeds
 # ------------------------------------------------
 
-
 User.create(email: "admin@test.com", password: "123abc!!", admin: true)
-
 
 # category seeds
 # ------------------------------------------------

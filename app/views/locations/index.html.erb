@@ -1,8 +1,13 @@
 <div class="breadcrumbs">
   <%= link_to "Prepare", prepare_path %> &gt;
-  
   LOCATIONS
 </div>
+
+<% if Location.roots.empty? %>
+  <center class="vertically-center">There aren't any locations in the system yet.<br>
+    <%= link_to "Add a location", admin_locations_path %>
+  </center>
+<% end %>
 
 <div class="listContainer">
   <ul class="mainUL">

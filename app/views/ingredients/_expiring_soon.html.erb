@@ -1,8 +1,36 @@
 <ul class="mdl-list">
 	<% Ingredient.expiring_soon.each do |ingredient| %>
-    <li>
-      <%= ingredient.name %>
-      <%= expiration_message(ingredient) %>
-    </li>
-  <% end %>
+		<%= link_to ingredient_path(ingredient) do %>
+			<li class="ripple" data-ripple-color="#3f51b5">
+
+				<ul class="inner-link-list">
+					<li class="indent">
+						<%= ingredient.name %>
+					</li>
+					<li class="right-column">
+						<%= expiration_message(ingredient) %>
+					</li>
+				</ul>
+			</li>
+		<% end %>
+	<% end %>
 </ul>
+
+<!-- <ul class="mdl-list">
+	<% Category.roots.order(:name).each do |category| %>
+		<li class="ripple" data-ripple-color="#3f51b5">
+			<%= link_to category_path(category) do %>
+				<ul class="inner-link-list">
+					<li class="list-item-count">
+						<span class="circle">
+							<%= category.descendant_count %>
+						</span>
+					</li>
+					<li class="list-item-name">
+						<%= category.name %>
+					</li>
+				</ul>
+			<% end %>
+		</li>
+	<% end %>
+</ul> -->

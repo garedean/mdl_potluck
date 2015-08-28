@@ -18,21 +18,19 @@ ul {
   a {
     color: #757575;
   }
-  > li {
-    border-bottom: 1px solid #eee;
-  }
   li {
     height: 70px;
     line-height: 70px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    font-weight: 300;
+    box-sizing: border-box;
   }
 }
 
 .inner-link-list {
   li {
-    font-size: 16px;
-    font-weight: 300;
     float: left;
-    box-sizing: border-box;
   }
   .list-item-count {
     display: inline-block;
@@ -202,4 +200,14 @@ form {
   .add-item-row {
     line-height: 20px;
   }
+  .indent {
+    width: 60%;
+    padding-left: 10%;
+  }
+}
+
+.right-column {
+  text-align: right;
+  width: 40%;
+  padding-right: 30px;
 }

@@ -136,7 +136,9 @@ a i {
 }
 
 .adminControlContainer {
-  margin: 1em;
+  padding-top: 1em;
+  margin-left: 1em;
+  padding-right: 1em;
   overflow-y: scroll;
   height: 100%;
   margin-bottom: 2em;
@@ -443,13 +445,14 @@ a i {
 }
 
 .adminLocationUL {
+  width: 100%;
   margin-bottom: 5%;
 }
 
 .adminLocationList {
   background-color: white;
   list-style: none;
-  border: 1px solid black;
+  border: 1px solid #BDBDBD;
   font-size: 80%;
 }
 

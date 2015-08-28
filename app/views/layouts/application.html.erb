@@ -30,7 +30,7 @@
             </span>
 
             <% if current_user %>
-              <%= link_to new_user_session_path do %>
+              <%= link_to prepare_path do %>
                 <i class="fa fa-spoon navbar-icon pull-right navbar-icon-right"></i>
               <% end %>
 
@@ -38,7 +38,7 @@
                 <i class="fa fa-cube navbar-icon pull-right navbar-icon-right"></i>
               <% end %>
             <% end %>
-            
+
         </nav>
           <%= yield %>
       </div>

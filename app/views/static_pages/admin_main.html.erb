@@ -6,20 +6,22 @@
   <%= header_link :root %>
 <% end %>
 
-<%= link_to admin_users_path do %>
-  <div class="adminButtons">
-    MANAGE USERS
-  </div>
-<% end %>
+<div class="admin-buttons">
+  <%= link_to admin_users_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" do %>
+    <div class="adminButtons">
+      MANAGE USERS
+    </div>
+  <% end %>
 
-<%= link_to admin_locations_path do %>
-  <div class="adminButtons">
-    MANAGE LOCATIONS
-  </div>
-<% end %>
+  <%= link_to admin_locations_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" do %>
+    <div class="adminButtons">
+      MANAGE LOCATIONS
+    </div>
+  <% end %>
 
-<%= link_to admin_categories_path do %>
-  <div class="adminButtons">
-    MANAGE CATEGORIES
-  </div>
-<% end %>
+  <%= link_to admin_categories_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" do %>
+    <div class="adminButtons">
+      MANAGE CATEGORIES
+    </div>
+  <% end %>
+</div>

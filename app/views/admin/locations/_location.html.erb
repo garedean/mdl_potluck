@@ -1,19 +1,5 @@
-<% if location.parent %>
-  <li class="adminLocationList">
-<% else %>
-  <li class="adminLocationListRoot">
-<% end %>
-  <%= link_to admin_location_path(location), data: {confirm: "You sure?"}, method: :delete do %>
-    <% if location.root? %>
-      <button class="deleteSublocation"><i class="fi-x-circle size-24 makeBlack"></i></button>
-    <% elsif location.children? %>
-      <button class="deleteSublocationLight"><i class="fi-x-circle size-24 makeBlack"></i></button>
-    <% else %>
-      <button class="deleteSublocationLighter"><i class="fi-x-circle size-24 makeBlack"></i></button>
-    <% end %>
-  <% end %>
+<li>
   <%= location.name %>
-  <%= link_to new_admin_location_path(parent_id: location) do %>
-    <button class="addSublocation"><i class="fi-plus size-24 makeBlack"></i></button>
-  <% end %>
-</li><br>
+  <%= link_to "Add nested", new_admin_location_path(parent_id: location) %>
+  <%= link_to "Delete", admin_location_path(location), data: {confirm: "You sure?"}, method: :delete %>
+</li>

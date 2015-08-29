@@ -75,7 +75,7 @@ button.add-food-item {
   border-radius: 50%;
   border: 1px solid #ddd;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 200;
   color: #999;
   top: 50%;
@@ -210,4 +210,30 @@ form {
   text-align: right;
   width: 40%;
   padding-right: 30px;
+}
+
+.mega-btn {
+  display: block;
+  margin: 0 20px;
+  padding: 10px 0;
+  height: initial;
+}
+
+.admin-buttons {
+  position: relative;
+  top: 19%;
+  a:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.vertically-centered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.stretch {
+  width: 100%;
 }

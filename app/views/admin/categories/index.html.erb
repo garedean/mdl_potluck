@@ -1,6 +1,11 @@
-<ul class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">CATEGORY MANAGEMENT</h1>
-</ul>
+<% content_for :title do %>
+  Manage Food Categories
+<% end %>
+
+<% content_for :header_icon do %>
+  <%= header_link admin_path %>
+<% end %>
+
 <div class="adminControlContainer">
   <p>This is where you can add, edit, or delete food bank categories. Be careful though! If you delete a top level category, all elements nested underneath it will be deleted too!</p>
 <br>

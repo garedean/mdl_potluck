@@ -1,43 +1,28 @@
-<ul class="breadcrumbs">
-  <h1 id="titleHeading" class="titleHeading">USER MANAGEMENT</h1>
-</ul>
-<div class="ingredientTable">
-  <table>
-    <thead>
-      <tr>
-        <th>EMAIL</th>
-        <th>SIGN IN COUNT</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
+<% content_for :title do %>
+  Manage Users
+<% end %>
 
+<% content_for :header_icon do %>
+  <%= header_link admin_path %>
+<% end %>
+
+<table class="mdl-data-table mdl-js-data-table stretch">
+  <tbody>
+    <% @users.each do |user| %>
       <tr>
-        <td>
+        <td class="mdl-data-table__cell--non-numeric">
           <%= user.email %>
         </td>
         <td>
-          <%= user.sign_in_count %>
+          <%= link_to "Edit", edit_admin_user_path(user) unless user.admin %>
         </td>
         <td>
-          <% if current_user.admin? %>
-            <%= link_to edit_admin_user_path(user) do %>
-              <div class="listButtons">EDIT</div>
-            <% end %>
+          <%= link_to "Delete", admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete unless user.admin %>
         </td>
-        <td>
-          <%= link_to admin_user_path(user), data: { confirm: "Are you sure?" }, method: :delete do %>
-            <div class="button">DELETE</div>
-          <% end %>
-        </td>
-      <% end %>
       </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+    <% end %>
+  </tbody>
+</table>
 
 <% if current_user.admin? %>
   <%= link_to new_admin_user_path do %>

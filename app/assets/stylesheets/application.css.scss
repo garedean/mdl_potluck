@@ -136,7 +136,9 @@ a i {
 }
 
 .adminControlContainer {
-  margin: 1em;
+  padding-top: 1em;
+  margin-left: 1em;
+  padding-right: 1em;
   overflow-y: scroll;
   height: 100%;
   margin-bottom: 2em;
@@ -348,6 +350,15 @@ a i {
   left: .5em;
 }
 
+.loginButton {
+  width: 66%;
+  height: 5em;
+  background-color: white;
+  margin-top: 0.5em;
+  left: 17%;
+  border: 1px solid black;
+}
+
 /* TABLES */
 
 .tableCell {
@@ -396,6 +407,7 @@ a i {
   padding: 0 10px 0 10px;
   font-size: .9em;
   line-height: 48px;
+  box-shadow: 0 1px 0 0 #BCBCBC;
   a {
     color: #08c;
   }
@@ -443,13 +455,14 @@ a i {
 }
 
 .adminLocationUL {
+  width: 100%;
   margin-bottom: 5%;
 }
 
 .adminLocationList {
   background-color: white;
   list-style: none;
-  border: 1px solid black;
+  border: 1px solid #BDBDBD;
   font-size: 80%;
 }
 
@@ -633,4 +646,10 @@ input.datepicker {
     height: 2em;
     background: white;
   }
+}
+
+/* TITLE ELEMENTS */
+
+.potluckLogo {
+  margin-bottom: .5em;
 }

@@ -22,7 +22,7 @@ class Admin::LocationsController < ApplicationController
     @location = Location.find(params[:id])
     @location.destroy
 
-    redirect_to admin_locations_path, notice: "LOCATION DELETED"
+    redirect_to admin_locations_path, notice: "Location Deleted"
   end
 
   private

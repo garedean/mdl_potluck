@@ -46,3 +46,12 @@ $(function() {
       $(this).delay(3000).fadeOut();
    });
 });
+
+/* BACK */
+
+$(document).ready(function(){
+	$('#back').click(function(){
+		parent.history.back();
+		return false;
+	});
+});

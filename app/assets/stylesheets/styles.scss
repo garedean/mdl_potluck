@@ -15,6 +15,7 @@ ul {
 }
 
 .mdl-list {
+  list-style-type: none;
   a {
     color: #757575;
   }
@@ -91,10 +92,12 @@ button.add-food-item {
 
 #breadcrumbs {
   height: 48px;
+  white-space: nowrap;
   background: white;
   line-height: 48px;
-  padding-left: 20px;
+  padding: 0 20px;
   color: #666;
+  overflow-x: scroll;
   a {
     color: #3F51B5;
   }
@@ -204,12 +207,32 @@ form {
     width: 60%;
     padding-left: 10%;
   }
-}
-
-.right-column {
-  text-align: right;
-  width: 40%;
-  padding-right: 30px;
+  .full-width {
+    width: 100%;
+  }
+  .right-column {
+    text-align: right;
+    width: 40%;
+    padding-right: 30px;
+    line-height: 18px;
+    padding-top: 26px;
+  }
+  .location-expiration-column {
+    padding: 15px 0 0 30px;
+    line-height: 20px;
+    .item-location {
+      position: relative;
+    }
+  }
+  .item-add {
+    float: right;
+    margin-right: 30px;
+    i {
+      line-height: 70px;
+      font-size: 25px;
+      color: #66BB6A;
+    }
+  }
 }
 
 .mega-btn {
@@ -219,7 +242,7 @@ form {
   height: initial;
 }
 
-.admin-buttons {
+.button-group {
   position: relative;
   top: 19%;
   a:not(:last-child) {
@@ -236,4 +259,19 @@ form {
 
 .stretch {
   width: 100%;
+}
+
+.li-link {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding-left: 40px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+    background-color: #EEEEEE;
 }

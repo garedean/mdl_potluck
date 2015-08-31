@@ -1,20 +1,23 @@
-<ul class="breadcrumbs">
-  <% if @location.parent != nil && @location.parent.parent != nil && @location.parent.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.parent.name %></li>
-  <% end %>
-  <% if @location.parent != nil && @location.parent.parent != nil%>
-    <li class="crumbles"><%= @location.parent.parent.name %></li>
-  <% end %>
-  <% if @location.parent != nil %>
-    <li class="crumbles"><%= @location.parent.name %></li>
-  <% end %>
-    <li class="crumbles"><%= @location.name %></li>
-</ul>
+<% content_for :title do %>
+  Relocate <%= @ingredient.name %>
+<% end %>
 
-<ul class="theList">
+<% content_for :header_icon do %>
+  <%= header_link ingredient_path(@ingredient) %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+  <%= breadcrumb_menu do %>
+    <%= breadcrumb_link "Locations", relocate_ingredient_locations_path(@ingredient), data: { 'no-turbolink' => true } %>
+    <%= ancestor_chain @location %>
+    <%= page_name @location.name %>
+  <% end %>
+<% end %>
+
+<div class="mdl-list">
   <% @sublocations.each do |location| %>
-    <li>
-      <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons") %>
+    <li class="ripple full-width" data-ripple-color="#3f51b5">
+      <%= hierarchy_link(location, :relocate, @ingredient, "button listButtons li-link") %>
     </li>
   <% end %>
-</ul>
+</div>

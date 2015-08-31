@@ -1,8 +1,19 @@
+<% content_for :title do %>
+  <%= @ingredient.name %>
+<% end %>
+
+<% content_for :header_icon do %>
+  <%= header_link category_ingredients_path(@ingredient.category) %>
+<% end %>
+
+<div class="button-group">
+  <%= link_to "Relocate", relocate_ingredient_locations_path(@ingredient), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" %>
+
+  <%= link_to "Delete", ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"}, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" %>
+</div>
+
 <div class="itemContainer">
-    <span id="titleFade" class="">
-      <h2><%= @ingredient.name %></h2> <p>ID: <%= @ingredient.id %></p>
-      <br>
-    </span>
+
   <div id="locationFade" class="">
     <h6>LOCATION:</h6>
       <% if @ingredient.location_id != nil %>

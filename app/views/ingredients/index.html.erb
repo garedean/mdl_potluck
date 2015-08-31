@@ -10,7 +10,7 @@
   <%= breadcrumb_menu do %>
     <%= breadcrumb_link "Categories", root_path %>
     <%= ancestor_chain @resource, :store %>
-    <%= page_name "#{@resource.name.pluralize(2)} (#{@ingredients.size})" %>
+    <%= page_name "#{@resource.name} (#{@ingredients.size})" %>
   <% end %>
 <% end %>
 
@@ -18,13 +18,18 @@
 	<% @ingredients.each do |ingredient| %>
 		<li>
       <ul class="inner-link-list">
-				<li class="add-item-row">
-          <%= link_to ingredient.location.tree_format, ingredient_path(ingredient) %><br>
+				<li class="location-expiration-column">
+          <%= link_to ingredient.location.tree_format, ingredient_path(ingredient), class: "item-location" %><br>
           <%= expiration_message(ingredient) %>
 				</li>
 
-        <li>
-          <%= link_to "Add to cart", add_to_cart_path(ingredient), method: :post %>
+        <li class="item-add">
+          <%#= link_to "Add to cart", add_to_cart_path(ingredient), method: :post %>
+
+          <%= link_to add_to_cart_path(ingredient), method: :post do %>
+            <i class="material-icons">add_shopping_cart</i>
+          <% end %>
+
         </li>
 			</ul>
     </li>

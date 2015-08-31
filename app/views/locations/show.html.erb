@@ -16,10 +16,8 @@
 
 <ul class="mdl-list">
 	<% @sublocations.each do |location| %>
-		<li>
-
+		<li class="ripple" data-ripple-color="#3f51b5">
       <% if location.children.any? %>
-
         <%= link_to location_path(location) do %>
           <ul class="inner-link-list">
   					<li class="list-item-count">
@@ -32,7 +30,6 @@
   					</li>
   				</ul>
         <% end %>
-
       <% else %>
         <%= link_to location_ingredients_path(location) do %>
 
@@ -47,7 +44,6 @@
   					</li>
   				</ul>
         <% end %>
-
       <% end %>
 		</li>
 	<% end %>

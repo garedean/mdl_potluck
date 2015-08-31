@@ -22,12 +22,9 @@ class IngredientsController < ApplicationController
   end
 
   def create
-
     expiration_date = Date.today + (ingredient_params[:expiration_date].to_i * 7)
 
-    @ingredient = Ingredient.new(category_id: params[:category_id],
-                                 location_id: params[:location_id],
-                                 expiration_date: expiration_date)
+    @ingredient = Ingredient.new(ingredient_params)
 
     if @ingredient.save
       redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"

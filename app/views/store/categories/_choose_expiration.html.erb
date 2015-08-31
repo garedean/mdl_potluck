@@ -9,42 +9,21 @@
 <% content_for :breadcrumbs do %>
   <%= breadcrumb_menu do %>
     <%= breadcrumb_link "Locations", store_category_locations_path(@category) %>
-
     <% if @location %>
       <%= ancestor_chain @location, @category, :store_in_location %>
-
       <%= breadcrumb_link @location.name, store_category_location_path(@category, @location.parent) %>
     <% end %>
-
     <%= page_name "Expiration Date for #{@category.name}" %>
-
   <% end %>
 <% end %>
 
-When does this expire?
-
-<%= form_for @ingredient do |f| %>
-  <%= hidden_field_tag :location_id, @location.try(:id) %>
-  <%= hidden_field_tag :category_id, @category.id %>
-
-  <div>
-    <%= f.radio_button :expiration_date, '2' %> 2 weeks
+<div class="row expiration-wrapper">
+  <div class="col-xs-8 col-xs-offset-2">
+    <%= form_for @ingredient do |f| %>
+      <%= f.hidden_field :location_id, value: @location.try(:id) %>
+      <%= f.hidden_field :category_id, value: @category.id %>
+      <%= f.text_field :expiration_date, class: "datepicker stretch" %>
+      <%= f.submit "Add Item", class: "stretch ripple" %>
+    <% end %>
   </div>
-  <div>
-    <%= f.radio_button :expiration_date, '4' %> 1 month
-  </div>
-  <div>
-    <%= f.radio_button :expiration_date, '8' %> 2 months
-  </div>
-  <div>
-    <%= f.radio_button :expiration_date, '12' %> 3 months
-  </div>
-  <div>
-    <%= f.radio_button :expiration_date, '24' %> 6 months
-  </div>
-  <div>
-    <%= f.radio_button :expiration_date, '48' %> 1+ years
-  </div>
-
-  <%= f.submit %>
-<% end %>
+</div>

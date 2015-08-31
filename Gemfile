@@ -16,6 +16,7 @@ gem 'ancestry'
 gem 'material_design_lite-rails'
 gem 'airbrake'
 gem 'simple_form'
+gem 'pickadate-rails'
 
 group :development do
   gem 'byebug'

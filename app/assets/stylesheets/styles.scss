@@ -268,6 +268,15 @@ form {
   padding-left: 40px;
 }
 
+.expiration-wrapper {
+  margin-top: 200px;
+  .datepicker {
+    font-size: 28px;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+}
+
 /* SCROLLBAR */
 
 ::-webkit-scrollbar {

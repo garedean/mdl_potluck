@@ -36,7 +36,7 @@ class Ingredient < ActiveRecord::Base
   end
 
 	def location
-		# if ingredient is assigned location, return location object
+		# if ingredient is assign ed location, return location object
 		if location_id
 			super
 		# if no location, create NullLocation object which has a #name method that returns 'No location'

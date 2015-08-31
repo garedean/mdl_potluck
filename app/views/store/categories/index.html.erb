@@ -15,13 +15,7 @@
 <ul class="mdl-list">
 	<% Category.roots.order(:name).each do |category| %>
 		<li class="ripple" data-ripple-color="#3f51b5">
-			<%= link_to store_category_path(category) do %>
-				<ul class="inner-link-list">
-					<li class="list-item-name">
-						<%= category.name %>
-					</li>
-				</ul>
-			<% end %>
+			<%= link_to category.name, store_category_path(category), class: "li-link"  %>
 		</li>
 	<% end %>
 </ul>

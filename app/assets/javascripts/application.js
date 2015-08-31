@@ -17,6 +17,9 @@
 //= require mdl_effects
 //= require_tree .
 
+//= require pickadate/picker
+//= require pickadate/picker.date
+
 $(function() {
    $('#flash').delay(100).fadeIn('normal', function() {
       $(this).delay(4000).fadeOut();
@@ -32,10 +35,8 @@ $(function() {
    $('button.link').click(function() {
      window.location.href = $(this).data('location');
    });
-});
 
-$("#titleHeading").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".ingredientTable").offset().top},
-        'slow');
+   $(".datepicker").pickadate({
+    format: 'mmmm d, yyyy',
+  });
 });

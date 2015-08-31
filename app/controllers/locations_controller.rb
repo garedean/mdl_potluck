@@ -11,7 +11,7 @@ class LocationsController < ApplicationController
   def update
   	@location = Location.find(params[:id])
     if @location.update(location_params)
-      flash[:alert] = "LOCATION UPDATED"
+      flash[:alert] = "Location Updated"
       redirect_to root_path
     else
       render :edit

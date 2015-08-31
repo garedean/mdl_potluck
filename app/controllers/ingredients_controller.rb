@@ -50,7 +50,7 @@ class IngredientsController < ApplicationController
   def update
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.update(ingredient_params)
-      flash[:notice] = "LOCATION SET"
+      flash[:notice] = "Location Set"
       # redirect_to store_path
       redirect_to ingredient_path(@ingredient)
     else
@@ -78,7 +78,7 @@ class IngredientsController < ApplicationController
     item_to_add = Ingredient.find(params[:id])
 
     current_user.cart.add_item(item_to_add)
-    flash[:alert] = "ADDED"
+    flash[:alert] = "Item Added"
     redirect_to :back
   end
 
@@ -90,7 +90,7 @@ class IngredientsController < ApplicationController
     item_to_remove = Ingredient.find(params[:id])
 
     current_user.cart.remove_item(item_to_remove)
-    flash[:notice] = "REMOVED"
+    flash[:notice] = "Removed"
     redirect_to :back
   end
 

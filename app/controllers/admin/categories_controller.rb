@@ -12,10 +12,12 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(category_params,
       parent_id: category_params[:parent_id])
 
+    @category.default_expiration = 30 if category_params[:default_expiration].empty?
+
     if @category.save
       redirect_to admin_categories_path
     else
-      redirect_to :back
+      redirect_to :back, notice: "Category name is required"
     end
   end
 

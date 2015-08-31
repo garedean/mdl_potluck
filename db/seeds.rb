@@ -7,6 +7,8 @@ r = Random.new
 
 User.create(email: "admin@test.com", password: "123abc!!", admin: true)
 
+if false
+
 # category seeds
 # ------------------------------------------------
 
@@ -293,4 +295,6 @@ cart = Cart.create
 
 40.times do
   cart.ingredients << Ingredient.find(r.rand(1..10))
+end
+
 end

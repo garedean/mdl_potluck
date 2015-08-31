@@ -6,8 +6,8 @@
   <label>Category name:</label>
   <%= f.text_field :name %>
 
-  <label>Default 'expires in' as days:</label>
-  <%= f.number_field :default_expiration %>
+  <label>Default 'days until expiration' (initally set to parent category default)</label>
+  <%= f.number_field :default_expiration, value: "#{@category.parent.try(:default_expiration)}" %>
 
   <%= f.submit "Save", :class => "managementButton" %>
 <% end %>

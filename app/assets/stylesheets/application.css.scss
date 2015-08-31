@@ -350,6 +350,15 @@ a i {
   left: .5em;
 }
 
+.loginButton {
+  width: 66%;
+  height: 5em;
+  background-color: white;
+  margin-top: 0.5em;
+  left: 17%;
+  border: 1px solid black;
+}
+
 /* TABLES */
 
 .tableCell {
@@ -637,4 +646,10 @@ input.datepicker {
     height: 2em;
     background: white;
   }
+}
+
+/* TITLE ELEMENTS */
+
+.potluckLogo {
+  margin-bottom: .5em;
 }

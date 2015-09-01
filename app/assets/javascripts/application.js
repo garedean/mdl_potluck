@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require material
@@ -21,22 +22,26 @@
 //= require pickadate/picker.date
 
 $(function() {
-   $('#flash').delay(100).fadeIn('normal', function() {
-      $(this).delay(4000).fadeOut();
-   });
+  $('#flash').delay(100).fadeIn('normal', function() {
+    $(this).delay(4000).fadeOut();
+  });
 
-   $('.fade-in').delay(200).fadeIn(500);
-   $('.fade-out').delay(1000).fadeOut(800);
+  $('.fade-in').delay(200).fadeIn(500);
+  $('.fade-out').delay(1000).fadeOut(800);
 
-   $('#close-expiration-lightbox').click(function() {
-     $('#expiration-lightbox').hide();
-   });
+  $('#close-expiration-lightbox').click(function() {
+   $('#expiration-lightbox').hide();
+  });
 
-   $('button.link').click(function() {
-     window.location.href = $(this).data('location');
-   });
+  $('button.link').click(function() {
+   window.location.href = $(this).data('location');
+  });
 
-   $(".datepicker").pickadate({
+  $(".datepicker").pickadate({
     format: 'mmmm d, yyyy',
   });
+
+  $("#flash").delay(1000).animate({
+    top: "-56",
+  }, 700, "easeOutBounce" );
 });

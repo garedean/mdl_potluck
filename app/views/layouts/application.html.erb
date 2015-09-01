@@ -15,6 +15,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body data-no-turbolink>
+
+    <%= yield :top_level_content %>
+
+    <% flash.each do |key, value| %>
+      <div id="flash">
+        <%= content_tag :div, value, class: "flash #{key}" %>
+      </div>
+    <% end %>
+
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
         mdl-layout--fixed-tabs">
       <header class="mdl-layout__header">

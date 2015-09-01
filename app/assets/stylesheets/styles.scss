@@ -221,17 +221,26 @@ form {
     padding: 15px 0 0 30px;
     line-height: 20px;
     .item-location {
+      color: #555;
+      font-weight: 300;
+      font-size: 18px;
       position: relative;
     }
   }
   .item-add {
     float: right;
-    margin-right: 30px;
+    margin-right: 40px;
+    color: #333;
     i {
       line-height: 70px;
-      font-size: 25px;
-      color: #66BB6A;
+      font-size: 27px;
     }
+  }
+  .expiration-message {
+    display: inline-block;
+    margin-top: 3px;
+    color: #888;
+    font-size: 14px;
   }
 }
 
@@ -303,6 +312,35 @@ footer {
 .card-sub {
   font-weight: 200;
   font-size: 18px;
+}
+
+#flash {
+  position: fixed;
+  top: 0;right:0;left:0;
+  height: 56px;
+  text-align: center;
+  line-height: 56px;
+  background: #ff4081;
+  color: white;
+  font-size: 20px;
+  z-index: 9997;
+}
+
+.absolutely-centered {
+  position: absolute;
+  top:0;right:0;left:0;bottom:0;
+  margin: auto;
+}
+
+.quick-links-lightbox {
+  z-index: 9999;
+}
+
+.backdrop {
+  position: fixed;
+  top:0;right:0;bottom:0;left:0;
+  background: rgba(0,0,0,.5);
+  z-index: 9998;
 }
 
 /* SCROLLBAR */

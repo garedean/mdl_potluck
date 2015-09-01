@@ -48,7 +48,7 @@ class IngredientsController < ApplicationController
   def update
     @ingredient = Ingredient.find(params[:id])
     if @ingredient.update(ingredient_params)
-      flash[:notice] = "LOCATION SET"
+      flash[:notice] = "Location Updated"
       # redirect_to store_path
       redirect_to ingredient_path(@ingredient)
     else
@@ -60,7 +60,7 @@ class IngredientsController < ApplicationController
     ingredient = Ingredient.find(params[:id])
     ingredient.destroy
 
-    redirect_to prepare_path, notice: "Item deleted!"
+    redirect_to root_path, notice: "Item Deleted"
   end
 
   def expiring_soon
@@ -75,7 +75,6 @@ class IngredientsController < ApplicationController
     item_to_add = Ingredient.find(params[:id])
 
     current_user.cart.add_item(item_to_add)
-    flash[:notice] = "ADDED TO CART"
     redirect_to :back
   end
 
@@ -111,7 +110,7 @@ class IngredientsController < ApplicationController
   def save_location
     ingredient = Ingredient.find(params[:ingredient_id])
     ingredient.update(location_id: params[:id])
-    redirect_to ingredient_path(ingredient), notice: "LOCATION UPDATED"
+    redirect_to ingredient_path(ingredient), notice: "Location Updated"
   end
 
   private

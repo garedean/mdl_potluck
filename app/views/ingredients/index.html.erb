@@ -20,16 +20,15 @@
       <ul class="inner-link-list">
 				<li class="location-expiration-column">
           <%= link_to ingredient.location.tree_format, ingredient_path(ingredient), class: "item-location" %><br>
-          <%= expiration_message(ingredient) %>
+          <span class="expiration-message">
+            <%= expiration_message(ingredient) %>
+          </span>
 				</li>
 
         <li class="item-add">
-          <%#= link_to "Add to cart", add_to_cart_path(ingredient), method: :post %>
-
           <%= link_to add_to_cart_path(ingredient), method: :post do %>
             <i class="material-icons">add_shopping_cart</i>
           <% end %>
-
         </li>
 			</ul>
     </li>

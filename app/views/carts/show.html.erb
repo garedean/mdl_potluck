@@ -3,65 +3,34 @@
 <% end %>
 
 <% content_for :header_icon do %>
-  <%= header_link :root %>
+  <%= header_link :back %>
 <% end %>
 
-<div class="cartTable">
-  <table>
-    <thead>
-      <tr>
-        <th>ITEM</th>
-        <th>ID</th>
-        <th>CONDITION</th>
-        <th>CART</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @cart_items.each do |cart_item| %>
-        <tr>
-          <td><h5><%= link_to cart_item.name, ingredient_path(cart_item) %></h5>
+<ul class="mdl-list">
+	<% @cart_items.each do |cart_item| %>
+		<li>
+      <ul class="inner-link-list">
+				<li class="location-expiration-column">
+          <%= link_to cart_item.name, ingredient_path(cart_item), class: "item-location" %><br>
+          <%= expiration_message(cart_item) %>
+				</li>
+        <li>
+          <%= link_to "Remove", remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart %>
+        </li>
+			</ul>
+    </li>
+	<% end %>
+</ul>
 
-            <span class="littleBreadcrumbs">
-              <% if cart_item.location_id != nil %>
-                  <%= cart_item.location.root.name %>
-                <% else %>
-                  NO LOCATION
-              <% end %>
-            </span>
-          </td>
-          <td><%= cart_item.id %></td>
-            <td class="tableCell">
-              <% if cart_item.expiration_date != nil %>
-                <% if cart_item.expiration_date.future? %>
-                  <div class="freshItem">FRESH</div>
-                <% else %>
-                  <div class="expiredItem">EXPIRED</div>
-                <% end %>
-                  <%= cart_item.expiration_date %>
-              <% else %>
-                N/A
-              <% end %>
-            </td>
-          <td>
-            <%= link_to remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart do %>
-            	<i class="fi-x-circle size-24 makeBlack" id="listButton"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-<div class="mainButtonRack">
-  <%= link_to use_all_items_path, method: :post do %>
-    <span class="mainButton">
-      <i class="fa fa-spoon"></i><br>USE
-    </span>
-  <% end %>
+<footer>
 
-  <%= link_to empty_cart_path, method: :post do %>
-    <span class="mainButton">
-      <i class="fa fa-cart-arrow-down"></i><br>EMPTY
-    </span>
-  <% end %>
-</div>
+    <div class="row">
+      <div class="col-xs-6">
+        <%= link_to "Use All", use_all_items_path, method: :post %>
+      </div>
+      <div class="col-xs-6">
+        <%= link_to "Empty Cart", empty_cart_path, method: :post %>
+      </div>
+    </div>
+
+</footer>

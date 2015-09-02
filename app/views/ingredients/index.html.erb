@@ -19,7 +19,12 @@
 		<li>
       <ul class="inner-link-list">
 				<li class="location-expiration-column">
-          <%= link_to ingredient.location.tree_format, ingredient_path(ingredient), class: "item-location" %><br>
+          <% if ingredient.location.class == NullLocation %>
+            <%= link_to "Unlocated Item", ingredient_path(ingredient), class: "item-location" %>
+          <% else %>
+            <%= link_to ingredient.location.tree_format, ingredient_path(ingredient), class: "item-location" %>
+          <% end %>
+          <br>
           <span class="expiration-message">
             <%= expiration_message(ingredient) %>
           </span>

@@ -361,6 +361,15 @@ footer {
   line-height: 70px;
 }
 
+footer {
+  a {
+    &:focus,
+    &:hover {
+      color: #ff4081;
+    }
+  }
+}
+
 /* SCROLLBAR */
 
 ::-webkit-scrollbar {

@@ -7,9 +7,9 @@ class IngredientsController < ApplicationController
 
     resource_ingredients =
       if method = @resource
-        method.ingredients.order(:expiration_date)
+        method.ingredients.unused.order(:expiration_date)
       else
-        Ingredient.all.order(:expiration_date)
+        Ingredient.unused.order(:expiration_date).all
       end
 
     cart_items = current_user.cart.ingredients
@@ -86,7 +86,7 @@ class IngredientsController < ApplicationController
     item_to_remove = Ingredient.find(params[:id])
 
     current_user.cart.remove_item(item_to_remove)
-    flash[:notice] = "REMOVED ITEM"
+    flash[:notice] = "Item Removed"
     redirect_to :back
   end
 

@@ -7,7 +7,7 @@ r = Random.new
 
 User.create(email: "admin@test.com", password: "123abc!!", admin: true)
 
-if true
+if false
 
 # category seeds
 # ------------------------------------------------

@@ -26,15 +26,20 @@
 	<% end %>
 </ul>
 
-<footer>
-
+<% if current_user.cart.ingredients.any? %>
+  <footer>
     <div class="row">
-      <div class="col-xs-6">
-        <%= link_to "Use All", use_all_items_path, method: :post %>
-      </div>
-      <div class="col-xs-6">
-        <%= link_to "Empty Cart", empty_cart_path, method: :post %>
-      </div>
-    </div>
+      <%= link_to use_all_items_path, method: :post, data: {confirm: "Please confirm: this will mark all items as 'used' and then reset the cart"} do %>
+        <div class="col-xs-6">
+          Use All
+        </div>
+      <% end %>
 
-</footer>
+      <%= link_to empty_cart_path, method: :post, data: {confirm: "Please confirm: this will empty all contents from the cart."} do %>
+        <div class="col-xs-6">
+          Empty Cart
+        </div>
+      <% end %>
+    </div>
+  </footer>
+<% end %>

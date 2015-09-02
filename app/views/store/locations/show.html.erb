@@ -3,7 +3,11 @@
 <% end %>
 
 <% content_for :header_icon do %>
-  <%= header_link store_category_path(@category.parent) %>
+  <% if @category.parent %>
+    <%= header_link store_category_path(@category.parent) %>
+  <% else %>
+    <%= header_link store_categories_path %>
+  <% end %>
 <% end %>
 
 <% content_for :breadcrumbs do %>

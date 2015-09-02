@@ -25,11 +25,11 @@
           </span>
 				</li>
 
-        <li class="item-add">
-          <%= link_to add_to_cart_path(ingredient), method: :post do %>
+        <%= link_to add_to_cart_path(ingredient), class: "add-to-cart", method: :post do %>
+          <button class="mdl-button mdl-js-button mdl-button--icon big-button mdl-button--colored">
             <i class="material-icons">add_shopping_cart</i>
-          <% end %>
-        </li>
+          </button>
+        <% end %>
 			</ul>
     </li>
 	<% end %>

@@ -117,6 +117,10 @@ header {
   }
 }
 
+.potluck-icon {
+  font-size: 26px;
+}
+
 i.cart {
   float: right;
 }
@@ -342,6 +346,19 @@ footer {
   top:0;right:0;bottom:0;left:0;
   background: rgba(0,0,0,.5);
   z-index: 9998;
+}
+
+.add-to-cart {
+  float: right;
+  position: relative;
+  top: 11px;
+  right: 18px;
+}
+
+.remove-from-cart {
+  float: right;
+  margin-right: 25px;
+  line-height: 70px;
 }
 
 /* SCROLLBAR */

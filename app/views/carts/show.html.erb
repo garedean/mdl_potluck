@@ -14,9 +14,13 @@
           <%= link_to cart_item.name, ingredient_path(cart_item), class: "item-location" %><br>
           <%= expiration_message(cart_item) %>
 				</li>
-        <li>
-          <%= link_to "Remove", remove_from_cart_path(cart_item), method: :post, action: :remove_from_cart %>
-        </li>
+
+        <%= link_to remove_from_cart_path(cart_item), class: "remove-from-cart", method: :post, action: :remove_from_cart do %>
+        <button class="mdl-button mdl-js-button mdl-button--primary">
+          Remove
+        </button>
+        <% end %>
+
 			</ul>
     </li>
 	<% end %>

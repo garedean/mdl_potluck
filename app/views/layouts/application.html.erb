@@ -40,9 +40,9 @@
 
           <div class="mdl-layout-spacer"></div>
 
-          <nav class="mdl-navigation">
+          <nav class="mdl-navigation right-nav-wrapper">
             <% if user_signed_in? && !current_user.cart.empty? %>
-              <%= link_to cart_path, class: "mdl-navigation__link" do %>
+              <%= link_to cart_path, id: "cart-link", class: "mdl-navigation__link" do %>
                 <i class="material-icons cart mdl-badge" data-badge=<%= current_user.cart.ingredients.size %>>shopping_cart</i>
               <% end %>
             <% end %>

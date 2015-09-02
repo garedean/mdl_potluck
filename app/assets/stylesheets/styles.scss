@@ -107,7 +107,6 @@ button.add-food-item {
 
 header {
   i {
-    font-size: 28px !important;
     color: white;
   }
   .main-icon {
@@ -123,8 +122,15 @@ i.cart {
 }
 
 .mdl-layout__header-row {
-  padding: 0 5px 0 60px !important;
+  padding: 0 0px 0 60px !important;
   position: relative;
+  .right-nav-wrapper {
+    padding-right: 20px
+  }
+}
+
+#cart-link {
+  padding-right: 15px;
 }
 
 /* MDL Add Button */

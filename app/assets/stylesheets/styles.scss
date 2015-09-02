@@ -51,19 +51,14 @@ button.add-food-item {
 }
 
 .mdl-layout__tab-bar-container {
-  .mdl-layout__tab-bar {
-    background: #F1F1F1;
-  }
   .mdl-layout__tab {
     color: #ccc;
-    &.is-active {
-      color: #3F51B5 !important;
+    &:hover,
+    &:focus,
+    &active {
+      text-decoration: none;
     }
   }
-}
-
-.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after {
-  background: #3F51B5 !important;
 }
 
 .circle {

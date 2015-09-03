@@ -286,7 +286,7 @@ end
 1000.times do
   Ingredient.create(category_id:  bottom_level_categories.sample.id,
                     location_id: locations.sample.id,
-                    expiration_date: Date.today + r.rand(-5..90))
+                    expiration_date: Date.today + r.rand(90..1000))
 end
 
 Ingredient.all.each do |ingredient|

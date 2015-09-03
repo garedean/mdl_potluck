@@ -146,6 +146,14 @@ i.cart {
   padding-right: 15px;
 }
 
+#expiring-soons {
+  a {
+    > li {
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+
 /* MDL Add Button */
 /*****************************************/
 

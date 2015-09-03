@@ -272,7 +272,7 @@ locations = Location.where({name: ["Bottom",
                                    "Right",
                                    "Left",
                                    "Under Counter",
-                                   "Spice Top Shelves",
+                                   "Spic7e Top Shelves",
                                    "Spice Middle Shelves",
                                    "Spice Bottom Shelves",
                                    "Shelves"]} )
@@ -283,12 +283,8 @@ Category.all.each do |category|
   bottom_level_categories << category if category.is_childless?
 end
 
-
-
 1000.times do
-  ingredient_category = bottom_level_categories.sample
-  Ingredient.create(category_id: ingredient_category.id,
-                    name:        ingredient_category.name,
+  Ingredient.create(category_id:  bottom_level_categories.sample.id,
                     location_id: locations.sample.id,
                     expiration_date: Date.today + r.rand(-5..90))
 end

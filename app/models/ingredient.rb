@@ -6,6 +6,7 @@ class Ingredient < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :location
 	belongs_to :cart
+	validates_presence_of :expiration_date
 	scope :unused, -> { where(used_on: nil) }
 
   def formatted_time

@@ -26,13 +26,10 @@ class IngredientsController < ApplicationController
 
     @ingredient = Ingredient.new(ingredient_params)
 
-    ingredient_category = Category.find(ingredient_params[:category_id])
-    @ingredient.name = ingredient_category.name
-
     if @ingredient.save
       redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"
     else
-      render 'new'
+      redirect_to :back, notice: "Expiration date required"
     end
   end
 

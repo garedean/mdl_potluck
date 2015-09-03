@@ -53,3 +53,15 @@
   height: 50px;
   width: 50px;
 }
+
+.mdl-button {
+  &.pull-left {
+    text-align: left;
+  }
+}
+
+.mdl-card__title-text {
+  &.text-center {
+    margin: 0 auto !important;
+  }
+}

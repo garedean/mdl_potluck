@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: "registrations"}, skip: :registration
+  devise_for :users, controllers: {sessions: "my_devise/sessions"}, skip: :registration
 
   #root to: 'stores#show'
   root to: "static_pages#home"

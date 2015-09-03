@@ -27,7 +27,7 @@
       <%= f.hidden_field :location_id, value: @location.try(:id) %>
       <%= f.hidden_field :category_id, value: @category.id %>
       <%= f.text_field :expiration_date, class: "datepicker stretch" %>
-      <%= f.submit "Add Item", class: "stretch ripple" %>
+      <%= f.submit "Add Item", class: "stretch ripple mdl-button mdl-js-button mdl-button--raised" %>
     <% end %>
   </div>
 </div>

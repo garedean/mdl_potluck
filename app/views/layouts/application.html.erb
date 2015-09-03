@@ -19,9 +19,7 @@
     <%= yield :top_level_content %>
 
     <% flash.each do |key, value| %>
-      <div id="flash">
-        <%= content_tag :div, value, class: "flash #{key}" %>
-      </div>
+        <%= content_tag :div, value, id: "flash", class: "flash #{key}" if value.length > 0 %>
     <% end %>
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header

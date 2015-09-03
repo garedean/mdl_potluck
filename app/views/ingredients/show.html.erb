@@ -9,7 +9,7 @@
 <div class="demo-card-event mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
     <h4>
-      <span class="card-main"><%= @ingredient.name %></span><br>
+      <span class="card-main"><%= @ingredient.category.name %></span><br>
 
       <% unless @ingredient.location.class == NullLocation %>
         <span class="card-sub"><%= @ingredient.location.tree_format %> > <%= @ingredient.location.name %></span>

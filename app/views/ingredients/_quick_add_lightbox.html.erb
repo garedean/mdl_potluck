@@ -1,8 +1,8 @@
 <!-- Square card -->
 <style>
 .demo-card-square.mdl-card {
-  width: 250px;
-  height: 250px;
+  height: 220px;
+  width: 270px;
 }
 .demo-card-square > .mdl-card__title {
   color: #666;
@@ -17,16 +17,16 @@
 
   <div class="demo-card-square mdl-card mdl-shadow--2dp absolutely-centered quick-links-lightbox">
     <div class="mdl-card__title mdl-card--expand">
-      <h2 class="mdl-card__title-text">Item added</h2>
+      <h2 class="mdl-card__title-text text-center">Item added</h2>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <%= link_to "Store Another Here", add_another_same_location_ingredient_path(@ingredient), method: :post, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+      <%= link_to "Store Another Here", add_another_same_location_ingredient_path(@ingredient), method: :post, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect stretch pull-left" %>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <%= link_to "Store Another with Changes", store_category_locations_path(@ingredient.category), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+      <%= link_to "Store Another with Changes", store_category_locations_path(@ingredient.category), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect stretch pull-left" %>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <%= link_to "Close", ingredient_path(@ingredient), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+      <%= link_to "Close", ingredient_path(@ingredient), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect stretch pull-left" %>
     </div>
   </div>
 <% end %>

@@ -7,7 +7,7 @@ r = Random.new
 
 User.create(email: "admin@test.com", password: "123abc!!", admin: true)
 
-if false
+if true
 
 # category seeds
 # ------------------------------------------------
@@ -283,12 +283,18 @@ Category.all.each do |category|
   bottom_level_categories << category if category.is_childless?
 end
 
+
+
 1000.times do
   ingredient_category = bottom_level_categories.sample
   Ingredient.create(category_id: ingredient_category.id,
                     name:        ingredient_category.name,
                     location_id: locations.sample.id,
                     expiration_date: Date.today + r.rand(-5..90))
+end
+
+Ingredient.all.each do |ingredient|
+  ingredient.update_descendants_count
 end
 
 # cart seeds

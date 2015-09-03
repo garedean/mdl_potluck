@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902223607) do
+ActiveRecord::Schema.define(version: 20150903183911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(version: 20150902223607) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ancestry"
+    t.integer  "descendants_count", default: 0
   end
 
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+  add_index "categories", ["name"], name: "index_categories_on_name", using: :btree
 
   create_table "ingredients", force: :cascade do |t|
     t.integer  "category_id"
@@ -40,14 +42,17 @@ ActiveRecord::Schema.define(version: 20150902223607) do
     t.date     "expiration_date"
     t.integer  "quantity"
     t.integer  "cart_id"
+    t.string   "name"
   end
 
   add_index "ingredients", ["cart_id"], name: "index_ingredients_on_cart_id", using: :btree
+  add_index "ingredients", ["category_id"], name: "index_ingredients_on_category_id", using: :btree
+  add_index "ingredients", ["expiration_date"], name: "index_ingredients_on_expiration_date", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string  "name"
     t.string  "ancestry"
-    t.integer "descendant_count"
+    t.integer "descendants_count", default: 0
   end
 
   add_index "locations", ["ancestry"], name: "index_locations_on_ancestry", using: :btree

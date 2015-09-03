@@ -18,6 +18,7 @@ gem 'airbrake'
 gem 'simple_form'
 gem 'pickadate-rails'
 gem 'jquery-ui-rails'
+gem 'rack-mini-profiler', '~> 0.9.6'
 
 group :development do
   gem 'byebug'

@@ -21,9 +21,9 @@ describe "the store pages" do
       click_on "Chicken"
       click_on "Whole Chicken"
       find('#add-item').click
-      ingredients_count = find("#item-count").text.to_i
+      descendants_count = find("#item-count").text.to_i
       click_on("Without Location")
-      expect(find("#item-count").text).to eq (ingredients_count + 1).to_s
+      expect(find("#item-count").text).to eq (descendants_count + 1).to_s
     end
   end
 end

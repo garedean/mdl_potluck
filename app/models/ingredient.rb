@@ -1,4 +1,8 @@
 class Ingredient < ActiveRecord::Base
+	after_save :update_descendants_count
+	after_destroy :update_descendants_count
+	after_update :update_descendants_count
+
 	belongs_to :category
 	belongs_to :location
 	belongs_to :cart
@@ -19,12 +23,6 @@ class Ingredient < ActiveRecord::Base
 	def formatted_created_at
 		return self.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d %I:%M %p")
 	end
-
-  def name
-		if category
-			category.name
-		end
-  end
 
 	def location
 		# if ingredient is assign ed location, return location object
@@ -50,4 +48,24 @@ class Ingredient < ActiveRecord::Base
 	def self.expiring_soon
 		order(expiration_date: :asc).limit(500)
 	end
+
+	def update_descendants_count
+		update_category_descendants_count
+		update_location_descendants_count
+	end
+
+	def update_category_descendants_count
+		(category.ancestors << category).each do |category|
+			category.update(descendants_count: category.descendants_count_helper)
+		end
+	end
+
+	def update_location_descendants_count
+		if location.class != NullLocation
+			(location.ancestors << location).each do |location|
+				location.update(descendants_count: location.descendants_count_helper)
+			end
+		end
+	end
+
 end

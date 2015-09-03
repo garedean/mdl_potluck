@@ -26,6 +26,9 @@ class IngredientsController < ApplicationController
 
     @ingredient = Ingredient.new(ingredient_params)
 
+    ingredient_category = Category.find(ingredient_params[:category_id])
+    @ingredient.name = ingredient_category.name
+
     if @ingredient.save
       redirect_to ingredient_path(@ingredient, show_quick_add: true), notice: "Item Stored"
     else
@@ -73,6 +76,7 @@ class IngredientsController < ApplicationController
 
   def add_to_cart
     item_to_add = Ingredient.find(params[:id])
+    item_to_add.update_descendants_count
 
     current_user.cart.add_item(item_to_add)
     redirect_to :back
@@ -84,6 +88,7 @@ class IngredientsController < ApplicationController
 
   def remove_from_cart
     item_to_remove = Ingredient.find(params[:id])
+    item_to_remove.update_descendants_count
 
     current_user.cart.remove_item(item_to_remove)
     flash[:notice] = "Item Removed"

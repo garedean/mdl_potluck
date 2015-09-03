@@ -284,13 +284,12 @@ Category.all.each do |category|
 end
 
 1000.times do
-  Ingredient.create(category_id: bottom_level_categories.sample.id,
+  ingredient_category = bottom_level_categories.sample
+  Ingredient.create(category_id: ingredient_category.id,
+                    name:        ingredient_category.name,
                     location_id: locations.sample.id,
                     expiration_date: Date.today + r.rand(-5..90))
 end
-
-# this takes about 5 minutes to run
-Ingredient.reset_descendant_counts
 
 # cart seeds
 # ------------------------------------------------

@@ -1,11 +1,12 @@
 class CartsController < ApplicationController
   def show
+    #session[:previous_page] ||= request.env['HTTP_REFERER']
     @cart_items = current_user.cart.ingredients
   end
 
   def empty_cart
     remove_cart_items
-    redirect_to cart_path, notice: "Cart emptied"
+    redirect_to :back, notice: "Cart emptied!"
   end
 
   def use_all_items
@@ -14,7 +15,7 @@ class CartsController < ApplicationController
     end
 
     remove_cart_items
-    redirect_to cart_path , notice: "Cart items used"
+    redirect_to :back, notice: "Cart items used"
   end
 
   private

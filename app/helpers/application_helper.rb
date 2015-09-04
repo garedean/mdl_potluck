@@ -50,7 +50,9 @@ module ApplicationHelper
         content_tag(:i, "", class: "zmdi zmdi-cutlery home-icon")
       end
     elsif destination == :back
-      link_to :back, data: { 'no-turbolink' => true } do
+      path = params[:redirect_to] || destination
+
+      link_to path, data: { 'no-turbolink' => true } do
         content_tag(:i, "arrow_back", class: "material-icons")
       end
     else

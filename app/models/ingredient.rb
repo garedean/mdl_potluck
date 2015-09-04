@@ -9,6 +9,10 @@ class Ingredient < ActiveRecord::Base
 	validates_presence_of :expiration_date
 	scope :unused, -> { where(used_on: nil) }
 
+	def name
+			category.name
+	end
+
   def formatted_time
     return self.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%A, %B %d at %I:%M %p")
   end

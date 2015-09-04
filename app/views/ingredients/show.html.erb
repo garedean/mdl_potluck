@@ -11,9 +11,17 @@
     <h4>
       <span class="card-main"><%= @ingredient.category.name %></span><br>
 
-      <% unless @ingredient.location.class == NullLocation %>
-        <span class="card-sub"><%= @ingredient.location.tree_format %> > <%= @ingredient.location.name %></span>
+      <% if @ingredient.location.class == NullLocation %>
+        <span class="card-sub">Not stored in a location</span><br>
+      <% else %>
+        <span class="card-sub"><%= @ingredient.location.tree_format %> > <%= @ingredient.location.name %></span><br>
       <% end %>
+
+      <% if @ingredient.location.class != NullLocation %>
+        <span class="card-sub">Qty this location: <%= Ingredient.count_this_location(@ingredient) %></span><br>
+      <% end %>
+
+      <span class="card-sub">Qty all locations: <%= Ingredient.count_all_locations(@ingredient) %></span>
     </h4>
   </div>
   <div class="mdl-card__actions mdl-card--border">

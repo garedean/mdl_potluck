@@ -6,8 +6,8 @@ class MyDevise::SessionsController < Devise::SessionsController
   def create
     welcome_messages = [
       "You’re here! The day just got better!",
+      "Beep bop, boop. System ready.",
       "You look nice today.",
-      "You brighten my day",
       "Let's do some work!",
       "Beep bop, boop. System ready.",
       "Hiya! Heya!",

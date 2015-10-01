@@ -41,7 +41,7 @@ $(function() {
     format: 'mmmm d, yyyy',
   });
 
-  $("#flash").delay(1000).animate({
+  $("#flash").delay(2000).animate({
     top: "-56",
   }, 700, "easeOutBounce" );
 });

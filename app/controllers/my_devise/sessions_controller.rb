@@ -17,7 +17,13 @@ class MyDevise::SessionsController < Devise::SessionsController
       "Beep bop, boop. System ready.",
       "You + Me = Dream Team",
       "Let's do this. Together!",
-      "What good shall we do today?"
+      "What good shall we do today?",
+      "We’re in this together.",
+      "You're the best.",
+      "Welcome, you are awesome!",
+      "I like you. A LOT.",
+      "Alright world, time to take you on!"
+
     ]
     super
     flash[:notice] = welcome_messages.sample

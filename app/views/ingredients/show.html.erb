@@ -9,7 +9,10 @@
 <div class="demo-card-event mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
     <h4>
-      <span class="card-main"><%= @ingredient.category.name %></span><br>
+      <span class="card-main">
+        Box <span class="card-main"><%= @ingredient.id %></span>,
+        <%= @ingredient.category.name %>
+      <br>
 
       <% if @ingredient.location.class == NullLocation %>
         <span class="card-sub">Not stored in a location</span><br>
@@ -17,11 +20,13 @@
         <span class="card-sub"><%= @ingredient.location.tree_format %> > <%= @ingredient.location.name %></span><br>
       <% end %>
 
-      <% if @ingredient.location.class != NullLocation %>
-        <span class="card-sub">Qty this location: <%= Ingredient.count_this_location(@ingredient) %></span><br>
-      <% end %>
+      <span class="card-sub">
+        Added on <%= @ingredient.created_at.strftime("%b %-d, %Y") %>
+      </span><br>
 
-      <span class="card-sub">Qty all locations: <%= Ingredient.count_all_locations(@ingredient) %></span>
+      <span class="card-sub">
+        <%= expiration_message(@ingredient) %>
+      </span><br>
     </h4>
   </div>
   <div class="mdl-card__actions mdl-card--border">
@@ -40,7 +45,9 @@
 <div class="button-group item-details">
   <%= link_to "Relocate", relocate_ingredient_locations_path(@ingredient), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" %>
 
-  <%= link_to "View More of These", category_ingredients_path(@ingredient.category), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" %>
+  <%= link_to category_ingredients_path(@ingredient.category), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" do %>
+    View more of these (<%= Ingredient.count_all_locations(@ingredient) %>)
+  <% end %>
 
   <%= link_to "Delete", ingredient_path(@ingredient), method: :delete, data: {confirm: "Are you sure?"}, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mega-btn" %>
 </div>

@@ -31,11 +31,11 @@
     <div class="row">
       <%= link_to use_all_items_path, method: :post, data: {confirm: "Please confirm: this will mark all items as 'used' and then reset the cart"} do %>
         <div class="col-xs-6">
-          Use All
+          Use All Items
         </div>
       <% end %>
 
-      <%= link_to empty_cart_path, method: :post, data: {confirm: "Please confirm: this will empty all contents from the cart."} do %>
+      <%= link_to empty_cart_path, method: :post, data: {confirm: "Please confirm: this will empty all contents from the cart and return all items to their original locations"} do %>
         <div class="col-xs-6">
           Empty Cart
         </div>
